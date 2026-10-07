@@ -55,6 +55,18 @@ from utils.db_functions import (
 )
 
 
+def notify(kind, message):
+    """Show all user-facing status messages as Streamlit popup notifications."""
+    icons = {
+        "success": "✅",
+        "warning": "⚠️",
+        "error": "❌",
+        "info": "ℹ️",
+    }
+    st.toast(message, icon=icons.get(kind, "ℹ️"))
+
+
+
 # ============================================================
 # CONSTANTS
 # ============================================================
@@ -125,12 +137,28 @@ def db_execute(sql, params=()):
         return cursor.lastrowid
 
 
+def normalize_phone(phone):
+    """Normalize a phone number so the same number cannot bypass uniqueness."""
+    value = re.sub(r"\D", "", str(phone or ""))
+    # Treat common Indian +91 / 0091 formats as the same 10-digit number.
+    if value.startswith("0091") and len(value) == 14:
+        value = value[4:]
+    elif value.startswith("91") and len(value) == 12:
+        value = value[2:]
+    return value
+
+
+def normalize_email(email):
+    """Normalize email for case-insensitive uniqueness."""
+    return str(email or "").strip().lower()
+
+
 # ============================================================
 # RESIDENT REGISTRATION + ZONE ALERT ENGINE
 # ============================================================
 
 def ensure_alert_tables():
-    """Create/migrate resident-alert tables without changing existing AquaTrack tables."""
+    """Create/migrate resident-alert tables and enforce global contact uniqueness."""
     with closing(sqlite3.connect(DATABASE_NAME)) as connection:
         cursor = connection.cursor()
 
@@ -166,49 +194,132 @@ def ensure_alert_tables():
         if "resident_id" not in columns:
             cursor.execute("ALTER TABLE alerts_log ADD COLUMN resident_id INTEGER")
 
+        # Normalize existing records so old data follows the same uniqueness rules.
+        rows = cursor.execute(
+            "SELECT resident_id, phone, email FROM residents"
+        ).fetchall()
+        for resident_id, phone, email in rows:
+            normalized_phone = normalize_phone(phone)
+            normalized_email = normalize_email(email)
+            cursor.execute(
+                "UPDATE residents SET phone = ?, email = ? WHERE resident_id = ?",
+                (normalized_phone, normalized_email, int(resident_id)),
+            )
+
+        # Database-level protection. Existing duplicate legacy records are not deleted;
+        # the application-level checks below still block any new cross-zone duplicates.
+        try:
+            cursor.execute("""
+                CREATE UNIQUE INDEX IF NOT EXISTS idx_residents_phone_unique
+                ON residents(phone)
+                WHERE phone IS NOT NULL AND phone <> ''
+            """)
+        except sqlite3.IntegrityError:
+            pass
+
+        try:
+            cursor.execute("""
+                CREATE UNIQUE INDEX IF NOT EXISTS idx_residents_email_unique
+                ON residents(email)
+                WHERE email IS NOT NULL AND email <> ''
+            """)
+        except sqlite3.IntegrityError:
+            pass
+
         connection.commit()
 
 
 def register_resident(zone_id, name, phone, email):
+    """Register one resident and prevent the same phone/email across zones.
+
+    A contact can update its registration within the same zone, but the same
+    normalized phone number or email address can never be registered to a
+    different zone. Returns (resident_id, created, message).
+    """
     zone_id = int(zone_id)
     name = (name or "").strip()
-    phone = (phone or "").strip()
-    email = (email or "").strip().lower()
+    phone = normalize_phone(phone)
+    email = normalize_email(email)
 
-    existing = db_query(
+    # Find phone/email matches globally, not just inside the selected zone.
+    matches = db_query(
         """
-        SELECT resident_id
-        FROM residents
-        WHERE zone_id = ?
-          AND (
-              (? <> '' AND phone = ?)
-              OR (? <> '' AND email = ?)
-          )
-        LIMIT 1
+        SELECT r.resident_id, r.zone_id, z.zone_name, r.phone, r.email
+        FROM residents r
+        LEFT JOIN zones z ON z.zone_id = r.zone_id
+        WHERE (
+            (? <> '' AND r.phone = ?)
+            OR (? <> '' AND r.email = ?)
+        )
+        ORDER BY r.resident_id
         """,
-        (zone_id, phone, phone, email, email),
+        (phone, phone, email, email),
     )
 
-    if not existing.empty:
-        resident_id = int(existing.iloc[0]["resident_id"])
+    if not matches.empty:
+        # A phone/email collision with two different resident records is always
+        # rejected rather than silently merging accounts.
+        matching_ids = set(matches["resident_id"].astype(int).tolist())
+        if len(matching_ids) > 1:
+            return None, False, "This phone number or email is already registered to another resident."
+
+        row = matches.iloc[0]
+        existing_id = int(row["resident_id"])
+        existing_zone_id = int(row["zone_id"])
+        existing_zone_name = str(row["zone_name"] or f"Zone {existing_zone_id}")
+
+        if existing_zone_id != zone_id:
+            if phone and str(row["phone"] or "") == phone:
+                return None, False, (
+                    f"This phone number is already registered for {existing_zone_name}. "
+                    "It cannot be registered for another zone."
+                )
+            return None, False, (
+                f"This email address is already registered for {existing_zone_name}. "
+                "It cannot be registered for another zone."
+            )
+
+        # Same resident + same zone: update the existing registration.
         db_execute(
             """
             UPDATE residents
             SET name = ?, phone = ?, email = ?
             WHERE resident_id = ?
             """,
-            (name, phone, email, resident_id),
+            (name, phone, email, existing_id),
         )
-        return resident_id, False
+        return existing_id, False, "Registration updated successfully."
 
-    resident_id = db_execute(
-        """
-        INSERT INTO residents (zone_id, name, phone, email)
-        VALUES (?, ?, ?, ?)
-        """,
-        (zone_id, name, phone, email),
-    )
-    return resident_id, True
+    try:
+        resident_id = db_execute(
+            """
+            INSERT INTO residents (zone_id, name, phone, email)
+            VALUES (?, ?, ?, ?)
+            """,
+            (zone_id, name, phone, email),
+        )
+    except sqlite3.IntegrityError:
+        # Covers a race with the database-level unique indexes. Re-check the
+        # contact so the user gets a clear zone-specific message.
+        matches = db_query(
+            """
+            SELECT r.phone, r.email, z.zone_name
+            FROM residents r
+            LEFT JOIN zones z ON z.zone_id = r.zone_id
+            WHERE (? <> '' AND r.phone = ?) OR (? <> '' AND r.email = ?)
+            LIMIT 1
+            """,
+            (phone, phone, email, email),
+        )
+        if not matches.empty:
+            row = matches.iloc[0]
+            zone_name = str(row["zone_name"] or "another zone")
+            if phone and str(row["phone"] or "") == phone:
+                return None, False, f"This phone number is already registered for {zone_name}. It cannot be registered for another zone."
+            return None, False, f"This email address is already registered for {zone_name}. It cannot be registered for another zone."
+        return None, False, "This phone number or email is already registered."
+
+    return resident_id, True, "Registration successful."
 
 
 def get_zone_residents(zone_id):
@@ -1322,6 +1433,13 @@ st.markdown(
     .aqua-reference-logo svg { width:24px; height:24px; }
     .aqua-reference-name { font-size:1.24rem; font-weight:800; letter-spacing:-.045em; color:#183b56; white-space:nowrap; }
 
+    /* Mobile navigation is hidden by default and only enabled by the
+       narrow-screen media query below. */
+    div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker),
+    div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) {
+        display:none !important;
+    }
+
     div[data-testid="stHorizontalBlock"] .stButton > button { min-height:2.35rem !important; min-width:0 !important; width:100% !important; padding:.38rem .42rem !important; background:#fff !important; color:#587286 !important; border:1px solid transparent !important; border-radius:11px !important; box-shadow:none !important; font-weight:600 !important; font-size:.78rem !important; white-space:nowrap !important; overflow:visible !important; text-overflow:clip !important; }
     div[data-testid="stHorizontalBlock"] .stButton > button p { white-space:nowrap !important; overflow:visible !important; text-overflow:clip !important; }
     div[data-testid="stHorizontalBlock"] .stButton > button:hover { background:#f0f8fc !important; color:#087da4 !important; border-color:#d7ebf3 !important; transform:none !important; box-shadow:none !important; }
@@ -1591,62 +1709,80 @@ st.markdown(
             padding-right:.65rem !important;
         }
 
-        div[data-testid="stHorizontalBlock"]:has(.aqua-reference-brand) {
-            display:flex !important;
-            flex-wrap:wrap !important;
-            gap:.45rem !important;
+        /* Mobile-only hamburger navigation. The original desktop header and
+           five-item secondary navigation are completely hidden on phones so
+           they cannot squeeze, collide or create horizontal overflow. */
+        div[data-testid="stHorizontalBlock"]:has(.aqua-desktop-header-marker),
+        div[data-testid="stVerticalBlock"]:has(.aqua-subnav-gap) > div[data-testid="stHorizontalBlock"] {
+            display:none !important;
+        }
+
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) {
+            display:grid !important;
+            grid-template-columns:minmax(0,1fr) 54px !important;
+            gap:.65rem !important;
             align-items:center !important;
-            overflow:visible !important;
-        }
-
-        div[data-testid="stHorizontalBlock"]:has(.aqua-reference-brand) > div {
-            min-width:0 !important;
-            box-sizing:border-box !important;
-        }
-
-        div[data-testid="stHorizontalBlock"]:has(.aqua-reference-brand) > div:first-child {
-            flex:0 0 100% !important;
             width:100% !important;
+            margin-bottom:.35rem !important;
         }
 
-        div[data-testid="stHorizontalBlock"]:has(.aqua-reference-brand) > div:not(:first-child) {
-            flex:1 1 calc(33.333% - .45rem) !important;
-            width:calc(33.333% - .45rem) !important;
-        }
-
-        div[data-testid="stHorizontalBlock"]:has(.aqua-reference-brand) .stButton > button {
-            min-height:2.8rem !important;
-            padding:.45rem .25rem !important;
-            font-size:.70rem !important;
-            border-radius:10px !important;
-            touch-action:manipulation !important;
-        }
-
-        /* All button rows become touch-friendly and wrap instead of shrinking
-           into unreadable controls on phones. */
-        div[data-testid="stHorizontalBlock"]:not(:has(.aqua-reference-brand)):has(.stButton) {
-            display:flex !important;
-            flex-wrap:wrap !important;
-            gap:.55rem !important;
-            width:100% !important;
-            max-width:100% !important;
-        }
-
-        div[data-testid="stHorizontalBlock"]:not(:has(.aqua-reference-brand)):has(.stButton) > div {
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div {
+            width:auto !important;
             min-width:0 !important;
-            box-sizing:border-box !important;
         }
 
-        div[data-testid="stHorizontalBlock"]:not(:has(.aqua-reference-brand)):has(.stButton) > div .stButton > button {
-            min-height:2.75rem !important;
-            font-size:.72rem !important;
-            padding:.45rem .38rem !important;
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .stButton > button {
+            min-height:3rem !important;
+            font-size:1.35rem !important;
+            padding:.2rem !important;
+            border-radius:12px !important;
+            background:#fff !important;
+            color:#0879b2 !important;
+            border:1px solid #d7e8ef !important;
+            box-shadow:none !important;
         }
 
-        /* The five secondary-navigation items use two rows on phones so
-           labels remain readable and easy to tap. */
-        div[data-testid="stHorizontalBlock"]:not(:has(.aqua-reference-brand)):has(.stButton) > div {
-            flex:1 1 calc(20% - .55rem) !important;
+        .aqua-mobile-brand {
+            min-height:52px !important;
+            padding:.15rem 0 !important;
+        }
+        .aqua-mobile-tagline {
+            font-size:.58rem;
+            color:#8aa0ad;
+            font-weight:600;
+            letter-spacing:.01em;
+            margin-top:-2px;
+        }
+
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) {
+            background:#fff !important;
+            border:1px solid #d7e8ef !important;
+            border-radius:16px !important;
+            padding:.75rem !important;
+            margin:.35rem 0 .8rem !important;
+            box-shadow:0 12px 28px rgba(37,82,107,.10) !important;
+        }
+
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton > button {
+            min-height:3rem !important;
+            width:100% !important;
+            justify-content:flex-start !important;
+            text-align:left !important;
+            padding:.7rem .85rem !important;
+            margin:0 !important;
+            font-size:.88rem !important;
+            border-radius:11px !important;
+            box-shadow:none !important;
+            background:#fff !important;
+            color:#587286 !important;
+            border:1px solid transparent !important;
+        }
+
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton > button:hover,
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton > button[kind="primary"] {
+            background:#edf7ff !important;
+            color:#0879b2 !important;
+            border-color:#d7ebf3 !important;
         }
 
         .aqua-reference-brand {
@@ -1925,6 +2061,9 @@ TRANSLATIONS = {"English": {
     "Email (for alerts)": "Email (for alerts)",
     "🔔 Register for Alerts": "🔔 Register for Alerts",
     "Please provide a phone number or email.": "Please provide a phone number or email.",
+    "This phone number is already registered for another zone.": "This phone number is already registered for another zone.",
+    "This email address is already registered for another zone.": "This email address is already registered for another zone.",
+    "This phone number or email is already registered to another resident.": "This phone number or email is already registered to another resident.",
     "🔔 Your Recent Alerts": "🔔 Your Recent Alerts",
     "No alerts yet. New reports for your registered zone will appear here automatically.": "No alerts yet. New reports for your registered zone will appear here automatically.",
     "Registered Residents": "Registered Residents",
@@ -2240,6 +2379,9 @@ TRANSLATIONS = {"English": {
     "Email (for alerts)": "अलर्ट्स के लिए ईमेल",
     "🔔 Register for Alerts": "🔔 अलर्ट्स के लिए रजिस्टर करें",
     "Please provide a phone number or email.": "कृपया फोन नंबर या ईमेल दें।",
+    "This phone number is already registered for another zone.": "यह फोन नंबर पहले से किसी दूसरे ज़ोन में रजिस्टर है।",
+    "This email address is already registered for another zone.": "यह ईमेल पहले से किसी दूसरे ज़ोन में रजिस्टर है।",
+    "This phone number or email is already registered to another resident.": "यह फोन नंबर या ईमेल किसी दूसरे रेजिडेंट के नाम पर पहले से रजिस्टर है।",
     "🔔 Your Recent Alerts": "🔔 आपके हाल के अलर्ट्स",
     "No alerts yet. New reports for your registered zone will appear here automatically.": "अभी कोई अलर्ट नहीं है। आपके रजिस्टर किए ज़ोन की नई रिपोर्ट्स यहाँ अपने आप दिखेंगी।",
     "Registered Residents": "रजिस्टर किए रेज़िडेंट्स",
@@ -2342,6 +2484,7 @@ st.session_state.setdefault("admin_user", None)
 st.session_state.setdefault("page", "Dashboard")
 st.session_state.setdefault("admin_login_error", None)
 st.session_state.setdefault("language", "English")
+st.session_state.setdefault("mobile_menu_open", False)
 
 
 def navigate_to(page_name):
@@ -2362,6 +2505,34 @@ def do_logout():
 def toggle_language():
     current = st.session_state.get("language", "English")
     st.session_state.language = "हिंदी" if current == "English" else "English"
+
+
+def toggle_mobile_menu():
+    st.session_state.mobile_menu_open = not st.session_state.get("mobile_menu_open", False)
+
+
+def close_mobile_menu():
+    st.session_state.mobile_menu_open = False
+
+
+def mobile_navigate(page_name):
+    st.session_state.page = page_name
+    st.session_state.mobile_menu_open = False
+
+
+def mobile_open_admin():
+    open_admin()
+    st.session_state.mobile_menu_open = False
+
+
+def mobile_logout():
+    do_logout()
+    st.session_state.mobile_menu_open = False
+
+
+def mobile_toggle_language():
+    toggle_language()
+    st.session_state.mobile_menu_open = False
 
 
 def attempt_admin_login():
@@ -2390,6 +2561,66 @@ page = st.session_state.page
 # HEADER NAVIGATION
 # ============================================================
 
+# Mobile navigation: a dedicated hamburger menu replaces the dense desktop
+# button grid on narrow screens. Desktop navigation below remains unchanged.
+mobile_header_cols = st.columns([6.2, 1.2], gap="small", vertical_alignment="center")
+with mobile_header_cols[0]:
+    st.markdown(
+        """
+        <div class="aqua-mobile-header-marker" aria-hidden="true"></div>
+        <div class="aqua-reference-brand aqua-mobile-brand">
+            <div class="aqua-reference-logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3.2C12 3.2 6.4 10.05 6.4 14.35C6.4 17.55 8.9 20.1 12 20.1C15.1 20.1 17.6 17.55 17.6 14.35C17.6 10.05 12 3.2 12 3.2Z" stroke="white" stroke-width="1.65"/>
+                </svg>
+            </div>
+            <div>
+                <div class="aqua-reference-name">AquaTrack</div>
+                <div class="aqua-mobile-tagline">Predictive Water Intelligence</div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+with mobile_header_cols[1]:
+    st.button(
+        "✕" if st.session_state.mobile_menu_open else "☰",
+        key="mobile_menu_toggle",
+        width="stretch",
+        on_click=toggle_mobile_menu,
+        type="secondary",
+    )
+
+if st.session_state.mobile_menu_open:
+    with st.container():
+        st.markdown('<div class="aqua-mobile-menu-marker" aria-hidden="true"></div>', unsafe_allow_html=True)
+        mobile_items = [
+            ("🏠 " + t("Home"), "Dashboard", "mobile_home"),
+            ("📝 " + t("Report"), "Report Water Body Issue", "mobile_report"),
+            ("🔔 " + t("Alerts"), "Resident Alerts", "mobile_alerts"),
+            ("🗺️ " + t("Map"), "Indore Zone Map", "mobile_map"),
+            ("⚙️ " + t("Admin"), "__ADMIN__", "mobile_admin"),
+            ("📊 " + t("Analytics"), "Zone Analytics", "mobile_analytics"),
+            ("⚖️ " + t("Compare"), "Compare Zones", "mobile_compare"),
+            ("💧 " + t("Quality"), "Water Quality Prediction", "mobile_quality"),
+            ("📈 " + t("Forecast"), "Availability Forecast", "mobile_forecast"),
+            ("🧠 " + t("Insights"), "Model Insights", "mobile_insights"),
+        ]
+        for label, target, key in mobile_items:
+            if target == "__ADMIN__":
+                st.button(label, key=key, width="stretch", on_click=mobile_open_admin,
+                          type="primary" if page in ("Admin Panel", "Admin Login") else "secondary")
+            else:
+                st.button(label, key=key, width="stretch", on_click=mobile_navigate, args=(target,),
+                          type="primary" if page == target else "secondary")
+        st.button(
+            ("🌐 " + ("View in English" if st.session_state.language == "हिंदी" else "हिंदी में देखें")),
+            key="mobile_language", width="stretch", on_click=mobile_toggle_language, type="secondary",
+        )
+        if st.session_state.admin_logged_in:
+            st.button(t("Logout"), key="mobile_logout", width="stretch", on_click=mobile_logout, type="secondary")
+
+# Desktop header
 if st.session_state.admin_logged_in:
     header_cols = st.columns(
         [5.55, 1.25, 1.04, 1.04, 1.04, 1.04, 1.04],
@@ -2397,8 +2628,6 @@ if st.session_state.admin_logged_in:
         vertical_alignment="center",
     )
 else:
-    # Public header: shift the ENTIRE top button group to the right so
-    # the Admin button's right edge lines up with the Insights button below.
     header_cols = st.columns(
         [3.82, 1.22, 1.08, 1.08, 1.08, 1.08, 1.08],
         gap="small",
@@ -2408,7 +2637,7 @@ else:
 with header_cols[0]:
     st.markdown(
         """
-        <div class="aqua-reference-brand">
+        <div class="aqua-reference-brand aqua-desktop-header-marker">
             <div class="aqua-reference-logo">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 3.2C12 3.2 6.4 10.05 6.4 14.35C6.4 17.55 8.9 20.1 12 20.1C15.1 20.1 17.6 17.55 17.6 14.35C17.6 10.05 12 3.2 12 3.2Z" stroke="white" stroke-width="1.65"/>
@@ -2424,71 +2653,21 @@ with header_cols[0]:
     )
 
 language_button_label = "हिंदी में देखें" if st.session_state.language == "English" else "View in English"
-header_cols[1 if not st.session_state.admin_logged_in else 1].button(
-    language_button_label, key="header_language_toggle", width="stretch",
-    on_click=toggle_language, type="secondary",
-)
-
-header_cols[2 if not st.session_state.admin_logged_in else 2].button(
-    "🏠 " + t("Home"), key="header_home", width="stretch", on_click=navigate_to, args=("Dashboard",),
-    type="primary" if page == "Dashboard" else "secondary",
-)
+header_cols[1].button(language_button_label, key="header_language_toggle", width="stretch", on_click=toggle_language, type="secondary")
+header_cols[2].button("🏠 " + t("Home"), key="header_home", width="stretch", on_click=navigate_to, args=("Dashboard",), type="primary" if page == "Dashboard" else "secondary")
 
 if not st.session_state.admin_logged_in:
-    header_cols[3].button(
-        "📝 " + t("Report"),
-        key="header_report",
-        width="stretch",
-        on_click=navigate_to,
-        args=("Report Water Body Issue",),
-        type="primary" if page == "Report Water Body Issue" else "secondary",
-    )
-    header_cols[4].button(
-        "🔔 " + t("Alerts"),
-        key="header_resident_alerts",
-        width="stretch",
-        on_click=navigate_to,
-        args=("Resident Alerts",),
-        type="primary" if page == "Resident Alerts" else "secondary",
-    )
-    # Public header: keep Admin on the far-right edge so it aligns with the
-    # right edge of the Insights button in the secondary navigation row.
+    header_cols[3].button("📝 " + t("Report"), key="header_report", width="stretch", on_click=navigate_to, args=("Report Water Body Issue",), type="primary" if page == "Report Water Body Issue" else "secondary")
+    header_cols[4].button("🔔 " + t("Alerts"), key="header_resident_alerts", width="stretch", on_click=navigate_to, args=("Resident Alerts",), type="primary" if page == "Resident Alerts" else "secondary")
     map_col, admin_col, logout_col = 5, 6, 7
 else:
-    header_cols[3].button(
-        "🔔 " + t("Alerts"),
-        key="header_resident_alerts_admin",
-        width="stretch",
-        on_click=navigate_to,
-        args=("Resident Alerts",),
-        type="primary" if page == "Resident Alerts" else "secondary",
-    )
+    header_cols[3].button("🔔 " + t("Alerts"), key="header_resident_alerts_admin", width="stretch", on_click=navigate_to, args=("Resident Alerts",), type="primary" if page == "Resident Alerts" else "secondary")
     map_col, admin_col, logout_col = 4, 5, 6
 
-header_cols[map_col].button(
-    "🗺️ " + t("Map"),
-    key="header_map",
-    width="stretch",
-    on_click=navigate_to,
-    args=("Indore Zone Map",),
-    type="primary" if page == "Indore Zone Map" else "secondary",
-)
-header_cols[admin_col].button(
-    "⚙️ " + t("Admin"),
-    key="header_admin",
-    width="stretch",
-    on_click=open_admin,
-    type="primary" if page in ("Admin Panel", "Admin Login") else "secondary",
-)
+header_cols[map_col].button("🗺️ " + t("Map"), key="header_map", width="stretch", on_click=navigate_to, args=("Indore Zone Map",), type="primary" if page == "Indore Zone Map" else "secondary")
+header_cols[admin_col].button("⚙️ " + t("Admin"), key="header_admin", width="stretch", on_click=open_admin, type="primary" if page in ("Admin Panel", "Admin Login") else "secondary")
 if st.session_state.admin_logged_in:
-    header_cols[logout_col].button(
-        t("Logout"),
-        key="header_logout",
-        width="stretch",
-        on_click=do_logout,
-        type="secondary",
-    )
-
+    header_cols[logout_col].button(t("Logout"), key="header_logout", width="stretch", on_click=do_logout, type="secondary")
 
 SUBNAV = [
     (t("📊 Analytics"), "Zone Analytics"),
@@ -2499,16 +2678,11 @@ SUBNAV = [
 ]
 SUBNAV_PAGES = {"Dashboard", "Indore Zone Map"} | {target for _, target in SUBNAV}
 
-# Keep the secondary analytics navigation on the dashboard and analytics
-# pages, but do not show it on the Indore Zone Map page.
 if page in SUBNAV_PAGES and page != "Indore Zone Map":
     st.markdown('<div class="aqua-subnav-gap" aria-hidden="true"></div>', unsafe_allow_html=True)
     subnav_cols = st.columns(len(SUBNAV), gap="small")
     for col, (label, target) in zip(subnav_cols, SUBNAV):
-        col.button(
-            label, key=f"subnav_{target}", width="stretch", on_click=navigate_to, args=(target,),
-            type="primary" if page == target else "secondary",
-        )
+        col.button(label, key=f"subnav_{target}", width="stretch", on_click=navigate_to, args=(target,), type="primary" if page == target else "secondary")
 
 
 # ============================================================
@@ -2695,7 +2869,7 @@ elif page == "Dashboard":
                 for zone_name, alert in alert_rows[5:]:
                     st.write(f"**{zone_name}** — {alert['severity']} | {t(alert['type'])}: {t(alert['message'])}")
     else:
-        st.success(t("No active alerts. All zones look normal in the latest records."))
+        notify("success", t("No active alerts. All zones look normal in the latest records."))
 
     section("Water Quality Risk Overview")
     risk_counts = get_risk_distribution()
@@ -2717,7 +2891,7 @@ elif page == "Dashboard":
             )
             show_chart(fig, 340)
     else:
-        st.warning(t("No water-quality data available."))
+        notify("warning", t("No water-quality data available."))
 
     section("Water Availability Overview")
     supply = snapshot.dropna(subset=["supply_hours"]).sort_values("supply_hours")
@@ -2743,7 +2917,7 @@ elif page == "Dashboard":
             fig.update_traces(marker_color="#12a9db")
             show_chart(fig, 400)
     else:
-        st.warning(t("No availability data available."))
+        notify("warning", t("No availability data available."))
 
     section("Recent Predictions")
     history = get_prediction_history()
@@ -2757,7 +2931,7 @@ elif page == "Dashboard":
             width="stretch", hide_index=True,
         )
     else:
-        st.info(t("No predictions have been recorded yet."))
+        notify("info", t("No predictions have been recorded yet."))
 
     section("Data & Model Health")
     health = get_system_health()
@@ -2831,7 +3005,7 @@ elif page == "Zone Analytics":
 
     with tab_quality:
         if quality_data.empty:
-            st.warning(t("No water-quality data found for this zone."))
+            notify("warning", t("No water-quality data found for this zone."))
         else:
             latest = quality_data.iloc[-1].to_dict()
             table, _ = compliance_table(latest)
@@ -2875,7 +3049,7 @@ elif page == "Zone Analytics":
 
     with tab_availability:
         if availability_data.empty:
-            st.warning(t("No availability data found for this zone."))
+            notify("warning", t("No availability data found for this zone."))
         else:
             recent_availability = filter_recent(availability_data, period_days)
             recent_availability["7-day average"] = recent_availability["supply_hours"].rolling(7, min_periods=1).mean()
@@ -2963,7 +3137,7 @@ elif page == "Compare Zones":
     )
 
     if len(selected) < 2:
-        st.info(t("Select at least two zones to start comparing."))
+        notify("info", t("Select at least two zones to start comparing."))
     else:
         chosen = snapshot[snapshot["zone_name"].isin(selected)].copy()
         st.dataframe(snapshot_display(chosen), width="stretch", hide_index=True)
@@ -3009,7 +3183,7 @@ elif page == "Compare Zones":
         availability = get_availability()
         subset = availability[availability["zone_name"].isin(selected)].copy()
         if subset.empty:
-            st.info(t("No availability records for the selected zones."))
+            notify("info", t("No availability records for the selected zones."))
         else:
             subset["date"] = pd.to_datetime(subset["date"])
             cutoff = subset["date"].max() - pd.Timedelta(days=60)
@@ -3115,7 +3289,7 @@ elif page == "Indore Zone Map":
 
     st_folium(indore_map, width=None, height=600, key="zone_map", returned_objects=[])
 
-    st.info(
+    notify("info", 
         t("These are representative, project-defined locations used for the prototype and are not official municipal zone boundaries.")
     )
 
@@ -3139,7 +3313,7 @@ elif page == "Water Quality Prediction":
 
     if check_mode == t("I do not have a water test report"):
         st.markdown('<div class="without-report-marker" aria-hidden="true"></div>', unsafe_allow_html=True)
-        st.info(t("No report? You can do a simple visual check instead. This is only a preliminary check and not a laboratory test."))
+        notify("info", t("No report? You can do a simple visual check instead. This is only a preliminary check and not a laboratory test."))
         st.subheader(t("Check the water using simple questions"))
 
         observation_items = [
@@ -3183,9 +3357,9 @@ elif page == "Water Quality Prediction":
         simple_water_result = st.session_state.get("simple_water_result")
 
         if simple_water_result == "normal":
-            st.success(t("The water looks normal from the information provided."))
+            notify("success", t("The water looks normal from the information provided."))
         elif simple_water_result == "attention":
-            st.warning(t("Some things about the water need attention."))
+            notify("warning", t("Some things about the water need attention."))
         elif simple_water_result == "hazard":
             st.markdown(
                 f'''<div class="simple-water-hazard">
@@ -3204,7 +3378,7 @@ elif page == "Water Quality Prediction":
                 navigate_to("Report Water Body Issue")
                 st.rerun()
 
-        st.info(t("This is only a preliminary check based on what can be seen or noticed. It cannot measure things that are not visible."))
+        notify("info", t("This is only a preliminary check based on what can be seen or noticed. It cannot measure things that are not visible."))
 
     else:
         snapshot = get_zone_snapshot()
@@ -3247,7 +3421,7 @@ elif page == "Water Quality Prediction":
             col2.metric(t("BIS PARAMETERS EXCEEDED"), f"{violations} / 7")
             col3.metric(t("MODEL CONFIDENCE"), f"{probabilities.max() * 100:.0f}%")
             if rule_risk != risk:
-                st.info(f"{t('The direct BIS count suggests')} **{t(rule_risk)}**, {t('while the model predicted')} **{t(risk)}**. {t('This can happen for borderline readings; check the parameter table below.')}")
+                notify("info", f"{t('The direct BIS count suggests')} **{t(rule_risk)}**, {t('while the model predicted')} **{t(risk)}**. {t('This can happen for borderline readings; check the parameter table below.')}")
             st.markdown(t("##### BIS limit check"))
             st.dataframe(table, width="stretch", hide_index=True)
             fig = px.bar(x=probabilities.values * 100, y=probabilities.index, orientation="h", color=probabilities.index, color_discrete_map=RISK_COLORS, title="Model probability by class", labels={"x": "Probability (%)", "y": ""})
@@ -3263,7 +3437,7 @@ elif page == "Water Quality Prediction":
             if alerts:
                 st.subheader(t("🚨 Alerts"))
                 for alert in alerts:
-                    st.warning(f"{alert['severity']} | {t(alert['message'])}")
+                    notify("warning", f"{alert['severity']} | {t(alert['message'])}")
             st.subheader(t("💡 Recommendations"))
             for recommendation in generate_recommendations(risk, "Good Availability"):
                 st.write("•", t(recommendation))
@@ -3285,7 +3459,7 @@ elif page == "Availability Forecast":
 
     zone_availability = get_availability(selected_zone)
     if zone_availability.empty:
-        st.warning(t("No historical availability data is available for the selected zone."))
+        notify("warning", t("No historical availability data is available for the selected zone."))
     else:
         zone_availability["date"] = pd.to_datetime(zone_availability["date"])
         zone_availability = zone_availability.sort_values("date")
@@ -3293,7 +3467,7 @@ elif page == "Availability Forecast":
         previous_supply_hours = float(latest_record["supply_hours"])
         latest_date = latest_record["date"]
 
-        st.info(
+        notify("info", 
             f"{t('Starting point:')} {previous_supply_hours:.2f} {t('Hours')} — {latest_date.strftime('%d %b %Y')}"
         )
 
@@ -3366,7 +3540,7 @@ elif page == "Availability Forecast":
             if alerts:
                 st.subheader(t("🚨 Alerts"))
                 for alert in alerts:
-                    st.warning(f"{alert['severity']} | {t(alert['message'])}")
+                    notify("warning", f"{alert['severity']} | {t(alert['message'])}")
 
             st.subheader(t("💡 Recommendations"))
             for recommendation in generate_recommendations("Safe", status):
@@ -3384,7 +3558,7 @@ elif page == "Model Insights":
 
     insights = get_model_insights()
 
-    st.warning(t("Read these numbers carefully. Risk labels come from the BIS violation count, and the same records were used to train the models, so they show agreement with the screening rule and not real-world accuracy. Validation with authorised, laboratory-verified data is the next step."))
+    notify("warning", t("Read these numbers carefully. Risk labels come from the BIS violation count, and the same records were used to train the models, so they show agreement with the screening rule and not real-world accuracy. Validation with authorised, laboratory-verified data is the next step."))
 
     if "quality" in insights:
         quality = insights["quality"]
@@ -3412,7 +3586,7 @@ elif page == "Model Insights":
         st.markdown(t("##### Per-class scores"))
         st.dataframe(quality["report"].round(3), width="stretch")
     else:
-        st.info(t("No water-quality records available for diagnostics."))
+        notify("info", t("No water-quality records available for diagnostics."))
 
     if "availability" in insights:
         availability = insights["availability"]
@@ -3422,9 +3596,9 @@ elif page == "Model Insights":
         col2.metric("R²", f"{availability['r2']:.3f}")
         col3.metric(t("NAIVE BASELINE MAE"), f"{availability['naive_mae']:.2f} h")
         if availability["mae"] < availability["naive_mae"]:
-            st.success(t("The model beats the naive baseline (repeat yesterday's supply), so rainfall and season add useful information."))
+            notify("success", t("The model beats the naive baseline (repeat yesterday's supply), so rainfall and season add useful information."))
         else:
-            st.info(t("The model does not beat the naive baseline (repeat yesterday's supply). Consider richer features or a time-series model."))
+            notify("info", t("The model does not beat the naive baseline (repeat yesterday's supply). Consider richer features or a time-series model."))
 
         chart_col1, chart_col2 = st.columns(2)
         with chart_col1:
@@ -3444,7 +3618,7 @@ elif page == "Model Insights":
             show_chart(fig, 360)
         st.caption(f"Intercept: {availability['intercept']:.3f}. {availability['records']:,} records used.")
     else:
-        st.info(t("No availability records available for diagnostics."))
+        notify("info", t("No availability records available for diagnostics."))
 
 
 # ============================================================
@@ -3469,7 +3643,7 @@ elif page == "Report Water Body Issue":
     water_bodies = get_water_bodies()
 
     if water_bodies.empty:
-        st.warning(t("No project-defined water bodies are available."))
+        notify("warning", t("No project-defined water bodies are available."))
     else:
         selected_water_body_name = st.selectbox(
             t("Select Water Body"), water_bodies["name"].tolist(), key="report_water_body"
@@ -3489,7 +3663,7 @@ elif page == "Report Water Body Issue":
 
         selected_supply = None
         if supply_data.empty:
-            st.warning(t("No served colony/society relationship is available for this water body."))
+            notify("warning", t("No served colony/society relationship is available for this water body."))
         else:
             supply_options = []
             for _, supply_row in supply_data.iterrows():
@@ -3800,7 +3974,7 @@ elif page == "Resident Alerts":
     zones = get_zones()
 
     if zones.empty:
-        st.warning(t("No project-defined zones are available."))
+        notify("warning", t("No project-defined zones are available."))
     else:
         with st.form("resident_signup"):
             zone_names = zones["zone_name"].tolist()
@@ -3825,27 +3999,35 @@ elif page == "Resident Alerts":
                 zone_id = int(
                     zones.loc[zones["zone_name"] == zone_name, "zone_id"].iloc[0]
                 )
-                resident_id, created = register_resident(
+                resident_id, created, registration_message = register_resident(
                     zone_id, name, phone, email
                 )
 
-                st.session_state["resident_id"] = resident_id
-                st.session_state["resident_zone_id"] = zone_id
-                st.session_state["resident_zone_name"] = zone_name
-
-                # Use a toast popup so the confirmation never collides with the form or fixed footer.
-                if created:
+                if resident_id is None:
+                    # Show duplicate-zone validation as a popup/toast notification
+                    # instead of placing an error block inside the form.
                     st.toast(
-                        f"Registration successful! You are now registered to receive water alerts for {zone_name}. "
-                        "New water-problem reports for this zone will appear in your Alerts section.",
-                        icon="✅",
+                        registration_message,
+                        icon="🚫",
                     )
                 else:
-                    st.toast(
-                        f"Registration updated! You are registered to receive water alerts for {zone_name}. "
-                        "New water-problem reports for this zone will appear in your Alerts section.",
-                        icon="✅",
-                    )
+                    st.session_state["resident_id"] = resident_id
+                    st.session_state["resident_zone_id"] = zone_id
+                    st.session_state["resident_zone_name"] = zone_name
+
+                    # Use a toast popup so the confirmation never collides with the form or fixed footer.
+                    if created:
+                        st.toast(
+                            f"Registration successful! You are now registered to receive water alerts for {zone_name}. "
+                            "New water-problem reports for this zone will appear in your Alerts section.",
+                            icon="✅",
+                        )
+                    else:
+                        st.toast(
+                            f"Registration updated! You are registered to receive water alerts for {zone_name}. "
+                            "New water-problem reports for this zone will appear in your Alerts section.",
+                            icon="✅",
+                        )
 
         resident_id = st.session_state.get("resident_id")
         if resident_id:
@@ -3862,7 +4044,7 @@ elif page == "Resident Alerts":
 
                 alerts = get_resident_alerts(resident_id, 50)
                 if alerts.empty:
-                    st.info(
+                    notify("info", 
                         t(
                             "No alerts yet. New reports for your registered zone "
                             "will appear here automatically."
@@ -3870,7 +4052,7 @@ elif page == "Resident Alerts":
                     )
                 else:
                     for _, alert in alerts.iterrows():
-                        st.info(
+                        notify("info", 
                             f"**{alert['created_at']}** · {alert['message']}"
                         )
 
@@ -3944,7 +4126,7 @@ elif page == "Admin Panel":
         st.caption(f"{t('Project-defined water bodies available:')} {len(water_bodies)}")
 
         if water_body_reports.empty:
-            st.info(t("No water-body issue reports have been submitted yet."))
+            notify("info", t("No water-body issue reports have been submitted yet."))
         else:
             chart_col1, chart_col2 = st.columns(2)
             with chart_col1:
@@ -4015,7 +4197,7 @@ elif page == "Admin Panel":
                         )
 
             if filtered.empty:
-                st.info(f"{t('No')} {t(selected_filter).lower()} {t('water-body reports found.')}")
+                notify("info", f"{t('No')} {t(selected_filter).lower()} {t('water-body reports found.')}")
             for _, report in filtered.iterrows():
                 report_id = int(report["report_id"])
                 current_status = str(report["status"])
@@ -4125,7 +4307,7 @@ elif page == "Admin Panel":
             """
         )
         if residents.empty:
-            st.info(t("No residents have registered for alerts yet."))
+            notify("info", t("No residents have registered for alerts yet."))
         else:
             st.dataframe(residents, width="stretch", hide_index=True)
 
@@ -4149,7 +4331,7 @@ elif page == "Admin Panel":
             alert_log = get_recent_alerts(200, zone_id=zone_id)
 
         if alert_log.empty:
-            st.info(t("No alerts have been generated yet."))
+            notify("info", t("No alerts have been generated yet."))
         else:
             st.dataframe(alert_log, width="stretch", hide_index=True)
 
@@ -4247,7 +4429,7 @@ elif page == "Admin Panel":
                     if validation_errors:
                         st.toast(t("CSV validation failed."), icon="❌")
                         for message in validation_errors:
-                            st.warning("⚠️ " + message)
+                            notify("warning", "⚠️ " + message)
                     else:
                         st.toast(t("CSV validation successful."), icon="✅")
                         st.write(f"{t('Records found:')} {len(uploaded_data)}")
@@ -4302,7 +4484,7 @@ elif page == "Admin Panel":
                                 )
                                 st.rerun()
                         else:
-                            st.info(t("No new records to import. All uploaded records already exist in the database."))
+                            notify("info", t("No new records to import. All uploaded records already exist in the database."))
             except Exception as error:  # noqa: BLE001
                 st.toast(f"{t('Unable to process CSV:')} {error}", icon="❌")
 
@@ -4311,7 +4493,7 @@ elif page == "Admin Panel":
         history = get_prediction_history()
         st.subheader(t("📋 Prediction History"))
         if history.empty:
-            st.info(t("No prediction history available."))
+            notify("info", t("No prediction history available."))
         else:
             admin_history = history.copy()
             admin_history["Type"] = admin_history["risk_level"].apply(
@@ -4361,13 +4543,13 @@ elif page == "Admin Panel":
 
         mail_status = smtp_status()
         if mail_status["configured"]:
-            st.success(
+            notify("success", 
                 f"SMTP ready • {mail_status['host']}:{mail_status['port']} • "
                 f"Sender: {mail_status['username']}"
             )
             st.caption(f"Sender name: {mail_status['sender_name']}")
         else:
-            st.warning(mail_status["message"])
+            notify("warning", mail_status["message"])
             st.code(
                 '[smtp]\n'
                 'host = "smtp.gmail.com"\n'
@@ -4397,14 +4579,14 @@ elif page == "Admin Panel":
 
         if test_email_button:
             if not test_recipient.strip():
-                st.error("Enter a recipient email address first.")
+                notify("error", "Enter a recipient email address first.")
             else:
                 with st.spinner("Sending test email..."):
                     sent, result = send_test_email(test_recipient.strip())
                 if sent:
-                    st.success(f"Test email sent successfully to {test_recipient.strip()}.")
+                    notify("success", f"Test email sent successfully to {test_recipient.strip()}.")
                 else:
-                    st.error(result)
+                    notify("error", result)
 
         st.divider()
 
@@ -4422,18 +4604,18 @@ elif page == "Admin Panel":
 
         try:
             counts = get_table_counts()
-            st.success(
+            notify("success", 
                 f"{t('Database connection: OK (')}{counts['water_quality']:,} {t('quality and')} "
                 f"{counts['availability']:,} {t('availability records)')}"
             )
         except Exception as error:  # noqa: BLE001
-            st.error(f"{t('Database connection failed:')} {error}")
+            notify("error", f"{t('Database connection failed:')} {error}")
 
         if st.button(t("🔄 Refresh cached data"), key="refresh_cache"):
             clear_data_caches()
             st.toast(t("Cached data refreshed successfully."), icon="✅")
         st.caption(t("Data is cached for speed. Use this after editing the database outside the app."))
-        st.info(t(DISCLAIMER))
+        notify("info", t(DISCLAIMER))
 
 
 st.markdown(

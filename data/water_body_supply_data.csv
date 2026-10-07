@@ -1,0 +1,5 @@
+water_body_name,water_body_type,location,latitude,longitude,description,zone_name,colony_name,society_name,supply_description
+Bilawali Tank,Reservoir,Indore,22.7180,75.8750,Project-defined source for demonstration,Vijay Nagar,Scheme No. 54,Malwa Heights Society,Project-defined served-area relationship
+Yeshwant Sagar,Reservoir,Indore,22.8340,75.6930,Project-defined source for demonstration,Rau,Rau Main Colony,Green Valley Society,Project-defined served-area relationship
+Sirpur Lake,Lake,Indore,22.6890,75.8210,Project-defined source for demonstration,Rajendra Nagar,Rajendra Nagar Colony,Shree Residency,Project-defined served-area relationship
+Limbodi Water Source,Water Source,Indore,22.6760,75.8990,Project-defined source for demonstration,Kanadia,Kanadia Main Colony,Sunrise Society,Project-defined served-area relationship

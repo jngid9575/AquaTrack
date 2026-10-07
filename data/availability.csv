@@ -1,0 +1,4381 @@
+zone,date,supply_hours,rainfall,season
+Vijay Nagar,2025-01-01,8.47,2.25,Winter
+Vijay Nagar,2025-01-02,9.66,2.47,Winter
+Vijay Nagar,2025-01-03,8.27,1.15,Winter
+Vijay Nagar,2025-01-04,9.3,3.87,Winter
+Vijay Nagar,2025-01-05,8.78,0.8,Winter
+Vijay Nagar,2025-01-06,8.07,0.8,Winter
+Vijay Nagar,2025-01-07,7.18,1.86,Winter
+Vijay Nagar,2025-01-08,7.91,0.0,Winter
+Vijay Nagar,2025-01-09,8.52,0.0,Winter
+Vijay Nagar,2025-01-10,7.33,0.14,Winter
+Vijay Nagar,2025-01-11,8.59,3.7,Winter
+Vijay Nagar,2025-01-12,7.49,1.6,Winter
+Vijay Nagar,2025-01-13,8.46,0.68,Winter
+Vijay Nagar,2025-01-14,8.56,0.0,Winter
+Vijay Nagar,2025-01-15,8.17,0.6,Winter
+Vijay Nagar,2025-01-16,9.67,0.6,Winter
+Vijay Nagar,2025-01-17,7.74,1.48,Winter
+Vijay Nagar,2025-01-18,7.77,2.73,Winter
+Vijay Nagar,2025-01-19,7.15,1.81,Winter
+Vijay Nagar,2025-01-20,8.44,0.0,Winter
+Vijay Nagar,2025-01-21,8.73,2.61,Winter
+Vijay Nagar,2025-01-22,8.25,1.33,Winter
+Vijay Nagar,2025-01-23,7.8,0.0,Winter
+Vijay Nagar,2025-01-24,9.14,0.81,Winter
+Vijay Nagar,2025-01-25,7.31,2.02,Winter
+Vijay Nagar,2025-01-26,8.27,1.99,Winter
+Vijay Nagar,2025-01-27,8.79,0.48,Winter
+Vijay Nagar,2025-01-28,9.32,3.05,Winter
+Vijay Nagar,2025-01-29,8.11,0.24,Winter
+Vijay Nagar,2025-01-30,9.22,2.0,Winter
+Vijay Nagar,2025-01-31,8.26,0.78,Winter
+Vijay Nagar,2025-02-01,7.46,0.0,Winter
+Vijay Nagar,2025-02-02,9.58,2.72,Winter
+Vijay Nagar,2025-02-03,9.17,1.39,Winter
+Vijay Nagar,2025-02-04,8.09,2.04,Winter
+Vijay Nagar,2025-02-05,9.62,2.04,Winter
+Vijay Nagar,2025-02-06,9.57,1.45,Winter
+Vijay Nagar,2025-02-07,8.88,0.0,Winter
+Vijay Nagar,2025-02-08,8.29,1.63,Winter
+Vijay Nagar,2025-02-09,7.11,1.64,Winter
+Vijay Nagar,2025-02-10,8.69,1.17,Winter
+Vijay Nagar,2025-02-11,8.38,3.72,Winter
+Vijay Nagar,2025-02-12,7.98,0.29,Winter
+Vijay Nagar,2025-02-13,8.87,2.87,Winter
+Vijay Nagar,2025-02-14,8.74,0.71,Winter
+Vijay Nagar,2025-02-15,9.18,1.65,Winter
+Vijay Nagar,2025-02-16,8.12,0.45,Winter
+Vijay Nagar,2025-02-17,7.38,0.91,Winter
+Vijay Nagar,2025-02-18,8.72,1.94,Winter
+Vijay Nagar,2025-02-19,8.32,1.51,Winter
+Vijay Nagar,2025-02-20,8.01,0.0,Winter
+Vijay Nagar,2025-02-21,7.86,0.99,Winter
+Vijay Nagar,2025-02-22,8.73,1.26,Winter
+Vijay Nagar,2025-02-23,8.94,4.33,Winter
+Vijay Nagar,2025-02-24,8.47,1.89,Winter
+Vijay Nagar,2025-02-25,8.28,0.0,Winter
+Vijay Nagar,2025-02-26,10.22,1.59,Winter
+Vijay Nagar,2025-02-27,8.66,1.21,Winter
+Vijay Nagar,2025-02-28,7.66,1.45,Winter
+Vijay Nagar,2025-03-01,7.2,1.41,Summer
+Vijay Nagar,2025-03-02,6.0,1.13,Summer
+Vijay Nagar,2025-03-03,5.71,1.62,Summer
+Vijay Nagar,2025-03-04,8.15,0.97,Summer
+Vijay Nagar,2025-03-05,6.1,0.0,Summer
+Vijay Nagar,2025-03-06,6.22,0.58,Summer
+Vijay Nagar,2025-03-07,6.55,0.0,Summer
+Vijay Nagar,2025-03-08,6.83,0.0,Summer
+Vijay Nagar,2025-03-09,7.58,0.0,Summer
+Vijay Nagar,2025-03-10,6.27,0.0,Summer
+Vijay Nagar,2025-03-11,5.78,1.15,Summer
+Vijay Nagar,2025-03-12,7.5,0.68,Summer
+Vijay Nagar,2025-03-13,6.63,0.0,Summer
+Vijay Nagar,2025-03-14,7.13,0.71,Summer
+Vijay Nagar,2025-03-15,5.58,0.0,Summer
+Vijay Nagar,2025-03-16,6.82,0.92,Summer
+Vijay Nagar,2025-03-17,6.83,0.7,Summer
+Vijay Nagar,2025-03-18,6.66,0.0,Summer
+Vijay Nagar,2025-03-19,6.09,0.73,Summer
+Vijay Nagar,2025-03-20,7.07,1.99,Summer
+Vijay Nagar,2025-03-21,6.96,0.0,Summer
+Vijay Nagar,2025-03-22,7.05,0.0,Summer
+Vijay Nagar,2025-03-23,6.1,1.43,Summer
+Vijay Nagar,2025-03-24,6.94,1.27,Summer
+Vijay Nagar,2025-03-25,7.97,1.16,Summer
+Vijay Nagar,2025-03-26,6.01,0.3,Summer
+Vijay Nagar,2025-03-27,5.93,0.0,Summer
+Vijay Nagar,2025-03-28,6.79,0.44,Summer
+Vijay Nagar,2025-03-29,7.17,0.72,Summer
+Vijay Nagar,2025-03-30,7.58,0.51,Summer
+Vijay Nagar,2025-03-31,8.44,0.29,Summer
+Vijay Nagar,2025-04-01,6.02,1.0,Summer
+Vijay Nagar,2025-04-02,6.84,0.0,Summer
+Vijay Nagar,2025-04-03,7.04,0.32,Summer
+Vijay Nagar,2025-04-04,6.55,0.88,Summer
+Vijay Nagar,2025-04-05,5.44,0.0,Summer
+Vijay Nagar,2025-04-06,7.12,0.14,Summer
+Vijay Nagar,2025-04-07,5.71,0.67,Summer
+Vijay Nagar,2025-04-08,6.85,0.64,Summer
+Vijay Nagar,2025-04-09,6.61,0.0,Summer
+Vijay Nagar,2025-04-10,5.77,0.55,Summer
+Vijay Nagar,2025-04-11,6.99,0.79,Summer
+Vijay Nagar,2025-04-12,7.4,1.37,Summer
+Vijay Nagar,2025-04-13,5.84,0.0,Summer
+Vijay Nagar,2025-04-14,6.97,0.91,Summer
+Vijay Nagar,2025-04-15,9.31,0.91,Summer
+Vijay Nagar,2025-04-16,7.41,0.96,Summer
+Vijay Nagar,2025-04-17,7.11,1.26,Summer
+Vijay Nagar,2025-04-18,7.06,0.25,Summer
+Vijay Nagar,2025-04-19,6.33,0.0,Summer
+Vijay Nagar,2025-04-20,6.57,0.11,Summer
+Vijay Nagar,2025-04-21,5.48,2.35,Summer
+Vijay Nagar,2025-04-22,5.5,1.05,Summer
+Vijay Nagar,2025-04-23,7.28,0.12,Summer
+Vijay Nagar,2025-04-24,5.81,0.55,Summer
+Vijay Nagar,2025-04-25,6.98,0.0,Summer
+Vijay Nagar,2025-04-26,6.65,0.0,Summer
+Vijay Nagar,2025-04-27,6.11,0.54,Summer
+Vijay Nagar,2025-04-28,7.21,2.22,Summer
+Vijay Nagar,2025-04-29,6.63,0.0,Summer
+Vijay Nagar,2025-04-30,7.1,0.0,Summer
+Vijay Nagar,2025-05-01,6.42,0.0,Summer
+Vijay Nagar,2025-05-02,7.21,0.9,Summer
+Vijay Nagar,2025-05-03,6.27,0.0,Summer
+Vijay Nagar,2025-05-04,6.06,0.12,Summer
+Vijay Nagar,2025-05-05,7.01,1.91,Summer
+Vijay Nagar,2025-05-06,7.14,0.0,Summer
+Vijay Nagar,2025-05-07,7.49,2.2,Summer
+Vijay Nagar,2025-05-08,6.16,0.0,Summer
+Vijay Nagar,2025-05-09,6.19,1.51,Summer
+Vijay Nagar,2025-05-10,7.14,0.86,Summer
+Vijay Nagar,2025-05-11,6.46,0.0,Summer
+Vijay Nagar,2025-05-12,5.78,0.0,Summer
+Vijay Nagar,2025-05-13,5.66,0.3,Summer
+Vijay Nagar,2025-05-14,5.72,1.81,Summer
+Vijay Nagar,2025-05-15,6.61,0.15,Summer
+Vijay Nagar,2025-05-16,5.69,1.65,Summer
+Vijay Nagar,2025-05-17,6.68,1.43,Summer
+Vijay Nagar,2025-05-18,6.82,0.0,Summer
+Vijay Nagar,2025-05-19,6.16,0.66,Summer
+Vijay Nagar,2025-05-20,6.3,0.56,Summer
+Vijay Nagar,2025-05-21,7.03,0.59,Summer
+Vijay Nagar,2025-05-22,5.85,1.77,Summer
+Vijay Nagar,2025-05-23,5.4,2.21,Summer
+Vijay Nagar,2025-05-24,6.96,0.38,Summer
+Vijay Nagar,2025-05-25,6.15,0.72,Summer
+Vijay Nagar,2025-05-26,6.19,0.33,Summer
+Vijay Nagar,2025-05-27,7.1,0.03,Summer
+Vijay Nagar,2025-05-28,6.11,0.79,Summer
+Vijay Nagar,2025-05-29,6.86,1.22,Summer
+Vijay Nagar,2025-05-30,7.08,1.15,Summer
+Vijay Nagar,2025-05-31,6.11,0.0,Summer
+Vijay Nagar,2025-06-01,10.84,11.74,Monsoon
+Vijay Nagar,2025-06-02,10.03,7.9,Monsoon
+Vijay Nagar,2025-06-03,10.31,14.39,Monsoon
+Vijay Nagar,2025-06-04,10.15,10.74,Monsoon
+Vijay Nagar,2025-06-05,10.6,6.91,Monsoon
+Vijay Nagar,2025-06-06,11.02,12.13,Monsoon
+Vijay Nagar,2025-06-07,10.76,14.53,Monsoon
+Vijay Nagar,2025-06-08,10.15,11.41,Monsoon
+Vijay Nagar,2025-06-09,10.06,9.62,Monsoon
+Vijay Nagar,2025-06-10,10.43,8.48,Monsoon
+Vijay Nagar,2025-06-11,10.93,3.91,Monsoon
+Vijay Nagar,2025-06-12,8.51,2.97,Monsoon
+Vijay Nagar,2025-06-13,11.21,13.79,Monsoon
+Vijay Nagar,2025-06-14,10.77,11.12,Monsoon
+Vijay Nagar,2025-06-15,9.32,7.94,Monsoon
+Vijay Nagar,2025-06-16,9.53,8.38,Monsoon
+Vijay Nagar,2025-06-17,10.44,12.88,Monsoon
+Vijay Nagar,2025-06-18,9.24,3.87,Monsoon
+Vijay Nagar,2025-06-19,9.81,10.06,Monsoon
+Vijay Nagar,2025-06-20,9.64,3.89,Monsoon
+Vijay Nagar,2025-06-21,9.75,9.22,Monsoon
+Vijay Nagar,2025-06-22,9.84,5.64,Monsoon
+Vijay Nagar,2025-06-23,8.11,0.76,Monsoon
+Vijay Nagar,2025-06-24,9.38,4.41,Monsoon
+Vijay Nagar,2025-06-25,11.18,9.55,Monsoon
+Vijay Nagar,2025-06-26,10.36,12.29,Monsoon
+Vijay Nagar,2025-06-27,9.25,7.9,Monsoon
+Vijay Nagar,2025-06-28,9.75,7.91,Monsoon
+Vijay Nagar,2025-06-29,9.57,9.61,Monsoon
+Vijay Nagar,2025-06-30,11.34,10.6,Monsoon
+Vijay Nagar,2025-07-01,10.18,7.46,Monsoon
+Vijay Nagar,2025-07-02,10.09,11.45,Monsoon
+Vijay Nagar,2025-07-03,10.1,9.12,Monsoon
+Vijay Nagar,2025-07-04,9.48,8.49,Monsoon
+Vijay Nagar,2025-07-05,10.32,8.12,Monsoon
+Vijay Nagar,2025-07-06,11.5,15.26,Monsoon
+Vijay Nagar,2025-07-07,10.71,18.77,Monsoon
+Vijay Nagar,2025-07-08,10.61,12.36,Monsoon
+Vijay Nagar,2025-07-09,10.71,18.95,Monsoon
+Vijay Nagar,2025-07-10,9.04,3.8,Monsoon
+Vijay Nagar,2025-07-11,8.63,0.0,Monsoon
+Vijay Nagar,2025-07-12,9.61,4.2,Monsoon
+Vijay Nagar,2025-07-13,11.48,9.71,Monsoon
+Vijay Nagar,2025-07-14,10.13,12.75,Monsoon
+Vijay Nagar,2025-07-15,9.77,3.51,Monsoon
+Vijay Nagar,2025-07-16,10.45,1.4,Monsoon
+Vijay Nagar,2025-07-17,10.34,13.9,Monsoon
+Vijay Nagar,2025-07-18,9.95,0.0,Monsoon
+Vijay Nagar,2025-07-19,10.76,7.43,Monsoon
+Vijay Nagar,2025-07-20,8.58,0.03,Monsoon
+Vijay Nagar,2025-07-21,10.0,8.03,Monsoon
+Vijay Nagar,2025-07-22,10.13,5.75,Monsoon
+Vijay Nagar,2025-07-23,9.22,2.66,Monsoon
+Vijay Nagar,2025-07-24,10.39,8.6,Monsoon
+Vijay Nagar,2025-07-25,9.6,11.56,Monsoon
+Vijay Nagar,2025-07-26,9.93,0.33,Monsoon
+Vijay Nagar,2025-07-27,9.64,9.66,Monsoon
+Vijay Nagar,2025-07-28,10.97,15.76,Monsoon
+Vijay Nagar,2025-07-29,10.71,13.9,Monsoon
+Vijay Nagar,2025-07-30,12.0,18.3,Monsoon
+Vijay Nagar,2025-07-31,10.49,6.76,Monsoon
+Vijay Nagar,2025-08-01,11.31,11.23,Monsoon
+Vijay Nagar,2025-08-02,9.86,3.18,Monsoon
+Vijay Nagar,2025-08-03,9.36,13.29,Monsoon
+Vijay Nagar,2025-08-04,7.82,2.08,Monsoon
+Vijay Nagar,2025-08-05,10.3,6.65,Monsoon
+Vijay Nagar,2025-08-06,10.91,15.51,Monsoon
+Vijay Nagar,2025-08-07,9.97,16.14,Monsoon
+Vijay Nagar,2025-08-08,8.96,0.0,Monsoon
+Vijay Nagar,2025-08-09,10.17,9.92,Monsoon
+Vijay Nagar,2025-08-10,8.94,0.0,Monsoon
+Vijay Nagar,2025-08-11,9.65,1.48,Monsoon
+Vijay Nagar,2025-08-12,9.52,9.83,Monsoon
+Vijay Nagar,2025-08-13,8.91,5.43,Monsoon
+Vijay Nagar,2025-08-14,10.59,7.69,Monsoon
+Vijay Nagar,2025-08-15,9.72,3.07,Monsoon
+Vijay Nagar,2025-08-16,9.09,5.35,Monsoon
+Vijay Nagar,2025-08-17,9.17,7.46,Monsoon
+Vijay Nagar,2025-08-18,8.79,5.23,Monsoon
+Vijay Nagar,2025-08-19,11.16,17.82,Monsoon
+Vijay Nagar,2025-08-20,9.69,4.5,Monsoon
+Vijay Nagar,2025-08-21,9.74,7.44,Monsoon
+Vijay Nagar,2025-08-22,10.86,11.07,Monsoon
+Vijay Nagar,2025-08-23,9.24,5.35,Monsoon
+Vijay Nagar,2025-08-24,8.18,6.62,Monsoon
+Vijay Nagar,2025-08-25,10.01,0.42,Monsoon
+Vijay Nagar,2025-08-26,10.77,16.22,Monsoon
+Vijay Nagar,2025-08-27,10.52,10.88,Monsoon
+Vijay Nagar,2025-08-28,12.0,20.0,Monsoon
+Vijay Nagar,2025-08-29,9.21,7.36,Monsoon
+Vijay Nagar,2025-08-30,9.14,0.0,Monsoon
+Vijay Nagar,2025-08-31,8.51,4.22,Monsoon
+Vijay Nagar,2025-09-01,8.81,4.77,Monsoon
+Vijay Nagar,2025-09-02,11.59,16.44,Monsoon
+Vijay Nagar,2025-09-03,10.99,7.96,Monsoon
+Vijay Nagar,2025-09-04,9.4,8.39,Monsoon
+Vijay Nagar,2025-09-05,11.25,15.62,Monsoon
+Vijay Nagar,2025-09-06,9.2,2.81,Monsoon
+Vijay Nagar,2025-09-07,8.47,3.62,Monsoon
+Vijay Nagar,2025-09-08,11.85,12.63,Monsoon
+Vijay Nagar,2025-09-09,9.51,1.01,Monsoon
+Vijay Nagar,2025-09-10,9.23,4.75,Monsoon
+Vijay Nagar,2025-09-11,9.0,5.04,Monsoon
+Vijay Nagar,2025-09-12,9.41,8.24,Monsoon
+Vijay Nagar,2025-09-13,10.09,9.35,Monsoon
+Vijay Nagar,2025-09-14,9.18,6.81,Monsoon
+Vijay Nagar,2025-09-15,10.14,5.12,Monsoon
+Vijay Nagar,2025-09-16,9.58,10.5,Monsoon
+Vijay Nagar,2025-09-17,10.55,8.5,Monsoon
+Vijay Nagar,2025-09-18,9.38,0.0,Monsoon
+Vijay Nagar,2025-09-19,9.96,4.69,Monsoon
+Vijay Nagar,2025-09-20,8.24,4.18,Monsoon
+Vijay Nagar,2025-09-21,9.03,0.0,Monsoon
+Vijay Nagar,2025-09-22,9.48,9.3,Monsoon
+Vijay Nagar,2025-09-23,9.18,11.19,Monsoon
+Vijay Nagar,2025-09-24,9.07,7.67,Monsoon
+Vijay Nagar,2025-09-25,9.6,4.74,Monsoon
+Vijay Nagar,2025-09-26,9.17,3.7,Monsoon
+Vijay Nagar,2025-09-27,10.16,13.03,Monsoon
+Vijay Nagar,2025-09-28,9.67,12.18,Monsoon
+Vijay Nagar,2025-09-29,11.29,10.65,Monsoon
+Vijay Nagar,2025-09-30,8.44,0.0,Monsoon
+Vijay Nagar,2025-10-01,8.44,2.37,Winter
+Vijay Nagar,2025-10-02,8.12,2.06,Winter
+Vijay Nagar,2025-10-03,8.39,1.63,Winter
+Vijay Nagar,2025-10-04,8.87,3.25,Winter
+Vijay Nagar,2025-10-05,8.25,2.01,Winter
+Vijay Nagar,2025-10-06,8.09,0.77,Winter
+Vijay Nagar,2025-10-07,8.26,2.09,Winter
+Vijay Nagar,2025-10-08,9.98,1.93,Winter
+Vijay Nagar,2025-10-09,8.41,2.81,Winter
+Vijay Nagar,2025-10-10,8.41,3.3,Winter
+Vijay Nagar,2025-10-11,7.59,0.0,Winter
+Vijay Nagar,2025-10-12,8.05,0.0,Winter
+Vijay Nagar,2025-10-13,9.66,1.53,Winter
+Vijay Nagar,2025-10-14,8.39,1.99,Winter
+Vijay Nagar,2025-10-15,7.08,2.74,Winter
+Vijay Nagar,2025-10-16,9.06,1.85,Winter
+Vijay Nagar,2025-10-17,9.1,0.0,Winter
+Vijay Nagar,2025-10-18,8.25,2.01,Winter
+Vijay Nagar,2025-10-19,10.18,2.45,Winter
+Vijay Nagar,2025-10-20,8.69,1.77,Winter
+Vijay Nagar,2025-10-21,7.8,0.81,Winter
+Vijay Nagar,2025-10-22,8.03,2.75,Winter
+Vijay Nagar,2025-10-23,8.16,1.61,Winter
+Vijay Nagar,2025-10-24,8.8,2.22,Winter
+Vijay Nagar,2025-10-25,8.31,3.06,Winter
+Vijay Nagar,2025-10-26,7.75,1.1,Winter
+Vijay Nagar,2025-10-27,8.66,0.83,Winter
+Vijay Nagar,2025-10-28,7.97,2.64,Winter
+Vijay Nagar,2025-10-29,9.59,2.8,Winter
+Vijay Nagar,2025-10-30,9.87,2.12,Winter
+Vijay Nagar,2025-10-31,7.47,0.34,Winter
+Vijay Nagar,2025-11-01,9.35,0.0,Winter
+Vijay Nagar,2025-11-02,8.56,2.48,Winter
+Vijay Nagar,2025-11-03,7.74,1.92,Winter
+Vijay Nagar,2025-11-04,9.01,5.17,Winter
+Vijay Nagar,2025-11-05,9.01,1.66,Winter
+Vijay Nagar,2025-11-06,8.72,2.22,Winter
+Vijay Nagar,2025-11-07,8.67,0.31,Winter
+Vijay Nagar,2025-11-08,9.76,4.32,Winter
+Vijay Nagar,2025-11-09,8.41,3.89,Winter
+Vijay Nagar,2025-11-10,8.21,0.02,Winter
+Vijay Nagar,2025-11-11,9.26,1.58,Winter
+Vijay Nagar,2025-11-12,9.37,0.0,Winter
+Vijay Nagar,2025-11-13,8.15,1.26,Winter
+Vijay Nagar,2025-11-14,7.14,0.0,Winter
+Vijay Nagar,2025-11-15,8.68,2.73,Winter
+Vijay Nagar,2025-11-16,7.39,0.0,Winter
+Vijay Nagar,2025-11-17,9.59,1.0,Winter
+Vijay Nagar,2025-11-18,7.38,1.11,Winter
+Vijay Nagar,2025-11-19,8.24,1.13,Winter
+Vijay Nagar,2025-11-20,8.26,0.0,Winter
+Vijay Nagar,2025-11-21,8.93,1.15,Winter
+Vijay Nagar,2025-11-22,9.6,4.27,Winter
+Vijay Nagar,2025-11-23,7.66,1.1,Winter
+Vijay Nagar,2025-11-24,8.98,5.36,Winter
+Vijay Nagar,2025-11-25,8.47,1.52,Winter
+Vijay Nagar,2025-11-26,8.41,1.8,Winter
+Vijay Nagar,2025-11-27,7.99,0.64,Winter
+Vijay Nagar,2025-11-28,8.09,1.45,Winter
+Vijay Nagar,2025-11-29,8.43,0.43,Winter
+Vijay Nagar,2025-11-30,9.49,1.12,Winter
+Vijay Nagar,2025-12-01,9.06,0.0,Winter
+Vijay Nagar,2025-12-02,7.25,3.37,Winter
+Vijay Nagar,2025-12-03,8.16,0.99,Winter
+Vijay Nagar,2025-12-04,7.76,0.0,Winter
+Vijay Nagar,2025-12-05,9.53,0.0,Winter
+Vijay Nagar,2025-12-06,9.54,2.9,Winter
+Vijay Nagar,2025-12-07,7.82,2.58,Winter
+Vijay Nagar,2025-12-08,8.73,0.71,Winter
+Vijay Nagar,2025-12-09,8.8,0.0,Winter
+Vijay Nagar,2025-12-10,8.17,1.14,Winter
+Vijay Nagar,2025-12-11,8.92,2.57,Winter
+Vijay Nagar,2025-12-12,9.23,0.96,Winter
+Vijay Nagar,2025-12-13,8.73,0.0,Winter
+Vijay Nagar,2025-12-14,8.37,2.39,Winter
+Vijay Nagar,2025-12-15,7.66,1.99,Winter
+Vijay Nagar,2025-12-16,8.52,2.89,Winter
+Vijay Nagar,2025-12-17,9.12,0.72,Winter
+Vijay Nagar,2025-12-18,7.37,0.44,Winter
+Vijay Nagar,2025-12-19,8.72,0.0,Winter
+Vijay Nagar,2025-12-20,9.53,0.0,Winter
+Vijay Nagar,2025-12-21,9.49,0.0,Winter
+Vijay Nagar,2025-12-22,8.45,1.82,Winter
+Vijay Nagar,2025-12-23,8.66,0.68,Winter
+Vijay Nagar,2025-12-24,9.25,1.44,Winter
+Vijay Nagar,2025-12-25,8.61,1.67,Winter
+Vijay Nagar,2025-12-26,8.37,0.95,Winter
+Vijay Nagar,2025-12-27,7.34,1.96,Winter
+Vijay Nagar,2025-12-28,8.82,0.0,Winter
+Vijay Nagar,2025-12-29,8.38,1.76,Winter
+Vijay Nagar,2025-12-30,8.73,1.53,Winter
+Vijay Nagar,2025-12-31,7.84,0.69,Winter
+Palasia,2025-01-01,7.83,1.79,Winter
+Palasia,2025-01-02,7.36,2.11,Winter
+Palasia,2025-01-03,9.0,3.04,Winter
+Palasia,2025-01-04,9.21,1.88,Winter
+Palasia,2025-01-05,9.49,4.0,Winter
+Palasia,2025-01-06,7.4,0.0,Winter
+Palasia,2025-01-07,8.39,0.56,Winter
+Palasia,2025-01-08,8.07,2.28,Winter
+Palasia,2025-01-09,7.98,1.78,Winter
+Palasia,2025-01-10,7.39,0.58,Winter
+Palasia,2025-01-11,7.37,0.12,Winter
+Palasia,2025-01-12,9.04,0.04,Winter
+Palasia,2025-01-13,10.15,0.08,Winter
+Palasia,2025-01-14,8.7,2.24,Winter
+Palasia,2025-01-15,8.82,0.21,Winter
+Palasia,2025-01-16,8.46,0.64,Winter
+Palasia,2025-01-17,8.87,5.34,Winter
+Palasia,2025-01-18,8.19,3.22,Winter
+Palasia,2025-01-19,9.71,1.45,Winter
+Palasia,2025-01-20,9.64,0.56,Winter
+Palasia,2025-01-21,8.21,2.56,Winter
+Palasia,2025-01-22,9.27,2.45,Winter
+Palasia,2025-01-23,7.49,2.43,Winter
+Palasia,2025-01-24,8.18,0.41,Winter
+Palasia,2025-01-25,8.9,1.39,Winter
+Palasia,2025-01-26,7.58,1.77,Winter
+Palasia,2025-01-27,8.98,2.07,Winter
+Palasia,2025-01-28,9.34,2.34,Winter
+Palasia,2025-01-29,8.95,2.75,Winter
+Palasia,2025-01-30,7.3,1.39,Winter
+Palasia,2025-01-31,8.7,2.14,Winter
+Palasia,2025-02-01,7.64,1.91,Winter
+Palasia,2025-02-02,9.04,0.0,Winter
+Palasia,2025-02-03,8.95,1.44,Winter
+Palasia,2025-02-04,8.51,1.54,Winter
+Palasia,2025-02-05,8.29,2.91,Winter
+Palasia,2025-02-06,8.17,1.64,Winter
+Palasia,2025-02-07,8.19,0.85,Winter
+Palasia,2025-02-08,8.18,1.83,Winter
+Palasia,2025-02-09,8.08,3.38,Winter
+Palasia,2025-02-10,8.14,1.22,Winter
+Palasia,2025-02-11,8.88,3.67,Winter
+Palasia,2025-02-12,7.63,3.05,Winter
+Palasia,2025-02-13,9.15,1.9,Winter
+Palasia,2025-02-14,9.24,1.62,Winter
+Palasia,2025-02-15,9.37,0.72,Winter
+Palasia,2025-02-16,8.64,4.95,Winter
+Palasia,2025-02-17,9.42,0.83,Winter
+Palasia,2025-02-18,8.4,3.87,Winter
+Palasia,2025-02-19,8.21,0.87,Winter
+Palasia,2025-02-20,7.66,0.0,Winter
+Palasia,2025-02-21,7.76,0.0,Winter
+Palasia,2025-02-22,8.64,1.45,Winter
+Palasia,2025-02-23,8.06,3.83,Winter
+Palasia,2025-02-24,8.51,2.98,Winter
+Palasia,2025-02-25,8.94,1.43,Winter
+Palasia,2025-02-26,8.57,0.0,Winter
+Palasia,2025-02-27,8.85,1.75,Winter
+Palasia,2025-02-28,10.25,1.93,Winter
+Palasia,2025-03-01,6.13,0.0,Summer
+Palasia,2025-03-02,6.11,0.0,Summer
+Palasia,2025-03-03,7.33,0.0,Summer
+Palasia,2025-03-04,6.3,1.64,Summer
+Palasia,2025-03-05,6.83,0.0,Summer
+Palasia,2025-03-06,6.95,0.06,Summer
+Palasia,2025-03-07,5.52,0.66,Summer
+Palasia,2025-03-08,7.97,1.74,Summer
+Palasia,2025-03-09,6.23,0.01,Summer
+Palasia,2025-03-10,6.82,0.73,Summer
+Palasia,2025-03-11,8.03,1.03,Summer
+Palasia,2025-03-12,5.98,0.36,Summer
+Palasia,2025-03-13,5.99,0.0,Summer
+Palasia,2025-03-14,7.81,0.47,Summer
+Palasia,2025-03-15,6.67,0.09,Summer
+Palasia,2025-03-16,7.39,0.49,Summer
+Palasia,2025-03-17,6.43,2.52,Summer
+Palasia,2025-03-18,7.24,0.11,Summer
+Palasia,2025-03-19,7.92,1.05,Summer
+Palasia,2025-03-20,6.36,0.97,Summer
+Palasia,2025-03-21,7.39,0.97,Summer
+Palasia,2025-03-22,6.99,1.16,Summer
+Palasia,2025-03-23,7.48,1.35,Summer
+Palasia,2025-03-24,7.15,1.61,Summer
+Palasia,2025-03-25,6.65,0.37,Summer
+Palasia,2025-03-26,6.1,1.47,Summer
+Palasia,2025-03-27,6.32,0.79,Summer
+Palasia,2025-03-28,7.46,0.52,Summer
+Palasia,2025-03-29,6.61,0.65,Summer
+Palasia,2025-03-30,7.02,0.0,Summer
+Palasia,2025-03-31,8.14,1.02,Summer
+Palasia,2025-04-01,6.68,0.25,Summer
+Palasia,2025-04-02,7.69,0.7,Summer
+Palasia,2025-04-03,6.75,0.42,Summer
+Palasia,2025-04-04,6.75,0.99,Summer
+Palasia,2025-04-05,6.65,0.14,Summer
+Palasia,2025-04-06,5.94,1.36,Summer
+Palasia,2025-04-07,6.08,0.61,Summer
+Palasia,2025-04-08,5.61,1.46,Summer
+Palasia,2025-04-09,6.77,0.05,Summer
+Palasia,2025-04-10,6.66,1.75,Summer
+Palasia,2025-04-11,7.82,0.06,Summer
+Palasia,2025-04-12,4.96,0.0,Summer
+Palasia,2025-04-13,6.25,0.85,Summer
+Palasia,2025-04-14,7.0,0.0,Summer
+Palasia,2025-04-15,6.19,0.7,Summer
+Palasia,2025-04-16,7.11,0.0,Summer
+Palasia,2025-04-17,6.55,1.02,Summer
+Palasia,2025-04-18,5.99,1.98,Summer
+Palasia,2025-04-19,6.02,0.0,Summer
+Palasia,2025-04-20,6.73,0.46,Summer
+Palasia,2025-04-21,6.78,0.31,Summer
+Palasia,2025-04-22,7.51,0.0,Summer
+Palasia,2025-04-23,7.33,0.43,Summer
+Palasia,2025-04-24,6.91,0.77,Summer
+Palasia,2025-04-25,6.93,0.96,Summer
+Palasia,2025-04-26,7.55,1.01,Summer
+Palasia,2025-04-27,7.08,0.66,Summer
+Palasia,2025-04-28,7.56,0.43,Summer
+Palasia,2025-04-29,7.76,0.0,Summer
+Palasia,2025-04-30,5.55,0.47,Summer
+Palasia,2025-05-01,6.1,0.6,Summer
+Palasia,2025-05-02,6.18,1.17,Summer
+Palasia,2025-05-03,5.19,0.14,Summer
+Palasia,2025-05-04,4.82,0.14,Summer
+Palasia,2025-05-05,7.03,0.0,Summer
+Palasia,2025-05-06,6.93,1.13,Summer
+Palasia,2025-05-07,6.47,0.0,Summer
+Palasia,2025-05-08,5.75,0.5,Summer
+Palasia,2025-05-09,7.32,1.7,Summer
+Palasia,2025-05-10,6.56,0.32,Summer
+Palasia,2025-05-11,5.15,0.67,Summer
+Palasia,2025-05-12,6.06,0.3,Summer
+Palasia,2025-05-13,6.3,0.0,Summer
+Palasia,2025-05-14,7.18,1.94,Summer
+Palasia,2025-05-15,6.91,0.04,Summer
+Palasia,2025-05-16,7.34,1.62,Summer
+Palasia,2025-05-17,6.11,0.55,Summer
+Palasia,2025-05-18,6.9,1.06,Summer
+Palasia,2025-05-19,7.09,1.22,Summer
+Palasia,2025-05-20,6.29,1.34,Summer
+Palasia,2025-05-21,6.82,1.55,Summer
+Palasia,2025-05-22,6.28,2.16,Summer
+Palasia,2025-05-23,6.87,1.89,Summer
+Palasia,2025-05-24,6.16,0.0,Summer
+Palasia,2025-05-25,6.83,0.24,Summer
+Palasia,2025-05-26,6.21,0.92,Summer
+Palasia,2025-05-27,8.06,0.48,Summer
+Palasia,2025-05-28,7.03,1.88,Summer
+Palasia,2025-05-29,6.65,0.53,Summer
+Palasia,2025-05-30,5.9,0.99,Summer
+Palasia,2025-05-31,5.37,0.29,Summer
+Palasia,2025-06-01,10.65,10.0,Monsoon
+Palasia,2025-06-02,10.77,5.58,Monsoon
+Palasia,2025-06-03,8.2,1.87,Monsoon
+Palasia,2025-06-04,10.83,9.12,Monsoon
+Palasia,2025-06-05,10.65,16.42,Monsoon
+Palasia,2025-06-06,10.58,13.39,Monsoon
+Palasia,2025-06-07,10.47,7.14,Monsoon
+Palasia,2025-06-08,9.25,11.26,Monsoon
+Palasia,2025-06-09,11.81,15.38,Monsoon
+Palasia,2025-06-10,9.86,4.87,Monsoon
+Palasia,2025-06-11,10.44,10.47,Monsoon
+Palasia,2025-06-12,9.16,5.25,Monsoon
+Palasia,2025-06-13,10.77,7.87,Monsoon
+Palasia,2025-06-14,10.03,10.72,Monsoon
+Palasia,2025-06-15,8.43,11.86,Monsoon
+Palasia,2025-06-16,9.43,13.74,Monsoon
+Palasia,2025-06-17,8.96,6.19,Monsoon
+Palasia,2025-06-18,10.0,1.53,Monsoon
+Palasia,2025-06-19,9.92,5.66,Monsoon
+Palasia,2025-06-20,10.27,7.77,Monsoon
+Palasia,2025-06-21,9.11,8.38,Monsoon
+Palasia,2025-06-22,10.21,12.98,Monsoon
+Palasia,2025-06-23,8.73,0.22,Monsoon
+Palasia,2025-06-24,11.46,15.5,Monsoon
+Palasia,2025-06-25,9.51,6.26,Monsoon
+Palasia,2025-06-26,11.22,6.39,Monsoon
+Palasia,2025-06-27,10.49,9.91,Monsoon
+Palasia,2025-06-28,10.75,13.15,Monsoon
+Palasia,2025-06-29,9.67,6.7,Monsoon
+Palasia,2025-06-30,9.89,7.64,Monsoon
+Palasia,2025-07-01,10.43,11.64,Monsoon
+Palasia,2025-07-02,10.34,11.66,Monsoon
+Palasia,2025-07-03,8.61,8.39,Monsoon
+Palasia,2025-07-04,10.75,12.58,Monsoon
+Palasia,2025-07-05,8.53,12.99,Monsoon
+Palasia,2025-07-06,11.12,18.44,Monsoon
+Palasia,2025-07-07,9.9,13.54,Monsoon
+Palasia,2025-07-08,9.59,11.06,Monsoon
+Palasia,2025-07-09,10.93,4.88,Monsoon
+Palasia,2025-07-10,10.0,7.05,Monsoon
+Palasia,2025-07-11,10.83,12.35,Monsoon
+Palasia,2025-07-12,10.31,8.75,Monsoon
+Palasia,2025-07-13,11.36,20.0,Monsoon
+Palasia,2025-07-14,10.82,9.01,Monsoon
+Palasia,2025-07-15,11.45,13.53,Monsoon
+Palasia,2025-07-16,9.54,11.19,Monsoon
+Palasia,2025-07-17,10.14,16.17,Monsoon
+Palasia,2025-07-18,9.61,9.51,Monsoon
+Palasia,2025-07-19,10.15,7.68,Monsoon
+Palasia,2025-07-20,10.45,9.61,Monsoon
+Palasia,2025-07-21,11.25,16.07,Monsoon
+Palasia,2025-07-22,10.49,6.78,Monsoon
+Palasia,2025-07-23,9.81,13.95,Monsoon
+Palasia,2025-07-24,10.81,10.99,Monsoon
+Palasia,2025-07-25,10.74,6.51,Monsoon
+Palasia,2025-07-26,9.96,7.25,Monsoon
+Palasia,2025-07-27,9.87,7.13,Monsoon
+Palasia,2025-07-28,8.29,2.52,Monsoon
+Palasia,2025-07-29,10.32,15.97,Monsoon
+Palasia,2025-07-30,7.86,3.04,Monsoon
+Palasia,2025-07-31,8.65,4.81,Monsoon
+Palasia,2025-08-01,11.65,16.21,Monsoon
+Palasia,2025-08-02,11.12,4.56,Monsoon
+Palasia,2025-08-03,10.32,12.91,Monsoon
+Palasia,2025-08-04,10.6,0.0,Monsoon
+Palasia,2025-08-05,7.97,1.05,Monsoon
+Palasia,2025-08-06,12.0,13.11,Monsoon
+Palasia,2025-08-07,11.19,14.92,Monsoon
+Palasia,2025-08-08,10.91,10.97,Monsoon
+Palasia,2025-08-09,10.61,11.79,Monsoon
+Palasia,2025-08-10,9.98,8.52,Monsoon
+Palasia,2025-08-11,9.31,4.23,Monsoon
+Palasia,2025-08-12,8.93,0.0,Monsoon
+Palasia,2025-08-13,8.59,3.06,Monsoon
+Palasia,2025-08-14,11.04,8.9,Monsoon
+Palasia,2025-08-15,9.41,12.59,Monsoon
+Palasia,2025-08-16,10.02,3.05,Monsoon
+Palasia,2025-08-17,9.21,3.09,Monsoon
+Palasia,2025-08-18,9.61,10.75,Monsoon
+Palasia,2025-08-19,9.09,8.53,Monsoon
+Palasia,2025-08-20,9.82,4.99,Monsoon
+Palasia,2025-08-21,9.31,0.04,Monsoon
+Palasia,2025-08-22,10.33,7.9,Monsoon
+Palasia,2025-08-23,11.05,9.12,Monsoon
+Palasia,2025-08-24,9.73,8.63,Monsoon
+Palasia,2025-08-25,10.41,8.61,Monsoon
+Palasia,2025-08-26,10.02,8.24,Monsoon
+Palasia,2025-08-27,9.07,4.49,Monsoon
+Palasia,2025-08-28,10.34,0.99,Monsoon
+Palasia,2025-08-29,8.73,1.78,Monsoon
+Palasia,2025-08-30,10.16,4.41,Monsoon
+Palasia,2025-08-31,10.66,6.53,Monsoon
+Palasia,2025-09-01,9.75,4.63,Monsoon
+Palasia,2025-09-02,10.96,3.82,Monsoon
+Palasia,2025-09-03,9.46,2.06,Monsoon
+Palasia,2025-09-04,10.63,11.17,Monsoon
+Palasia,2025-09-05,9.76,7.07,Monsoon
+Palasia,2025-09-06,9.88,8.22,Monsoon
+Palasia,2025-09-07,12.0,12.82,Monsoon
+Palasia,2025-09-08,8.67,5.21,Monsoon
+Palasia,2025-09-09,11.71,7.56,Monsoon
+Palasia,2025-09-10,10.63,3.98,Monsoon
+Palasia,2025-09-11,10.58,16.39,Monsoon
+Palasia,2025-09-12,11.44,10.84,Monsoon
+Palasia,2025-09-13,9.59,6.1,Monsoon
+Palasia,2025-09-14,8.9,5.09,Monsoon
+Palasia,2025-09-15,8.71,4.75,Monsoon
+Palasia,2025-09-16,9.44,8.17,Monsoon
+Palasia,2025-09-17,9.01,9.17,Monsoon
+Palasia,2025-09-18,10.74,9.65,Monsoon
+Palasia,2025-09-19,9.26,0.0,Monsoon
+Palasia,2025-09-20,9.85,14.14,Monsoon
+Palasia,2025-09-21,11.26,16.36,Monsoon
+Palasia,2025-09-22,9.5,4.47,Monsoon
+Palasia,2025-09-23,10.35,10.79,Monsoon
+Palasia,2025-09-24,9.64,10.69,Monsoon
+Palasia,2025-09-25,9.07,8.85,Monsoon
+Palasia,2025-09-26,9.26,7.44,Monsoon
+Palasia,2025-09-27,10.38,4.32,Monsoon
+Palasia,2025-09-28,11.04,13.46,Monsoon
+Palasia,2025-09-29,9.08,2.54,Monsoon
+Palasia,2025-09-30,10.79,14.07,Monsoon
+Palasia,2025-10-01,9.17,4.98,Winter
+Palasia,2025-10-02,8.3,1.79,Winter
+Palasia,2025-10-03,8.4,1.7,Winter
+Palasia,2025-10-04,9.28,2.56,Winter
+Palasia,2025-10-05,7.41,0.32,Winter
+Palasia,2025-10-06,8.66,0.0,Winter
+Palasia,2025-10-07,6.79,0.0,Winter
+Palasia,2025-10-08,10.3,2.08,Winter
+Palasia,2025-10-09,9.07,1.49,Winter
+Palasia,2025-10-10,8.43,1.62,Winter
+Palasia,2025-10-11,8.44,2.88,Winter
+Palasia,2025-10-12,8.75,1.9,Winter
+Palasia,2025-10-13,9.05,0.5,Winter
+Palasia,2025-10-14,7.92,1.24,Winter
+Palasia,2025-10-15,7.95,2.3,Winter
+Palasia,2025-10-16,8.48,1.54,Winter
+Palasia,2025-10-17,9.01,3.13,Winter
+Palasia,2025-10-18,9.05,1.46,Winter
+Palasia,2025-10-19,9.12,3.59,Winter
+Palasia,2025-10-20,7.56,1.52,Winter
+Palasia,2025-10-21,8.09,0.0,Winter
+Palasia,2025-10-22,8.24,0.59,Winter
+Palasia,2025-10-23,8.86,1.58,Winter
+Palasia,2025-10-24,8.81,1.39,Winter
+Palasia,2025-10-25,7.11,1.6,Winter
+Palasia,2025-10-26,8.21,0.09,Winter
+Palasia,2025-10-27,8.72,0.0,Winter
+Palasia,2025-10-28,9.61,3.8,Winter
+Palasia,2025-10-29,9.49,1.18,Winter
+Palasia,2025-10-30,8.27,1.72,Winter
+Palasia,2025-10-31,8.16,0.58,Winter
+Palasia,2025-11-01,8.53,0.92,Winter
+Palasia,2025-11-02,8.51,1.74,Winter
+Palasia,2025-11-03,9.39,2.16,Winter
+Palasia,2025-11-04,7.61,2.92,Winter
+Palasia,2025-11-05,8.95,0.0,Winter
+Palasia,2025-11-06,8.14,0.0,Winter
+Palasia,2025-11-07,7.04,0.0,Winter
+Palasia,2025-11-08,9.11,2.31,Winter
+Palasia,2025-11-09,6.56,0.64,Winter
+Palasia,2025-11-10,8.66,0.68,Winter
+Palasia,2025-11-11,8.43,0.0,Winter
+Palasia,2025-11-12,8.88,1.48,Winter
+Palasia,2025-11-13,7.82,1.68,Winter
+Palasia,2025-11-14,8.58,3.29,Winter
+Palasia,2025-11-15,7.82,1.46,Winter
+Palasia,2025-11-16,7.78,0.84,Winter
+Palasia,2025-11-17,9.65,1.24,Winter
+Palasia,2025-11-18,7.17,0.0,Winter
+Palasia,2025-11-19,8.6,3.71,Winter
+Palasia,2025-11-20,9.09,0.5,Winter
+Palasia,2025-11-21,9.65,0.59,Winter
+Palasia,2025-11-22,8.26,2.52,Winter
+Palasia,2025-11-23,8.44,4.74,Winter
+Palasia,2025-11-24,8.82,2.61,Winter
+Palasia,2025-11-25,9.81,3.45,Winter
+Palasia,2025-11-26,7.96,1.55,Winter
+Palasia,2025-11-27,8.09,2.19,Winter
+Palasia,2025-11-28,8.94,4.52,Winter
+Palasia,2025-11-29,8.54,0.95,Winter
+Palasia,2025-11-30,7.62,0.0,Winter
+Palasia,2025-12-01,8.24,3.3,Winter
+Palasia,2025-12-02,8.68,0.0,Winter
+Palasia,2025-12-03,9.2,3.28,Winter
+Palasia,2025-12-04,8.13,2.99,Winter
+Palasia,2025-12-05,9.35,0.0,Winter
+Palasia,2025-12-06,8.25,1.02,Winter
+Palasia,2025-12-07,9.11,3.49,Winter
+Palasia,2025-12-08,10.08,2.18,Winter
+Palasia,2025-12-09,9.01,0.53,Winter
+Palasia,2025-12-10,8.68,1.59,Winter
+Palasia,2025-12-11,9.11,3.79,Winter
+Palasia,2025-12-12,9.33,2.31,Winter
+Palasia,2025-12-13,7.83,0.95,Winter
+Palasia,2025-12-14,6.92,0.0,Winter
+Palasia,2025-12-15,8.08,4.58,Winter
+Palasia,2025-12-16,8.25,1.17,Winter
+Palasia,2025-12-17,9.11,1.96,Winter
+Palasia,2025-12-18,8.23,2.79,Winter
+Palasia,2025-12-19,8.65,1.25,Winter
+Palasia,2025-12-20,9.56,1.13,Winter
+Palasia,2025-12-21,9.08,2.24,Winter
+Palasia,2025-12-22,9.42,2.49,Winter
+Palasia,2025-12-23,7.6,1.77,Winter
+Palasia,2025-12-24,8.1,2.1,Winter
+Palasia,2025-12-25,8.8,0.71,Winter
+Palasia,2025-12-26,8.72,3.36,Winter
+Palasia,2025-12-27,9.73,1.96,Winter
+Palasia,2025-12-28,10.34,1.86,Winter
+Palasia,2025-12-29,7.35,2.35,Winter
+Palasia,2025-12-30,8.88,2.63,Winter
+Palasia,2025-12-31,9.18,3.43,Winter
+Bhawarkuan,2025-01-01,7.6,1.29,Winter
+Bhawarkuan,2025-01-02,7.85,1.19,Winter
+Bhawarkuan,2025-01-03,8.79,0.63,Winter
+Bhawarkuan,2025-01-04,9.06,4.0,Winter
+Bhawarkuan,2025-01-05,8.61,0.0,Winter
+Bhawarkuan,2025-01-06,8.27,3.29,Winter
+Bhawarkuan,2025-01-07,8.47,1.3,Winter
+Bhawarkuan,2025-01-08,8.79,0.32,Winter
+Bhawarkuan,2025-01-09,8.75,1.32,Winter
+Bhawarkuan,2025-01-10,8.01,0.17,Winter
+Bhawarkuan,2025-01-11,8.35,2.58,Winter
+Bhawarkuan,2025-01-12,8.51,4.09,Winter
+Bhawarkuan,2025-01-13,9.17,1.84,Winter
+Bhawarkuan,2025-01-14,7.07,0.0,Winter
+Bhawarkuan,2025-01-15,9.18,0.0,Winter
+Bhawarkuan,2025-01-16,10.17,0.67,Winter
+Bhawarkuan,2025-01-17,8.51,0.65,Winter
+Bhawarkuan,2025-01-18,10.16,3.81,Winter
+Bhawarkuan,2025-01-19,9.7,4.59,Winter
+Bhawarkuan,2025-01-20,9.08,3.04,Winter
+Bhawarkuan,2025-01-21,8.23,2.67,Winter
+Bhawarkuan,2025-01-22,8.33,0.27,Winter
+Bhawarkuan,2025-01-23,8.13,1.24,Winter
+Bhawarkuan,2025-01-24,9.27,2.54,Winter
+Bhawarkuan,2025-01-25,9.53,1.63,Winter
+Bhawarkuan,2025-01-26,8.16,0.0,Winter
+Bhawarkuan,2025-01-27,7.04,0.42,Winter
+Bhawarkuan,2025-01-28,8.38,1.38,Winter
+Bhawarkuan,2025-01-29,9.19,3.77,Winter
+Bhawarkuan,2025-01-30,9.6,0.0,Winter
+Bhawarkuan,2025-01-31,9.11,3.33,Winter
+Bhawarkuan,2025-02-01,7.77,1.16,Winter
+Bhawarkuan,2025-02-02,9.18,0.94,Winter
+Bhawarkuan,2025-02-03,9.9,4.33,Winter
+Bhawarkuan,2025-02-04,7.61,0.77,Winter
+Bhawarkuan,2025-02-05,7.27,1.71,Winter
+Bhawarkuan,2025-02-06,8.43,1.98,Winter
+Bhawarkuan,2025-02-07,7.28,0.8,Winter
+Bhawarkuan,2025-02-08,8.2,2.27,Winter
+Bhawarkuan,2025-02-09,6.29,0.0,Winter
+Bhawarkuan,2025-02-10,9.72,1.46,Winter
+Bhawarkuan,2025-02-11,8.46,3.99,Winter
+Bhawarkuan,2025-02-12,8.7,0.6,Winter
+Bhawarkuan,2025-02-13,8.51,0.0,Winter
+Bhawarkuan,2025-02-14,9.48,2.65,Winter
+Bhawarkuan,2025-02-15,8.32,1.35,Winter
+Bhawarkuan,2025-02-16,7.74,0.18,Winter
+Bhawarkuan,2025-02-17,8.7,1.16,Winter
+Bhawarkuan,2025-02-18,8.08,2.87,Winter
+Bhawarkuan,2025-02-19,8.56,3.74,Winter
+Bhawarkuan,2025-02-20,7.95,1.47,Winter
+Bhawarkuan,2025-02-21,8.92,0.0,Winter
+Bhawarkuan,2025-02-22,8.42,2.61,Winter
+Bhawarkuan,2025-02-23,8.85,1.6,Winter
+Bhawarkuan,2025-02-24,7.93,0.0,Winter
+Bhawarkuan,2025-02-25,7.74,2.69,Winter
+Bhawarkuan,2025-02-26,7.58,1.94,Winter
+Bhawarkuan,2025-02-27,8.54,2.2,Winter
+Bhawarkuan,2025-02-28,9.12,0.0,Winter
+Bhawarkuan,2025-03-01,5.93,0.0,Summer
+Bhawarkuan,2025-03-02,7.38,0.66,Summer
+Bhawarkuan,2025-03-03,6.54,0.0,Summer
+Bhawarkuan,2025-03-04,7.09,0.84,Summer
+Bhawarkuan,2025-03-05,6.32,0.64,Summer
+Bhawarkuan,2025-03-06,6.56,0.0,Summer
+Bhawarkuan,2025-03-07,4.46,0.0,Summer
+Bhawarkuan,2025-03-08,7.23,0.85,Summer
+Bhawarkuan,2025-03-09,5.79,0.0,Summer
+Bhawarkuan,2025-03-10,8.06,1.0,Summer
+Bhawarkuan,2025-03-11,6.05,0.52,Summer
+Bhawarkuan,2025-03-12,7.5,0.35,Summer
+Bhawarkuan,2025-03-13,5.94,0.0,Summer
+Bhawarkuan,2025-03-14,5.85,0.11,Summer
+Bhawarkuan,2025-03-15,7.71,0.6,Summer
+Bhawarkuan,2025-03-16,6.41,0.76,Summer
+Bhawarkuan,2025-03-17,5.44,0.27,Summer
+Bhawarkuan,2025-03-18,6.59,1.21,Summer
+Bhawarkuan,2025-03-19,8.78,0.36,Summer
+Bhawarkuan,2025-03-20,6.06,0.74,Summer
+Bhawarkuan,2025-03-21,7.32,0.16,Summer
+Bhawarkuan,2025-03-22,5.56,0.59,Summer
+Bhawarkuan,2025-03-23,6.18,1.24,Summer
+Bhawarkuan,2025-03-24,7.5,2.0,Summer
+Bhawarkuan,2025-03-25,7.41,0.14,Summer
+Bhawarkuan,2025-03-26,7.16,0.55,Summer
+Bhawarkuan,2025-03-27,6.01,0.89,Summer
+Bhawarkuan,2025-03-28,7.22,0.0,Summer
+Bhawarkuan,2025-03-29,6.25,0.23,Summer
+Bhawarkuan,2025-03-30,6.8,0.0,Summer
+Bhawarkuan,2025-03-31,6.01,2.15,Summer
+Bhawarkuan,2025-04-01,7.55,0.52,Summer
+Bhawarkuan,2025-04-02,6.87,0.44,Summer
+Bhawarkuan,2025-04-03,6.8,0.0,Summer
+Bhawarkuan,2025-04-04,7.23,0.35,Summer
+Bhawarkuan,2025-04-05,8.49,1.45,Summer
+Bhawarkuan,2025-04-06,6.84,0.96,Summer
+Bhawarkuan,2025-04-07,6.33,0.66,Summer
+Bhawarkuan,2025-04-08,6.39,0.77,Summer
+Bhawarkuan,2025-04-09,7.5,0.63,Summer
+Bhawarkuan,2025-04-10,7.3,0.0,Summer
+Bhawarkuan,2025-04-11,6.6,1.55,Summer
+Bhawarkuan,2025-04-12,6.07,0.0,Summer
+Bhawarkuan,2025-04-13,6.67,1.54,Summer
+Bhawarkuan,2025-04-14,6.15,0.0,Summer
+Bhawarkuan,2025-04-15,7.02,1.17,Summer
+Bhawarkuan,2025-04-16,6.28,0.31,Summer
+Bhawarkuan,2025-04-17,5.88,0.19,Summer
+Bhawarkuan,2025-04-18,6.49,1.79,Summer
+Bhawarkuan,2025-04-19,7.74,1.47,Summer
+Bhawarkuan,2025-04-20,6.35,1.3,Summer
+Bhawarkuan,2025-04-21,6.58,0.82,Summer
+Bhawarkuan,2025-04-22,6.73,0.0,Summer
+Bhawarkuan,2025-04-23,7.33,0.0,Summer
+Bhawarkuan,2025-04-24,6.66,0.13,Summer
+Bhawarkuan,2025-04-25,6.41,0.73,Summer
+Bhawarkuan,2025-04-26,6.28,0.97,Summer
+Bhawarkuan,2025-04-27,5.7,1.2,Summer
+Bhawarkuan,2025-04-28,7.93,0.6,Summer
+Bhawarkuan,2025-04-29,6.03,0.0,Summer
+Bhawarkuan,2025-04-30,6.74,0.91,Summer
+Bhawarkuan,2025-05-01,6.94,0.78,Summer
+Bhawarkuan,2025-05-02,7.4,1.01,Summer
+Bhawarkuan,2025-05-03,6.43,0.83,Summer
+Bhawarkuan,2025-05-04,7.95,1.04,Summer
+Bhawarkuan,2025-05-05,5.87,0.39,Summer
+Bhawarkuan,2025-05-06,6.58,1.39,Summer
+Bhawarkuan,2025-05-07,7.09,0.0,Summer
+Bhawarkuan,2025-05-08,6.45,0.07,Summer
+Bhawarkuan,2025-05-09,6.73,0.77,Summer
+Bhawarkuan,2025-05-10,6.32,1.07,Summer
+Bhawarkuan,2025-05-11,6.43,0.91,Summer
+Bhawarkuan,2025-05-12,7.06,1.09,Summer
+Bhawarkuan,2025-05-13,7.26,0.0,Summer
+Bhawarkuan,2025-05-14,7.07,0.07,Summer
+Bhawarkuan,2025-05-15,7.88,0.79,Summer
+Bhawarkuan,2025-05-16,6.29,0.32,Summer
+Bhawarkuan,2025-05-17,6.35,0.48,Summer
+Bhawarkuan,2025-05-18,5.51,1.14,Summer
+Bhawarkuan,2025-05-19,5.75,0.0,Summer
+Bhawarkuan,2025-05-20,7.85,1.26,Summer
+Bhawarkuan,2025-05-21,6.43,0.42,Summer
+Bhawarkuan,2025-05-22,7.38,0.56,Summer
+Bhawarkuan,2025-05-23,6.67,0.0,Summer
+Bhawarkuan,2025-05-24,7.0,1.28,Summer
+Bhawarkuan,2025-05-25,7.28,0.65,Summer
+Bhawarkuan,2025-05-26,6.97,0.0,Summer
+Bhawarkuan,2025-05-27,5.22,0.0,Summer
+Bhawarkuan,2025-05-28,7.57,0.91,Summer
+Bhawarkuan,2025-05-29,7.21,0.39,Summer
+Bhawarkuan,2025-05-30,7.64,1.79,Summer
+Bhawarkuan,2025-05-31,7.24,1.81,Summer
+Bhawarkuan,2025-06-01,8.88,8.38,Monsoon
+Bhawarkuan,2025-06-02,9.22,6.77,Monsoon
+Bhawarkuan,2025-06-03,11.14,18.85,Monsoon
+Bhawarkuan,2025-06-04,10.42,8.62,Monsoon
+Bhawarkuan,2025-06-05,11.17,8.22,Monsoon
+Bhawarkuan,2025-06-06,9.72,4.89,Monsoon
+Bhawarkuan,2025-06-07,8.59,4.29,Monsoon
+Bhawarkuan,2025-06-08,9.57,4.94,Monsoon
+Bhawarkuan,2025-06-09,9.22,5.85,Monsoon
+Bhawarkuan,2025-06-10,9.06,0.97,Monsoon
+Bhawarkuan,2025-06-11,9.59,0.48,Monsoon
+Bhawarkuan,2025-06-12,8.99,8.41,Monsoon
+Bhawarkuan,2025-06-13,9.25,6.45,Monsoon
+Bhawarkuan,2025-06-14,11.09,9.6,Monsoon
+Bhawarkuan,2025-06-15,9.08,0.0,Monsoon
+Bhawarkuan,2025-06-16,10.33,7.2,Monsoon
+Bhawarkuan,2025-06-17,9.56,9.07,Monsoon
+Bhawarkuan,2025-06-18,9.21,6.4,Monsoon
+Bhawarkuan,2025-06-19,10.62,13.38,Monsoon
+Bhawarkuan,2025-06-20,11.06,17.51,Monsoon
+Bhawarkuan,2025-06-21,8.48,4.46,Monsoon
+Bhawarkuan,2025-06-22,7.89,0.0,Monsoon
+Bhawarkuan,2025-06-23,10.48,9.34,Monsoon
+Bhawarkuan,2025-06-24,9.64,0.09,Monsoon
+Bhawarkuan,2025-06-25,9.77,5.58,Monsoon
+Bhawarkuan,2025-06-26,11.56,16.06,Monsoon
+Bhawarkuan,2025-06-27,9.18,6.66,Monsoon
+Bhawarkuan,2025-06-28,8.5,0.0,Monsoon
+Bhawarkuan,2025-06-29,9.14,6.94,Monsoon
+Bhawarkuan,2025-06-30,9.94,7.34,Monsoon
+Bhawarkuan,2025-07-01,9.37,6.88,Monsoon
+Bhawarkuan,2025-07-02,10.37,8.84,Monsoon
+Bhawarkuan,2025-07-03,10.29,2.55,Monsoon
+Bhawarkuan,2025-07-04,9.91,7.51,Monsoon
+Bhawarkuan,2025-07-05,10.55,11.54,Monsoon
+Bhawarkuan,2025-07-06,10.73,12.77,Monsoon
+Bhawarkuan,2025-07-07,9.85,4.94,Monsoon
+Bhawarkuan,2025-07-08,9.35,2.28,Monsoon
+Bhawarkuan,2025-07-09,9.79,7.83,Monsoon
+Bhawarkuan,2025-07-10,8.57,7.36,Monsoon
+Bhawarkuan,2025-07-11,9.7,5.26,Monsoon
+Bhawarkuan,2025-07-12,9.34,8.8,Monsoon
+Bhawarkuan,2025-07-13,10.11,14.33,Monsoon
+Bhawarkuan,2025-07-14,10.84,12.85,Monsoon
+Bhawarkuan,2025-07-15,10.81,4.77,Monsoon
+Bhawarkuan,2025-07-16,9.89,2.03,Monsoon
+Bhawarkuan,2025-07-17,10.09,13.0,Monsoon
+Bhawarkuan,2025-07-18,10.62,14.96,Monsoon
+Bhawarkuan,2025-07-19,10.32,9.44,Monsoon
+Bhawarkuan,2025-07-20,10.45,7.33,Monsoon
+Bhawarkuan,2025-07-21,9.21,11.97,Monsoon
+Bhawarkuan,2025-07-22,9.58,14.52,Monsoon
+Bhawarkuan,2025-07-23,11.37,13.16,Monsoon
+Bhawarkuan,2025-07-24,9.02,2.55,Monsoon
+Bhawarkuan,2025-07-25,9.15,2.47,Monsoon
+Bhawarkuan,2025-07-26,10.32,6.46,Monsoon
+Bhawarkuan,2025-07-27,11.72,14.55,Monsoon
+Bhawarkuan,2025-07-28,9.48,5.19,Monsoon
+Bhawarkuan,2025-07-29,8.44,0.0,Monsoon
+Bhawarkuan,2025-07-30,11.67,12.82,Monsoon
+Bhawarkuan,2025-07-31,8.8,1.83,Monsoon
+Bhawarkuan,2025-08-01,10.14,7.87,Monsoon
+Bhawarkuan,2025-08-02,9.77,3.95,Monsoon
+Bhawarkuan,2025-08-03,9.67,5.63,Monsoon
+Bhawarkuan,2025-08-04,10.29,10.73,Monsoon
+Bhawarkuan,2025-08-05,9.62,5.82,Monsoon
+Bhawarkuan,2025-08-06,9.65,7.56,Monsoon
+Bhawarkuan,2025-08-07,10.92,6.71,Monsoon
+Bhawarkuan,2025-08-08,10.09,10.8,Monsoon
+Bhawarkuan,2025-08-09,10.14,11.48,Monsoon
+Bhawarkuan,2025-08-10,10.92,13.87,Monsoon
+Bhawarkuan,2025-08-11,10.21,7.46,Monsoon
+Bhawarkuan,2025-08-12,8.23,0.15,Monsoon
+Bhawarkuan,2025-08-13,9.34,2.03,Monsoon
+Bhawarkuan,2025-08-14,12.0,16.66,Monsoon
+Bhawarkuan,2025-08-15,10.69,11.19,Monsoon
+Bhawarkuan,2025-08-16,8.62,0.0,Monsoon
+Bhawarkuan,2025-08-17,9.05,4.06,Monsoon
+Bhawarkuan,2025-08-18,9.53,7.16,Monsoon
+Bhawarkuan,2025-08-19,9.52,0.0,Monsoon
+Bhawarkuan,2025-08-20,9.48,2.64,Monsoon
+Bhawarkuan,2025-08-21,10.56,18.37,Monsoon
+Bhawarkuan,2025-08-22,8.8,0.0,Monsoon
+Bhawarkuan,2025-08-23,11.99,13.5,Monsoon
+Bhawarkuan,2025-08-24,9.57,1.85,Monsoon
+Bhawarkuan,2025-08-25,9.61,5.67,Monsoon
+Bhawarkuan,2025-08-26,10.35,20.0,Monsoon
+Bhawarkuan,2025-08-27,10.44,9.27,Monsoon
+Bhawarkuan,2025-08-28,10.68,13.43,Monsoon
+Bhawarkuan,2025-08-29,9.87,9.54,Monsoon
+Bhawarkuan,2025-08-30,9.88,9.35,Monsoon
+Bhawarkuan,2025-08-31,10.07,11.11,Monsoon
+Bhawarkuan,2025-09-01,10.17,9.89,Monsoon
+Bhawarkuan,2025-09-02,10.6,13.63,Monsoon
+Bhawarkuan,2025-09-03,9.88,0.0,Monsoon
+Bhawarkuan,2025-09-04,8.96,3.47,Monsoon
+Bhawarkuan,2025-09-05,10.56,5.02,Monsoon
+Bhawarkuan,2025-09-06,11.2,0.0,Monsoon
+Bhawarkuan,2025-09-07,10.75,13.28,Monsoon
+Bhawarkuan,2025-09-08,10.13,7.73,Monsoon
+Bhawarkuan,2025-09-09,10.72,10.61,Monsoon
+Bhawarkuan,2025-09-10,10.36,10.78,Monsoon
+Bhawarkuan,2025-09-11,9.74,7.01,Monsoon
+Bhawarkuan,2025-09-12,10.64,7.03,Monsoon
+Bhawarkuan,2025-09-13,8.26,10.97,Monsoon
+Bhawarkuan,2025-09-14,10.49,11.28,Monsoon
+Bhawarkuan,2025-09-15,9.68,7.91,Monsoon
+Bhawarkuan,2025-09-16,11.3,13.62,Monsoon
+Bhawarkuan,2025-09-17,9.78,4.14,Monsoon
+Bhawarkuan,2025-09-18,8.41,3.14,Monsoon
+Bhawarkuan,2025-09-19,10.19,4.87,Monsoon
+Bhawarkuan,2025-09-20,10.89,12.77,Monsoon
+Bhawarkuan,2025-09-21,10.76,11.63,Monsoon
+Bhawarkuan,2025-09-22,9.88,4.79,Monsoon
+Bhawarkuan,2025-09-23,10.97,12.0,Monsoon
+Bhawarkuan,2025-09-24,11.17,13.94,Monsoon
+Bhawarkuan,2025-09-25,10.92,9.76,Monsoon
+Bhawarkuan,2025-09-26,9.33,7.87,Monsoon
+Bhawarkuan,2025-09-27,9.34,7.18,Monsoon
+Bhawarkuan,2025-09-28,9.45,4.62,Monsoon
+Bhawarkuan,2025-09-29,9.27,4.04,Monsoon
+Bhawarkuan,2025-09-30,9.15,0.0,Monsoon
+Bhawarkuan,2025-10-01,7.91,1.5,Winter
+Bhawarkuan,2025-10-02,9.25,2.49,Winter
+Bhawarkuan,2025-10-03,7.77,0.0,Winter
+Bhawarkuan,2025-10-04,7.68,0.35,Winter
+Bhawarkuan,2025-10-05,8.49,2.74,Winter
+Bhawarkuan,2025-10-06,7.03,1.1,Winter
+Bhawarkuan,2025-10-07,7.73,2.45,Winter
+Bhawarkuan,2025-10-08,8.68,1.59,Winter
+Bhawarkuan,2025-10-09,7.81,3.54,Winter
+Bhawarkuan,2025-10-10,8.43,0.0,Winter
+Bhawarkuan,2025-10-11,9.67,4.2,Winter
+Bhawarkuan,2025-10-12,8.17,1.81,Winter
+Bhawarkuan,2025-10-13,7.94,2.71,Winter
+Bhawarkuan,2025-10-14,8.92,2.21,Winter
+Bhawarkuan,2025-10-15,10.6,3.09,Winter
+Bhawarkuan,2025-10-16,8.19,2.09,Winter
+Bhawarkuan,2025-10-17,7.24,1.46,Winter
+Bhawarkuan,2025-10-18,8.07,0.46,Winter
+Bhawarkuan,2025-10-19,8.49,0.71,Winter
+Bhawarkuan,2025-10-20,9.12,0.27,Winter
+Bhawarkuan,2025-10-21,8.47,1.5,Winter
+Bhawarkuan,2025-10-22,8.53,1.01,Winter
+Bhawarkuan,2025-10-23,8.02,2.74,Winter
+Bhawarkuan,2025-10-24,8.15,0.51,Winter
+Bhawarkuan,2025-10-25,7.73,0.0,Winter
+Bhawarkuan,2025-10-26,9.01,0.79,Winter
+Bhawarkuan,2025-10-27,8.66,1.89,Winter
+Bhawarkuan,2025-10-28,8.54,2.78,Winter
+Bhawarkuan,2025-10-29,8.48,2.09,Winter
+Bhawarkuan,2025-10-30,8.12,1.9,Winter
+Bhawarkuan,2025-10-31,8.21,0.0,Winter
+Bhawarkuan,2025-11-01,9.38,3.63,Winter
+Bhawarkuan,2025-11-02,9.52,2.95,Winter
+Bhawarkuan,2025-11-03,8.63,1.63,Winter
+Bhawarkuan,2025-11-04,8.15,0.57,Winter
+Bhawarkuan,2025-11-05,9.43,2.42,Winter
+Bhawarkuan,2025-11-06,8.14,1.29,Winter
+Bhawarkuan,2025-11-07,8.9,1.5,Winter
+Bhawarkuan,2025-11-08,6.69,0.0,Winter
+Bhawarkuan,2025-11-09,7.53,0.67,Winter
+Bhawarkuan,2025-11-10,8.29,0.74,Winter
+Bhawarkuan,2025-11-11,9.42,0.82,Winter
+Bhawarkuan,2025-11-12,8.75,1.99,Winter
+Bhawarkuan,2025-11-13,7.79,2.43,Winter
+Bhawarkuan,2025-11-14,8.61,3.06,Winter
+Bhawarkuan,2025-11-15,7.85,2.51,Winter
+Bhawarkuan,2025-11-16,8.87,0.0,Winter
+Bhawarkuan,2025-11-17,7.92,2.06,Winter
+Bhawarkuan,2025-11-18,9.11,0.2,Winter
+Bhawarkuan,2025-11-19,9.45,0.0,Winter
+Bhawarkuan,2025-11-20,8.76,0.15,Winter
+Bhawarkuan,2025-11-21,8.84,1.01,Winter
+Bhawarkuan,2025-11-22,8.27,0.68,Winter
+Bhawarkuan,2025-11-23,7.79,1.56,Winter
+Bhawarkuan,2025-11-24,8.25,2.61,Winter
+Bhawarkuan,2025-11-25,7.74,1.16,Winter
+Bhawarkuan,2025-11-26,8.17,0.0,Winter
+Bhawarkuan,2025-11-27,9.46,5.12,Winter
+Bhawarkuan,2025-11-28,8.29,1.47,Winter
+Bhawarkuan,2025-11-29,8.87,1.53,Winter
+Bhawarkuan,2025-11-30,9.08,0.0,Winter
+Bhawarkuan,2025-12-01,9.11,2.57,Winter
+Bhawarkuan,2025-12-02,8.57,2.16,Winter
+Bhawarkuan,2025-12-03,9.02,2.51,Winter
+Bhawarkuan,2025-12-04,8.01,0.97,Winter
+Bhawarkuan,2025-12-05,9.58,1.65,Winter
+Bhawarkuan,2025-12-06,7.27,0.0,Winter
+Bhawarkuan,2025-12-07,8.55,1.75,Winter
+Bhawarkuan,2025-12-08,8.68,1.76,Winter
+Bhawarkuan,2025-12-09,9.48,1.17,Winter
+Bhawarkuan,2025-12-10,7.72,0.0,Winter
+Bhawarkuan,2025-12-11,7.31,1.35,Winter
+Bhawarkuan,2025-12-12,9.61,1.24,Winter
+Bhawarkuan,2025-12-13,8.65,1.53,Winter
+Bhawarkuan,2025-12-14,7.87,0.0,Winter
+Bhawarkuan,2025-12-15,8.19,0.94,Winter
+Bhawarkuan,2025-12-16,9.1,3.42,Winter
+Bhawarkuan,2025-12-17,8.47,0.0,Winter
+Bhawarkuan,2025-12-18,9.37,2.25,Winter
+Bhawarkuan,2025-12-19,8.05,3.87,Winter
+Bhawarkuan,2025-12-20,7.45,0.28,Winter
+Bhawarkuan,2025-12-21,8.76,1.15,Winter
+Bhawarkuan,2025-12-22,8.6,2.98,Winter
+Bhawarkuan,2025-12-23,8.53,1.02,Winter
+Bhawarkuan,2025-12-24,9.79,0.25,Winter
+Bhawarkuan,2025-12-25,8.43,0.0,Winter
+Bhawarkuan,2025-12-26,8.85,4.54,Winter
+Bhawarkuan,2025-12-27,8.2,1.21,Winter
+Bhawarkuan,2025-12-28,9.41,1.23,Winter
+Bhawarkuan,2025-12-29,9.37,0.0,Winter
+Bhawarkuan,2025-12-30,8.11,0.0,Winter
+Bhawarkuan,2025-12-31,8.81,0.86,Winter
+Khajrana,2025-01-01,8.62,0.0,Winter
+Khajrana,2025-01-02,7.89,4.54,Winter
+Khajrana,2025-01-03,8.05,1.78,Winter
+Khajrana,2025-01-04,8.57,2.14,Winter
+Khajrana,2025-01-05,8.71,0.54,Winter
+Khajrana,2025-01-06,8.67,4.21,Winter
+Khajrana,2025-01-07,7.7,2.58,Winter
+Khajrana,2025-01-08,8.64,0.07,Winter
+Khajrana,2025-01-09,9.0,3.73,Winter
+Khajrana,2025-01-10,8.42,1.03,Winter
+Khajrana,2025-01-11,8.72,0.0,Winter
+Khajrana,2025-01-12,8.32,2.82,Winter
+Khajrana,2025-01-13,8.58,0.79,Winter
+Khajrana,2025-01-14,8.36,0.84,Winter
+Khajrana,2025-01-15,8.69,4.65,Winter
+Khajrana,2025-01-16,7.96,0.96,Winter
+Khajrana,2025-01-17,8.49,2.62,Winter
+Khajrana,2025-01-18,9.29,0.53,Winter
+Khajrana,2025-01-19,8.32,3.63,Winter
+Khajrana,2025-01-20,9.01,0.0,Winter
+Khajrana,2025-01-21,8.91,0.47,Winter
+Khajrana,2025-01-22,8.92,0.0,Winter
+Khajrana,2025-01-23,8.81,0.0,Winter
+Khajrana,2025-01-24,7.81,1.52,Winter
+Khajrana,2025-01-25,8.89,0.89,Winter
+Khajrana,2025-01-26,8.91,1.66,Winter
+Khajrana,2025-01-27,7.74,4.46,Winter
+Khajrana,2025-01-28,8.84,3.93,Winter
+Khajrana,2025-01-29,7.39,0.15,Winter
+Khajrana,2025-01-30,9.09,1.22,Winter
+Khajrana,2025-01-31,9.51,1.31,Winter
+Khajrana,2025-02-01,8.29,0.0,Winter
+Khajrana,2025-02-02,8.55,0.0,Winter
+Khajrana,2025-02-03,8.35,2.83,Winter
+Khajrana,2025-02-04,8.44,0.0,Winter
+Khajrana,2025-02-05,8.84,2.16,Winter
+Khajrana,2025-02-06,7.95,3.35,Winter
+Khajrana,2025-02-07,9.44,2.52,Winter
+Khajrana,2025-02-08,8.52,0.0,Winter
+Khajrana,2025-02-09,8.33,0.74,Winter
+Khajrana,2025-02-10,8.2,2.02,Winter
+Khajrana,2025-02-11,8.38,0.49,Winter
+Khajrana,2025-02-12,7.54,0.0,Winter
+Khajrana,2025-02-13,7.8,2.52,Winter
+Khajrana,2025-02-14,8.92,2.5,Winter
+Khajrana,2025-02-15,7.83,0.0,Winter
+Khajrana,2025-02-16,8.01,3.29,Winter
+Khajrana,2025-02-17,8.72,0.8,Winter
+Khajrana,2025-02-18,8.44,2.68,Winter
+Khajrana,2025-02-19,9.37,0.6,Winter
+Khajrana,2025-02-20,9.48,4.11,Winter
+Khajrana,2025-02-21,7.93,1.63,Winter
+Khajrana,2025-02-22,8.7,0.25,Winter
+Khajrana,2025-02-23,9.54,2.13,Winter
+Khajrana,2025-02-24,7.54,2.48,Winter
+Khajrana,2025-02-25,7.97,3.08,Winter
+Khajrana,2025-02-26,8.59,0.92,Winter
+Khajrana,2025-02-27,11.02,4.49,Winter
+Khajrana,2025-02-28,8.46,2.41,Winter
+Khajrana,2025-03-01,7.23,0.93,Summer
+Khajrana,2025-03-02,7.79,0.24,Summer
+Khajrana,2025-03-03,6.93,0.68,Summer
+Khajrana,2025-03-04,6.92,1.03,Summer
+Khajrana,2025-03-05,6.21,1.17,Summer
+Khajrana,2025-03-06,5.74,0.05,Summer
+Khajrana,2025-03-07,7.15,0.85,Summer
+Khajrana,2025-03-08,7.78,0.87,Summer
+Khajrana,2025-03-09,7.03,0.5,Summer
+Khajrana,2025-03-10,6.23,0.0,Summer
+Khajrana,2025-03-11,7.22,1.06,Summer
+Khajrana,2025-03-12,6.48,0.26,Summer
+Khajrana,2025-03-13,6.25,0.0,Summer
+Khajrana,2025-03-14,7.05,1.21,Summer
+Khajrana,2025-03-15,6.64,0.9,Summer
+Khajrana,2025-03-16,6.1,0.51,Summer
+Khajrana,2025-03-17,6.92,1.06,Summer
+Khajrana,2025-03-18,6.24,0.89,Summer
+Khajrana,2025-03-19,7.27,0.0,Summer
+Khajrana,2025-03-20,5.91,0.12,Summer
+Khajrana,2025-03-21,6.35,1.05,Summer
+Khajrana,2025-03-22,7.09,1.35,Summer
+Khajrana,2025-03-23,5.67,1.05,Summer
+Khajrana,2025-03-24,6.86,1.47,Summer
+Khajrana,2025-03-25,6.62,0.2,Summer
+Khajrana,2025-03-26,6.79,0.0,Summer
+Khajrana,2025-03-27,5.55,0.0,Summer
+Khajrana,2025-03-28,7.28,0.0,Summer
+Khajrana,2025-03-29,7.57,0.0,Summer
+Khajrana,2025-03-30,5.31,0.07,Summer
+Khajrana,2025-03-31,7.37,0.0,Summer
+Khajrana,2025-04-01,6.16,0.38,Summer
+Khajrana,2025-04-02,6.93,0.63,Summer
+Khajrana,2025-04-03,7.68,1.39,Summer
+Khajrana,2025-04-04,5.6,0.21,Summer
+Khajrana,2025-04-05,6.7,0.17,Summer
+Khajrana,2025-04-06,5.83,0.0,Summer
+Khajrana,2025-04-07,6.56,0.78,Summer
+Khajrana,2025-04-08,6.03,0.53,Summer
+Khajrana,2025-04-09,5.89,0.32,Summer
+Khajrana,2025-04-10,7.37,1.21,Summer
+Khajrana,2025-04-11,5.85,0.0,Summer
+Khajrana,2025-04-12,6.04,0.0,Summer
+Khajrana,2025-04-13,5.54,0.43,Summer
+Khajrana,2025-04-14,5.8,0.0,Summer
+Khajrana,2025-04-15,6.63,0.67,Summer
+Khajrana,2025-04-16,6.62,0.0,Summer
+Khajrana,2025-04-17,6.32,0.06,Summer
+Khajrana,2025-04-18,7.66,1.84,Summer
+Khajrana,2025-04-19,7.08,0.0,Summer
+Khajrana,2025-04-20,5.83,1.15,Summer
+Khajrana,2025-04-21,7.72,1.16,Summer
+Khajrana,2025-04-22,5.86,0.0,Summer
+Khajrana,2025-04-23,6.85,1.31,Summer
+Khajrana,2025-04-24,6.85,0.94,Summer
+Khajrana,2025-04-25,5.67,0.81,Summer
+Khajrana,2025-04-26,7.48,1.34,Summer
+Khajrana,2025-04-27,6.51,0.32,Summer
+Khajrana,2025-04-28,6.86,0.0,Summer
+Khajrana,2025-04-29,6.57,0.96,Summer
+Khajrana,2025-04-30,6.43,1.4,Summer
+Khajrana,2025-05-01,5.9,0.95,Summer
+Khajrana,2025-05-02,6.44,0.48,Summer
+Khajrana,2025-05-03,6.32,0.68,Summer
+Khajrana,2025-05-04,7.13,0.39,Summer
+Khajrana,2025-05-05,5.39,0.15,Summer
+Khajrana,2025-05-06,7.69,1.9,Summer
+Khajrana,2025-05-07,6.98,0.0,Summer
+Khajrana,2025-05-08,6.7,0.1,Summer
+Khajrana,2025-05-09,6.42,0.74,Summer
+Khajrana,2025-05-10,6.02,0.0,Summer
+Khajrana,2025-05-11,5.92,0.0,Summer
+Khajrana,2025-05-12,6.05,0.45,Summer
+Khajrana,2025-05-13,7.67,1.05,Summer
+Khajrana,2025-05-14,6.67,0.04,Summer
+Khajrana,2025-05-15,6.94,0.9,Summer
+Khajrana,2025-05-16,7.09,0.56,Summer
+Khajrana,2025-05-17,5.74,0.89,Summer
+Khajrana,2025-05-18,7.26,1.2,Summer
+Khajrana,2025-05-19,6.53,0.0,Summer
+Khajrana,2025-05-20,6.48,1.05,Summer
+Khajrana,2025-05-21,8.32,1.36,Summer
+Khajrana,2025-05-22,5.53,0.0,Summer
+Khajrana,2025-05-23,7.09,0.74,Summer
+Khajrana,2025-05-24,7.56,0.32,Summer
+Khajrana,2025-05-25,6.99,0.0,Summer
+Khajrana,2025-05-26,7.71,0.02,Summer
+Khajrana,2025-05-27,6.21,2.09,Summer
+Khajrana,2025-05-28,7.11,0.06,Summer
+Khajrana,2025-05-29,6.49,0.19,Summer
+Khajrana,2025-05-30,5.22,0.52,Summer
+Khajrana,2025-05-31,6.08,0.49,Summer
+Khajrana,2025-06-01,10.67,5.53,Monsoon
+Khajrana,2025-06-02,9.78,1.72,Monsoon
+Khajrana,2025-06-03,9.6,6.61,Monsoon
+Khajrana,2025-06-04,10.67,11.95,Monsoon
+Khajrana,2025-06-05,10.98,10.85,Monsoon
+Khajrana,2025-06-06,9.33,6.34,Monsoon
+Khajrana,2025-06-07,8.73,2.57,Monsoon
+Khajrana,2025-06-08,12.0,20.0,Monsoon
+Khajrana,2025-06-09,8.22,1.24,Monsoon
+Khajrana,2025-06-10,10.63,10.41,Monsoon
+Khajrana,2025-06-11,10.11,10.74,Monsoon
+Khajrana,2025-06-12,10.11,7.37,Monsoon
+Khajrana,2025-06-13,8.46,8.43,Monsoon
+Khajrana,2025-06-14,9.23,6.85,Monsoon
+Khajrana,2025-06-15,12.0,8.88,Monsoon
+Khajrana,2025-06-16,9.96,9.84,Monsoon
+Khajrana,2025-06-17,10.85,12.61,Monsoon
+Khajrana,2025-06-18,10.64,10.1,Monsoon
+Khajrana,2025-06-19,10.4,18.28,Monsoon
+Khajrana,2025-06-20,9.6,10.37,Monsoon
+Khajrana,2025-06-21,9.65,10.78,Monsoon
+Khajrana,2025-06-22,9.5,5.91,Monsoon
+Khajrana,2025-06-23,11.19,12.88,Monsoon
+Khajrana,2025-06-24,9.25,1.77,Monsoon
+Khajrana,2025-06-25,8.65,4.45,Monsoon
+Khajrana,2025-06-26,9.61,6.91,Monsoon
+Khajrana,2025-06-27,11.7,20.0,Monsoon
+Khajrana,2025-06-28,8.74,1.11,Monsoon
+Khajrana,2025-06-29,12.0,13.11,Monsoon
+Khajrana,2025-06-30,7.69,0.07,Monsoon
+Khajrana,2025-07-01,11.36,17.35,Monsoon
+Khajrana,2025-07-02,9.81,3.66,Monsoon
+Khajrana,2025-07-03,9.0,0.0,Monsoon
+Khajrana,2025-07-04,10.8,9.64,Monsoon
+Khajrana,2025-07-05,9.41,2.93,Monsoon
+Khajrana,2025-07-06,9.58,3.37,Monsoon
+Khajrana,2025-07-07,9.14,3.52,Monsoon
+Khajrana,2025-07-08,9.82,3.02,Monsoon
+Khajrana,2025-07-09,10.31,12.29,Monsoon
+Khajrana,2025-07-10,8.97,8.19,Monsoon
+Khajrana,2025-07-11,9.75,6.5,Monsoon
+Khajrana,2025-07-12,10.62,20.0,Monsoon
+Khajrana,2025-07-13,11.54,15.32,Monsoon
+Khajrana,2025-07-14,11.36,9.4,Monsoon
+Khajrana,2025-07-15,10.46,9.86,Monsoon
+Khajrana,2025-07-16,10.78,7.73,Monsoon
+Khajrana,2025-07-17,10.18,13.48,Monsoon
+Khajrana,2025-07-18,9.03,1.4,Monsoon
+Khajrana,2025-07-19,9.44,4.0,Monsoon
+Khajrana,2025-07-20,10.38,14.19,Monsoon
+Khajrana,2025-07-21,9.97,7.79,Monsoon
+Khajrana,2025-07-22,8.9,12.24,Monsoon
+Khajrana,2025-07-23,9.74,4.97,Monsoon
+Khajrana,2025-07-24,10.34,14.0,Monsoon
+Khajrana,2025-07-25,9.43,0.0,Monsoon
+Khajrana,2025-07-26,8.75,4.82,Monsoon
+Khajrana,2025-07-27,9.46,4.88,Monsoon
+Khajrana,2025-07-28,8.05,4.98,Monsoon
+Khajrana,2025-07-29,11.39,12.49,Monsoon
+Khajrana,2025-07-30,9.55,11.26,Monsoon
+Khajrana,2025-07-31,9.83,6.99,Monsoon
+Khajrana,2025-08-01,10.79,10.99,Monsoon
+Khajrana,2025-08-02,9.58,4.33,Monsoon
+Khajrana,2025-08-03,11.25,10.29,Monsoon
+Khajrana,2025-08-04,10.94,11.52,Monsoon
+Khajrana,2025-08-05,11.0,8.42,Monsoon
+Khajrana,2025-08-06,9.6,10.05,Monsoon
+Khajrana,2025-08-07,11.29,15.02,Monsoon
+Khajrana,2025-08-08,9.36,5.78,Monsoon
+Khajrana,2025-08-09,10.46,9.48,Monsoon
+Khajrana,2025-08-10,10.3,8.99,Monsoon
+Khajrana,2025-08-11,11.73,16.5,Monsoon
+Khajrana,2025-08-12,10.73,8.95,Monsoon
+Khajrana,2025-08-13,9.62,2.84,Monsoon
+Khajrana,2025-08-14,10.89,17.05,Monsoon
+Khajrana,2025-08-15,8.99,3.76,Monsoon
+Khajrana,2025-08-16,8.76,2.55,Monsoon
+Khajrana,2025-08-17,8.75,6.15,Monsoon
+Khajrana,2025-08-18,10.6,8.08,Monsoon
+Khajrana,2025-08-19,10.48,3.46,Monsoon
+Khajrana,2025-08-20,10.99,10.55,Monsoon
+Khajrana,2025-08-21,10.16,4.71,Monsoon
+Khajrana,2025-08-22,9.93,2.54,Monsoon
+Khajrana,2025-08-23,10.45,8.86,Monsoon
+Khajrana,2025-08-24,8.63,2.12,Monsoon
+Khajrana,2025-08-25,9.65,10.99,Monsoon
+Khajrana,2025-08-26,9.28,10.32,Monsoon
+Khajrana,2025-08-27,9.61,12.24,Monsoon
+Khajrana,2025-08-28,10.73,10.76,Monsoon
+Khajrana,2025-08-29,9.95,4.52,Monsoon
+Khajrana,2025-08-30,9.74,9.3,Monsoon
+Khajrana,2025-08-31,7.98,2.96,Monsoon
+Khajrana,2025-09-01,9.07,9.75,Monsoon
+Khajrana,2025-09-02,9.83,8.48,Monsoon
+Khajrana,2025-09-03,10.16,11.4,Monsoon
+Khajrana,2025-09-04,10.27,6.35,Monsoon
+Khajrana,2025-09-05,10.38,9.68,Monsoon
+Khajrana,2025-09-06,9.17,10.35,Monsoon
+Khajrana,2025-09-07,10.84,11.78,Monsoon
+Khajrana,2025-09-08,9.18,2.92,Monsoon
+Khajrana,2025-09-09,9.84,7.8,Monsoon
+Khajrana,2025-09-10,11.16,9.67,Monsoon
+Khajrana,2025-09-11,9.69,13.41,Monsoon
+Khajrana,2025-09-12,11.26,11.11,Monsoon
+Khajrana,2025-09-13,10.96,9.93,Monsoon
+Khajrana,2025-09-14,11.88,18.06,Monsoon
+Khajrana,2025-09-15,10.84,9.25,Monsoon
+Khajrana,2025-09-16,10.06,8.72,Monsoon
+Khajrana,2025-09-17,10.84,6.24,Monsoon
+Khajrana,2025-09-18,10.54,3.91,Monsoon
+Khajrana,2025-09-19,9.28,10.5,Monsoon
+Khajrana,2025-09-20,8.71,9.84,Monsoon
+Khajrana,2025-09-21,10.95,11.13,Monsoon
+Khajrana,2025-09-22,9.69,5.04,Monsoon
+Khajrana,2025-09-23,10.78,17.77,Monsoon
+Khajrana,2025-09-24,10.36,2.71,Monsoon
+Khajrana,2025-09-25,11.14,17.81,Monsoon
+Khajrana,2025-09-26,11.51,13.06,Monsoon
+Khajrana,2025-09-27,9.17,4.29,Monsoon
+Khajrana,2025-09-28,11.88,14.15,Monsoon
+Khajrana,2025-09-29,9.68,10.81,Monsoon
+Khajrana,2025-09-30,10.78,17.94,Monsoon
+Khajrana,2025-10-01,8.66,1.0,Winter
+Khajrana,2025-10-02,9.36,3.83,Winter
+Khajrana,2025-10-03,8.88,2.12,Winter
+Khajrana,2025-10-04,8.88,1.57,Winter
+Khajrana,2025-10-05,8.09,0.0,Winter
+Khajrana,2025-10-06,7.72,1.86,Winter
+Khajrana,2025-10-07,8.41,2.08,Winter
+Khajrana,2025-10-08,9.9,4.13,Winter
+Khajrana,2025-10-09,8.29,0.8,Winter
+Khajrana,2025-10-10,8.15,1.39,Winter
+Khajrana,2025-10-11,7.98,1.79,Winter
+Khajrana,2025-10-12,8.74,0.0,Winter
+Khajrana,2025-10-13,8.03,2.44,Winter
+Khajrana,2025-10-14,8.2,2.84,Winter
+Khajrana,2025-10-15,9.1,1.88,Winter
+Khajrana,2025-10-16,8.79,1.45,Winter
+Khajrana,2025-10-17,8.25,0.73,Winter
+Khajrana,2025-10-18,7.92,1.19,Winter
+Khajrana,2025-10-19,7.36,1.23,Winter
+Khajrana,2025-10-20,8.19,0.76,Winter
+Khajrana,2025-10-21,8.26,1.12,Winter
+Khajrana,2025-10-22,8.8,1.41,Winter
+Khajrana,2025-10-23,8.18,2.81,Winter
+Khajrana,2025-10-24,7.57,0.0,Winter
+Khajrana,2025-10-25,8.15,0.77,Winter
+Khajrana,2025-10-26,7.43,0.35,Winter
+Khajrana,2025-10-27,8.52,0.82,Winter
+Khajrana,2025-10-28,8.2,2.39,Winter
+Khajrana,2025-10-29,7.76,0.88,Winter
+Khajrana,2025-10-30,7.88,1.45,Winter
+Khajrana,2025-10-31,7.33,2.36,Winter
+Khajrana,2025-11-01,8.63,0.96,Winter
+Khajrana,2025-11-02,10.4,1.78,Winter
+Khajrana,2025-11-03,7.84,2.02,Winter
+Khajrana,2025-11-04,7.22,1.36,Winter
+Khajrana,2025-11-05,7.88,1.38,Winter
+Khajrana,2025-11-06,8.26,2.87,Winter
+Khajrana,2025-11-07,8.01,1.32,Winter
+Khajrana,2025-11-08,8.57,4.11,Winter
+Khajrana,2025-11-09,9.38,4.25,Winter
+Khajrana,2025-11-10,8.82,2.22,Winter
+Khajrana,2025-11-11,7.2,2.09,Winter
+Khajrana,2025-11-12,9.02,1.08,Winter
+Khajrana,2025-11-13,7.49,1.43,Winter
+Khajrana,2025-11-14,9.66,1.42,Winter
+Khajrana,2025-11-15,8.66,3.37,Winter
+Khajrana,2025-11-16,8.39,2.93,Winter
+Khajrana,2025-11-17,7.65,0.0,Winter
+Khajrana,2025-11-18,8.57,3.84,Winter
+Khajrana,2025-11-19,8.23,1.13,Winter
+Khajrana,2025-11-20,9.96,4.36,Winter
+Khajrana,2025-11-21,8.77,4.83,Winter
+Khajrana,2025-11-22,7.47,1.94,Winter
+Khajrana,2025-11-23,7.93,3.72,Winter
+Khajrana,2025-11-24,7.75,1.83,Winter
+Khajrana,2025-11-25,7.79,0.62,Winter
+Khajrana,2025-11-26,7.99,0.59,Winter
+Khajrana,2025-11-27,8.96,0.68,Winter
+Khajrana,2025-11-28,8.45,0.0,Winter
+Khajrana,2025-11-29,8.34,3.33,Winter
+Khajrana,2025-11-30,8.19,0.42,Winter
+Khajrana,2025-12-01,8.83,3.27,Winter
+Khajrana,2025-12-02,8.72,0.7,Winter
+Khajrana,2025-12-03,8.78,0.0,Winter
+Khajrana,2025-12-04,8.34,2.11,Winter
+Khajrana,2025-12-05,7.71,0.24,Winter
+Khajrana,2025-12-06,9.44,2.3,Winter
+Khajrana,2025-12-07,8.69,0.54,Winter
+Khajrana,2025-12-08,7.89,0.0,Winter
+Khajrana,2025-12-09,7.84,1.45,Winter
+Khajrana,2025-12-10,7.84,0.1,Winter
+Khajrana,2025-12-11,8.4,1.94,Winter
+Khajrana,2025-12-12,6.82,0.0,Winter
+Khajrana,2025-12-13,8.69,0.59,Winter
+Khajrana,2025-12-14,7.95,0.0,Winter
+Khajrana,2025-12-15,9.36,0.71,Winter
+Khajrana,2025-12-16,8.68,0.92,Winter
+Khajrana,2025-12-17,7.01,1.71,Winter
+Khajrana,2025-12-18,8.77,2.65,Winter
+Khajrana,2025-12-19,11.32,2.26,Winter
+Khajrana,2025-12-20,9.51,0.0,Winter
+Khajrana,2025-12-21,8.63,1.07,Winter
+Khajrana,2025-12-22,8.17,1.43,Winter
+Khajrana,2025-12-23,8.61,0.65,Winter
+Khajrana,2025-12-24,8.83,0.0,Winter
+Khajrana,2025-12-25,7.61,0.88,Winter
+Khajrana,2025-12-26,9.28,0.82,Winter
+Khajrana,2025-12-27,8.63,0.7,Winter
+Khajrana,2025-12-28,8.88,0.4,Winter
+Khajrana,2025-12-29,9.9,2.53,Winter
+Khajrana,2025-12-30,8.92,1.24,Winter
+Khajrana,2025-12-31,9.4,1.65,Winter
+Bengali Square,2025-01-01,8.87,0.42,Winter
+Bengali Square,2025-01-02,8.4,1.21,Winter
+Bengali Square,2025-01-03,8.67,1.64,Winter
+Bengali Square,2025-01-04,8.61,1.33,Winter
+Bengali Square,2025-01-05,9.45,3.87,Winter
+Bengali Square,2025-01-06,8.32,2.8,Winter
+Bengali Square,2025-01-07,8.99,0.17,Winter
+Bengali Square,2025-01-08,9.67,2.81,Winter
+Bengali Square,2025-01-09,8.21,0.59,Winter
+Bengali Square,2025-01-10,8.03,0.0,Winter
+Bengali Square,2025-01-11,8.33,2.99,Winter
+Bengali Square,2025-01-12,8.46,2.46,Winter
+Bengali Square,2025-01-13,7.73,1.99,Winter
+Bengali Square,2025-01-14,6.4,1.63,Winter
+Bengali Square,2025-01-15,7.31,1.22,Winter
+Bengali Square,2025-01-16,9.24,3.31,Winter
+Bengali Square,2025-01-17,9.63,2.2,Winter
+Bengali Square,2025-01-18,9.53,0.08,Winter
+Bengali Square,2025-01-19,8.48,2.9,Winter
+Bengali Square,2025-01-20,7.91,3.2,Winter
+Bengali Square,2025-01-21,7.91,0.26,Winter
+Bengali Square,2025-01-22,7.65,0.71,Winter
+Bengali Square,2025-01-23,8.52,3.33,Winter
+Bengali Square,2025-01-24,8.14,2.03,Winter
+Bengali Square,2025-01-25,8.49,0.0,Winter
+Bengali Square,2025-01-26,8.25,0.0,Winter
+Bengali Square,2025-01-27,9.69,0.0,Winter
+Bengali Square,2025-01-28,8.72,2.87,Winter
+Bengali Square,2025-01-29,8.12,3.4,Winter
+Bengali Square,2025-01-30,8.72,2.32,Winter
+Bengali Square,2025-01-31,9.42,1.9,Winter
+Bengali Square,2025-02-01,8.81,2.6,Winter
+Bengali Square,2025-02-02,7.63,0.0,Winter
+Bengali Square,2025-02-03,8.52,1.32,Winter
+Bengali Square,2025-02-04,9.99,0.0,Winter
+Bengali Square,2025-02-05,9.17,3.77,Winter
+Bengali Square,2025-02-06,8.34,1.61,Winter
+Bengali Square,2025-02-07,8.36,0.07,Winter
+Bengali Square,2025-02-08,7.66,1.89,Winter
+Bengali Square,2025-02-09,8.43,2.0,Winter
+Bengali Square,2025-02-10,7.7,0.0,Winter
+Bengali Square,2025-02-11,9.73,0.88,Winter
+Bengali Square,2025-02-12,7.65,2.33,Winter
+Bengali Square,2025-02-13,7.48,2.23,Winter
+Bengali Square,2025-02-14,8.35,3.12,Winter
+Bengali Square,2025-02-15,9.39,1.36,Winter
+Bengali Square,2025-02-16,7.32,0.0,Winter
+Bengali Square,2025-02-17,9.1,0.62,Winter
+Bengali Square,2025-02-18,6.32,0.0,Winter
+Bengali Square,2025-02-19,8.79,0.82,Winter
+Bengali Square,2025-02-20,8.37,3.3,Winter
+Bengali Square,2025-02-21,9.21,0.88,Winter
+Bengali Square,2025-02-22,8.03,0.0,Winter
+Bengali Square,2025-02-23,8.83,1.79,Winter
+Bengali Square,2025-02-24,8.41,0.74,Winter
+Bengali Square,2025-02-25,7.84,0.0,Winter
+Bengali Square,2025-02-26,7.87,2.18,Winter
+Bengali Square,2025-02-27,8.8,1.59,Winter
+Bengali Square,2025-02-28,8.54,0.99,Winter
+Bengali Square,2025-03-01,6.36,0.0,Summer
+Bengali Square,2025-03-02,6.73,0.99,Summer
+Bengali Square,2025-03-03,6.66,0.03,Summer
+Bengali Square,2025-03-04,5.19,1.07,Summer
+Bengali Square,2025-03-05,6.44,1.43,Summer
+Bengali Square,2025-03-06,7.44,0.84,Summer
+Bengali Square,2025-03-07,6.0,0.0,Summer
+Bengali Square,2025-03-08,5.98,0.27,Summer
+Bengali Square,2025-03-09,6.13,1.89,Summer
+Bengali Square,2025-03-10,6.65,0.06,Summer
+Bengali Square,2025-03-11,6.22,0.0,Summer
+Bengali Square,2025-03-12,6.36,0.75,Summer
+Bengali Square,2025-03-13,6.18,0.43,Summer
+Bengali Square,2025-03-14,6.73,0.0,Summer
+Bengali Square,2025-03-15,6.74,1.9,Summer
+Bengali Square,2025-03-16,7.07,0.68,Summer
+Bengali Square,2025-03-17,7.69,0.0,Summer
+Bengali Square,2025-03-18,7.72,0.66,Summer
+Bengali Square,2025-03-19,7.77,0.0,Summer
+Bengali Square,2025-03-20,7.02,1.12,Summer
+Bengali Square,2025-03-21,6.41,0.69,Summer
+Bengali Square,2025-03-22,6.77,1.46,Summer
+Bengali Square,2025-03-23,5.72,0.0,Summer
+Bengali Square,2025-03-24,6.76,0.35,Summer
+Bengali Square,2025-03-25,7.41,0.45,Summer
+Bengali Square,2025-03-26,6.6,0.0,Summer
+Bengali Square,2025-03-27,7.03,0.0,Summer
+Bengali Square,2025-03-28,6.84,0.42,Summer
+Bengali Square,2025-03-29,7.4,0.0,Summer
+Bengali Square,2025-03-30,7.07,1.33,Summer
+Bengali Square,2025-03-31,6.95,0.4,Summer
+Bengali Square,2025-04-01,7.1,0.0,Summer
+Bengali Square,2025-04-02,7.47,1.82,Summer
+Bengali Square,2025-04-03,6.75,0.0,Summer
+Bengali Square,2025-04-04,6.9,0.0,Summer
+Bengali Square,2025-04-05,5.29,0.86,Summer
+Bengali Square,2025-04-06,6.3,0.0,Summer
+Bengali Square,2025-04-07,5.68,0.26,Summer
+Bengali Square,2025-04-08,6.77,0.81,Summer
+Bengali Square,2025-04-09,6.01,0.34,Summer
+Bengali Square,2025-04-10,7.82,1.34,Summer
+Bengali Square,2025-04-11,6.09,0.11,Summer
+Bengali Square,2025-04-12,6.36,0.89,Summer
+Bengali Square,2025-04-13,7.06,0.39,Summer
+Bengali Square,2025-04-14,7.42,0.0,Summer
+Bengali Square,2025-04-15,6.28,0.56,Summer
+Bengali Square,2025-04-16,6.53,0.43,Summer
+Bengali Square,2025-04-17,7.55,0.0,Summer
+Bengali Square,2025-04-18,6.87,0.53,Summer
+Bengali Square,2025-04-19,5.94,1.26,Summer
+Bengali Square,2025-04-20,6.42,0.88,Summer
+Bengali Square,2025-04-21,5.15,1.18,Summer
+Bengali Square,2025-04-22,6.13,0.42,Summer
+Bengali Square,2025-04-23,6.93,0.85,Summer
+Bengali Square,2025-04-24,6.0,0.0,Summer
+Bengali Square,2025-04-25,5.92,0.41,Summer
+Bengali Square,2025-04-26,6.38,1.17,Summer
+Bengali Square,2025-04-27,6.24,0.0,Summer
+Bengali Square,2025-04-28,5.36,0.0,Summer
+Bengali Square,2025-04-29,6.58,0.0,Summer
+Bengali Square,2025-04-30,6.91,1.56,Summer
+Bengali Square,2025-05-01,6.82,0.01,Summer
+Bengali Square,2025-05-02,6.03,0.13,Summer
+Bengali Square,2025-05-03,5.27,0.0,Summer
+Bengali Square,2025-05-04,6.63,0.19,Summer
+Bengali Square,2025-05-05,6.26,0.42,Summer
+Bengali Square,2025-05-06,6.93,0.0,Summer
+Bengali Square,2025-05-07,7.04,0.0,Summer
+Bengali Square,2025-05-08,5.97,0.0,Summer
+Bengali Square,2025-05-09,6.15,0.0,Summer
+Bengali Square,2025-05-10,7.01,1.28,Summer
+Bengali Square,2025-05-11,7.02,1.28,Summer
+Bengali Square,2025-05-12,6.27,0.0,Summer
+Bengali Square,2025-05-13,7.43,0.0,Summer
+Bengali Square,2025-05-14,7.13,0.0,Summer
+Bengali Square,2025-05-15,7.93,1.21,Summer
+Bengali Square,2025-05-16,7.02,0.17,Summer
+Bengali Square,2025-05-17,6.35,2.33,Summer
+Bengali Square,2025-05-18,5.18,0.0,Summer
+Bengali Square,2025-05-19,5.31,1.07,Summer
+Bengali Square,2025-05-20,6.83,0.2,Summer
+Bengali Square,2025-05-21,6.88,0.65,Summer
+Bengali Square,2025-05-22,7.48,0.68,Summer
+Bengali Square,2025-05-23,6.03,0.0,Summer
+Bengali Square,2025-05-24,7.08,0.0,Summer
+Bengali Square,2025-05-25,6.96,1.22,Summer
+Bengali Square,2025-05-26,5.85,1.45,Summer
+Bengali Square,2025-05-27,7.79,1.83,Summer
+Bengali Square,2025-05-28,7.88,1.09,Summer
+Bengali Square,2025-05-29,6.13,0.0,Summer
+Bengali Square,2025-05-30,7.01,0.0,Summer
+Bengali Square,2025-05-31,7.03,0.0,Summer
+Bengali Square,2025-06-01,11.27,14.85,Monsoon
+Bengali Square,2025-06-02,9.44,9.42,Monsoon
+Bengali Square,2025-06-03,10.33,3.77,Monsoon
+Bengali Square,2025-06-04,10.4,11.9,Monsoon
+Bengali Square,2025-06-05,8.29,5.91,Monsoon
+Bengali Square,2025-06-06,10.66,2.65,Monsoon
+Bengali Square,2025-06-07,9.32,1.6,Monsoon
+Bengali Square,2025-06-08,9.69,13.04,Monsoon
+Bengali Square,2025-06-09,10.73,8.92,Monsoon
+Bengali Square,2025-06-10,11.98,8.06,Monsoon
+Bengali Square,2025-06-11,9.74,0.0,Monsoon
+Bengali Square,2025-06-12,10.4,7.14,Monsoon
+Bengali Square,2025-06-13,9.71,10.21,Monsoon
+Bengali Square,2025-06-14,8.8,9.14,Monsoon
+Bengali Square,2025-06-15,10.53,11.02,Monsoon
+Bengali Square,2025-06-16,11.08,11.19,Monsoon
+Bengali Square,2025-06-17,10.28,9.84,Monsoon
+Bengali Square,2025-06-18,8.93,3.59,Monsoon
+Bengali Square,2025-06-19,11.68,13.93,Monsoon
+Bengali Square,2025-06-20,9.85,6.81,Monsoon
+Bengali Square,2025-06-21,10.24,3.48,Monsoon
+Bengali Square,2025-06-22,11.72,11.33,Monsoon
+Bengali Square,2025-06-23,9.17,3.61,Monsoon
+Bengali Square,2025-06-24,10.55,9.16,Monsoon
+Bengali Square,2025-06-25,9.22,6.92,Monsoon
+Bengali Square,2025-06-26,10.99,12.41,Monsoon
+Bengali Square,2025-06-27,10.36,3.42,Monsoon
+Bengali Square,2025-06-28,10.76,13.85,Monsoon
+Bengali Square,2025-06-29,10.4,8.4,Monsoon
+Bengali Square,2025-06-30,9.46,3.69,Monsoon
+Bengali Square,2025-07-01,9.61,0.0,Monsoon
+Bengali Square,2025-07-02,10.08,0.19,Monsoon
+Bengali Square,2025-07-03,9.61,6.35,Monsoon
+Bengali Square,2025-07-04,9.38,4.86,Monsoon
+Bengali Square,2025-07-05,9.07,15.09,Monsoon
+Bengali Square,2025-07-06,10.96,14.38,Monsoon
+Bengali Square,2025-07-07,8.48,1.96,Monsoon
+Bengali Square,2025-07-08,10.3,16.38,Monsoon
+Bengali Square,2025-07-09,10.06,2.23,Monsoon
+Bengali Square,2025-07-10,9.51,9.69,Monsoon
+Bengali Square,2025-07-11,9.37,9.08,Monsoon
+Bengali Square,2025-07-12,11.36,13.5,Monsoon
+Bengali Square,2025-07-13,10.53,10.66,Monsoon
+Bengali Square,2025-07-14,11.02,16.81,Monsoon
+Bengali Square,2025-07-15,9.57,2.09,Monsoon
+Bengali Square,2025-07-16,10.5,18.43,Monsoon
+Bengali Square,2025-07-17,10.03,6.19,Monsoon
+Bengali Square,2025-07-18,9.24,7.73,Monsoon
+Bengali Square,2025-07-19,12.0,13.61,Monsoon
+Bengali Square,2025-07-20,9.44,8.98,Monsoon
+Bengali Square,2025-07-21,9.21,0.26,Monsoon
+Bengali Square,2025-07-22,10.95,13.52,Monsoon
+Bengali Square,2025-07-23,9.55,7.99,Monsoon
+Bengali Square,2025-07-24,9.89,2.54,Monsoon
+Bengali Square,2025-07-25,9.43,12.57,Monsoon
+Bengali Square,2025-07-26,11.32,15.95,Monsoon
+Bengali Square,2025-07-27,9.86,15.0,Monsoon
+Bengali Square,2025-07-28,9.04,1.17,Monsoon
+Bengali Square,2025-07-29,11.52,10.51,Monsoon
+Bengali Square,2025-07-30,10.21,11.53,Monsoon
+Bengali Square,2025-07-31,10.21,2.87,Monsoon
+Bengali Square,2025-08-01,10.52,3.18,Monsoon
+Bengali Square,2025-08-02,10.9,6.58,Monsoon
+Bengali Square,2025-08-03,10.27,11.39,Monsoon
+Bengali Square,2025-08-04,9.41,5.4,Monsoon
+Bengali Square,2025-08-05,10.27,10.14,Monsoon
+Bengali Square,2025-08-06,9.49,5.03,Monsoon
+Bengali Square,2025-08-07,8.52,8.39,Monsoon
+Bengali Square,2025-08-08,9.55,10.29,Monsoon
+Bengali Square,2025-08-09,8.09,2.23,Monsoon
+Bengali Square,2025-08-10,8.05,0.0,Monsoon
+Bengali Square,2025-08-11,10.9,4.45,Monsoon
+Bengali Square,2025-08-12,9.77,5.37,Monsoon
+Bengali Square,2025-08-13,10.29,10.0,Monsoon
+Bengali Square,2025-08-14,9.08,7.61,Monsoon
+Bengali Square,2025-08-15,12.0,15.25,Monsoon
+Bengali Square,2025-08-16,8.28,0.0,Monsoon
+Bengali Square,2025-08-17,9.12,6.6,Monsoon
+Bengali Square,2025-08-18,9.75,10.53,Monsoon
+Bengali Square,2025-08-19,12.0,18.83,Monsoon
+Bengali Square,2025-08-20,10.81,9.06,Monsoon
+Bengali Square,2025-08-21,10.23,13.53,Monsoon
+Bengali Square,2025-08-22,9.52,3.92,Monsoon
+Bengali Square,2025-08-23,10.57,12.31,Monsoon
+Bengali Square,2025-08-24,8.45,0.12,Monsoon
+Bengali Square,2025-08-25,9.86,7.63,Monsoon
+Bengali Square,2025-08-26,10.17,17.86,Monsoon
+Bengali Square,2025-08-27,11.31,10.53,Monsoon
+Bengali Square,2025-08-28,11.04,19.36,Monsoon
+Bengali Square,2025-08-29,10.65,10.46,Monsoon
+Bengali Square,2025-08-30,10.01,8.98,Monsoon
+Bengali Square,2025-08-31,8.45,10.18,Monsoon
+Bengali Square,2025-09-01,10.46,11.41,Monsoon
+Bengali Square,2025-09-02,11.26,6.89,Monsoon
+Bengali Square,2025-09-03,9.27,4.63,Monsoon
+Bengali Square,2025-09-04,10.57,17.96,Monsoon
+Bengali Square,2025-09-05,9.53,5.25,Monsoon
+Bengali Square,2025-09-06,10.61,12.2,Monsoon
+Bengali Square,2025-09-07,8.81,1.54,Monsoon
+Bengali Square,2025-09-08,9.54,4.96,Monsoon
+Bengali Square,2025-09-09,10.51,10.13,Monsoon
+Bengali Square,2025-09-10,9.74,0.0,Monsoon
+Bengali Square,2025-09-11,11.08,9.26,Monsoon
+Bengali Square,2025-09-12,11.0,10.22,Monsoon
+Bengali Square,2025-09-13,11.18,10.33,Monsoon
+Bengali Square,2025-09-14,10.2,10.61,Monsoon
+Bengali Square,2025-09-15,11.95,19.36,Monsoon
+Bengali Square,2025-09-16,9.41,10.87,Monsoon
+Bengali Square,2025-09-17,9.39,1.56,Monsoon
+Bengali Square,2025-09-18,9.62,8.73,Monsoon
+Bengali Square,2025-09-19,11.16,8.7,Monsoon
+Bengali Square,2025-09-20,9.58,11.48,Monsoon
+Bengali Square,2025-09-21,9.33,7.44,Monsoon
+Bengali Square,2025-09-22,9.44,6.06,Monsoon
+Bengali Square,2025-09-23,8.79,5.61,Monsoon
+Bengali Square,2025-09-24,9.49,7.36,Monsoon
+Bengali Square,2025-09-25,10.44,0.0,Monsoon
+Bengali Square,2025-09-26,10.35,13.44,Monsoon
+Bengali Square,2025-09-27,9.15,8.09,Monsoon
+Bengali Square,2025-09-28,12.0,16.48,Monsoon
+Bengali Square,2025-09-29,10.77,8.78,Monsoon
+Bengali Square,2025-09-30,9.13,8.88,Monsoon
+Bengali Square,2025-10-01,8.5,0.88,Winter
+Bengali Square,2025-10-02,8.25,0.82,Winter
+Bengali Square,2025-10-03,8.41,1.36,Winter
+Bengali Square,2025-10-04,7.75,1.58,Winter
+Bengali Square,2025-10-05,7.45,0.42,Winter
+Bengali Square,2025-10-06,7.18,2.97,Winter
+Bengali Square,2025-10-07,9.66,3.23,Winter
+Bengali Square,2025-10-08,6.6,1.05,Winter
+Bengali Square,2025-10-09,8.37,0.96,Winter
+Bengali Square,2025-10-10,7.94,0.0,Winter
+Bengali Square,2025-10-11,9.22,3.8,Winter
+Bengali Square,2025-10-12,7.2,0.11,Winter
+Bengali Square,2025-10-13,8.27,1.01,Winter
+Bengali Square,2025-10-14,8.19,2.24,Winter
+Bengali Square,2025-10-15,9.93,2.27,Winter
+Bengali Square,2025-10-16,8.59,2.72,Winter
+Bengali Square,2025-10-17,8.2,1.23,Winter
+Bengali Square,2025-10-18,8.25,3.27,Winter
+Bengali Square,2025-10-19,8.52,1.57,Winter
+Bengali Square,2025-10-20,7.43,0.75,Winter
+Bengali Square,2025-10-21,8.5,1.98,Winter
+Bengali Square,2025-10-22,8.2,2.25,Winter
+Bengali Square,2025-10-23,8.09,3.33,Winter
+Bengali Square,2025-10-24,7.56,4.07,Winter
+Bengali Square,2025-10-25,8.89,2.15,Winter
+Bengali Square,2025-10-26,8.63,0.31,Winter
+Bengali Square,2025-10-27,7.16,3.42,Winter
+Bengali Square,2025-10-28,6.83,2.25,Winter
+Bengali Square,2025-10-29,9.45,0.05,Winter
+Bengali Square,2025-10-30,7.55,0.63,Winter
+Bengali Square,2025-10-31,9.89,1.2,Winter
+Bengali Square,2025-11-01,7.56,0.0,Winter
+Bengali Square,2025-11-02,10.05,3.75,Winter
+Bengali Square,2025-11-03,7.59,1.34,Winter
+Bengali Square,2025-11-04,9.97,4.64,Winter
+Bengali Square,2025-11-05,8.03,2.52,Winter
+Bengali Square,2025-11-06,8.36,1.43,Winter
+Bengali Square,2025-11-07,9.56,2.0,Winter
+Bengali Square,2025-11-08,7.88,2.82,Winter
+Bengali Square,2025-11-09,8.95,3.56,Winter
+Bengali Square,2025-11-10,9.63,2.53,Winter
+Bengali Square,2025-11-11,8.27,0.0,Winter
+Bengali Square,2025-11-12,7.29,0.7,Winter
+Bengali Square,2025-11-13,10.3,2.02,Winter
+Bengali Square,2025-11-14,8.28,0.0,Winter
+Bengali Square,2025-11-15,8.68,2.46,Winter
+Bengali Square,2025-11-16,7.55,1.33,Winter
+Bengali Square,2025-11-17,7.99,1.85,Winter
+Bengali Square,2025-11-18,9.14,0.0,Winter
+Bengali Square,2025-11-19,8.69,2.94,Winter
+Bengali Square,2025-11-20,9.27,1.84,Winter
+Bengali Square,2025-11-21,9.15,1.84,Winter
+Bengali Square,2025-11-22,9.34,1.05,Winter
+Bengali Square,2025-11-23,8.67,1.98,Winter
+Bengali Square,2025-11-24,8.5,0.0,Winter
+Bengali Square,2025-11-25,7.88,0.25,Winter
+Bengali Square,2025-11-26,7.59,0.28,Winter
+Bengali Square,2025-11-27,9.79,4.69,Winter
+Bengali Square,2025-11-28,7.97,4.38,Winter
+Bengali Square,2025-11-29,7.59,1.61,Winter
+Bengali Square,2025-11-30,7.71,0.46,Winter
+Bengali Square,2025-12-01,8.43,3.36,Winter
+Bengali Square,2025-12-02,9.1,3.1,Winter
+Bengali Square,2025-12-03,7.86,4.96,Winter
+Bengali Square,2025-12-04,9.51,3.39,Winter
+Bengali Square,2025-12-05,9.01,0.04,Winter
+Bengali Square,2025-12-06,8.38,2.0,Winter
+Bengali Square,2025-12-07,7.83,0.26,Winter
+Bengali Square,2025-12-08,8.85,4.57,Winter
+Bengali Square,2025-12-09,8.07,2.67,Winter
+Bengali Square,2025-12-10,9.1,0.33,Winter
+Bengali Square,2025-12-11,8.01,0.0,Winter
+Bengali Square,2025-12-12,8.56,1.55,Winter
+Bengali Square,2025-12-13,8.72,1.23,Winter
+Bengali Square,2025-12-14,9.12,2.54,Winter
+Bengali Square,2025-12-15,8.1,0.02,Winter
+Bengali Square,2025-12-16,9.32,3.29,Winter
+Bengali Square,2025-12-17,8.55,0.0,Winter
+Bengali Square,2025-12-18,8.33,0.0,Winter
+Bengali Square,2025-12-19,8.16,4.35,Winter
+Bengali Square,2025-12-20,8.86,0.25,Winter
+Bengali Square,2025-12-21,7.86,0.0,Winter
+Bengali Square,2025-12-22,8.14,2.39,Winter
+Bengali Square,2025-12-23,8.96,1.15,Winter
+Bengali Square,2025-12-24,8.74,2.13,Winter
+Bengali Square,2025-12-25,8.68,0.99,Winter
+Bengali Square,2025-12-26,8.78,1.31,Winter
+Bengali Square,2025-12-27,8.26,0.75,Winter
+Bengali Square,2025-12-28,8.28,0.02,Winter
+Bengali Square,2025-12-29,7.55,0.28,Winter
+Bengali Square,2025-12-30,8.68,1.89,Winter
+Bengali Square,2025-12-31,8.32,2.67,Winter
+Rau,2025-01-01,8.94,2.11,Winter
+Rau,2025-01-02,7.98,2.17,Winter
+Rau,2025-01-03,8.76,1.72,Winter
+Rau,2025-01-04,7.02,1.51,Winter
+Rau,2025-01-05,10.06,1.74,Winter
+Rau,2025-01-06,7.91,0.96,Winter
+Rau,2025-01-07,8.77,2.06,Winter
+Rau,2025-01-08,7.81,3.29,Winter
+Rau,2025-01-09,9.02,2.6,Winter
+Rau,2025-01-10,8.69,1.29,Winter
+Rau,2025-01-11,9.28,3.04,Winter
+Rau,2025-01-12,8.87,0.0,Winter
+Rau,2025-01-13,8.52,1.4,Winter
+Rau,2025-01-14,8.39,1.61,Winter
+Rau,2025-01-15,8.64,3.29,Winter
+Rau,2025-01-16,8.02,0.0,Winter
+Rau,2025-01-17,9.37,1.77,Winter
+Rau,2025-01-18,7.99,2.4,Winter
+Rau,2025-01-19,9.11,5.23,Winter
+Rau,2025-01-20,8.6,3.41,Winter
+Rau,2025-01-21,9.16,2.3,Winter
+Rau,2025-01-22,9.44,3.33,Winter
+Rau,2025-01-23,8.42,2.81,Winter
+Rau,2025-01-24,8.61,0.64,Winter
+Rau,2025-01-25,8.49,2.9,Winter
+Rau,2025-01-26,9.69,3.1,Winter
+Rau,2025-01-27,7.73,0.13,Winter
+Rau,2025-01-28,8.67,1.29,Winter
+Rau,2025-01-29,9.33,0.71,Winter
+Rau,2025-01-30,8.58,2.14,Winter
+Rau,2025-01-31,7.38,0.0,Winter
+Rau,2025-02-01,7.04,1.92,Winter
+Rau,2025-02-02,8.55,3.02,Winter
+Rau,2025-02-03,10.68,6.36,Winter
+Rau,2025-02-04,8.37,1.23,Winter
+Rau,2025-02-05,9.85,2.99,Winter
+Rau,2025-02-06,7.05,0.0,Winter
+Rau,2025-02-07,8.78,0.57,Winter
+Rau,2025-02-08,9.32,2.25,Winter
+Rau,2025-02-09,6.68,0.0,Winter
+Rau,2025-02-10,8.05,2.79,Winter
+Rau,2025-02-11,8.4,0.0,Winter
+Rau,2025-02-12,8.54,2.69,Winter
+Rau,2025-02-13,8.29,0.81,Winter
+Rau,2025-02-14,7.47,0.94,Winter
+Rau,2025-02-15,8.72,0.43,Winter
+Rau,2025-02-16,8.66,1.98,Winter
+Rau,2025-02-17,8.17,0.01,Winter
+Rau,2025-02-18,8.42,0.0,Winter
+Rau,2025-02-19,7.71,3.64,Winter
+Rau,2025-02-20,8.6,0.62,Winter
+Rau,2025-02-21,8.39,3.38,Winter
+Rau,2025-02-22,6.98,0.46,Winter
+Rau,2025-02-23,9.93,1.66,Winter
+Rau,2025-02-24,8.51,1.92,Winter
+Rau,2025-02-25,8.53,1.98,Winter
+Rau,2025-02-26,8.91,0.28,Winter
+Rau,2025-02-27,8.53,1.84,Winter
+Rau,2025-02-28,9.22,0.04,Winter
+Rau,2025-03-01,6.24,1.03,Summer
+Rau,2025-03-02,6.31,1.3,Summer
+Rau,2025-03-03,5.97,0.0,Summer
+Rau,2025-03-04,6.83,0.0,Summer
+Rau,2025-03-05,5.64,0.0,Summer
+Rau,2025-03-06,6.44,0.0,Summer
+Rau,2025-03-07,6.32,0.38,Summer
+Rau,2025-03-08,5.68,0.0,Summer
+Rau,2025-03-09,6.22,0.87,Summer
+Rau,2025-03-10,5.97,0.75,Summer
+Rau,2025-03-11,7.49,0.64,Summer
+Rau,2025-03-12,6.33,0.97,Summer
+Rau,2025-03-13,6.42,0.71,Summer
+Rau,2025-03-14,6.33,0.51,Summer
+Rau,2025-03-15,6.69,0.37,Summer
+Rau,2025-03-16,5.79,0.0,Summer
+Rau,2025-03-17,5.38,0.0,Summer
+Rau,2025-03-18,6.61,0.0,Summer
+Rau,2025-03-19,6.86,0.0,Summer
+Rau,2025-03-20,5.19,0.53,Summer
+Rau,2025-03-21,7.19,1.02,Summer
+Rau,2025-03-22,6.79,0.0,Summer
+Rau,2025-03-23,6.57,0.0,Summer
+Rau,2025-03-24,5.24,0.0,Summer
+Rau,2025-03-25,6.44,0.19,Summer
+Rau,2025-03-26,5.69,0.18,Summer
+Rau,2025-03-27,6.71,0.18,Summer
+Rau,2025-03-28,6.68,0.46,Summer
+Rau,2025-03-29,7.32,0.0,Summer
+Rau,2025-03-30,6.84,0.0,Summer
+Rau,2025-03-31,7.01,1.45,Summer
+Rau,2025-04-01,6.17,0.34,Summer
+Rau,2025-04-02,5.66,1.33,Summer
+Rau,2025-04-03,6.22,0.0,Summer
+Rau,2025-04-04,6.94,1.49,Summer
+Rau,2025-04-05,6.28,0.0,Summer
+Rau,2025-04-06,6.0,0.01,Summer
+Rau,2025-04-07,5.69,1.28,Summer
+Rau,2025-04-08,7.29,1.79,Summer
+Rau,2025-04-09,6.34,1.37,Summer
+Rau,2025-04-10,5.54,0.38,Summer
+Rau,2025-04-11,6.86,0.08,Summer
+Rau,2025-04-12,5.91,1.54,Summer
+Rau,2025-04-13,6.42,0.21,Summer
+Rau,2025-04-14,6.91,0.0,Summer
+Rau,2025-04-15,6.36,0.0,Summer
+Rau,2025-04-16,5.96,0.14,Summer
+Rau,2025-04-17,6.41,0.49,Summer
+Rau,2025-04-18,6.01,0.2,Summer
+Rau,2025-04-19,7.75,0.76,Summer
+Rau,2025-04-20,7.27,0.61,Summer
+Rau,2025-04-21,6.61,0.0,Summer
+Rau,2025-04-22,5.47,0.0,Summer
+Rau,2025-04-23,7.33,0.0,Summer
+Rau,2025-04-24,6.82,1.26,Summer
+Rau,2025-04-25,6.36,0.0,Summer
+Rau,2025-04-26,6.71,0.74,Summer
+Rau,2025-04-27,5.88,0.0,Summer
+Rau,2025-04-28,6.93,0.45,Summer
+Rau,2025-04-29,6.39,0.0,Summer
+Rau,2025-04-30,7.17,0.61,Summer
+Rau,2025-05-01,7.03,1.05,Summer
+Rau,2025-05-02,5.16,0.0,Summer
+Rau,2025-05-03,7.22,0.19,Summer
+Rau,2025-05-04,7.19,1.61,Summer
+Rau,2025-05-05,6.87,0.84,Summer
+Rau,2025-05-06,6.42,0.06,Summer
+Rau,2025-05-07,6.06,1.84,Summer
+Rau,2025-05-08,6.49,1.79,Summer
+Rau,2025-05-09,5.7,1.56,Summer
+Rau,2025-05-10,6.1,0.97,Summer
+Rau,2025-05-11,6.65,0.0,Summer
+Rau,2025-05-12,6.07,1.31,Summer
+Rau,2025-05-13,6.44,0.0,Summer
+Rau,2025-05-14,6.94,0.43,Summer
+Rau,2025-05-15,6.61,1.26,Summer
+Rau,2025-05-16,6.9,1.98,Summer
+Rau,2025-05-17,5.4,0.22,Summer
+Rau,2025-05-18,6.3,0.29,Summer
+Rau,2025-05-19,6.98,1.27,Summer
+Rau,2025-05-20,6.62,0.0,Summer
+Rau,2025-05-21,7.69,1.04,Summer
+Rau,2025-05-22,7.18,1.21,Summer
+Rau,2025-05-23,6.84,0.55,Summer
+Rau,2025-05-24,5.75,1.5,Summer
+Rau,2025-05-25,5.99,0.22,Summer
+Rau,2025-05-26,7.46,0.8,Summer
+Rau,2025-05-27,4.83,0.02,Summer
+Rau,2025-05-28,7.16,0.17,Summer
+Rau,2025-05-29,6.91,0.93,Summer
+Rau,2025-05-30,5.64,0.28,Summer
+Rau,2025-05-31,6.03,0.91,Summer
+Rau,2025-06-01,11.67,18.92,Monsoon
+Rau,2025-06-02,9.18,5.1,Monsoon
+Rau,2025-06-03,9.74,7.54,Monsoon
+Rau,2025-06-04,10.76,13.58,Monsoon
+Rau,2025-06-05,10.84,4.34,Monsoon
+Rau,2025-06-06,10.53,8.25,Monsoon
+Rau,2025-06-07,9.85,4.96,Monsoon
+Rau,2025-06-08,8.82,9.56,Monsoon
+Rau,2025-06-09,12.0,18.08,Monsoon
+Rau,2025-06-10,8.95,6.01,Monsoon
+Rau,2025-06-11,10.23,9.74,Monsoon
+Rau,2025-06-12,10.31,9.78,Monsoon
+Rau,2025-06-13,11.28,10.53,Monsoon
+Rau,2025-06-14,9.57,10.84,Monsoon
+Rau,2025-06-15,11.93,14.81,Monsoon
+Rau,2025-06-16,10.61,20.0,Monsoon
+Rau,2025-06-17,8.65,9.21,Monsoon
+Rau,2025-06-18,9.91,10.77,Monsoon
+Rau,2025-06-19,10.57,17.62,Monsoon
+Rau,2025-06-20,8.67,0.0,Monsoon
+Rau,2025-06-21,9.53,0.0,Monsoon
+Rau,2025-06-22,9.02,0.0,Monsoon
+Rau,2025-06-23,8.78,0.0,Monsoon
+Rau,2025-06-24,11.2,16.22,Monsoon
+Rau,2025-06-25,9.42,3.68,Monsoon
+Rau,2025-06-26,10.3,8.09,Monsoon
+Rau,2025-06-27,9.55,1.17,Monsoon
+Rau,2025-06-28,8.56,0.0,Monsoon
+Rau,2025-06-29,10.11,5.56,Monsoon
+Rau,2025-06-30,8.99,8.11,Monsoon
+Rau,2025-07-01,9.51,3.08,Monsoon
+Rau,2025-07-02,9.51,7.6,Monsoon
+Rau,2025-07-03,10.16,5.6,Monsoon
+Rau,2025-07-04,9.59,5.41,Monsoon
+Rau,2025-07-05,10.27,18.85,Monsoon
+Rau,2025-07-06,9.55,0.0,Monsoon
+Rau,2025-07-07,9.33,4.61,Monsoon
+Rau,2025-07-08,9.31,4.09,Monsoon
+Rau,2025-07-09,11.48,15.99,Monsoon
+Rau,2025-07-10,9.49,12.31,Monsoon
+Rau,2025-07-11,7.28,2.24,Monsoon
+Rau,2025-07-12,10.14,3.95,Monsoon
+Rau,2025-07-13,10.12,10.58,Monsoon
+Rau,2025-07-14,9.46,7.89,Monsoon
+Rau,2025-07-15,10.62,9.02,Monsoon
+Rau,2025-07-16,9.21,0.0,Monsoon
+Rau,2025-07-17,10.23,12.66,Monsoon
+Rau,2025-07-18,12.0,11.5,Monsoon
+Rau,2025-07-19,10.17,7.48,Monsoon
+Rau,2025-07-20,9.64,4.31,Monsoon
+Rau,2025-07-21,10.37,10.3,Monsoon
+Rau,2025-07-22,9.49,2.9,Monsoon
+Rau,2025-07-23,11.15,15.31,Monsoon
+Rau,2025-07-24,10.37,12.81,Monsoon
+Rau,2025-07-25,10.61,11.75,Monsoon
+Rau,2025-07-26,9.61,3.25,Monsoon
+Rau,2025-07-27,8.92,3.04,Monsoon
+Rau,2025-07-28,10.28,8.95,Monsoon
+Rau,2025-07-29,9.98,2.05,Monsoon
+Rau,2025-07-30,9.81,10.86,Monsoon
+Rau,2025-07-31,8.94,0.31,Monsoon
+Rau,2025-08-01,9.77,5.77,Monsoon
+Rau,2025-08-02,8.34,6.18,Monsoon
+Rau,2025-08-03,9.51,6.06,Monsoon
+Rau,2025-08-04,9.85,11.17,Monsoon
+Rau,2025-08-05,9.63,16.39,Monsoon
+Rau,2025-08-06,10.59,14.56,Monsoon
+Rau,2025-08-07,10.53,12.3,Monsoon
+Rau,2025-08-08,10.37,13.7,Monsoon
+Rau,2025-08-09,10.3,2.51,Monsoon
+Rau,2025-08-10,10.05,7.43,Monsoon
+Rau,2025-08-11,9.98,14.17,Monsoon
+Rau,2025-08-12,9.9,10.98,Monsoon
+Rau,2025-08-13,9.93,7.34,Monsoon
+Rau,2025-08-14,8.51,0.5,Monsoon
+Rau,2025-08-15,11.39,14.76,Monsoon
+Rau,2025-08-16,10.09,7.69,Monsoon
+Rau,2025-08-17,10.73,6.53,Monsoon
+Rau,2025-08-18,10.0,7.0,Monsoon
+Rau,2025-08-19,10.1,13.73,Monsoon
+Rau,2025-08-20,9.82,15.79,Monsoon
+Rau,2025-08-21,10.68,16.15,Monsoon
+Rau,2025-08-22,8.49,6.79,Monsoon
+Rau,2025-08-23,8.96,5.73,Monsoon
+Rau,2025-08-24,9.5,4.96,Monsoon
+Rau,2025-08-25,10.68,12.79,Monsoon
+Rau,2025-08-26,9.38,9.54,Monsoon
+Rau,2025-08-27,10.69,3.6,Monsoon
+Rau,2025-08-28,10.68,4.32,Monsoon
+Rau,2025-08-29,9.82,6.78,Monsoon
+Rau,2025-08-30,11.49,13.35,Monsoon
+Rau,2025-08-31,9.62,7.45,Monsoon
+Rau,2025-09-01,10.16,7.72,Monsoon
+Rau,2025-09-02,10.5,12.46,Monsoon
+Rau,2025-09-03,11.48,11.09,Monsoon
+Rau,2025-09-04,10.41,9.91,Monsoon
+Rau,2025-09-05,7.21,0.41,Monsoon
+Rau,2025-09-06,10.13,9.94,Monsoon
+Rau,2025-09-07,9.82,5.43,Monsoon
+Rau,2025-09-08,10.71,7.7,Monsoon
+Rau,2025-09-09,9.49,8.43,Monsoon
+Rau,2025-09-10,10.4,12.95,Monsoon
+Rau,2025-09-11,9.94,10.63,Monsoon
+Rau,2025-09-12,9.63,4.75,Monsoon
+Rau,2025-09-13,10.3,8.06,Monsoon
+Rau,2025-09-14,8.51,6.66,Monsoon
+Rau,2025-09-15,10.26,5.84,Monsoon
+Rau,2025-09-16,9.61,6.51,Monsoon
+Rau,2025-09-17,10.05,12.93,Monsoon
+Rau,2025-09-18,8.92,0.29,Monsoon
+Rau,2025-09-19,8.99,5.58,Monsoon
+Rau,2025-09-20,10.2,7.12,Monsoon
+Rau,2025-09-21,10.17,7.95,Monsoon
+Rau,2025-09-22,10.81,17.07,Monsoon
+Rau,2025-09-23,9.77,9.39,Monsoon
+Rau,2025-09-24,9.04,3.77,Monsoon
+Rau,2025-09-25,9.92,5.61,Monsoon
+Rau,2025-09-26,10.87,19.75,Monsoon
+Rau,2025-09-27,9.67,5.92,Monsoon
+Rau,2025-09-28,10.38,9.98,Monsoon
+Rau,2025-09-29,9.03,14.42,Monsoon
+Rau,2025-09-30,8.65,0.0,Monsoon
+Rau,2025-10-01,7.58,3.15,Winter
+Rau,2025-10-02,8.7,0.0,Winter
+Rau,2025-10-03,7.76,1.87,Winter
+Rau,2025-10-04,7.62,0.02,Winter
+Rau,2025-10-05,8.06,1.67,Winter
+Rau,2025-10-06,6.57,2.24,Winter
+Rau,2025-10-07,7.54,0.21,Winter
+Rau,2025-10-08,8.06,1.12,Winter
+Rau,2025-10-09,7.32,2.7,Winter
+Rau,2025-10-10,8.88,1.57,Winter
+Rau,2025-10-11,8.48,4.28,Winter
+Rau,2025-10-12,7.28,1.99,Winter
+Rau,2025-10-13,8.89,0.0,Winter
+Rau,2025-10-14,9.3,1.49,Winter
+Rau,2025-10-15,8.66,0.0,Winter
+Rau,2025-10-16,9.11,4.3,Winter
+Rau,2025-10-17,8.54,1.91,Winter
+Rau,2025-10-18,9.25,0.0,Winter
+Rau,2025-10-19,8.72,0.58,Winter
+Rau,2025-10-20,7.47,0.0,Winter
+Rau,2025-10-21,8.5,3.65,Winter
+Rau,2025-10-22,8.69,3.68,Winter
+Rau,2025-10-23,8.92,0.0,Winter
+Rau,2025-10-24,8.86,0.62,Winter
+Rau,2025-10-25,7.4,1.54,Winter
+Rau,2025-10-26,10.05,1.75,Winter
+Rau,2025-10-27,8.53,2.24,Winter
+Rau,2025-10-28,8.82,3.11,Winter
+Rau,2025-10-29,7.75,1.81,Winter
+Rau,2025-10-30,9.25,1.85,Winter
+Rau,2025-10-31,9.33,0.25,Winter
+Rau,2025-11-01,7.84,1.36,Winter
+Rau,2025-11-02,8.46,3.0,Winter
+Rau,2025-11-03,8.41,2.64,Winter
+Rau,2025-11-04,8.81,1.41,Winter
+Rau,2025-11-05,7.14,1.94,Winter
+Rau,2025-11-06,8.95,0.0,Winter
+Rau,2025-11-07,8.09,1.3,Winter
+Rau,2025-11-08,7.54,0.0,Winter
+Rau,2025-11-09,8.23,0.0,Winter
+Rau,2025-11-10,7.7,0.6,Winter
+Rau,2025-11-11,8.72,1.4,Winter
+Rau,2025-11-12,7.8,4.64,Winter
+Rau,2025-11-13,9.37,3.24,Winter
+Rau,2025-11-14,8.48,0.33,Winter
+Rau,2025-11-15,8.53,0.81,Winter
+Rau,2025-11-16,9.18,3.76,Winter
+Rau,2025-11-17,8.27,2.26,Winter
+Rau,2025-11-18,8.15,0.0,Winter
+Rau,2025-11-19,7.63,3.31,Winter
+Rau,2025-11-20,8.39,0.0,Winter
+Rau,2025-11-21,7.75,0.02,Winter
+Rau,2025-11-22,7.45,0.86,Winter
+Rau,2025-11-23,8.8,0.04,Winter
+Rau,2025-11-24,7.18,0.0,Winter
+Rau,2025-11-25,8.88,0.55,Winter
+Rau,2025-11-26,8.12,1.2,Winter
+Rau,2025-11-27,7.27,1.57,Winter
+Rau,2025-11-28,8.84,2.24,Winter
+Rau,2025-11-29,9.11,0.89,Winter
+Rau,2025-11-30,9.09,0.0,Winter
+Rau,2025-12-01,8.27,1.73,Winter
+Rau,2025-12-02,8.4,1.47,Winter
+Rau,2025-12-03,7.95,3.33,Winter
+Rau,2025-12-04,9.07,0.36,Winter
+Rau,2025-12-05,9.0,0.61,Winter
+Rau,2025-12-06,8.5,4.05,Winter
+Rau,2025-12-07,7.8,2.52,Winter
+Rau,2025-12-08,8.76,2.63,Winter
+Rau,2025-12-09,8.11,2.21,Winter
+Rau,2025-12-10,8.65,0.0,Winter
+Rau,2025-12-11,8.08,0.0,Winter
+Rau,2025-12-12,8.78,2.91,Winter
+Rau,2025-12-13,9.55,4.42,Winter
+Rau,2025-12-14,8.38,0.52,Winter
+Rau,2025-12-15,7.36,1.43,Winter
+Rau,2025-12-16,7.92,0.09,Winter
+Rau,2025-12-17,8.33,0.0,Winter
+Rau,2025-12-18,7.26,1.13,Winter
+Rau,2025-12-19,9.05,2.11,Winter
+Rau,2025-12-20,8.29,1.84,Winter
+Rau,2025-12-21,9.06,2.39,Winter
+Rau,2025-12-22,7.96,1.96,Winter
+Rau,2025-12-23,9.37,1.91,Winter
+Rau,2025-12-24,9.84,0.61,Winter
+Rau,2025-12-25,8.41,0.71,Winter
+Rau,2025-12-26,8.52,0.49,Winter
+Rau,2025-12-27,7.92,0.0,Winter
+Rau,2025-12-28,8.39,0.0,Winter
+Rau,2025-12-29,9.11,2.99,Winter
+Rau,2025-12-30,9.73,0.0,Winter
+Rau,2025-12-31,7.99,1.94,Winter
+Rajendra Nagar,2025-01-01,8.63,1.74,Winter
+Rajendra Nagar,2025-01-02,8.5,0.5,Winter
+Rajendra Nagar,2025-01-03,8.09,0.59,Winter
+Rajendra Nagar,2025-01-04,7.35,0.47,Winter
+Rajendra Nagar,2025-01-05,8.92,1.72,Winter
+Rajendra Nagar,2025-01-06,9.15,2.27,Winter
+Rajendra Nagar,2025-01-07,8.17,1.99,Winter
+Rajendra Nagar,2025-01-08,7.68,2.76,Winter
+Rajendra Nagar,2025-01-09,7.64,0.15,Winter
+Rajendra Nagar,2025-01-10,9.33,3.12,Winter
+Rajendra Nagar,2025-01-11,9.32,2.23,Winter
+Rajendra Nagar,2025-01-12,8.57,0.18,Winter
+Rajendra Nagar,2025-01-13,9.05,1.31,Winter
+Rajendra Nagar,2025-01-14,8.19,1.33,Winter
+Rajendra Nagar,2025-01-15,9.19,2.31,Winter
+Rajendra Nagar,2025-01-16,8.32,0.5,Winter
+Rajendra Nagar,2025-01-17,6.55,0.0,Winter
+Rajendra Nagar,2025-01-18,8.94,1.8,Winter
+Rajendra Nagar,2025-01-19,7.16,1.89,Winter
+Rajendra Nagar,2025-01-20,6.86,0.97,Winter
+Rajendra Nagar,2025-01-21,7.97,3.55,Winter
+Rajendra Nagar,2025-01-22,9.37,3.38,Winter
+Rajendra Nagar,2025-01-23,7.52,0.15,Winter
+Rajendra Nagar,2025-01-24,7.95,2.03,Winter
+Rajendra Nagar,2025-01-25,8.16,1.65,Winter
+Rajendra Nagar,2025-01-26,6.74,0.0,Winter
+Rajendra Nagar,2025-01-27,8.13,1.84,Winter
+Rajendra Nagar,2025-01-28,8.87,0.67,Winter
+Rajendra Nagar,2025-01-29,8.5,3.26,Winter
+Rajendra Nagar,2025-01-30,8.77,0.99,Winter
+Rajendra Nagar,2025-01-31,8.46,0.0,Winter
+Rajendra Nagar,2025-02-01,9.06,2.33,Winter
+Rajendra Nagar,2025-02-02,7.77,0.0,Winter
+Rajendra Nagar,2025-02-03,8.39,0.18,Winter
+Rajendra Nagar,2025-02-04,9.61,2.22,Winter
+Rajendra Nagar,2025-02-05,8.04,0.76,Winter
+Rajendra Nagar,2025-02-06,8.89,3.22,Winter
+Rajendra Nagar,2025-02-07,8.91,3.4,Winter
+Rajendra Nagar,2025-02-08,7.37,0.0,Winter
+Rajendra Nagar,2025-02-09,8.76,0.0,Winter
+Rajendra Nagar,2025-02-10,9.99,3.28,Winter
+Rajendra Nagar,2025-02-11,9.45,2.76,Winter
+Rajendra Nagar,2025-02-12,7.57,0.63,Winter
+Rajendra Nagar,2025-02-13,8.93,2.78,Winter
+Rajendra Nagar,2025-02-14,8.77,1.66,Winter
+Rajendra Nagar,2025-02-15,9.44,1.98,Winter
+Rajendra Nagar,2025-02-16,9.09,3.44,Winter
+Rajendra Nagar,2025-02-17,8.99,2.77,Winter
+Rajendra Nagar,2025-02-18,8.93,0.81,Winter
+Rajendra Nagar,2025-02-19,9.04,0.0,Winter
+Rajendra Nagar,2025-02-20,8.5,0.0,Winter
+Rajendra Nagar,2025-02-21,8.72,0.23,Winter
+Rajendra Nagar,2025-02-22,7.36,1.45,Winter
+Rajendra Nagar,2025-02-23,8.15,2.13,Winter
+Rajendra Nagar,2025-02-24,8.64,2.82,Winter
+Rajendra Nagar,2025-02-25,7.88,2.09,Winter
+Rajendra Nagar,2025-02-26,8.05,0.62,Winter
+Rajendra Nagar,2025-02-27,9.81,2.79,Winter
+Rajendra Nagar,2025-02-28,9.09,0.29,Winter
+Rajendra Nagar,2025-03-01,5.66,0.0,Summer
+Rajendra Nagar,2025-03-02,5.55,0.0,Summer
+Rajendra Nagar,2025-03-03,6.79,0.0,Summer
+Rajendra Nagar,2025-03-04,6.81,0.33,Summer
+Rajendra Nagar,2025-03-05,6.81,1.05,Summer
+Rajendra Nagar,2025-03-06,6.57,1.03,Summer
+Rajendra Nagar,2025-03-07,7.24,0.0,Summer
+Rajendra Nagar,2025-03-08,5.85,0.03,Summer
+Rajendra Nagar,2025-03-09,5.9,0.36,Summer
+Rajendra Nagar,2025-03-10,6.76,0.17,Summer
+Rajendra Nagar,2025-03-11,5.96,0.78,Summer
+Rajendra Nagar,2025-03-12,7.27,0.11,Summer
+Rajendra Nagar,2025-03-13,8.06,0.9,Summer
+Rajendra Nagar,2025-03-14,7.47,1.44,Summer
+Rajendra Nagar,2025-03-15,7.03,0.0,Summer
+Rajendra Nagar,2025-03-16,6.17,0.46,Summer
+Rajendra Nagar,2025-03-17,7.24,0.63,Summer
+Rajendra Nagar,2025-03-18,5.99,0.9,Summer
+Rajendra Nagar,2025-03-19,6.18,1.09,Summer
+Rajendra Nagar,2025-03-20,6.37,0.67,Summer
+Rajendra Nagar,2025-03-21,7.08,0.32,Summer
+Rajendra Nagar,2025-03-22,7.86,0.0,Summer
+Rajendra Nagar,2025-03-23,6.08,0.0,Summer
+Rajendra Nagar,2025-03-24,7.0,0.8,Summer
+Rajendra Nagar,2025-03-25,6.51,0.42,Summer
+Rajendra Nagar,2025-03-26,6.44,0.83,Summer
+Rajendra Nagar,2025-03-27,7.28,1.61,Summer
+Rajendra Nagar,2025-03-28,5.97,1.2,Summer
+Rajendra Nagar,2025-03-29,6.34,0.44,Summer
+Rajendra Nagar,2025-03-30,6.75,0.0,Summer
+Rajendra Nagar,2025-03-31,6.97,0.07,Summer
+Rajendra Nagar,2025-04-01,7.7,0.0,Summer
+Rajendra Nagar,2025-04-02,6.65,0.0,Summer
+Rajendra Nagar,2025-04-03,6.24,1.13,Summer
+Rajendra Nagar,2025-04-04,5.78,1.18,Summer
+Rajendra Nagar,2025-04-05,6.71,1.66,Summer
+Rajendra Nagar,2025-04-06,6.29,0.02,Summer
+Rajendra Nagar,2025-04-07,6.23,1.15,Summer
+Rajendra Nagar,2025-04-08,6.34,0.0,Summer
+Rajendra Nagar,2025-04-09,7.77,0.0,Summer
+Rajendra Nagar,2025-04-10,7.09,0.05,Summer
+Rajendra Nagar,2025-04-11,5.89,0.67,Summer
+Rajendra Nagar,2025-04-12,7.11,0.5,Summer
+Rajendra Nagar,2025-04-13,7.38,0.35,Summer
+Rajendra Nagar,2025-04-14,7.3,1.32,Summer
+Rajendra Nagar,2025-04-15,5.76,0.13,Summer
+Rajendra Nagar,2025-04-16,6.64,0.01,Summer
+Rajendra Nagar,2025-04-17,5.09,0.94,Summer
+Rajendra Nagar,2025-04-18,6.67,0.49,Summer
+Rajendra Nagar,2025-04-19,7.44,0.28,Summer
+Rajendra Nagar,2025-04-20,7.52,0.84,Summer
+Rajendra Nagar,2025-04-21,7.2,0.33,Summer
+Rajendra Nagar,2025-04-22,7.64,1.81,Summer
+Rajendra Nagar,2025-04-23,6.32,0.0,Summer
+Rajendra Nagar,2025-04-24,6.87,0.22,Summer
+Rajendra Nagar,2025-04-25,6.04,1.05,Summer
+Rajendra Nagar,2025-04-26,5.15,0.55,Summer
+Rajendra Nagar,2025-04-27,6.34,1.65,Summer
+Rajendra Nagar,2025-04-28,6.35,0.54,Summer
+Rajendra Nagar,2025-04-29,4.68,1.42,Summer
+Rajendra Nagar,2025-04-30,6.48,0.49,Summer
+Rajendra Nagar,2025-05-01,7.72,0.14,Summer
+Rajendra Nagar,2025-05-02,7.04,0.0,Summer
+Rajendra Nagar,2025-05-03,7.48,0.79,Summer
+Rajendra Nagar,2025-05-04,5.99,0.0,Summer
+Rajendra Nagar,2025-05-05,6.96,1.38,Summer
+Rajendra Nagar,2025-05-06,6.12,0.0,Summer
+Rajendra Nagar,2025-05-07,7.18,0.81,Summer
+Rajendra Nagar,2025-05-08,4.46,0.0,Summer
+Rajendra Nagar,2025-05-09,5.76,0.92,Summer
+Rajendra Nagar,2025-05-10,4.52,0.0,Summer
+Rajendra Nagar,2025-05-11,6.73,1.15,Summer
+Rajendra Nagar,2025-05-12,7.51,0.32,Summer
+Rajendra Nagar,2025-05-13,7.75,1.01,Summer
+Rajendra Nagar,2025-05-14,6.48,0.0,Summer
+Rajendra Nagar,2025-05-15,6.34,0.0,Summer
+Rajendra Nagar,2025-05-16,6.97,0.3,Summer
+Rajendra Nagar,2025-05-17,7.0,0.54,Summer
+Rajendra Nagar,2025-05-18,8.14,1.06,Summer
+Rajendra Nagar,2025-05-19,5.87,0.25,Summer
+Rajendra Nagar,2025-05-20,6.02,0.7,Summer
+Rajendra Nagar,2025-05-21,6.5,1.69,Summer
+Rajendra Nagar,2025-05-22,6.18,0.05,Summer
+Rajendra Nagar,2025-05-23,6.52,1.07,Summer
+Rajendra Nagar,2025-05-24,7.67,0.0,Summer
+Rajendra Nagar,2025-05-25,6.52,0.0,Summer
+Rajendra Nagar,2025-05-26,5.48,1.02,Summer
+Rajendra Nagar,2025-05-27,5.87,0.88,Summer
+Rajendra Nagar,2025-05-28,5.97,1.16,Summer
+Rajendra Nagar,2025-05-29,7.4,1.05,Summer
+Rajendra Nagar,2025-05-30,6.82,1.19,Summer
+Rajendra Nagar,2025-05-31,6.13,0.31,Summer
+Rajendra Nagar,2025-06-01,10.35,15.36,Monsoon
+Rajendra Nagar,2025-06-02,9.8,2.81,Monsoon
+Rajendra Nagar,2025-06-03,8.82,4.02,Monsoon
+Rajendra Nagar,2025-06-04,8.76,0.78,Monsoon
+Rajendra Nagar,2025-06-05,10.08,7.59,Monsoon
+Rajendra Nagar,2025-06-06,10.9,12.76,Monsoon
+Rajendra Nagar,2025-06-07,9.71,7.05,Monsoon
+Rajendra Nagar,2025-06-08,11.16,10.55,Monsoon
+Rajendra Nagar,2025-06-09,9.71,8.63,Monsoon
+Rajendra Nagar,2025-06-10,8.35,3.04,Monsoon
+Rajendra Nagar,2025-06-11,10.76,11.33,Monsoon
+Rajendra Nagar,2025-06-12,10.22,10.89,Monsoon
+Rajendra Nagar,2025-06-13,10.47,15.03,Monsoon
+Rajendra Nagar,2025-06-14,10.51,12.78,Monsoon
+Rajendra Nagar,2025-06-15,10.01,4.96,Monsoon
+Rajendra Nagar,2025-06-16,10.46,10.05,Monsoon
+Rajendra Nagar,2025-06-17,9.98,8.41,Monsoon
+Rajendra Nagar,2025-06-18,12.0,19.94,Monsoon
+Rajendra Nagar,2025-06-19,10.47,11.61,Monsoon
+Rajendra Nagar,2025-06-20,10.93,13.04,Monsoon
+Rajendra Nagar,2025-06-21,9.76,8.13,Monsoon
+Rajendra Nagar,2025-06-22,7.69,7.6,Monsoon
+Rajendra Nagar,2025-06-23,9.74,9.05,Monsoon
+Rajendra Nagar,2025-06-24,10.93,15.96,Monsoon
+Rajendra Nagar,2025-06-25,9.21,2.06,Monsoon
+Rajendra Nagar,2025-06-26,9.66,2.77,Monsoon
+Rajendra Nagar,2025-06-27,10.81,9.45,Monsoon
+Rajendra Nagar,2025-06-28,9.51,4.05,Monsoon
+Rajendra Nagar,2025-06-29,9.63,1.17,Monsoon
+Rajendra Nagar,2025-06-30,10.62,10.59,Monsoon
+Rajendra Nagar,2025-07-01,10.25,8.01,Monsoon
+Rajendra Nagar,2025-07-02,10.72,16.02,Monsoon
+Rajendra Nagar,2025-07-03,9.28,8.69,Monsoon
+Rajendra Nagar,2025-07-04,9.51,3.66,Monsoon
+Rajendra Nagar,2025-07-05,10.44,13.52,Monsoon
+Rajendra Nagar,2025-07-06,9.53,6.82,Monsoon
+Rajendra Nagar,2025-07-07,9.85,5.33,Monsoon
+Rajendra Nagar,2025-07-08,9.96,0.51,Monsoon
+Rajendra Nagar,2025-07-09,10.07,4.67,Monsoon
+Rajendra Nagar,2025-07-10,9.67,1.65,Monsoon
+Rajendra Nagar,2025-07-11,10.63,11.36,Monsoon
+Rajendra Nagar,2025-07-12,9.54,3.03,Monsoon
+Rajendra Nagar,2025-07-13,9.07,2.08,Monsoon
+Rajendra Nagar,2025-07-14,11.14,13.15,Monsoon
+Rajendra Nagar,2025-07-15,9.29,8.08,Monsoon
+Rajendra Nagar,2025-07-16,10.36,11.23,Monsoon
+Rajendra Nagar,2025-07-17,9.55,0.0,Monsoon
+Rajendra Nagar,2025-07-18,10.79,7.88,Monsoon
+Rajendra Nagar,2025-07-19,7.08,2.52,Monsoon
+Rajendra Nagar,2025-07-20,10.33,9.4,Monsoon
+Rajendra Nagar,2025-07-21,8.32,0.0,Monsoon
+Rajendra Nagar,2025-07-22,11.19,20.0,Monsoon
+Rajendra Nagar,2025-07-23,9.94,11.65,Monsoon
+Rajendra Nagar,2025-07-24,8.88,0.0,Monsoon
+Rajendra Nagar,2025-07-25,9.52,6.67,Monsoon
+Rajendra Nagar,2025-07-26,10.08,7.43,Monsoon
+Rajendra Nagar,2025-07-27,8.99,7.25,Monsoon
+Rajendra Nagar,2025-07-28,8.89,10.43,Monsoon
+Rajendra Nagar,2025-07-29,9.52,0.0,Monsoon
+Rajendra Nagar,2025-07-30,10.22,10.54,Monsoon
+Rajendra Nagar,2025-07-31,8.63,1.02,Monsoon
+Rajendra Nagar,2025-08-01,8.69,6.69,Monsoon
+Rajendra Nagar,2025-08-02,9.97,4.3,Monsoon
+Rajendra Nagar,2025-08-03,10.52,15.14,Monsoon
+Rajendra Nagar,2025-08-04,9.07,11.78,Monsoon
+Rajendra Nagar,2025-08-05,9.79,11.3,Monsoon
+Rajendra Nagar,2025-08-06,9.97,9.54,Monsoon
+Rajendra Nagar,2025-08-07,10.14,14.6,Monsoon
+Rajendra Nagar,2025-08-08,10.14,11.14,Monsoon
+Rajendra Nagar,2025-08-09,9.74,7.21,Monsoon
+Rajendra Nagar,2025-08-10,9.44,3.77,Monsoon
+Rajendra Nagar,2025-08-11,10.09,7.69,Monsoon
+Rajendra Nagar,2025-08-12,10.57,8.42,Monsoon
+Rajendra Nagar,2025-08-13,9.78,12.62,Monsoon
+Rajendra Nagar,2025-08-14,9.65,12.34,Monsoon
+Rajendra Nagar,2025-08-15,10.75,10.94,Monsoon
+Rajendra Nagar,2025-08-16,9.07,0.0,Monsoon
+Rajendra Nagar,2025-08-17,9.15,5.66,Monsoon
+Rajendra Nagar,2025-08-18,10.31,14.75,Monsoon
+Rajendra Nagar,2025-08-19,9.53,3.97,Monsoon
+Rajendra Nagar,2025-08-20,10.27,11.43,Monsoon
+Rajendra Nagar,2025-08-21,11.03,13.83,Monsoon
+Rajendra Nagar,2025-08-22,8.63,0.0,Monsoon
+Rajendra Nagar,2025-08-23,9.96,5.19,Monsoon
+Rajendra Nagar,2025-08-24,10.78,0.0,Monsoon
+Rajendra Nagar,2025-08-25,10.38,10.66,Monsoon
+Rajendra Nagar,2025-08-26,12.0,13.91,Monsoon
+Rajendra Nagar,2025-08-27,11.15,12.35,Monsoon
+Rajendra Nagar,2025-08-28,9.94,8.65,Monsoon
+Rajendra Nagar,2025-08-29,9.1,5.62,Monsoon
+Rajendra Nagar,2025-08-30,8.6,4.56,Monsoon
+Rajendra Nagar,2025-08-31,8.74,7.62,Monsoon
+Rajendra Nagar,2025-09-01,10.05,8.95,Monsoon
+Rajendra Nagar,2025-09-02,9.68,8.73,Monsoon
+Rajendra Nagar,2025-09-03,12.0,20.0,Monsoon
+Rajendra Nagar,2025-09-04,9.38,1.78,Monsoon
+Rajendra Nagar,2025-09-05,8.89,4.96,Monsoon
+Rajendra Nagar,2025-09-06,9.46,1.3,Monsoon
+Rajendra Nagar,2025-09-07,10.23,4.59,Monsoon
+Rajendra Nagar,2025-09-08,11.52,12.97,Monsoon
+Rajendra Nagar,2025-09-09,9.78,3.74,Monsoon
+Rajendra Nagar,2025-09-10,10.01,11.16,Monsoon
+Rajendra Nagar,2025-09-11,10.62,4.14,Monsoon
+Rajendra Nagar,2025-09-12,10.54,9.14,Monsoon
+Rajendra Nagar,2025-09-13,8.61,3.89,Monsoon
+Rajendra Nagar,2025-09-14,9.53,5.15,Monsoon
+Rajendra Nagar,2025-09-15,9.31,2.68,Monsoon
+Rajendra Nagar,2025-09-16,8.22,0.0,Monsoon
+Rajendra Nagar,2025-09-17,10.79,11.35,Monsoon
+Rajendra Nagar,2025-09-18,9.01,6.04,Monsoon
+Rajendra Nagar,2025-09-19,9.08,2.86,Monsoon
+Rajendra Nagar,2025-09-20,11.0,11.22,Monsoon
+Rajendra Nagar,2025-09-21,8.85,5.52,Monsoon
+Rajendra Nagar,2025-09-22,9.54,9.34,Monsoon
+Rajendra Nagar,2025-09-23,10.58,5.41,Monsoon
+Rajendra Nagar,2025-09-24,10.57,12.14,Monsoon
+Rajendra Nagar,2025-09-25,9.34,1.64,Monsoon
+Rajendra Nagar,2025-09-26,10.33,13.31,Monsoon
+Rajendra Nagar,2025-09-27,11.68,14.76,Monsoon
+Rajendra Nagar,2025-09-28,11.17,16.32,Monsoon
+Rajendra Nagar,2025-09-29,11.3,10.94,Monsoon
+Rajendra Nagar,2025-09-30,9.88,10.24,Monsoon
+Rajendra Nagar,2025-10-01,8.57,0.83,Winter
+Rajendra Nagar,2025-10-02,8.2,0.0,Winter
+Rajendra Nagar,2025-10-03,7.14,3.14,Winter
+Rajendra Nagar,2025-10-04,9.54,3.8,Winter
+Rajendra Nagar,2025-10-05,8.78,0.81,Winter
+Rajendra Nagar,2025-10-06,9.34,1.5,Winter
+Rajendra Nagar,2025-10-07,7.68,2.97,Winter
+Rajendra Nagar,2025-10-08,8.44,2.38,Winter
+Rajendra Nagar,2025-10-09,7.99,1.62,Winter
+Rajendra Nagar,2025-10-10,9.52,4.12,Winter
+Rajendra Nagar,2025-10-11,7.41,0.39,Winter
+Rajendra Nagar,2025-10-12,8.71,0.92,Winter
+Rajendra Nagar,2025-10-13,9.4,1.86,Winter
+Rajendra Nagar,2025-10-14,9.3,2.68,Winter
+Rajendra Nagar,2025-10-15,7.57,1.99,Winter
+Rajendra Nagar,2025-10-16,9.19,1.21,Winter
+Rajendra Nagar,2025-10-17,8.82,1.42,Winter
+Rajendra Nagar,2025-10-18,7.7,1.02,Winter
+Rajendra Nagar,2025-10-19,8.67,1.31,Winter
+Rajendra Nagar,2025-10-20,8.2,0.52,Winter
+Rajendra Nagar,2025-10-21,9.09,0.09,Winter
+Rajendra Nagar,2025-10-22,9.44,1.06,Winter
+Rajendra Nagar,2025-10-23,8.7,3.79,Winter
+Rajendra Nagar,2025-10-24,6.84,0.0,Winter
+Rajendra Nagar,2025-10-25,7.34,0.0,Winter
+Rajendra Nagar,2025-10-26,8.81,3.57,Winter
+Rajendra Nagar,2025-10-27,7.0,2.08,Winter
+Rajendra Nagar,2025-10-28,8.92,0.0,Winter
+Rajendra Nagar,2025-10-29,8.43,1.93,Winter
+Rajendra Nagar,2025-10-30,9.73,2.35,Winter
+Rajendra Nagar,2025-10-31,8.49,1.17,Winter
+Rajendra Nagar,2025-11-01,10.19,1.79,Winter
+Rajendra Nagar,2025-11-02,8.78,0.0,Winter
+Rajendra Nagar,2025-11-03,8.86,1.33,Winter
+Rajendra Nagar,2025-11-04,8.33,0.51,Winter
+Rajendra Nagar,2025-11-05,10.79,2.57,Winter
+Rajendra Nagar,2025-11-06,8.03,2.71,Winter
+Rajendra Nagar,2025-11-07,8.09,0.86,Winter
+Rajendra Nagar,2025-11-08,8.07,0.0,Winter
+Rajendra Nagar,2025-11-09,7.72,2.6,Winter
+Rajendra Nagar,2025-11-10,9.01,3.07,Winter
+Rajendra Nagar,2025-11-11,8.25,0.4,Winter
+Rajendra Nagar,2025-11-12,9.28,3.9,Winter
+Rajendra Nagar,2025-11-13,8.32,1.51,Winter
+Rajendra Nagar,2025-11-14,8.14,1.61,Winter
+Rajendra Nagar,2025-11-15,9.73,0.0,Winter
+Rajendra Nagar,2025-11-16,8.79,1.73,Winter
+Rajendra Nagar,2025-11-17,7.95,1.41,Winter
+Rajendra Nagar,2025-11-18,7.33,1.22,Winter
+Rajendra Nagar,2025-11-19,8.03,4.92,Winter
+Rajendra Nagar,2025-11-20,7.99,0.0,Winter
+Rajendra Nagar,2025-11-21,8.72,3.43,Winter
+Rajendra Nagar,2025-11-22,9.18,0.0,Winter
+Rajendra Nagar,2025-11-23,8.99,2.6,Winter
+Rajendra Nagar,2025-11-24,10.28,2.57,Winter
+Rajendra Nagar,2025-11-25,8.39,4.78,Winter
+Rajendra Nagar,2025-11-26,9.04,3.94,Winter
+Rajendra Nagar,2025-11-27,7.39,2.25,Winter
+Rajendra Nagar,2025-11-28,7.88,1.24,Winter
+Rajendra Nagar,2025-11-29,9.38,2.74,Winter
+Rajendra Nagar,2025-11-30,8.28,0.0,Winter
+Rajendra Nagar,2025-12-01,8.55,3.18,Winter
+Rajendra Nagar,2025-12-02,8.86,2.59,Winter
+Rajendra Nagar,2025-12-03,8.35,2.01,Winter
+Rajendra Nagar,2025-12-04,7.51,0.0,Winter
+Rajendra Nagar,2025-12-05,8.62,2.56,Winter
+Rajendra Nagar,2025-12-06,8.16,1.29,Winter
+Rajendra Nagar,2025-12-07,9.16,1.04,Winter
+Rajendra Nagar,2025-12-08,7.48,1.0,Winter
+Rajendra Nagar,2025-12-09,8.47,2.62,Winter
+Rajendra Nagar,2025-12-10,9.61,1.55,Winter
+Rajendra Nagar,2025-12-11,8.68,1.47,Winter
+Rajendra Nagar,2025-12-12,8.15,0.0,Winter
+Rajendra Nagar,2025-12-13,7.5,2.41,Winter
+Rajendra Nagar,2025-12-14,8.59,1.8,Winter
+Rajendra Nagar,2025-12-15,9.21,1.56,Winter
+Rajendra Nagar,2025-12-16,9.57,2.0,Winter
+Rajendra Nagar,2025-12-17,8.4,0.01,Winter
+Rajendra Nagar,2025-12-18,7.75,1.63,Winter
+Rajendra Nagar,2025-12-19,10.28,2.93,Winter
+Rajendra Nagar,2025-12-20,8.83,1.47,Winter
+Rajendra Nagar,2025-12-21,8.0,1.63,Winter
+Rajendra Nagar,2025-12-22,7.81,0.0,Winter
+Rajendra Nagar,2025-12-23,9.49,0.0,Winter
+Rajendra Nagar,2025-12-24,8.22,1.33,Winter
+Rajendra Nagar,2025-12-25,7.85,2.83,Winter
+Rajendra Nagar,2025-12-26,8.39,0.35,Winter
+Rajendra Nagar,2025-12-27,9.02,3.04,Winter
+Rajendra Nagar,2025-12-28,8.58,1.87,Winter
+Rajendra Nagar,2025-12-29,8.69,2.1,Winter
+Rajendra Nagar,2025-12-30,8.33,0.0,Winter
+Rajendra Nagar,2025-12-31,8.36,0.0,Winter
+Annapurna,2025-01-01,10.17,0.78,Winter
+Annapurna,2025-01-02,7.49,1.44,Winter
+Annapurna,2025-01-03,8.82,1.3,Winter
+Annapurna,2025-01-04,8.37,4.01,Winter
+Annapurna,2025-01-05,8.87,0.0,Winter
+Annapurna,2025-01-06,7.99,0.0,Winter
+Annapurna,2025-01-07,8.38,1.11,Winter
+Annapurna,2025-01-08,8.13,2.53,Winter
+Annapurna,2025-01-09,8.42,1.09,Winter
+Annapurna,2025-01-10,8.58,1.72,Winter
+Annapurna,2025-01-11,9.15,2.15,Winter
+Annapurna,2025-01-12,8.87,2.09,Winter
+Annapurna,2025-01-13,8.34,0.0,Winter
+Annapurna,2025-01-14,9.08,2.22,Winter
+Annapurna,2025-01-15,7.89,0.46,Winter
+Annapurna,2025-01-16,8.75,0.64,Winter
+Annapurna,2025-01-17,8.38,3.05,Winter
+Annapurna,2025-01-18,8.73,2.86,Winter
+Annapurna,2025-01-19,8.31,1.31,Winter
+Annapurna,2025-01-20,8.84,2.62,Winter
+Annapurna,2025-01-21,8.29,4.91,Winter
+Annapurna,2025-01-22,8.2,2.28,Winter
+Annapurna,2025-01-23,8.32,0.2,Winter
+Annapurna,2025-01-24,10.55,1.71,Winter
+Annapurna,2025-01-25,7.66,1.22,Winter
+Annapurna,2025-01-26,7.08,1.91,Winter
+Annapurna,2025-01-27,8.47,1.36,Winter
+Annapurna,2025-01-28,9.3,2.69,Winter
+Annapurna,2025-01-29,8.28,0.74,Winter
+Annapurna,2025-01-30,7.55,0.35,Winter
+Annapurna,2025-01-31,7.64,1.96,Winter
+Annapurna,2025-02-01,7.71,0.88,Winter
+Annapurna,2025-02-02,9.84,2.32,Winter
+Annapurna,2025-02-03,7.0,0.0,Winter
+Annapurna,2025-02-04,8.47,1.31,Winter
+Annapurna,2025-02-05,8.21,1.83,Winter
+Annapurna,2025-02-06,8.7,1.2,Winter
+Annapurna,2025-02-07,7.3,3.06,Winter
+Annapurna,2025-02-08,8.56,0.95,Winter
+Annapurna,2025-02-09,9.53,0.12,Winter
+Annapurna,2025-02-10,8.34,0.55,Winter
+Annapurna,2025-02-11,8.17,2.33,Winter
+Annapurna,2025-02-12,8.0,0.0,Winter
+Annapurna,2025-02-13,8.43,3.04,Winter
+Annapurna,2025-02-14,8.98,0.23,Winter
+Annapurna,2025-02-15,8.06,1.0,Winter
+Annapurna,2025-02-16,9.05,1.72,Winter
+Annapurna,2025-02-17,9.49,5.07,Winter
+Annapurna,2025-02-18,8.33,3.24,Winter
+Annapurna,2025-02-19,8.34,0.0,Winter
+Annapurna,2025-02-20,7.74,1.66,Winter
+Annapurna,2025-02-21,8.73,1.24,Winter
+Annapurna,2025-02-22,8.9,2.04,Winter
+Annapurna,2025-02-23,8.18,1.94,Winter
+Annapurna,2025-02-24,7.55,0.73,Winter
+Annapurna,2025-02-25,8.81,4.18,Winter
+Annapurna,2025-02-26,7.79,1.16,Winter
+Annapurna,2025-02-27,8.26,5.9,Winter
+Annapurna,2025-02-28,8.69,0.86,Winter
+Annapurna,2025-03-01,7.29,0.98,Summer
+Annapurna,2025-03-02,7.09,1.95,Summer
+Annapurna,2025-03-03,6.32,0.0,Summer
+Annapurna,2025-03-04,8.04,0.75,Summer
+Annapurna,2025-03-05,7.34,0.0,Summer
+Annapurna,2025-03-06,7.16,0.64,Summer
+Annapurna,2025-03-07,5.96,0.42,Summer
+Annapurna,2025-03-08,7.09,1.1,Summer
+Annapurna,2025-03-09,6.64,1.28,Summer
+Annapurna,2025-03-10,5.41,0.02,Summer
+Annapurna,2025-03-11,6.94,1.16,Summer
+Annapurna,2025-03-12,6.12,0.0,Summer
+Annapurna,2025-03-13,5.48,0.13,Summer
+Annapurna,2025-03-14,5.71,0.0,Summer
+Annapurna,2025-03-15,6.0,0.17,Summer
+Annapurna,2025-03-16,7.92,0.0,Summer
+Annapurna,2025-03-17,6.13,1.5,Summer
+Annapurna,2025-03-18,6.88,0.72,Summer
+Annapurna,2025-03-19,6.1,1.45,Summer
+Annapurna,2025-03-20,6.28,1.37,Summer
+Annapurna,2025-03-21,7.01,0.0,Summer
+Annapurna,2025-03-22,8.5,1.53,Summer
+Annapurna,2025-03-23,6.99,0.0,Summer
+Annapurna,2025-03-24,7.07,0.17,Summer
+Annapurna,2025-03-25,5.62,0.0,Summer
+Annapurna,2025-03-26,6.56,0.0,Summer
+Annapurna,2025-03-27,6.96,0.0,Summer
+Annapurna,2025-03-28,7.08,1.32,Summer
+Annapurna,2025-03-29,7.01,1.8,Summer
+Annapurna,2025-03-30,7.45,0.0,Summer
+Annapurna,2025-03-31,7.14,0.02,Summer
+Annapurna,2025-04-01,7.03,1.76,Summer
+Annapurna,2025-04-02,5.86,0.0,Summer
+Annapurna,2025-04-03,6.57,1.56,Summer
+Annapurna,2025-04-04,7.1,0.56,Summer
+Annapurna,2025-04-05,6.82,1.06,Summer
+Annapurna,2025-04-06,6.32,0.33,Summer
+Annapurna,2025-04-07,7.03,1.19,Summer
+Annapurna,2025-04-08,7.29,0.29,Summer
+Annapurna,2025-04-09,5.95,0.4,Summer
+Annapurna,2025-04-10,5.81,0.0,Summer
+Annapurna,2025-04-11,7.4,0.28,Summer
+Annapurna,2025-04-12,6.63,0.0,Summer
+Annapurna,2025-04-13,6.32,0.0,Summer
+Annapurna,2025-04-14,6.35,0.0,Summer
+Annapurna,2025-04-15,6.92,0.35,Summer
+Annapurna,2025-04-16,5.74,0.68,Summer
+Annapurna,2025-04-17,6.81,1.37,Summer
+Annapurna,2025-04-18,6.57,0.66,Summer
+Annapurna,2025-04-19,6.66,0.09,Summer
+Annapurna,2025-04-20,5.38,0.88,Summer
+Annapurna,2025-04-21,6.33,0.07,Summer
+Annapurna,2025-04-22,7.42,0.7,Summer
+Annapurna,2025-04-23,6.15,0.0,Summer
+Annapurna,2025-04-24,5.95,0.09,Summer
+Annapurna,2025-04-25,7.07,0.22,Summer
+Annapurna,2025-04-26,6.8,0.0,Summer
+Annapurna,2025-04-27,6.11,0.0,Summer
+Annapurna,2025-04-28,7.7,0.24,Summer
+Annapurna,2025-04-29,4.99,0.28,Summer
+Annapurna,2025-04-30,6.52,0.0,Summer
+Annapurna,2025-05-01,6.88,0.99,Summer
+Annapurna,2025-05-02,7.39,0.63,Summer
+Annapurna,2025-05-03,7.13,0.07,Summer
+Annapurna,2025-05-04,5.87,0.0,Summer
+Annapurna,2025-05-05,6.31,0.0,Summer
+Annapurna,2025-05-06,6.64,0.46,Summer
+Annapurna,2025-05-07,5.92,0.55,Summer
+Annapurna,2025-05-08,5.49,0.35,Summer
+Annapurna,2025-05-09,6.48,1.59,Summer
+Annapurna,2025-05-10,7.63,0.11,Summer
+Annapurna,2025-05-11,5.71,0.0,Summer
+Annapurna,2025-05-12,6.45,0.0,Summer
+Annapurna,2025-05-13,7.12,0.85,Summer
+Annapurna,2025-05-14,5.23,2.56,Summer
+Annapurna,2025-05-15,6.23,0.99,Summer
+Annapurna,2025-05-16,6.07,0.03,Summer
+Annapurna,2025-05-17,7.68,0.0,Summer
+Annapurna,2025-05-18,6.66,1.17,Summer
+Annapurna,2025-05-19,5.63,1.58,Summer
+Annapurna,2025-05-20,4.98,0.0,Summer
+Annapurna,2025-05-21,6.61,0.0,Summer
+Annapurna,2025-05-22,6.67,0.58,Summer
+Annapurna,2025-05-23,7.06,0.0,Summer
+Annapurna,2025-05-24,7.1,0.69,Summer
+Annapurna,2025-05-25,6.72,0.0,Summer
+Annapurna,2025-05-26,6.22,0.0,Summer
+Annapurna,2025-05-27,6.68,0.93,Summer
+Annapurna,2025-05-28,6.5,0.0,Summer
+Annapurna,2025-05-29,7.31,0.0,Summer
+Annapurna,2025-05-30,7.32,0.34,Summer
+Annapurna,2025-05-31,6.14,0.08,Summer
+Annapurna,2025-06-01,10.11,4.18,Monsoon
+Annapurna,2025-06-02,9.99,4.45,Monsoon
+Annapurna,2025-06-03,8.35,6.09,Monsoon
+Annapurna,2025-06-04,8.79,5.15,Monsoon
+Annapurna,2025-06-05,9.15,8.17,Monsoon
+Annapurna,2025-06-06,10.45,12.63,Monsoon
+Annapurna,2025-06-07,10.31,7.11,Monsoon
+Annapurna,2025-06-08,10.52,12.82,Monsoon
+Annapurna,2025-06-09,8.26,4.14,Monsoon
+Annapurna,2025-06-10,9.12,4.57,Monsoon
+Annapurna,2025-06-11,9.78,8.54,Monsoon
+Annapurna,2025-06-12,9.94,11.44,Monsoon
+Annapurna,2025-06-13,10.75,7.71,Monsoon
+Annapurna,2025-06-14,10.12,9.71,Monsoon
+Annapurna,2025-06-15,9.16,4.99,Monsoon
+Annapurna,2025-06-16,9.07,3.75,Monsoon
+Annapurna,2025-06-17,10.26,11.78,Monsoon
+Annapurna,2025-06-18,10.39,1.25,Monsoon
+Annapurna,2025-06-19,9.17,9.6,Monsoon
+Annapurna,2025-06-20,9.77,5.79,Monsoon
+Annapurna,2025-06-21,10.21,16.52,Monsoon
+Annapurna,2025-06-22,11.53,12.88,Monsoon
+Annapurna,2025-06-23,9.39,4.86,Monsoon
+Annapurna,2025-06-24,9.2,2.82,Monsoon
+Annapurna,2025-06-25,10.4,7.82,Monsoon
+Annapurna,2025-06-26,10.09,13.45,Monsoon
+Annapurna,2025-06-27,8.99,0.0,Monsoon
+Annapurna,2025-06-28,10.31,9.47,Monsoon
+Annapurna,2025-06-29,9.85,6.37,Monsoon
+Annapurna,2025-06-30,11.14,15.58,Monsoon
+Annapurna,2025-07-01,9.39,6.13,Monsoon
+Annapurna,2025-07-02,11.0,7.15,Monsoon
+Annapurna,2025-07-03,9.84,7.08,Monsoon
+Annapurna,2025-07-04,10.44,5.59,Monsoon
+Annapurna,2025-07-05,11.45,17.8,Monsoon
+Annapurna,2025-07-06,10.04,8.41,Monsoon
+Annapurna,2025-07-07,9.52,0.0,Monsoon
+Annapurna,2025-07-08,10.34,8.67,Monsoon
+Annapurna,2025-07-09,9.26,4.44,Monsoon
+Annapurna,2025-07-10,10.43,5.94,Monsoon
+Annapurna,2025-07-11,11.19,6.11,Monsoon
+Annapurna,2025-07-12,9.33,10.15,Monsoon
+Annapurna,2025-07-13,9.43,7.36,Monsoon
+Annapurna,2025-07-14,10.12,0.0,Monsoon
+Annapurna,2025-07-15,10.76,11.52,Monsoon
+Annapurna,2025-07-16,9.09,8.83,Monsoon
+Annapurna,2025-07-17,10.26,5.58,Monsoon
+Annapurna,2025-07-18,7.56,2.74,Monsoon
+Annapurna,2025-07-19,9.72,6.86,Monsoon
+Annapurna,2025-07-20,10.55,8.68,Monsoon
+Annapurna,2025-07-21,10.52,11.19,Monsoon
+Annapurna,2025-07-22,9.61,13.98,Monsoon
+Annapurna,2025-07-23,10.7,10.52,Monsoon
+Annapurna,2025-07-24,8.16,1.8,Monsoon
+Annapurna,2025-07-25,9.05,4.27,Monsoon
+Annapurna,2025-07-26,9.98,11.77,Monsoon
+Annapurna,2025-07-27,9.02,3.72,Monsoon
+Annapurna,2025-07-28,10.64,13.59,Monsoon
+Annapurna,2025-07-29,9.78,7.1,Monsoon
+Annapurna,2025-07-30,10.21,14.46,Monsoon
+Annapurna,2025-07-31,10.9,14.58,Monsoon
+Annapurna,2025-08-01,11.61,7.2,Monsoon
+Annapurna,2025-08-02,9.08,2.72,Monsoon
+Annapurna,2025-08-03,9.89,1.84,Monsoon
+Annapurna,2025-08-04,12.0,16.45,Monsoon
+Annapurna,2025-08-05,10.56,14.12,Monsoon
+Annapurna,2025-08-06,8.57,6.17,Monsoon
+Annapurna,2025-08-07,11.51,18.18,Monsoon
+Annapurna,2025-08-08,10.59,5.54,Monsoon
+Annapurna,2025-08-09,9.66,3.14,Monsoon
+Annapurna,2025-08-10,10.3,7.14,Monsoon
+Annapurna,2025-08-11,8.91,7.68,Monsoon
+Annapurna,2025-08-12,10.74,8.38,Monsoon
+Annapurna,2025-08-13,10.49,7.85,Monsoon
+Annapurna,2025-08-14,9.31,2.77,Monsoon
+Annapurna,2025-08-15,10.11,4.88,Monsoon
+Annapurna,2025-08-16,10.46,8.16,Monsoon
+Annapurna,2025-08-17,11.1,13.44,Monsoon
+Annapurna,2025-08-18,9.43,9.37,Monsoon
+Annapurna,2025-08-19,9.59,7.99,Monsoon
+Annapurna,2025-08-20,9.49,6.28,Monsoon
+Annapurna,2025-08-21,8.0,3.1,Monsoon
+Annapurna,2025-08-22,9.69,4.66,Monsoon
+Annapurna,2025-08-23,9.16,1.26,Monsoon
+Annapurna,2025-08-24,11.82,17.5,Monsoon
+Annapurna,2025-08-25,11.22,16.22,Monsoon
+Annapurna,2025-08-26,10.15,13.84,Monsoon
+Annapurna,2025-08-27,7.66,4.78,Monsoon
+Annapurna,2025-08-28,11.75,13.93,Monsoon
+Annapurna,2025-08-29,9.45,5.23,Monsoon
+Annapurna,2025-08-30,9.78,4.23,Monsoon
+Annapurna,2025-08-31,9.42,13.62,Monsoon
+Annapurna,2025-09-01,10.01,10.05,Monsoon
+Annapurna,2025-09-02,10.35,8.57,Monsoon
+Annapurna,2025-09-03,9.77,7.06,Monsoon
+Annapurna,2025-09-04,10.51,6.93,Monsoon
+Annapurna,2025-09-05,10.37,10.09,Monsoon
+Annapurna,2025-09-06,8.93,1.65,Monsoon
+Annapurna,2025-09-07,10.53,12.49,Monsoon
+Annapurna,2025-09-08,11.59,11.3,Monsoon
+Annapurna,2025-09-09,10.65,13.19,Monsoon
+Annapurna,2025-09-10,7.87,5.45,Monsoon
+Annapurna,2025-09-11,9.63,7.16,Monsoon
+Annapurna,2025-09-12,10.09,9.95,Monsoon
+Annapurna,2025-09-13,8.52,6.4,Monsoon
+Annapurna,2025-09-14,9.73,3.3,Monsoon
+Annapurna,2025-09-15,10.92,16.58,Monsoon
+Annapurna,2025-09-16,10.82,9.64,Monsoon
+Annapurna,2025-09-17,9.73,3.95,Monsoon
+Annapurna,2025-09-18,10.12,4.3,Monsoon
+Annapurna,2025-09-19,10.26,8.76,Monsoon
+Annapurna,2025-09-20,9.99,4.09,Monsoon
+Annapurna,2025-09-21,10.51,18.42,Monsoon
+Annapurna,2025-09-22,9.92,6.3,Monsoon
+Annapurna,2025-09-23,10.04,11.93,Monsoon
+Annapurna,2025-09-24,9.95,0.0,Monsoon
+Annapurna,2025-09-25,9.2,11.8,Monsoon
+Annapurna,2025-09-26,10.69,4.96,Monsoon
+Annapurna,2025-09-27,11.49,15.24,Monsoon
+Annapurna,2025-09-28,9.91,7.12,Monsoon
+Annapurna,2025-09-29,10.67,7.35,Monsoon
+Annapurna,2025-09-30,8.87,3.62,Monsoon
+Annapurna,2025-10-01,8.63,3.02,Winter
+Annapurna,2025-10-02,8.26,3.57,Winter
+Annapurna,2025-10-03,7.82,1.42,Winter
+Annapurna,2025-10-04,7.45,1.51,Winter
+Annapurna,2025-10-05,7.39,0.77,Winter
+Annapurna,2025-10-06,9.11,2.54,Winter
+Annapurna,2025-10-07,9.23,0.0,Winter
+Annapurna,2025-10-08,8.96,5.25,Winter
+Annapurna,2025-10-09,10.34,0.54,Winter
+Annapurna,2025-10-10,8.31,0.0,Winter
+Annapurna,2025-10-11,9.45,1.77,Winter
+Annapurna,2025-10-12,8.2,2.04,Winter
+Annapurna,2025-10-13,8.07,0.07,Winter
+Annapurna,2025-10-14,8.33,0.0,Winter
+Annapurna,2025-10-15,7.33,0.65,Winter
+Annapurna,2025-10-16,8.36,3.38,Winter
+Annapurna,2025-10-17,8.18,0.0,Winter
+Annapurna,2025-10-18,7.27,1.6,Winter
+Annapurna,2025-10-19,7.81,2.0,Winter
+Annapurna,2025-10-20,9.15,4.07,Winter
+Annapurna,2025-10-21,7.89,0.9,Winter
+Annapurna,2025-10-22,8.89,1.34,Winter
+Annapurna,2025-10-23,8.32,1.46,Winter
+Annapurna,2025-10-24,8.07,1.59,Winter
+Annapurna,2025-10-25,6.96,0.99,Winter
+Annapurna,2025-10-26,8.86,2.96,Winter
+Annapurna,2025-10-27,9.67,0.34,Winter
+Annapurna,2025-10-28,7.77,1.63,Winter
+Annapurna,2025-10-29,8.91,2.79,Winter
+Annapurna,2025-10-30,8.25,2.09,Winter
+Annapurna,2025-10-31,8.38,2.18,Winter
+Annapurna,2025-11-01,7.25,2.33,Winter
+Annapurna,2025-11-02,9.61,0.85,Winter
+Annapurna,2025-11-03,7.92,0.35,Winter
+Annapurna,2025-11-04,7.55,0.83,Winter
+Annapurna,2025-11-05,8.14,0.0,Winter
+Annapurna,2025-11-06,8.47,1.7,Winter
+Annapurna,2025-11-07,8.48,1.28,Winter
+Annapurna,2025-11-08,8.53,3.03,Winter
+Annapurna,2025-11-09,8.18,0.64,Winter
+Annapurna,2025-11-10,9.57,2.37,Winter
+Annapurna,2025-11-11,8.44,0.56,Winter
+Annapurna,2025-11-12,7.85,2.01,Winter
+Annapurna,2025-11-13,7.46,1.53,Winter
+Annapurna,2025-11-14,8.56,0.0,Winter
+Annapurna,2025-11-15,8.55,0.92,Winter
+Annapurna,2025-11-16,7.79,1.47,Winter
+Annapurna,2025-11-17,7.61,1.43,Winter
+Annapurna,2025-11-18,7.78,3.59,Winter
+Annapurna,2025-11-19,7.72,1.21,Winter
+Annapurna,2025-11-20,8.35,2.36,Winter
+Annapurna,2025-11-21,8.98,0.72,Winter
+Annapurna,2025-11-22,8.85,1.54,Winter
+Annapurna,2025-11-23,7.32,0.03,Winter
+Annapurna,2025-11-24,8.28,1.66,Winter
+Annapurna,2025-11-25,8.54,2.44,Winter
+Annapurna,2025-11-26,7.38,1.81,Winter
+Annapurna,2025-11-27,8.7,4.33,Winter
+Annapurna,2025-11-28,8.02,2.55,Winter
+Annapurna,2025-11-29,7.62,1.96,Winter
+Annapurna,2025-11-30,8.31,2.18,Winter
+Annapurna,2025-12-01,8.97,1.54,Winter
+Annapurna,2025-12-02,7.82,0.0,Winter
+Annapurna,2025-12-03,10.03,2.19,Winter
+Annapurna,2025-12-04,8.87,1.29,Winter
+Annapurna,2025-12-05,9.82,1.34,Winter
+Annapurna,2025-12-06,8.37,0.0,Winter
+Annapurna,2025-12-07,6.55,0.0,Winter
+Annapurna,2025-12-08,8.63,1.95,Winter
+Annapurna,2025-12-09,8.35,1.07,Winter
+Annapurna,2025-12-10,8.86,6.15,Winter
+Annapurna,2025-12-11,8.12,2.27,Winter
+Annapurna,2025-12-12,8.37,1.94,Winter
+Annapurna,2025-12-13,9.68,0.88,Winter
+Annapurna,2025-12-14,8.79,3.27,Winter
+Annapurna,2025-12-15,8.05,0.0,Winter
+Annapurna,2025-12-16,8.81,5.55,Winter
+Annapurna,2025-12-17,9.69,3.15,Winter
+Annapurna,2025-12-18,7.93,1.83,Winter
+Annapurna,2025-12-19,8.78,0.0,Winter
+Annapurna,2025-12-20,8.46,0.28,Winter
+Annapurna,2025-12-21,8.11,0.0,Winter
+Annapurna,2025-12-22,8.67,1.55,Winter
+Annapurna,2025-12-23,9.14,0.0,Winter
+Annapurna,2025-12-24,7.2,0.6,Winter
+Annapurna,2025-12-25,8.48,1.34,Winter
+Annapurna,2025-12-26,9.46,1.74,Winter
+Annapurna,2025-12-27,8.35,1.15,Winter
+Annapurna,2025-12-28,8.87,0.0,Winter
+Annapurna,2025-12-29,8.22,1.78,Winter
+Annapurna,2025-12-30,9.31,0.0,Winter
+Annapurna,2025-12-31,7.89,0.0,Winter
+Sudama Nagar,2025-01-01,7.71,2.04,Winter
+Sudama Nagar,2025-01-02,6.81,0.0,Winter
+Sudama Nagar,2025-01-03,8.23,2.58,Winter
+Sudama Nagar,2025-01-04,8.31,5.89,Winter
+Sudama Nagar,2025-01-05,7.92,0.12,Winter
+Sudama Nagar,2025-01-06,8.19,1.86,Winter
+Sudama Nagar,2025-01-07,7.91,2.42,Winter
+Sudama Nagar,2025-01-08,7.04,0.0,Winter
+Sudama Nagar,2025-01-09,7.94,0.0,Winter
+Sudama Nagar,2025-01-10,7.98,1.05,Winter
+Sudama Nagar,2025-01-11,9.56,3.37,Winter
+Sudama Nagar,2025-01-12,7.16,1.0,Winter
+Sudama Nagar,2025-01-13,7.96,0.65,Winter
+Sudama Nagar,2025-01-14,7.87,0.51,Winter
+Sudama Nagar,2025-01-15,8.09,0.52,Winter
+Sudama Nagar,2025-01-16,8.51,0.55,Winter
+Sudama Nagar,2025-01-17,7.91,2.04,Winter
+Sudama Nagar,2025-01-18,8.02,3.41,Winter
+Sudama Nagar,2025-01-19,8.57,0.0,Winter
+Sudama Nagar,2025-01-20,8.56,0.27,Winter
+Sudama Nagar,2025-01-21,9.27,0.0,Winter
+Sudama Nagar,2025-01-22,7.55,2.51,Winter
+Sudama Nagar,2025-01-23,9.47,0.0,Winter
+Sudama Nagar,2025-01-24,7.76,0.39,Winter
+Sudama Nagar,2025-01-25,8.05,0.0,Winter
+Sudama Nagar,2025-01-26,8.94,1.16,Winter
+Sudama Nagar,2025-01-27,7.24,0.0,Winter
+Sudama Nagar,2025-01-28,9.27,2.18,Winter
+Sudama Nagar,2025-01-29,9.06,0.0,Winter
+Sudama Nagar,2025-01-30,9.25,1.56,Winter
+Sudama Nagar,2025-01-31,6.7,1.39,Winter
+Sudama Nagar,2025-02-01,9.19,1.27,Winter
+Sudama Nagar,2025-02-02,8.05,0.16,Winter
+Sudama Nagar,2025-02-03,6.42,1.24,Winter
+Sudama Nagar,2025-02-04,8.15,4.01,Winter
+Sudama Nagar,2025-02-05,8.51,2.26,Winter
+Sudama Nagar,2025-02-06,8.99,3.39,Winter
+Sudama Nagar,2025-02-07,7.81,1.15,Winter
+Sudama Nagar,2025-02-08,7.31,2.7,Winter
+Sudama Nagar,2025-02-09,7.83,2.47,Winter
+Sudama Nagar,2025-02-10,8.82,3.38,Winter
+Sudama Nagar,2025-02-11,8.65,2.47,Winter
+Sudama Nagar,2025-02-12,7.7,0.0,Winter
+Sudama Nagar,2025-02-13,8.72,2.51,Winter
+Sudama Nagar,2025-02-14,8.97,3.27,Winter
+Sudama Nagar,2025-02-15,7.75,0.05,Winter
+Sudama Nagar,2025-02-16,6.88,1.65,Winter
+Sudama Nagar,2025-02-17,9.09,4.01,Winter
+Sudama Nagar,2025-02-18,7.59,3.34,Winter
+Sudama Nagar,2025-02-19,10.27,3.37,Winter
+Sudama Nagar,2025-02-20,8.84,0.0,Winter
+Sudama Nagar,2025-02-21,7.4,1.5,Winter
+Sudama Nagar,2025-02-22,9.15,2.24,Winter
+Sudama Nagar,2025-02-23,9.19,0.6,Winter
+Sudama Nagar,2025-02-24,7.25,0.0,Winter
+Sudama Nagar,2025-02-25,8.52,1.7,Winter
+Sudama Nagar,2025-02-26,8.92,0.43,Winter
+Sudama Nagar,2025-02-27,9.18,2.3,Winter
+Sudama Nagar,2025-02-28,8.88,1.32,Winter
+Sudama Nagar,2025-03-01,7.95,0.14,Summer
+Sudama Nagar,2025-03-02,7.97,0.0,Summer
+Sudama Nagar,2025-03-03,5.6,0.53,Summer
+Sudama Nagar,2025-03-04,6.78,1.59,Summer
+Sudama Nagar,2025-03-05,7.5,1.18,Summer
+Sudama Nagar,2025-03-06,6.18,0.77,Summer
+Sudama Nagar,2025-03-07,6.65,1.28,Summer
+Sudama Nagar,2025-03-08,5.12,1.05,Summer
+Sudama Nagar,2025-03-09,6.16,0.86,Summer
+Sudama Nagar,2025-03-10,7.15,1.82,Summer
+Sudama Nagar,2025-03-11,6.92,0.69,Summer
+Sudama Nagar,2025-03-12,7.64,0.0,Summer
+Sudama Nagar,2025-03-13,7.03,2.09,Summer
+Sudama Nagar,2025-03-14,6.31,1.77,Summer
+Sudama Nagar,2025-03-15,6.53,0.0,Summer
+Sudama Nagar,2025-03-16,6.33,0.85,Summer
+Sudama Nagar,2025-03-17,6.83,0.93,Summer
+Sudama Nagar,2025-03-18,6.86,0.0,Summer
+Sudama Nagar,2025-03-19,6.76,1.19,Summer
+Sudama Nagar,2025-03-20,5.82,1.42,Summer
+Sudama Nagar,2025-03-21,5.79,0.87,Summer
+Sudama Nagar,2025-03-22,6.06,0.0,Summer
+Sudama Nagar,2025-03-23,6.12,0.0,Summer
+Sudama Nagar,2025-03-24,7.13,0.33,Summer
+Sudama Nagar,2025-03-25,5.42,0.24,Summer
+Sudama Nagar,2025-03-26,6.08,1.41,Summer
+Sudama Nagar,2025-03-27,6.87,0.45,Summer
+Sudama Nagar,2025-03-28,7.35,0.66,Summer
+Sudama Nagar,2025-03-29,6.0,0.88,Summer
+Sudama Nagar,2025-03-30,6.91,2.24,Summer
+Sudama Nagar,2025-03-31,7.22,0.38,Summer
+Sudama Nagar,2025-04-01,6.86,0.7,Summer
+Sudama Nagar,2025-04-02,6.61,2.49,Summer
+Sudama Nagar,2025-04-03,6.61,0.25,Summer
+Sudama Nagar,2025-04-04,5.61,1.36,Summer
+Sudama Nagar,2025-04-05,6.09,0.0,Summer
+Sudama Nagar,2025-04-06,6.2,0.0,Summer
+Sudama Nagar,2025-04-07,5.98,0.9,Summer
+Sudama Nagar,2025-04-08,6.55,0.0,Summer
+Sudama Nagar,2025-04-09,5.46,1.19,Summer
+Sudama Nagar,2025-04-10,7.21,1.16,Summer
+Sudama Nagar,2025-04-11,7.5,1.26,Summer
+Sudama Nagar,2025-04-12,6.52,2.26,Summer
+Sudama Nagar,2025-04-13,6.28,0.59,Summer
+Sudama Nagar,2025-04-14,7.63,0.5,Summer
+Sudama Nagar,2025-04-15,5.9,0.0,Summer
+Sudama Nagar,2025-04-16,7.41,1.6,Summer
+Sudama Nagar,2025-04-17,7.12,0.21,Summer
+Sudama Nagar,2025-04-18,7.64,0.77,Summer
+Sudama Nagar,2025-04-19,7.29,0.56,Summer
+Sudama Nagar,2025-04-20,7.23,2.61,Summer
+Sudama Nagar,2025-04-21,7.07,0.54,Summer
+Sudama Nagar,2025-04-22,8.2,0.21,Summer
+Sudama Nagar,2025-04-23,6.39,0.64,Summer
+Sudama Nagar,2025-04-24,7.27,0.0,Summer
+Sudama Nagar,2025-04-25,6.3,1.19,Summer
+Sudama Nagar,2025-04-26,5.56,0.96,Summer
+Sudama Nagar,2025-04-27,6.89,0.65,Summer
+Sudama Nagar,2025-04-28,6.18,1.87,Summer
+Sudama Nagar,2025-04-29,5.87,0.0,Summer
+Sudama Nagar,2025-04-30,7.44,0.0,Summer
+Sudama Nagar,2025-05-01,6.93,1.74,Summer
+Sudama Nagar,2025-05-02,6.77,1.48,Summer
+Sudama Nagar,2025-05-03,6.32,0.42,Summer
+Sudama Nagar,2025-05-04,5.45,0.25,Summer
+Sudama Nagar,2025-05-05,6.56,0.71,Summer
+Sudama Nagar,2025-05-06,6.7,1.1,Summer
+Sudama Nagar,2025-05-07,5.93,0.37,Summer
+Sudama Nagar,2025-05-08,7.08,0.56,Summer
+Sudama Nagar,2025-05-09,6.56,0.0,Summer
+Sudama Nagar,2025-05-10,6.08,0.69,Summer
+Sudama Nagar,2025-05-11,6.66,0.03,Summer
+Sudama Nagar,2025-05-12,6.74,0.0,Summer
+Sudama Nagar,2025-05-13,7.24,0.0,Summer
+Sudama Nagar,2025-05-14,6.18,2.37,Summer
+Sudama Nagar,2025-05-15,6.1,0.93,Summer
+Sudama Nagar,2025-05-16,5.77,1.33,Summer
+Sudama Nagar,2025-05-17,6.0,0.88,Summer
+Sudama Nagar,2025-05-18,5.82,0.33,Summer
+Sudama Nagar,2025-05-19,6.05,1.16,Summer
+Sudama Nagar,2025-05-20,6.37,0.94,Summer
+Sudama Nagar,2025-05-21,6.65,0.41,Summer
+Sudama Nagar,2025-05-22,6.65,0.0,Summer
+Sudama Nagar,2025-05-23,6.16,1.72,Summer
+Sudama Nagar,2025-05-24,7.72,1.44,Summer
+Sudama Nagar,2025-05-25,5.48,0.0,Summer
+Sudama Nagar,2025-05-26,6.21,0.74,Summer
+Sudama Nagar,2025-05-27,6.76,1.99,Summer
+Sudama Nagar,2025-05-28,5.7,0.0,Summer
+Sudama Nagar,2025-05-29,6.26,1.37,Summer
+Sudama Nagar,2025-05-30,7.23,0.54,Summer
+Sudama Nagar,2025-05-31,6.48,0.11,Summer
+Sudama Nagar,2025-06-01,10.43,7.92,Monsoon
+Sudama Nagar,2025-06-02,10.16,10.95,Monsoon
+Sudama Nagar,2025-06-03,9.74,8.32,Monsoon
+Sudama Nagar,2025-06-04,9.25,0.61,Monsoon
+Sudama Nagar,2025-06-05,10.48,17.46,Monsoon
+Sudama Nagar,2025-06-06,8.89,4.13,Monsoon
+Sudama Nagar,2025-06-07,10.71,11.62,Monsoon
+Sudama Nagar,2025-06-08,9.22,7.21,Monsoon
+Sudama Nagar,2025-06-09,8.92,8.46,Monsoon
+Sudama Nagar,2025-06-10,10.66,8.72,Monsoon
+Sudama Nagar,2025-06-11,8.14,1.74,Monsoon
+Sudama Nagar,2025-06-12,10.48,15.9,Monsoon
+Sudama Nagar,2025-06-13,10.53,13.68,Monsoon
+Sudama Nagar,2025-06-14,10.17,7.19,Monsoon
+Sudama Nagar,2025-06-15,9.52,3.58,Monsoon
+Sudama Nagar,2025-06-16,8.81,6.09,Monsoon
+Sudama Nagar,2025-06-17,9.98,9.69,Monsoon
+Sudama Nagar,2025-06-18,9.02,7.21,Monsoon
+Sudama Nagar,2025-06-19,11.53,15.96,Monsoon
+Sudama Nagar,2025-06-20,10.32,12.82,Monsoon
+Sudama Nagar,2025-06-21,10.37,0.0,Monsoon
+Sudama Nagar,2025-06-22,9.4,7.69,Monsoon
+Sudama Nagar,2025-06-23,11.03,10.08,Monsoon
+Sudama Nagar,2025-06-24,10.84,7.88,Monsoon
+Sudama Nagar,2025-06-25,9.86,13.41,Monsoon
+Sudama Nagar,2025-06-26,10.23,4.63,Monsoon
+Sudama Nagar,2025-06-27,8.9,0.0,Monsoon
+Sudama Nagar,2025-06-28,8.77,0.85,Monsoon
+Sudama Nagar,2025-06-29,9.53,6.51,Monsoon
+Sudama Nagar,2025-06-30,8.86,5.24,Monsoon
+Sudama Nagar,2025-07-01,12.0,19.46,Monsoon
+Sudama Nagar,2025-07-02,10.37,2.19,Monsoon
+Sudama Nagar,2025-07-03,9.81,6.0,Monsoon
+Sudama Nagar,2025-07-04,9.46,7.68,Monsoon
+Sudama Nagar,2025-07-05,10.64,12.92,Monsoon
+Sudama Nagar,2025-07-06,8.76,5.62,Monsoon
+Sudama Nagar,2025-07-07,8.27,3.53,Monsoon
+Sudama Nagar,2025-07-08,9.13,8.06,Monsoon
+Sudama Nagar,2025-07-09,10.76,6.67,Monsoon
+Sudama Nagar,2025-07-10,10.66,14.0,Monsoon
+Sudama Nagar,2025-07-11,11.22,7.56,Monsoon
+Sudama Nagar,2025-07-12,10.04,10.6,Monsoon
+Sudama Nagar,2025-07-13,9.38,0.87,Monsoon
+Sudama Nagar,2025-07-14,10.02,12.15,Monsoon
+Sudama Nagar,2025-07-15,9.88,9.46,Monsoon
+Sudama Nagar,2025-07-16,8.11,7.08,Monsoon
+Sudama Nagar,2025-07-17,10.51,6.89,Monsoon
+Sudama Nagar,2025-07-18,9.62,4.84,Monsoon
+Sudama Nagar,2025-07-19,9.76,4.22,Monsoon
+Sudama Nagar,2025-07-20,9.17,6.92,Monsoon
+Sudama Nagar,2025-07-21,11.41,14.66,Monsoon
+Sudama Nagar,2025-07-22,9.95,4.98,Monsoon
+Sudama Nagar,2025-07-23,10.73,10.69,Monsoon
+Sudama Nagar,2025-07-24,9.7,0.0,Monsoon
+Sudama Nagar,2025-07-25,9.37,5.15,Monsoon
+Sudama Nagar,2025-07-26,11.61,20.0,Monsoon
+Sudama Nagar,2025-07-27,8.18,6.07,Monsoon
+Sudama Nagar,2025-07-28,9.85,14.95,Monsoon
+Sudama Nagar,2025-07-29,9.13,2.98,Monsoon
+Sudama Nagar,2025-07-30,11.35,15.08,Monsoon
+Sudama Nagar,2025-07-31,10.08,7.21,Monsoon
+Sudama Nagar,2025-08-01,9.7,5.0,Monsoon
+Sudama Nagar,2025-08-02,10.68,8.37,Monsoon
+Sudama Nagar,2025-08-03,10.89,12.84,Monsoon
+Sudama Nagar,2025-08-04,10.26,6.19,Monsoon
+Sudama Nagar,2025-08-05,9.15,7.54,Monsoon
+Sudama Nagar,2025-08-06,9.78,5.98,Monsoon
+Sudama Nagar,2025-08-07,10.38,12.55,Monsoon
+Sudama Nagar,2025-08-08,9.27,1.95,Monsoon
+Sudama Nagar,2025-08-09,10.16,8.57,Monsoon
+Sudama Nagar,2025-08-10,11.23,12.6,Monsoon
+Sudama Nagar,2025-08-11,9.17,5.03,Monsoon
+Sudama Nagar,2025-08-12,9.83,2.8,Monsoon
+Sudama Nagar,2025-08-13,10.61,15.24,Monsoon
+Sudama Nagar,2025-08-14,10.84,6.79,Monsoon
+Sudama Nagar,2025-08-15,10.57,10.53,Monsoon
+Sudama Nagar,2025-08-16,9.72,2.05,Monsoon
+Sudama Nagar,2025-08-17,8.61,3.35,Monsoon
+Sudama Nagar,2025-08-18,9.34,6.27,Monsoon
+Sudama Nagar,2025-08-19,8.82,6.89,Monsoon
+Sudama Nagar,2025-08-20,11.32,12.79,Monsoon
+Sudama Nagar,2025-08-21,9.68,0.0,Monsoon
+Sudama Nagar,2025-08-22,10.07,3.95,Monsoon
+Sudama Nagar,2025-08-23,9.94,7.66,Monsoon
+Sudama Nagar,2025-08-24,10.7,7.07,Monsoon
+Sudama Nagar,2025-08-25,9.64,1.8,Monsoon
+Sudama Nagar,2025-08-26,11.12,13.51,Monsoon
+Sudama Nagar,2025-08-27,10.98,19.62,Monsoon
+Sudama Nagar,2025-08-28,10.46,12.79,Monsoon
+Sudama Nagar,2025-08-29,10.69,14.17,Monsoon
+Sudama Nagar,2025-08-30,10.64,6.06,Monsoon
+Sudama Nagar,2025-08-31,8.68,5.54,Monsoon
+Sudama Nagar,2025-09-01,10.08,5.42,Monsoon
+Sudama Nagar,2025-09-02,10.87,14.96,Monsoon
+Sudama Nagar,2025-09-03,9.8,14.59,Monsoon
+Sudama Nagar,2025-09-04,9.49,5.78,Monsoon
+Sudama Nagar,2025-09-05,9.95,7.43,Monsoon
+Sudama Nagar,2025-09-06,10.06,11.45,Monsoon
+Sudama Nagar,2025-09-07,10.01,8.7,Monsoon
+Sudama Nagar,2025-09-08,9.32,3.37,Monsoon
+Sudama Nagar,2025-09-09,9.76,7.28,Monsoon
+Sudama Nagar,2025-09-10,10.03,8.16,Monsoon
+Sudama Nagar,2025-09-11,10.59,5.84,Monsoon
+Sudama Nagar,2025-09-12,8.75,2.15,Monsoon
+Sudama Nagar,2025-09-13,10.67,20.0,Monsoon
+Sudama Nagar,2025-09-14,9.66,1.23,Monsoon
+Sudama Nagar,2025-09-15,8.84,0.0,Monsoon
+Sudama Nagar,2025-09-16,10.17,18.73,Monsoon
+Sudama Nagar,2025-09-17,7.95,0.0,Monsoon
+Sudama Nagar,2025-09-18,11.29,12.49,Monsoon
+Sudama Nagar,2025-09-19,10.13,5.44,Monsoon
+Sudama Nagar,2025-09-20,12.0,14.95,Monsoon
+Sudama Nagar,2025-09-21,8.2,6.77,Monsoon
+Sudama Nagar,2025-09-22,9.17,3.9,Monsoon
+Sudama Nagar,2025-09-23,9.67,6.71,Monsoon
+Sudama Nagar,2025-09-24,11.52,13.59,Monsoon
+Sudama Nagar,2025-09-25,10.63,7.14,Monsoon
+Sudama Nagar,2025-09-26,10.22,9.79,Monsoon
+Sudama Nagar,2025-09-27,10.55,12.53,Monsoon
+Sudama Nagar,2025-09-28,10.19,18.29,Monsoon
+Sudama Nagar,2025-09-29,9.56,5.42,Monsoon
+Sudama Nagar,2025-09-30,11.11,10.2,Monsoon
+Sudama Nagar,2025-10-01,7.48,1.46,Winter
+Sudama Nagar,2025-10-02,9.16,2.76,Winter
+Sudama Nagar,2025-10-03,8.3,0.0,Winter
+Sudama Nagar,2025-10-04,7.83,0.0,Winter
+Sudama Nagar,2025-10-05,8.88,0.15,Winter
+Sudama Nagar,2025-10-06,7.6,1.68,Winter
+Sudama Nagar,2025-10-07,7.63,2.82,Winter
+Sudama Nagar,2025-10-08,7.97,2.0,Winter
+Sudama Nagar,2025-10-09,8.77,0.95,Winter
+Sudama Nagar,2025-10-10,9.51,2.28,Winter
+Sudama Nagar,2025-10-11,8.68,1.38,Winter
+Sudama Nagar,2025-10-12,8.53,0.84,Winter
+Sudama Nagar,2025-10-13,8.49,2.16,Winter
+Sudama Nagar,2025-10-14,8.53,0.0,Winter
+Sudama Nagar,2025-10-15,8.07,2.05,Winter
+Sudama Nagar,2025-10-16,9.33,0.0,Winter
+Sudama Nagar,2025-10-17,8.41,2.24,Winter
+Sudama Nagar,2025-10-18,7.72,0.0,Winter
+Sudama Nagar,2025-10-19,8.81,3.45,Winter
+Sudama Nagar,2025-10-20,8.74,0.67,Winter
+Sudama Nagar,2025-10-21,9.38,0.28,Winter
+Sudama Nagar,2025-10-22,8.4,3.53,Winter
+Sudama Nagar,2025-10-23,6.53,0.56,Winter
+Sudama Nagar,2025-10-24,7.36,0.0,Winter
+Sudama Nagar,2025-10-25,8.28,1.7,Winter
+Sudama Nagar,2025-10-26,8.1,0.0,Winter
+Sudama Nagar,2025-10-27,8.94,2.26,Winter
+Sudama Nagar,2025-10-28,8.21,0.0,Winter
+Sudama Nagar,2025-10-29,8.93,0.0,Winter
+Sudama Nagar,2025-10-30,7.99,2.68,Winter
+Sudama Nagar,2025-10-31,8.02,0.35,Winter
+Sudama Nagar,2025-11-01,8.54,0.0,Winter
+Sudama Nagar,2025-11-02,9.11,1.09,Winter
+Sudama Nagar,2025-11-03,7.87,0.0,Winter
+Sudama Nagar,2025-11-04,7.6,0.0,Winter
+Sudama Nagar,2025-11-05,9.0,0.0,Winter
+Sudama Nagar,2025-11-06,8.44,0.45,Winter
+Sudama Nagar,2025-11-07,7.52,0.93,Winter
+Sudama Nagar,2025-11-08,8.87,1.25,Winter
+Sudama Nagar,2025-11-09,8.87,0.0,Winter
+Sudama Nagar,2025-11-10,7.99,0.23,Winter
+Sudama Nagar,2025-11-11,8.11,2.3,Winter
+Sudama Nagar,2025-11-12,8.27,1.56,Winter
+Sudama Nagar,2025-11-13,6.84,1.69,Winter
+Sudama Nagar,2025-11-14,8.73,0.0,Winter
+Sudama Nagar,2025-11-15,8.03,3.06,Winter
+Sudama Nagar,2025-11-16,8.64,1.13,Winter
+Sudama Nagar,2025-11-17,7.19,2.54,Winter
+Sudama Nagar,2025-11-18,8.09,0.17,Winter
+Sudama Nagar,2025-11-19,10.36,2.55,Winter
+Sudama Nagar,2025-11-20,7.45,1.16,Winter
+Sudama Nagar,2025-11-21,9.48,2.1,Winter
+Sudama Nagar,2025-11-22,7.86,1.66,Winter
+Sudama Nagar,2025-11-23,9.12,2.94,Winter
+Sudama Nagar,2025-11-24,8.57,0.0,Winter
+Sudama Nagar,2025-11-25,9.49,3.0,Winter
+Sudama Nagar,2025-11-26,8.22,1.4,Winter
+Sudama Nagar,2025-11-27,7.85,3.34,Winter
+Sudama Nagar,2025-11-28,7.6,2.16,Winter
+Sudama Nagar,2025-11-29,8.49,3.1,Winter
+Sudama Nagar,2025-11-30,9.05,3.4,Winter
+Sudama Nagar,2025-12-01,9.3,0.0,Winter
+Sudama Nagar,2025-12-02,9.38,3.83,Winter
+Sudama Nagar,2025-12-03,8.13,0.36,Winter
+Sudama Nagar,2025-12-04,8.01,1.72,Winter
+Sudama Nagar,2025-12-05,8.89,4.04,Winter
+Sudama Nagar,2025-12-06,8.54,0.0,Winter
+Sudama Nagar,2025-12-07,8.36,0.98,Winter
+Sudama Nagar,2025-12-08,8.98,0.95,Winter
+Sudama Nagar,2025-12-09,8.88,3.18,Winter
+Sudama Nagar,2025-12-10,8.39,0.99,Winter
+Sudama Nagar,2025-12-11,7.92,1.53,Winter
+Sudama Nagar,2025-12-12,8.91,2.37,Winter
+Sudama Nagar,2025-12-13,9.64,3.81,Winter
+Sudama Nagar,2025-12-14,8.93,0.47,Winter
+Sudama Nagar,2025-12-15,8.8,0.07,Winter
+Sudama Nagar,2025-12-16,7.67,0.73,Winter
+Sudama Nagar,2025-12-17,6.66,1.92,Winter
+Sudama Nagar,2025-12-18,8.18,0.0,Winter
+Sudama Nagar,2025-12-19,8.24,1.62,Winter
+Sudama Nagar,2025-12-20,7.73,0.0,Winter
+Sudama Nagar,2025-12-21,8.96,2.09,Winter
+Sudama Nagar,2025-12-22,9.29,1.48,Winter
+Sudama Nagar,2025-12-23,8.03,2.1,Winter
+Sudama Nagar,2025-12-24,7.45,1.08,Winter
+Sudama Nagar,2025-12-25,9.24,1.34,Winter
+Sudama Nagar,2025-12-26,9.58,2.53,Winter
+Sudama Nagar,2025-12-27,9.37,1.05,Winter
+Sudama Nagar,2025-12-28,9.48,1.21,Winter
+Sudama Nagar,2025-12-29,8.97,1.47,Winter
+Sudama Nagar,2025-12-30,8.61,3.71,Winter
+Sudama Nagar,2025-12-31,9.42,1.83,Winter
+Aerodrome,2025-01-01,7.53,1.3,Winter
+Aerodrome,2025-01-02,8.54,4.71,Winter
+Aerodrome,2025-01-03,9.32,1.74,Winter
+Aerodrome,2025-01-04,7.66,0.59,Winter
+Aerodrome,2025-01-05,7.27,1.88,Winter
+Aerodrome,2025-01-06,8.6,1.07,Winter
+Aerodrome,2025-01-07,7.35,1.1,Winter
+Aerodrome,2025-01-08,8.84,3.89,Winter
+Aerodrome,2025-01-09,8.56,3.65,Winter
+Aerodrome,2025-01-10,8.51,0.18,Winter
+Aerodrome,2025-01-11,7.62,1.18,Winter
+Aerodrome,2025-01-12,8.31,3.7,Winter
+Aerodrome,2025-01-13,9.23,0.0,Winter
+Aerodrome,2025-01-14,7.96,0.74,Winter
+Aerodrome,2025-01-15,9.52,0.0,Winter
+Aerodrome,2025-01-16,8.34,0.0,Winter
+Aerodrome,2025-01-17,8.94,2.87,Winter
+Aerodrome,2025-01-18,7.28,1.41,Winter
+Aerodrome,2025-01-19,8.47,0.29,Winter
+Aerodrome,2025-01-20,8.48,0.32,Winter
+Aerodrome,2025-01-21,9.28,2.52,Winter
+Aerodrome,2025-01-22,9.84,0.0,Winter
+Aerodrome,2025-01-23,8.62,2.65,Winter
+Aerodrome,2025-01-24,10.33,3.13,Winter
+Aerodrome,2025-01-25,8.14,0.0,Winter
+Aerodrome,2025-01-26,8.43,0.0,Winter
+Aerodrome,2025-01-27,8.52,2.05,Winter
+Aerodrome,2025-01-28,6.93,0.52,Winter
+Aerodrome,2025-01-29,9.57,2.06,Winter
+Aerodrome,2025-01-30,8.68,0.61,Winter
+Aerodrome,2025-01-31,8.62,0.0,Winter
+Aerodrome,2025-02-01,7.88,0.91,Winter
+Aerodrome,2025-02-02,8.07,0.36,Winter
+Aerodrome,2025-02-03,7.63,2.07,Winter
+Aerodrome,2025-02-04,8.38,0.9,Winter
+Aerodrome,2025-02-05,9.56,0.0,Winter
+Aerodrome,2025-02-06,7.86,0.22,Winter
+Aerodrome,2025-02-07,9.56,0.03,Winter
+Aerodrome,2025-02-08,7.92,2.33,Winter
+Aerodrome,2025-02-09,8.82,3.16,Winter
+Aerodrome,2025-02-10,8.29,1.89,Winter
+Aerodrome,2025-02-11,8.58,0.38,Winter
+Aerodrome,2025-02-12,9.65,0.68,Winter
+Aerodrome,2025-02-13,9.38,0.0,Winter
+Aerodrome,2025-02-14,8.67,1.33,Winter
+Aerodrome,2025-02-15,8.19,2.75,Winter
+Aerodrome,2025-02-16,6.74,2.8,Winter
+Aerodrome,2025-02-17,7.7,0.42,Winter
+Aerodrome,2025-02-18,8.15,0.0,Winter
+Aerodrome,2025-02-19,9.04,2.08,Winter
+Aerodrome,2025-02-20,8.06,1.86,Winter
+Aerodrome,2025-02-21,8.63,2.05,Winter
+Aerodrome,2025-02-22,9.19,2.9,Winter
+Aerodrome,2025-02-23,7.86,1.55,Winter
+Aerodrome,2025-02-24,7.98,0.52,Winter
+Aerodrome,2025-02-25,8.61,1.03,Winter
+Aerodrome,2025-02-26,8.57,2.57,Winter
+Aerodrome,2025-02-27,8.58,1.52,Winter
+Aerodrome,2025-02-28,7.74,0.73,Winter
+Aerodrome,2025-03-01,6.01,0.0,Summer
+Aerodrome,2025-03-02,6.11,0.88,Summer
+Aerodrome,2025-03-03,6.86,0.31,Summer
+Aerodrome,2025-03-04,5.85,0.92,Summer
+Aerodrome,2025-03-05,7.44,1.3,Summer
+Aerodrome,2025-03-06,5.92,0.0,Summer
+Aerodrome,2025-03-07,6.57,1.45,Summer
+Aerodrome,2025-03-08,5.52,0.0,Summer
+Aerodrome,2025-03-09,5.72,0.3,Summer
+Aerodrome,2025-03-10,6.54,0.17,Summer
+Aerodrome,2025-03-11,6.5,1.67,Summer
+Aerodrome,2025-03-12,7.66,1.36,Summer
+Aerodrome,2025-03-13,6.9,1.65,Summer
+Aerodrome,2025-03-14,6.82,0.0,Summer
+Aerodrome,2025-03-15,6.6,1.34,Summer
+Aerodrome,2025-03-16,7.33,1.9,Summer
+Aerodrome,2025-03-17,7.38,0.95,Summer
+Aerodrome,2025-03-18,4.85,0.77,Summer
+Aerodrome,2025-03-19,7.35,0.1,Summer
+Aerodrome,2025-03-20,6.34,0.0,Summer
+Aerodrome,2025-03-21,7.75,0.0,Summer
+Aerodrome,2025-03-22,6.1,1.85,Summer
+Aerodrome,2025-03-23,6.1,0.62,Summer
+Aerodrome,2025-03-24,6.98,0.99,Summer
+Aerodrome,2025-03-25,6.87,1.15,Summer
+Aerodrome,2025-03-26,6.12,2.85,Summer
+Aerodrome,2025-03-27,6.22,0.0,Summer
+Aerodrome,2025-03-28,5.46,0.0,Summer
+Aerodrome,2025-03-29,5.85,0.0,Summer
+Aerodrome,2025-03-30,6.86,0.0,Summer
+Aerodrome,2025-03-31,6.39,0.1,Summer
+Aerodrome,2025-04-01,6.11,1.22,Summer
+Aerodrome,2025-04-02,6.79,0.29,Summer
+Aerodrome,2025-04-03,4.83,0.0,Summer
+Aerodrome,2025-04-04,6.94,0.78,Summer
+Aerodrome,2025-04-05,6.87,2.15,Summer
+Aerodrome,2025-04-06,6.5,1.16,Summer
+Aerodrome,2025-04-07,7.76,0.74,Summer
+Aerodrome,2025-04-08,6.79,0.0,Summer
+Aerodrome,2025-04-09,6.96,2.21,Summer
+Aerodrome,2025-04-10,6.28,1.82,Summer
+Aerodrome,2025-04-11,6.58,0.47,Summer
+Aerodrome,2025-04-12,5.68,0.0,Summer
+Aerodrome,2025-04-13,7.08,0.0,Summer
+Aerodrome,2025-04-14,6.87,1.2,Summer
+Aerodrome,2025-04-15,6.52,1.16,Summer
+Aerodrome,2025-04-16,6.68,1.46,Summer
+Aerodrome,2025-04-17,6.38,0.55,Summer
+Aerodrome,2025-04-18,6.33,1.05,Summer
+Aerodrome,2025-04-19,5.86,1.28,Summer
+Aerodrome,2025-04-20,6.98,0.0,Summer
+Aerodrome,2025-04-21,6.23,0.43,Summer
+Aerodrome,2025-04-22,6.22,1.21,Summer
+Aerodrome,2025-04-23,7.52,0.34,Summer
+Aerodrome,2025-04-24,7.81,1.73,Summer
+Aerodrome,2025-04-25,7.39,0.27,Summer
+Aerodrome,2025-04-26,5.87,0.0,Summer
+Aerodrome,2025-04-27,7.67,0.0,Summer
+Aerodrome,2025-04-28,6.41,0.0,Summer
+Aerodrome,2025-04-29,6.99,0.0,Summer
+Aerodrome,2025-04-30,5.61,0.2,Summer
+Aerodrome,2025-05-01,5.6,0.85,Summer
+Aerodrome,2025-05-02,5.03,0.0,Summer
+Aerodrome,2025-05-03,6.62,0.0,Summer
+Aerodrome,2025-05-04,5.46,0.0,Summer
+Aerodrome,2025-05-05,6.18,0.5,Summer
+Aerodrome,2025-05-06,8.03,2.09,Summer
+Aerodrome,2025-05-07,6.89,0.0,Summer
+Aerodrome,2025-05-08,6.21,1.1,Summer
+Aerodrome,2025-05-09,6.49,0.0,Summer
+Aerodrome,2025-05-10,6.24,0.36,Summer
+Aerodrome,2025-05-11,6.08,0.85,Summer
+Aerodrome,2025-05-12,6.58,0.0,Summer
+Aerodrome,2025-05-13,5.77,0.81,Summer
+Aerodrome,2025-05-14,5.41,1.24,Summer
+Aerodrome,2025-05-15,6.32,0.04,Summer
+Aerodrome,2025-05-16,6.1,0.0,Summer
+Aerodrome,2025-05-17,6.14,2.0,Summer
+Aerodrome,2025-05-18,7.1,2.45,Summer
+Aerodrome,2025-05-19,6.9,0.57,Summer
+Aerodrome,2025-05-20,6.11,2.52,Summer
+Aerodrome,2025-05-21,5.97,0.0,Summer
+Aerodrome,2025-05-22,5.36,0.53,Summer
+Aerodrome,2025-05-23,7.75,0.52,Summer
+Aerodrome,2025-05-24,6.37,0.62,Summer
+Aerodrome,2025-05-25,7.13,0.01,Summer
+Aerodrome,2025-05-26,7.79,0.0,Summer
+Aerodrome,2025-05-27,6.93,2.05,Summer
+Aerodrome,2025-05-28,7.28,0.49,Summer
+Aerodrome,2025-05-29,6.1,1.38,Summer
+Aerodrome,2025-05-30,5.58,0.08,Summer
+Aerodrome,2025-05-31,7.07,0.83,Summer
+Aerodrome,2025-06-01,8.83,1.25,Monsoon
+Aerodrome,2025-06-02,8.52,1.26,Monsoon
+Aerodrome,2025-06-03,9.78,10.76,Monsoon
+Aerodrome,2025-06-04,8.64,6.5,Monsoon
+Aerodrome,2025-06-05,10.04,8.93,Monsoon
+Aerodrome,2025-06-06,9.39,4.36,Monsoon
+Aerodrome,2025-06-07,9.5,8.9,Monsoon
+Aerodrome,2025-06-08,10.34,0.62,Monsoon
+Aerodrome,2025-06-09,9.51,4.83,Monsoon
+Aerodrome,2025-06-10,12.0,13.05,Monsoon
+Aerodrome,2025-06-11,9.53,1.78,Monsoon
+Aerodrome,2025-06-12,9.16,4.46,Monsoon
+Aerodrome,2025-06-13,8.74,4.4,Monsoon
+Aerodrome,2025-06-14,8.9,7.79,Monsoon
+Aerodrome,2025-06-15,10.57,12.73,Monsoon
+Aerodrome,2025-06-16,9.89,10.11,Monsoon
+Aerodrome,2025-06-17,9.94,6.16,Monsoon
+Aerodrome,2025-06-18,9.01,2.18,Monsoon
+Aerodrome,2025-06-19,8.82,3.7,Monsoon
+Aerodrome,2025-06-20,9.94,0.0,Monsoon
+Aerodrome,2025-06-21,10.36,4.57,Monsoon
+Aerodrome,2025-06-22,9.7,13.34,Monsoon
+Aerodrome,2025-06-23,11.1,2.56,Monsoon
+Aerodrome,2025-06-24,10.99,16.75,Monsoon
+Aerodrome,2025-06-25,9.67,9.29,Monsoon
+Aerodrome,2025-06-26,9.72,10.16,Monsoon
+Aerodrome,2025-06-27,8.07,0.0,Monsoon
+Aerodrome,2025-06-28,9.18,8.11,Monsoon
+Aerodrome,2025-06-29,9.17,7.66,Monsoon
+Aerodrome,2025-06-30,10.09,4.09,Monsoon
+Aerodrome,2025-07-01,10.1,9.24,Monsoon
+Aerodrome,2025-07-02,10.82,12.39,Monsoon
+Aerodrome,2025-07-03,10.51,15.23,Monsoon
+Aerodrome,2025-07-04,8.79,5.85,Monsoon
+Aerodrome,2025-07-05,10.38,5.86,Monsoon
+Aerodrome,2025-07-06,11.41,14.5,Monsoon
+Aerodrome,2025-07-07,9.76,0.0,Monsoon
+Aerodrome,2025-07-08,9.63,0.0,Monsoon
+Aerodrome,2025-07-09,10.23,6.16,Monsoon
+Aerodrome,2025-07-10,9.98,1.34,Monsoon
+Aerodrome,2025-07-11,8.61,0.68,Monsoon
+Aerodrome,2025-07-12,8.13,3.01,Monsoon
+Aerodrome,2025-07-13,11.28,8.47,Monsoon
+Aerodrome,2025-07-14,11.47,20.0,Monsoon
+Aerodrome,2025-07-15,10.79,13.58,Monsoon
+Aerodrome,2025-07-16,10.02,10.49,Monsoon
+Aerodrome,2025-07-17,10.45,8.98,Monsoon
+Aerodrome,2025-07-18,9.56,5.11,Monsoon
+Aerodrome,2025-07-19,10.5,7.71,Monsoon
+Aerodrome,2025-07-20,9.28,2.67,Monsoon
+Aerodrome,2025-07-21,11.92,17.56,Monsoon
+Aerodrome,2025-07-22,10.79,14.75,Monsoon
+Aerodrome,2025-07-23,10.85,9.6,Monsoon
+Aerodrome,2025-07-24,9.53,15.8,Monsoon
+Aerodrome,2025-07-25,10.09,1.42,Monsoon
+Aerodrome,2025-07-26,9.32,6.62,Monsoon
+Aerodrome,2025-07-27,8.82,1.73,Monsoon
+Aerodrome,2025-07-28,10.58,0.99,Monsoon
+Aerodrome,2025-07-29,9.91,7.89,Monsoon
+Aerodrome,2025-07-30,10.99,10.94,Monsoon
+Aerodrome,2025-07-31,11.28,12.73,Monsoon
+Aerodrome,2025-08-01,9.37,4.85,Monsoon
+Aerodrome,2025-08-02,10.05,11.85,Monsoon
+Aerodrome,2025-08-03,10.24,7.97,Monsoon
+Aerodrome,2025-08-04,9.19,11.93,Monsoon
+Aerodrome,2025-08-05,10.23,11.57,Monsoon
+Aerodrome,2025-08-06,10.93,11.54,Monsoon
+Aerodrome,2025-08-07,11.87,16.04,Monsoon
+Aerodrome,2025-08-08,11.78,14.73,Monsoon
+Aerodrome,2025-08-09,10.16,9.46,Monsoon
+Aerodrome,2025-08-10,11.0,12.36,Monsoon
+Aerodrome,2025-08-11,10.06,6.45,Monsoon
+Aerodrome,2025-08-12,9.34,7.82,Monsoon
+Aerodrome,2025-08-13,10.77,14.45,Monsoon
+Aerodrome,2025-08-14,10.05,18.24,Monsoon
+Aerodrome,2025-08-15,9.65,5.22,Monsoon
+Aerodrome,2025-08-16,10.92,13.69,Monsoon
+Aerodrome,2025-08-17,9.36,9.55,Monsoon
+Aerodrome,2025-08-18,9.49,2.22,Monsoon
+Aerodrome,2025-08-19,8.77,1.18,Monsoon
+Aerodrome,2025-08-20,9.57,10.5,Monsoon
+Aerodrome,2025-08-21,11.78,16.03,Monsoon
+Aerodrome,2025-08-22,8.36,0.14,Monsoon
+Aerodrome,2025-08-23,8.45,0.0,Monsoon
+Aerodrome,2025-08-24,10.13,11.83,Monsoon
+Aerodrome,2025-08-25,9.17,10.3,Monsoon
+Aerodrome,2025-08-26,10.05,11.99,Monsoon
+Aerodrome,2025-08-27,9.9,8.06,Monsoon
+Aerodrome,2025-08-28,8.39,1.64,Monsoon
+Aerodrome,2025-08-29,10.82,12.84,Monsoon
+Aerodrome,2025-08-30,10.82,13.25,Monsoon
+Aerodrome,2025-08-31,8.84,8.71,Monsoon
+Aerodrome,2025-09-01,9.78,6.65,Monsoon
+Aerodrome,2025-09-02,11.61,17.77,Monsoon
+Aerodrome,2025-09-03,11.3,15.68,Monsoon
+Aerodrome,2025-09-04,9.62,4.44,Monsoon
+Aerodrome,2025-09-05,9.44,9.18,Monsoon
+Aerodrome,2025-09-06,9.59,6.08,Monsoon
+Aerodrome,2025-09-07,9.47,16.03,Monsoon
+Aerodrome,2025-09-08,10.03,14.03,Monsoon
+Aerodrome,2025-09-09,9.96,1.14,Monsoon
+Aerodrome,2025-09-10,11.28,11.66,Monsoon
+Aerodrome,2025-09-11,11.88,12.0,Monsoon
+Aerodrome,2025-09-12,10.19,10.79,Monsoon
+Aerodrome,2025-09-13,11.04,9.71,Monsoon
+Aerodrome,2025-09-14,9.04,4.1,Monsoon
+Aerodrome,2025-09-15,8.3,6.46,Monsoon
+Aerodrome,2025-09-16,8.72,8.69,Monsoon
+Aerodrome,2025-09-17,10.6,8.27,Monsoon
+Aerodrome,2025-09-18,10.85,5.62,Monsoon
+Aerodrome,2025-09-19,9.92,0.7,Monsoon
+Aerodrome,2025-09-20,9.16,11.38,Monsoon
+Aerodrome,2025-09-21,11.36,20.0,Monsoon
+Aerodrome,2025-09-22,8.45,3.61,Monsoon
+Aerodrome,2025-09-23,9.74,6.9,Monsoon
+Aerodrome,2025-09-24,9.81,8.51,Monsoon
+Aerodrome,2025-09-25,10.07,11.17,Monsoon
+Aerodrome,2025-09-26,8.9,0.0,Monsoon
+Aerodrome,2025-09-27,9.25,0.0,Monsoon
+Aerodrome,2025-09-28,9.49,3.1,Monsoon
+Aerodrome,2025-09-29,10.08,14.57,Monsoon
+Aerodrome,2025-09-30,10.29,13.31,Monsoon
+Aerodrome,2025-10-01,8.54,4.13,Winter
+Aerodrome,2025-10-02,8.81,0.24,Winter
+Aerodrome,2025-10-03,7.81,0.85,Winter
+Aerodrome,2025-10-04,8.36,0.78,Winter
+Aerodrome,2025-10-05,7.37,3.51,Winter
+Aerodrome,2025-10-06,8.92,1.53,Winter
+Aerodrome,2025-10-07,9.43,1.79,Winter
+Aerodrome,2025-10-08,8.34,1.39,Winter
+Aerodrome,2025-10-09,8.66,2.39,Winter
+Aerodrome,2025-10-10,8.77,0.91,Winter
+Aerodrome,2025-10-11,7.93,0.52,Winter
+Aerodrome,2025-10-12,9.33,0.71,Winter
+Aerodrome,2025-10-13,8.58,0.0,Winter
+Aerodrome,2025-10-14,7.31,1.55,Winter
+Aerodrome,2025-10-15,8.87,1.96,Winter
+Aerodrome,2025-10-16,6.73,2.38,Winter
+Aerodrome,2025-10-17,8.21,3.55,Winter
+Aerodrome,2025-10-18,9.12,2.53,Winter
+Aerodrome,2025-10-19,8.78,0.18,Winter
+Aerodrome,2025-10-20,6.96,0.92,Winter
+Aerodrome,2025-10-21,8.15,3.25,Winter
+Aerodrome,2025-10-22,8.04,0.22,Winter
+Aerodrome,2025-10-23,8.49,1.91,Winter
+Aerodrome,2025-10-24,7.64,2.32,Winter
+Aerodrome,2025-10-25,8.27,0.39,Winter
+Aerodrome,2025-10-26,8.74,4.35,Winter
+Aerodrome,2025-10-27,8.7,3.13,Winter
+Aerodrome,2025-10-28,8.22,0.77,Winter
+Aerodrome,2025-10-29,8.87,1.25,Winter
+Aerodrome,2025-10-30,8.98,3.56,Winter
+Aerodrome,2025-10-31,8.02,3.28,Winter
+Aerodrome,2025-11-01,7.9,0.88,Winter
+Aerodrome,2025-11-02,8.29,1.97,Winter
+Aerodrome,2025-11-03,7.96,2.59,Winter
+Aerodrome,2025-11-04,8.97,1.56,Winter
+Aerodrome,2025-11-05,9.79,0.0,Winter
+Aerodrome,2025-11-06,7.01,1.08,Winter
+Aerodrome,2025-11-07,8.53,1.74,Winter
+Aerodrome,2025-11-08,9.16,1.38,Winter
+Aerodrome,2025-11-09,8.82,2.62,Winter
+Aerodrome,2025-11-10,8.49,2.18,Winter
+Aerodrome,2025-11-11,7.76,4.16,Winter
+Aerodrome,2025-11-12,8.55,1.71,Winter
+Aerodrome,2025-11-13,8.04,2.72,Winter
+Aerodrome,2025-11-14,8.41,0.0,Winter
+Aerodrome,2025-11-15,9.57,1.92,Winter
+Aerodrome,2025-11-16,9.11,0.0,Winter
+Aerodrome,2025-11-17,8.64,5.05,Winter
+Aerodrome,2025-11-18,8.02,0.0,Winter
+Aerodrome,2025-11-19,8.88,1.52,Winter
+Aerodrome,2025-11-20,9.46,0.61,Winter
+Aerodrome,2025-11-21,7.08,0.0,Winter
+Aerodrome,2025-11-22,7.09,3.16,Winter
+Aerodrome,2025-11-23,10.63,1.19,Winter
+Aerodrome,2025-11-24,7.69,1.48,Winter
+Aerodrome,2025-11-25,8.43,1.41,Winter
+Aerodrome,2025-11-26,8.97,1.74,Winter
+Aerodrome,2025-11-27,9.48,0.0,Winter
+Aerodrome,2025-11-28,9.03,1.87,Winter
+Aerodrome,2025-11-29,9.27,0.56,Winter
+Aerodrome,2025-11-30,8.63,1.11,Winter
+Aerodrome,2025-12-01,7.61,0.1,Winter
+Aerodrome,2025-12-02,8.29,2.53,Winter
+Aerodrome,2025-12-03,7.88,0.22,Winter
+Aerodrome,2025-12-04,8.17,2.55,Winter
+Aerodrome,2025-12-05,8.47,1.32,Winter
+Aerodrome,2025-12-06,7.27,0.0,Winter
+Aerodrome,2025-12-07,8.02,2.0,Winter
+Aerodrome,2025-12-08,9.35,3.09,Winter
+Aerodrome,2025-12-09,9.88,2.58,Winter
+Aerodrome,2025-12-10,8.92,1.38,Winter
+Aerodrome,2025-12-11,10.09,0.62,Winter
+Aerodrome,2025-12-12,8.85,4.48,Winter
+Aerodrome,2025-12-13,9.5,2.08,Winter
+Aerodrome,2025-12-14,7.99,1.28,Winter
+Aerodrome,2025-12-15,8.69,2.81,Winter
+Aerodrome,2025-12-16,7.93,1.77,Winter
+Aerodrome,2025-12-17,8.47,0.0,Winter
+Aerodrome,2025-12-18,8.48,2.86,Winter
+Aerodrome,2025-12-19,8.25,3.65,Winter
+Aerodrome,2025-12-20,8.25,0.0,Winter
+Aerodrome,2025-12-21,9.0,1.38,Winter
+Aerodrome,2025-12-22,9.3,0.34,Winter
+Aerodrome,2025-12-23,8.81,4.45,Winter
+Aerodrome,2025-12-24,7.97,3.37,Winter
+Aerodrome,2025-12-25,9.41,3.11,Winter
+Aerodrome,2025-12-26,8.62,2.8,Winter
+Aerodrome,2025-12-27,7.85,0.0,Winter
+Aerodrome,2025-12-28,7.68,0.56,Winter
+Aerodrome,2025-12-29,8.21,1.68,Winter
+Aerodrome,2025-12-30,7.59,0.26,Winter
+Aerodrome,2025-12-31,9.14,0.43,Winter
+Kanadia,2025-01-01,8.0,0.51,Winter
+Kanadia,2025-01-02,8.64,0.81,Winter
+Kanadia,2025-01-03,6.43,2.18,Winter
+Kanadia,2025-01-04,9.67,3.03,Winter
+Kanadia,2025-01-05,7.62,0.0,Winter
+Kanadia,2025-01-06,7.87,0.82,Winter
+Kanadia,2025-01-07,7.16,1.84,Winter
+Kanadia,2025-01-08,9.38,0.0,Winter
+Kanadia,2025-01-09,9.18,0.11,Winter
+Kanadia,2025-01-10,7.28,2.03,Winter
+Kanadia,2025-01-11,8.51,2.45,Winter
+Kanadia,2025-01-12,8.57,0.82,Winter
+Kanadia,2025-01-13,9.06,2.21,Winter
+Kanadia,2025-01-14,8.98,3.27,Winter
+Kanadia,2025-01-15,7.97,0.0,Winter
+Kanadia,2025-01-16,9.52,5.91,Winter
+Kanadia,2025-01-17,9.88,5.05,Winter
+Kanadia,2025-01-18,8.73,1.86,Winter
+Kanadia,2025-01-19,7.26,1.45,Winter
+Kanadia,2025-01-20,9.33,1.53,Winter
+Kanadia,2025-01-21,8.66,0.6,Winter
+Kanadia,2025-01-22,8.0,2.78,Winter
+Kanadia,2025-01-23,7.69,0.82,Winter
+Kanadia,2025-01-24,7.43,0.27,Winter
+Kanadia,2025-01-25,9.31,0.15,Winter
+Kanadia,2025-01-26,8.4,0.13,Winter
+Kanadia,2025-01-27,9.21,0.75,Winter
+Kanadia,2025-01-28,9.32,3.47,Winter
+Kanadia,2025-01-29,8.37,1.96,Winter
+Kanadia,2025-01-30,9.66,0.0,Winter
+Kanadia,2025-01-31,8.81,0.36,Winter
+Kanadia,2025-02-01,8.28,3.09,Winter
+Kanadia,2025-02-02,9.2,3.06,Winter
+Kanadia,2025-02-03,8.46,4.09,Winter
+Kanadia,2025-02-04,7.95,0.0,Winter
+Kanadia,2025-02-05,8.56,1.81,Winter
+Kanadia,2025-02-06,7.07,0.91,Winter
+Kanadia,2025-02-07,9.95,2.21,Winter
+Kanadia,2025-02-08,8.99,2.2,Winter
+Kanadia,2025-02-09,8.86,2.36,Winter
+Kanadia,2025-02-10,8.92,2.9,Winter
+Kanadia,2025-02-11,7.87,1.03,Winter
+Kanadia,2025-02-12,8.66,1.13,Winter
+Kanadia,2025-02-13,8.64,1.03,Winter
+Kanadia,2025-02-14,9.14,2.16,Winter
+Kanadia,2025-02-15,8.77,3.42,Winter
+Kanadia,2025-02-16,8.06,0.0,Winter
+Kanadia,2025-02-17,7.2,1.57,Winter
+Kanadia,2025-02-18,8.83,3.58,Winter
+Kanadia,2025-02-19,9.5,2.07,Winter
+Kanadia,2025-02-20,8.77,0.55,Winter
+Kanadia,2025-02-21,8.33,1.34,Winter
+Kanadia,2025-02-22,9.51,0.34,Winter
+Kanadia,2025-02-23,8.9,0.94,Winter
+Kanadia,2025-02-24,9.13,0.0,Winter
+Kanadia,2025-02-25,8.74,3.08,Winter
+Kanadia,2025-02-26,8.72,1.16,Winter
+Kanadia,2025-02-27,7.66,4.93,Winter
+Kanadia,2025-02-28,7.98,2.67,Winter
+Kanadia,2025-03-01,6.38,0.48,Summer
+Kanadia,2025-03-02,6.51,0.16,Summer
+Kanadia,2025-03-03,7.22,0.0,Summer
+Kanadia,2025-03-04,6.88,0.0,Summer
+Kanadia,2025-03-05,5.71,0.24,Summer
+Kanadia,2025-03-06,5.49,0.66,Summer
+Kanadia,2025-03-07,5.57,0.53,Summer
+Kanadia,2025-03-08,5.96,0.87,Summer
+Kanadia,2025-03-09,6.72,0.14,Summer
+Kanadia,2025-03-10,6.46,0.0,Summer
+Kanadia,2025-03-11,6.94,0.0,Summer
+Kanadia,2025-03-12,8.68,1.91,Summer
+Kanadia,2025-03-13,7.12,0.57,Summer
+Kanadia,2025-03-14,7.55,0.0,Summer
+Kanadia,2025-03-15,6.3,1.12,Summer
+Kanadia,2025-03-16,6.5,1.49,Summer
+Kanadia,2025-03-17,6.85,0.13,Summer
+Kanadia,2025-03-18,7.22,0.0,Summer
+Kanadia,2025-03-19,5.76,0.0,Summer
+Kanadia,2025-03-20,7.03,0.0,Summer
+Kanadia,2025-03-21,5.56,0.01,Summer
+Kanadia,2025-03-22,6.48,0.02,Summer
+Kanadia,2025-03-23,5.69,0.0,Summer
+Kanadia,2025-03-24,6.16,2.19,Summer
+Kanadia,2025-03-25,6.27,0.24,Summer
+Kanadia,2025-03-26,6.95,0.16,Summer
+Kanadia,2025-03-27,6.44,1.26,Summer
+Kanadia,2025-03-28,7.39,0.0,Summer
+Kanadia,2025-03-29,7.76,0.42,Summer
+Kanadia,2025-03-30,6.64,0.0,Summer
+Kanadia,2025-03-31,6.5,2.03,Summer
+Kanadia,2025-04-01,6.75,0.32,Summer
+Kanadia,2025-04-02,6.29,0.05,Summer
+Kanadia,2025-04-03,6.09,0.23,Summer
+Kanadia,2025-04-04,7.0,1.48,Summer
+Kanadia,2025-04-05,7.15,0.7,Summer
+Kanadia,2025-04-06,5.99,0.29,Summer
+Kanadia,2025-04-07,6.5,0.02,Summer
+Kanadia,2025-04-08,6.15,0.0,Summer
+Kanadia,2025-04-09,8.0,0.09,Summer
+Kanadia,2025-04-10,6.37,0.0,Summer
+Kanadia,2025-04-11,6.81,1.88,Summer
+Kanadia,2025-04-12,6.7,1.1,Summer
+Kanadia,2025-04-13,4.93,0.0,Summer
+Kanadia,2025-04-14,6.04,0.66,Summer
+Kanadia,2025-04-15,6.15,0.0,Summer
+Kanadia,2025-04-16,8.41,1.9,Summer
+Kanadia,2025-04-17,6.26,0.67,Summer
+Kanadia,2025-04-18,6.83,0.0,Summer
+Kanadia,2025-04-19,6.56,1.93,Summer
+Kanadia,2025-04-20,6.97,0.0,Summer
+Kanadia,2025-04-21,5.54,1.29,Summer
+Kanadia,2025-04-22,6.89,0.64,Summer
+Kanadia,2025-04-23,6.0,0.44,Summer
+Kanadia,2025-04-24,6.38,1.31,Summer
+Kanadia,2025-04-25,5.07,0.0,Summer
+Kanadia,2025-04-26,7.11,1.51,Summer
+Kanadia,2025-04-27,6.26,0.57,Summer
+Kanadia,2025-04-28,5.76,0.08,Summer
+Kanadia,2025-04-29,5.03,0.15,Summer
+Kanadia,2025-04-30,6.28,0.0,Summer
+Kanadia,2025-05-01,6.59,0.99,Summer
+Kanadia,2025-05-02,7.58,1.14,Summer
+Kanadia,2025-05-03,6.99,1.35,Summer
+Kanadia,2025-05-04,5.87,0.51,Summer
+Kanadia,2025-05-05,7.81,1.09,Summer
+Kanadia,2025-05-06,7.93,0.77,Summer
+Kanadia,2025-05-07,5.69,0.0,Summer
+Kanadia,2025-05-08,6.83,1.18,Summer
+Kanadia,2025-05-09,6.68,1.55,Summer
+Kanadia,2025-05-10,6.35,0.0,Summer
+Kanadia,2025-05-11,5.71,0.0,Summer
+Kanadia,2025-05-12,7.26,1.28,Summer
+Kanadia,2025-05-13,5.39,0.79,Summer
+Kanadia,2025-05-14,5.67,0.21,Summer
+Kanadia,2025-05-15,6.26,1.44,Summer
+Kanadia,2025-05-16,6.52,0.0,Summer
+Kanadia,2025-05-17,7.54,0.0,Summer
+Kanadia,2025-05-18,5.52,0.0,Summer
+Kanadia,2025-05-19,6.48,0.0,Summer
+Kanadia,2025-05-20,5.51,0.05,Summer
+Kanadia,2025-05-21,7.14,1.45,Summer
+Kanadia,2025-05-22,7.51,0.48,Summer
+Kanadia,2025-05-23,6.05,1.03,Summer
+Kanadia,2025-05-24,7.07,0.0,Summer
+Kanadia,2025-05-25,6.72,0.82,Summer
+Kanadia,2025-05-26,6.93,0.0,Summer
+Kanadia,2025-05-27,6.43,0.0,Summer
+Kanadia,2025-05-28,6.24,1.66,Summer
+Kanadia,2025-05-29,5.76,0.0,Summer
+Kanadia,2025-05-30,6.83,1.3,Summer
+Kanadia,2025-05-31,6.19,0.4,Summer
+Kanadia,2025-06-01,9.66,10.43,Monsoon
+Kanadia,2025-06-02,9.63,9.53,Monsoon
+Kanadia,2025-06-03,8.98,3.51,Monsoon
+Kanadia,2025-06-04,9.7,6.12,Monsoon
+Kanadia,2025-06-05,7.52,9.18,Monsoon
+Kanadia,2025-06-06,9.2,3.96,Monsoon
+Kanadia,2025-06-07,10.11,15.53,Monsoon
+Kanadia,2025-06-08,11.1,8.81,Monsoon
+Kanadia,2025-06-09,9.45,1.44,Monsoon
+Kanadia,2025-06-10,9.13,3.99,Monsoon
+Kanadia,2025-06-11,8.97,3.98,Monsoon
+Kanadia,2025-06-12,11.99,20.0,Monsoon
+Kanadia,2025-06-13,10.97,13.51,Monsoon
+Kanadia,2025-06-14,9.28,0.0,Monsoon
+Kanadia,2025-06-15,10.01,13.36,Monsoon
+Kanadia,2025-06-16,11.03,12.83,Monsoon
+Kanadia,2025-06-17,10.78,17.26,Monsoon
+Kanadia,2025-06-18,9.05,2.51,Monsoon
+Kanadia,2025-06-19,9.54,15.18,Monsoon
+Kanadia,2025-06-20,9.06,0.0,Monsoon
+Kanadia,2025-06-21,9.7,5.79,Monsoon
+Kanadia,2025-06-22,10.14,12.73,Monsoon
+Kanadia,2025-06-23,10.43,0.0,Monsoon
+Kanadia,2025-06-24,8.62,3.01,Monsoon
+Kanadia,2025-06-25,10.35,13.52,Monsoon
+Kanadia,2025-06-26,10.26,7.68,Monsoon
+Kanadia,2025-06-27,10.38,13.42,Monsoon
+Kanadia,2025-06-28,9.38,15.6,Monsoon
+Kanadia,2025-06-29,9.83,11.8,Monsoon
+Kanadia,2025-06-30,10.88,14.86,Monsoon
+Kanadia,2025-07-01,10.02,4.64,Monsoon
+Kanadia,2025-07-02,10.95,12.47,Monsoon
+Kanadia,2025-07-03,9.0,2.85,Monsoon
+Kanadia,2025-07-04,9.93,7.98,Monsoon
+Kanadia,2025-07-05,9.0,11.75,Monsoon
+Kanadia,2025-07-06,9.96,9.67,Monsoon
+Kanadia,2025-07-07,8.94,3.81,Monsoon
+Kanadia,2025-07-08,7.31,6.93,Monsoon
+Kanadia,2025-07-09,8.93,4.49,Monsoon
+Kanadia,2025-07-10,9.72,10.66,Monsoon
+Kanadia,2025-07-11,10.91,6.92,Monsoon
+Kanadia,2025-07-12,11.19,12.97,Monsoon
+Kanadia,2025-07-13,10.04,5.5,Monsoon
+Kanadia,2025-07-14,9.68,6.83,Monsoon
+Kanadia,2025-07-15,9.79,10.05,Monsoon
+Kanadia,2025-07-16,10.74,15.47,Monsoon
+Kanadia,2025-07-17,11.35,11.09,Monsoon
+Kanadia,2025-07-18,9.59,13.16,Monsoon
+Kanadia,2025-07-19,10.82,10.22,Monsoon
+Kanadia,2025-07-20,9.72,12.46,Monsoon
+Kanadia,2025-07-21,10.26,4.71,Monsoon
+Kanadia,2025-07-22,9.29,4.19,Monsoon
+Kanadia,2025-07-23,10.87,15.88,Monsoon
+Kanadia,2025-07-24,8.91,4.37,Monsoon
+Kanadia,2025-07-25,9.23,9.66,Monsoon
+Kanadia,2025-07-26,10.04,6.76,Monsoon
+Kanadia,2025-07-27,11.21,14.5,Monsoon
+Kanadia,2025-07-28,10.36,4.43,Monsoon
+Kanadia,2025-07-29,8.92,6.5,Monsoon
+Kanadia,2025-07-30,10.86,7.14,Monsoon
+Kanadia,2025-07-31,10.07,8.83,Monsoon
+Kanadia,2025-08-01,9.94,16.19,Monsoon
+Kanadia,2025-08-02,8.06,1.57,Monsoon
+Kanadia,2025-08-03,10.3,9.86,Monsoon
+Kanadia,2025-08-04,11.06,15.71,Monsoon
+Kanadia,2025-08-05,9.72,5.98,Monsoon
+Kanadia,2025-08-06,8.86,8.59,Monsoon
+Kanadia,2025-08-07,11.76,20.0,Monsoon
+Kanadia,2025-08-08,10.52,9.05,Monsoon
+Kanadia,2025-08-09,10.29,11.55,Monsoon
+Kanadia,2025-08-10,10.0,4.84,Monsoon
+Kanadia,2025-08-11,9.62,9.93,Monsoon
+Kanadia,2025-08-12,11.02,15.1,Monsoon
+Kanadia,2025-08-13,11.37,11.65,Monsoon
+Kanadia,2025-08-14,10.19,8.11,Monsoon
+Kanadia,2025-08-15,9.94,12.05,Monsoon
+Kanadia,2025-08-16,10.08,8.27,Monsoon
+Kanadia,2025-08-17,11.01,3.22,Monsoon
+Kanadia,2025-08-18,8.21,0.96,Monsoon
+Kanadia,2025-08-19,11.25,14.57,Monsoon
+Kanadia,2025-08-20,9.77,2.87,Monsoon
+Kanadia,2025-08-21,10.82,15.34,Monsoon
+Kanadia,2025-08-22,10.19,20.0,Monsoon
+Kanadia,2025-08-23,11.19,11.47,Monsoon
+Kanadia,2025-08-24,10.35,12.46,Monsoon
+Kanadia,2025-08-25,10.1,6.55,Monsoon
+Kanadia,2025-08-26,10.87,12.08,Monsoon
+Kanadia,2025-08-27,9.87,13.2,Monsoon
+Kanadia,2025-08-28,9.17,6.86,Monsoon
+Kanadia,2025-08-29,10.44,6.07,Monsoon
+Kanadia,2025-08-30,11.85,8.54,Monsoon
+Kanadia,2025-08-31,10.12,8.97,Monsoon
+Kanadia,2025-09-01,9.58,8.53,Monsoon
+Kanadia,2025-09-02,10.71,7.71,Monsoon
+Kanadia,2025-09-03,9.47,8.57,Monsoon
+Kanadia,2025-09-04,9.09,3.37,Monsoon
+Kanadia,2025-09-05,10.84,8.37,Monsoon
+Kanadia,2025-09-06,8.93,1.3,Monsoon
+Kanadia,2025-09-07,8.76,8.72,Monsoon
+Kanadia,2025-09-08,8.98,3.83,Monsoon
+Kanadia,2025-09-09,9.62,4.02,Monsoon
+Kanadia,2025-09-10,9.47,7.2,Monsoon
+Kanadia,2025-09-11,11.42,10.14,Monsoon
+Kanadia,2025-09-12,9.6,16.2,Monsoon
+Kanadia,2025-09-13,10.18,10.89,Monsoon
+Kanadia,2025-09-14,9.77,8.78,Monsoon
+Kanadia,2025-09-15,10.14,8.59,Monsoon
+Kanadia,2025-09-16,8.99,5.11,Monsoon
+Kanadia,2025-09-17,9.85,5.76,Monsoon
+Kanadia,2025-09-18,10.92,10.99,Monsoon
+Kanadia,2025-09-19,9.86,5.53,Monsoon
+Kanadia,2025-09-20,11.35,12.81,Monsoon
+Kanadia,2025-09-21,9.77,7.71,Monsoon
+Kanadia,2025-09-22,9.27,8.96,Monsoon
+Kanadia,2025-09-23,10.37,7.03,Monsoon
+Kanadia,2025-09-24,10.16,11.21,Monsoon
+Kanadia,2025-09-25,9.51,9.09,Monsoon
+Kanadia,2025-09-26,10.33,11.52,Monsoon
+Kanadia,2025-09-27,9.54,6.62,Monsoon
+Kanadia,2025-09-28,9.61,7.69,Monsoon
+Kanadia,2025-09-29,10.08,11.29,Monsoon
+Kanadia,2025-09-30,11.94,15.96,Monsoon
+Kanadia,2025-10-01,8.37,0.16,Winter
+Kanadia,2025-10-02,8.13,0.52,Winter
+Kanadia,2025-10-03,8.63,4.5,Winter
+Kanadia,2025-10-04,8.92,2.04,Winter
+Kanadia,2025-10-05,7.7,0.0,Winter
+Kanadia,2025-10-06,7.68,0.0,Winter
+Kanadia,2025-10-07,8.68,0.0,Winter
+Kanadia,2025-10-08,8.95,4.58,Winter
+Kanadia,2025-10-09,7.85,0.0,Winter
+Kanadia,2025-10-10,7.69,0.81,Winter
+Kanadia,2025-10-11,9.2,2.79,Winter
+Kanadia,2025-10-12,8.81,0.0,Winter
+Kanadia,2025-10-13,10.09,3.79,Winter
+Kanadia,2025-10-14,8.36,5.8,Winter
+Kanadia,2025-10-15,8.74,5.74,Winter
+Kanadia,2025-10-16,8.6,0.61,Winter
+Kanadia,2025-10-17,8.65,0.63,Winter
+Kanadia,2025-10-18,8.13,0.0,Winter
+Kanadia,2025-10-19,8.67,3.43,Winter
+Kanadia,2025-10-20,8.84,1.71,Winter
+Kanadia,2025-10-21,7.53,3.26,Winter
+Kanadia,2025-10-22,8.4,2.38,Winter
+Kanadia,2025-10-23,9.25,1.75,Winter
+Kanadia,2025-10-24,7.59,0.0,Winter
+Kanadia,2025-10-25,7.92,0.0,Winter
+Kanadia,2025-10-26,8.64,3.5,Winter
+Kanadia,2025-10-27,7.96,0.0,Winter
+Kanadia,2025-10-28,7.51,0.0,Winter
+Kanadia,2025-10-29,7.73,2.08,Winter
+Kanadia,2025-10-30,8.63,3.17,Winter
+Kanadia,2025-10-31,8.3,1.63,Winter
+Kanadia,2025-11-01,9.17,2.66,Winter
+Kanadia,2025-11-02,8.94,2.0,Winter
+Kanadia,2025-11-03,8.82,1.18,Winter
+Kanadia,2025-11-04,8.42,0.99,Winter
+Kanadia,2025-11-05,8.11,1.09,Winter
+Kanadia,2025-11-06,8.68,0.47,Winter
+Kanadia,2025-11-07,9.54,3.47,Winter
+Kanadia,2025-11-08,9.2,0.0,Winter
+Kanadia,2025-11-09,8.84,1.02,Winter
+Kanadia,2025-11-10,8.42,0.14,Winter
+Kanadia,2025-11-11,7.5,1.97,Winter
+Kanadia,2025-11-12,9.53,2.41,Winter
+Kanadia,2025-11-13,9.4,1.24,Winter
+Kanadia,2025-11-14,9.04,1.22,Winter
+Kanadia,2025-11-15,9.99,0.0,Winter
+Kanadia,2025-11-16,8.55,3.74,Winter
+Kanadia,2025-11-17,8.5,0.0,Winter
+Kanadia,2025-11-18,8.61,0.0,Winter
+Kanadia,2025-11-19,7.9,2.12,Winter
+Kanadia,2025-11-20,9.25,3.18,Winter
+Kanadia,2025-11-21,8.66,2.96,Winter
+Kanadia,2025-11-22,8.98,0.0,Winter
+Kanadia,2025-11-23,7.46,1.09,Winter
+Kanadia,2025-11-24,10.19,3.53,Winter
+Kanadia,2025-11-25,9.98,1.44,Winter
+Kanadia,2025-11-26,8.23,1.64,Winter
+Kanadia,2025-11-27,9.51,0.55,Winter
+Kanadia,2025-11-28,8.85,0.33,Winter
+Kanadia,2025-11-29,8.06,0.66,Winter
+Kanadia,2025-11-30,8.4,3.05,Winter
+Kanadia,2025-12-01,9.2,0.89,Winter
+Kanadia,2025-12-02,9.22,3.9,Winter
+Kanadia,2025-12-03,8.0,0.52,Winter
+Kanadia,2025-12-04,8.72,1.62,Winter
+Kanadia,2025-12-05,8.81,0.02,Winter
+Kanadia,2025-12-06,7.29,1.63,Winter
+Kanadia,2025-12-07,7.96,0.11,Winter
+Kanadia,2025-12-08,9.79,1.39,Winter
+Kanadia,2025-12-09,7.93,1.86,Winter
+Kanadia,2025-12-10,8.27,1.83,Winter
+Kanadia,2025-12-11,8.94,1.99,Winter
+Kanadia,2025-12-12,8.68,3.31,Winter
+Kanadia,2025-12-13,9.41,3.96,Winter
+Kanadia,2025-12-14,9.9,0.44,Winter
+Kanadia,2025-12-15,7.95,1.99,Winter
+Kanadia,2025-12-16,10.23,3.98,Winter
+Kanadia,2025-12-17,8.12,1.45,Winter
+Kanadia,2025-12-18,8.95,1.24,Winter
+Kanadia,2025-12-19,9.11,3.42,Winter
+Kanadia,2025-12-20,9.55,1.65,Winter
+Kanadia,2025-12-21,9.15,1.03,Winter
+Kanadia,2025-12-22,8.73,1.07,Winter
+Kanadia,2025-12-23,8.42,1.33,Winter
+Kanadia,2025-12-24,9.35,0.93,Winter
+Kanadia,2025-12-25,7.83,0.4,Winter
+Kanadia,2025-12-26,9.55,4.68,Winter
+Kanadia,2025-12-27,7.9,0.0,Winter
+Kanadia,2025-12-28,7.63,0.0,Winter
+Kanadia,2025-12-29,8.2,0.0,Winter
+Kanadia,2025-12-30,8.34,0.0,Winter
+Kanadia,2025-12-31,8.36,0.0,Winter
+Silicon City,2025-01-01,9.46,0.88,Winter
+Silicon City,2025-01-02,9.28,3.62,Winter
+Silicon City,2025-01-03,9.81,1.01,Winter
+Silicon City,2025-01-04,7.32,0.0,Winter
+Silicon City,2025-01-05,10.04,1.37,Winter
+Silicon City,2025-01-06,8.32,1.2,Winter
+Silicon City,2025-01-07,8.96,0.0,Winter
+Silicon City,2025-01-08,9.2,2.93,Winter
+Silicon City,2025-01-09,7.87,0.56,Winter
+Silicon City,2025-01-10,8.36,0.0,Winter
+Silicon City,2025-01-11,7.48,0.0,Winter
+Silicon City,2025-01-12,8.06,0.86,Winter
+Silicon City,2025-01-13,8.71,0.69,Winter
+Silicon City,2025-01-14,8.29,1.62,Winter
+Silicon City,2025-01-15,7.82,1.77,Winter
+Silicon City,2025-01-16,8.6,1.66,Winter
+Silicon City,2025-01-17,9.0,0.0,Winter
+Silicon City,2025-01-18,8.38,0.18,Winter
+Silicon City,2025-01-19,9.34,3.25,Winter
+Silicon City,2025-01-20,8.23,1.55,Winter
+Silicon City,2025-01-21,9.12,2.92,Winter
+Silicon City,2025-01-22,7.81,0.57,Winter
+Silicon City,2025-01-23,8.41,0.0,Winter
+Silicon City,2025-01-24,9.26,1.38,Winter
+Silicon City,2025-01-25,9.48,2.04,Winter
+Silicon City,2025-01-26,9.15,0.45,Winter
+Silicon City,2025-01-27,8.93,0.71,Winter
+Silicon City,2025-01-28,8.46,0.0,Winter
+Silicon City,2025-01-29,8.11,0.0,Winter
+Silicon City,2025-01-30,8.19,2.16,Winter
+Silicon City,2025-01-31,8.89,0.0,Winter
+Silicon City,2025-02-01,8.12,1.34,Winter
+Silicon City,2025-02-02,10.33,1.56,Winter
+Silicon City,2025-02-03,9.5,3.23,Winter
+Silicon City,2025-02-04,8.67,2.15,Winter
+Silicon City,2025-02-05,7.82,0.0,Winter
+Silicon City,2025-02-06,7.08,0.78,Winter
+Silicon City,2025-02-07,6.91,0.0,Winter
+Silicon City,2025-02-08,9.05,1.44,Winter
+Silicon City,2025-02-09,8.97,3.16,Winter
+Silicon City,2025-02-10,6.95,0.05,Winter
+Silicon City,2025-02-11,7.41,0.0,Winter
+Silicon City,2025-02-12,8.21,0.17,Winter
+Silicon City,2025-02-13,8.54,0.0,Winter
+Silicon City,2025-02-14,8.45,1.15,Winter
+Silicon City,2025-02-15,7.86,3.21,Winter
+Silicon City,2025-02-16,8.55,2.13,Winter
+Silicon City,2025-02-17,9.04,1.0,Winter
+Silicon City,2025-02-18,7.98,2.82,Winter
+Silicon City,2025-02-19,8.64,1.23,Winter
+Silicon City,2025-02-20,8.84,1.09,Winter
+Silicon City,2025-02-21,9.81,1.92,Winter
+Silicon City,2025-02-22,8.21,0.0,Winter
+Silicon City,2025-02-23,8.74,0.14,Winter
+Silicon City,2025-02-24,8.54,0.0,Winter
+Silicon City,2025-02-25,7.85,0.55,Winter
+Silicon City,2025-02-26,7.97,0.0,Winter
+Silicon City,2025-02-27,8.66,3.13,Winter
+Silicon City,2025-02-28,9.76,2.44,Winter
+Silicon City,2025-03-01,6.19,0.71,Summer
+Silicon City,2025-03-02,6.22,0.87,Summer
+Silicon City,2025-03-03,5.45,0.1,Summer
+Silicon City,2025-03-04,6.38,1.24,Summer
+Silicon City,2025-03-05,5.85,0.65,Summer
+Silicon City,2025-03-06,6.07,0.85,Summer
+Silicon City,2025-03-07,7.16,0.39,Summer
+Silicon City,2025-03-08,6.62,1.13,Summer
+Silicon City,2025-03-09,8.59,0.0,Summer
+Silicon City,2025-03-10,7.23,1.9,Summer
+Silicon City,2025-03-11,6.42,0.0,Summer
+Silicon City,2025-03-12,7.39,0.07,Summer
+Silicon City,2025-03-13,6.04,0.71,Summer
+Silicon City,2025-03-14,7.3,0.12,Summer
+Silicon City,2025-03-15,7.78,1.78,Summer
+Silicon City,2025-03-16,6.46,1.11,Summer
+Silicon City,2025-03-17,6.71,0.0,Summer
+Silicon City,2025-03-18,6.66,0.5,Summer
+Silicon City,2025-03-19,5.64,0.54,Summer
+Silicon City,2025-03-20,7.06,0.95,Summer
+Silicon City,2025-03-21,7.29,1.05,Summer
+Silicon City,2025-03-22,6.33,0.98,Summer
+Silicon City,2025-03-23,6.62,0.44,Summer
+Silicon City,2025-03-24,7.27,0.59,Summer
+Silicon City,2025-03-25,8.08,1.01,Summer
+Silicon City,2025-03-26,6.83,2.27,Summer
+Silicon City,2025-03-27,7.37,0.0,Summer
+Silicon City,2025-03-28,5.95,0.07,Summer
+Silicon City,2025-03-29,6.21,0.18,Summer
+Silicon City,2025-03-30,5.53,0.99,Summer
+Silicon City,2025-03-31,6.74,0.0,Summer
+Silicon City,2025-04-01,7.07,1.0,Summer
+Silicon City,2025-04-02,5.82,0.0,Summer
+Silicon City,2025-04-03,6.68,0.09,Summer
+Silicon City,2025-04-04,5.27,1.69,Summer
+Silicon City,2025-04-05,5.61,0.32,Summer
+Silicon City,2025-04-06,7.18,0.0,Summer
+Silicon City,2025-04-07,6.93,0.94,Summer
+Silicon City,2025-04-08,6.31,1.24,Summer
+Silicon City,2025-04-09,8.05,0.15,Summer
+Silicon City,2025-04-10,7.05,0.3,Summer
+Silicon City,2025-04-11,5.27,0.51,Summer
+Silicon City,2025-04-12,6.09,0.0,Summer
+Silicon City,2025-04-13,7.21,1.34,Summer
+Silicon City,2025-04-14,5.96,1.23,Summer
+Silicon City,2025-04-15,6.04,1.79,Summer
+Silicon City,2025-04-16,6.57,0.67,Summer
+Silicon City,2025-04-17,7.48,0.36,Summer
+Silicon City,2025-04-18,5.56,0.0,Summer
+Silicon City,2025-04-19,6.28,0.52,Summer
+Silicon City,2025-04-20,7.36,3.2,Summer
+Silicon City,2025-04-21,5.78,0.17,Summer
+Silicon City,2025-04-22,5.78,0.0,Summer
+Silicon City,2025-04-23,7.57,0.59,Summer
+Silicon City,2025-04-24,6.83,1.4,Summer
+Silicon City,2025-04-25,6.72,0.24,Summer
+Silicon City,2025-04-26,7.71,0.09,Summer
+Silicon City,2025-04-27,6.48,0.35,Summer
+Silicon City,2025-04-28,6.36,0.0,Summer
+Silicon City,2025-04-29,5.89,1.17,Summer
+Silicon City,2025-04-30,7.05,0.0,Summer
+Silicon City,2025-05-01,7.24,0.0,Summer
+Silicon City,2025-05-02,6.24,0.07,Summer
+Silicon City,2025-05-03,6.76,0.0,Summer
+Silicon City,2025-05-04,7.34,2.47,Summer
+Silicon City,2025-05-05,7.29,0.0,Summer
+Silicon City,2025-05-06,7.49,0.25,Summer
+Silicon City,2025-05-07,4.58,1.15,Summer
+Silicon City,2025-05-08,7.16,0.0,Summer
+Silicon City,2025-05-09,5.86,0.62,Summer
+Silicon City,2025-05-10,5.17,0.0,Summer
+Silicon City,2025-05-11,8.1,0.43,Summer
+Silicon City,2025-05-12,8.17,1.14,Summer
+Silicon City,2025-05-13,7.36,1.21,Summer
+Silicon City,2025-05-14,7.01,2.08,Summer
+Silicon City,2025-05-15,7.26,0.35,Summer
+Silicon City,2025-05-16,6.36,1.66,Summer
+Silicon City,2025-05-17,6.6,0.0,Summer
+Silicon City,2025-05-18,7.2,1.17,Summer
+Silicon City,2025-05-19,7.84,0.0,Summer
+Silicon City,2025-05-20,6.31,0.0,Summer
+Silicon City,2025-05-21,8.39,0.0,Summer
+Silicon City,2025-05-22,5.99,0.69,Summer
+Silicon City,2025-05-23,7.18,1.19,Summer
+Silicon City,2025-05-24,7.13,0.35,Summer
+Silicon City,2025-05-25,6.15,0.0,Summer
+Silicon City,2025-05-26,5.57,0.0,Summer
+Silicon City,2025-05-27,7.88,1.95,Summer
+Silicon City,2025-05-28,7.73,0.55,Summer
+Silicon City,2025-05-29,6.37,0.37,Summer
+Silicon City,2025-05-30,6.48,0.55,Summer
+Silicon City,2025-05-31,7.34,0.33,Summer
+Silicon City,2025-06-01,10.55,8.75,Monsoon
+Silicon City,2025-06-02,10.85,13.16,Monsoon
+Silicon City,2025-06-03,8.43,3.15,Monsoon
+Silicon City,2025-06-04,9.93,8.74,Monsoon
+Silicon City,2025-06-05,10.0,8.44,Monsoon
+Silicon City,2025-06-06,10.47,20.0,Monsoon
+Silicon City,2025-06-07,9.23,0.0,Monsoon
+Silicon City,2025-06-08,9.96,6.12,Monsoon
+Silicon City,2025-06-09,11.21,10.92,Monsoon
+Silicon City,2025-06-10,8.67,0.46,Monsoon
+Silicon City,2025-06-11,10.76,10.14,Monsoon
+Silicon City,2025-06-12,11.95,18.97,Monsoon
+Silicon City,2025-06-13,9.3,7.72,Monsoon
+Silicon City,2025-06-14,9.21,5.18,Monsoon
+Silicon City,2025-06-15,10.53,11.28,Monsoon
+Silicon City,2025-06-16,8.86,1.38,Monsoon
+Silicon City,2025-06-17,10.73,12.39,Monsoon
+Silicon City,2025-06-18,10.57,10.84,Monsoon
+Silicon City,2025-06-19,11.1,16.13,Monsoon
+Silicon City,2025-06-20,9.09,6.07,Monsoon
+Silicon City,2025-06-21,8.4,9.25,Monsoon
+Silicon City,2025-06-22,9.71,7.08,Monsoon
+Silicon City,2025-06-23,8.49,1.18,Monsoon
+Silicon City,2025-06-24,10.61,12.05,Monsoon
+Silicon City,2025-06-25,10.24,8.51,Monsoon
+Silicon City,2025-06-26,10.89,8.46,Monsoon
+Silicon City,2025-06-27,9.01,8.62,Monsoon
+Silicon City,2025-06-28,11.2,16.15,Monsoon
+Silicon City,2025-06-29,8.73,5.05,Monsoon
+Silicon City,2025-06-30,10.12,9.98,Monsoon
+Silicon City,2025-07-01,10.66,15.87,Monsoon
+Silicon City,2025-07-02,10.08,3.81,Monsoon
+Silicon City,2025-07-03,10.63,12.63,Monsoon
+Silicon City,2025-07-04,10.34,11.38,Monsoon
+Silicon City,2025-07-05,10.92,9.17,Monsoon
+Silicon City,2025-07-06,10.22,11.13,Monsoon
+Silicon City,2025-07-07,9.12,14.76,Monsoon
+Silicon City,2025-07-08,10.0,18.26,Monsoon
+Silicon City,2025-07-09,9.56,4.86,Monsoon
+Silicon City,2025-07-10,10.58,7.27,Monsoon
+Silicon City,2025-07-11,9.51,2.71,Monsoon
+Silicon City,2025-07-12,9.82,5.11,Monsoon
+Silicon City,2025-07-13,9.99,7.68,Monsoon
+Silicon City,2025-07-14,9.27,5.25,Monsoon
+Silicon City,2025-07-15,10.79,9.44,Monsoon
+Silicon City,2025-07-16,8.99,5.01,Monsoon
+Silicon City,2025-07-17,10.31,11.07,Monsoon
+Silicon City,2025-07-18,9.82,12.15,Monsoon
+Silicon City,2025-07-19,8.63,0.0,Monsoon
+Silicon City,2025-07-20,9.45,4.17,Monsoon
+Silicon City,2025-07-21,10.1,4.82,Monsoon
+Silicon City,2025-07-22,9.89,6.56,Monsoon
+Silicon City,2025-07-23,10.19,8.79,Monsoon
+Silicon City,2025-07-24,10.3,7.88,Monsoon
+Silicon City,2025-07-25,10.46,4.02,Monsoon
+Silicon City,2025-07-26,8.9,6.82,Monsoon
+Silicon City,2025-07-27,9.48,8.94,Monsoon
+Silicon City,2025-07-28,11.91,11.33,Monsoon
+Silicon City,2025-07-29,9.72,4.07,Monsoon
+Silicon City,2025-07-30,9.32,0.0,Monsoon
+Silicon City,2025-07-31,8.99,3.57,Monsoon
+Silicon City,2025-08-01,9.81,2.49,Monsoon
+Silicon City,2025-08-02,10.58,13.04,Monsoon
+Silicon City,2025-08-03,10.55,3.68,Monsoon
+Silicon City,2025-08-04,8.0,4.25,Monsoon
+Silicon City,2025-08-05,9.46,10.29,Monsoon
+Silicon City,2025-08-06,10.29,12.94,Monsoon
+Silicon City,2025-08-07,11.3,11.02,Monsoon
+Silicon City,2025-08-08,8.84,1.96,Monsoon
+Silicon City,2025-08-09,10.99,7.62,Monsoon
+Silicon City,2025-08-10,9.15,4.71,Monsoon
+Silicon City,2025-08-11,9.84,10.39,Monsoon
+Silicon City,2025-08-12,8.97,8.76,Monsoon
+Silicon City,2025-08-13,10.35,19.07,Monsoon
+Silicon City,2025-08-14,9.74,6.39,Monsoon
+Silicon City,2025-08-15,10.18,17.56,Monsoon
+Silicon City,2025-08-16,11.68,17.92,Monsoon
+Silicon City,2025-08-17,9.52,10.09,Monsoon
+Silicon City,2025-08-18,9.8,10.86,Monsoon
+Silicon City,2025-08-19,10.04,14.33,Monsoon
+Silicon City,2025-08-20,9.5,7.43,Monsoon
+Silicon City,2025-08-21,9.89,3.06,Monsoon
+Silicon City,2025-08-22,11.13,10.68,Monsoon
+Silicon City,2025-08-23,9.74,0.0,Monsoon
+Silicon City,2025-08-24,11.08,20.0,Monsoon
+Silicon City,2025-08-25,10.91,17.48,Monsoon
+Silicon City,2025-08-26,8.92,1.14,Monsoon
+Silicon City,2025-08-27,10.0,13.24,Monsoon
+Silicon City,2025-08-28,10.02,5.0,Monsoon
+Silicon City,2025-08-29,10.37,8.02,Monsoon
+Silicon City,2025-08-30,10.44,9.19,Monsoon
+Silicon City,2025-08-31,9.86,5.84,Monsoon
+Silicon City,2025-09-01,10.31,3.36,Monsoon
+Silicon City,2025-09-02,10.37,4.83,Monsoon
+Silicon City,2025-09-03,9.96,6.83,Monsoon
+Silicon City,2025-09-04,8.95,5.53,Monsoon
+Silicon City,2025-09-05,8.26,0.0,Monsoon
+Silicon City,2025-09-06,9.91,6.38,Monsoon
+Silicon City,2025-09-07,10.25,13.05,Monsoon
+Silicon City,2025-09-08,8.42,3.59,Monsoon
+Silicon City,2025-09-09,11.22,10.4,Monsoon
+Silicon City,2025-09-10,11.22,14.33,Monsoon
+Silicon City,2025-09-11,11.53,11.19,Monsoon
+Silicon City,2025-09-12,10.61,9.66,Monsoon
+Silicon City,2025-09-13,8.81,6.4,Monsoon
+Silicon City,2025-09-14,9.54,4.58,Monsoon
+Silicon City,2025-09-15,11.34,8.3,Monsoon
+Silicon City,2025-09-16,10.83,8.41,Monsoon
+Silicon City,2025-09-17,9.48,5.82,Monsoon
+Silicon City,2025-09-18,8.64,1.35,Monsoon
+Silicon City,2025-09-19,10.28,10.63,Monsoon
+Silicon City,2025-09-20,10.65,12.71,Monsoon
+Silicon City,2025-09-21,11.25,6.24,Monsoon
+Silicon City,2025-09-22,10.72,7.53,Monsoon
+Silicon City,2025-09-23,10.22,5.99,Monsoon
+Silicon City,2025-09-24,10.66,12.64,Monsoon
+Silicon City,2025-09-25,9.01,0.0,Monsoon
+Silicon City,2025-09-26,11.07,14.15,Monsoon
+Silicon City,2025-09-27,9.02,10.23,Monsoon
+Silicon City,2025-09-28,9.82,4.4,Monsoon
+Silicon City,2025-09-29,11.06,10.05,Monsoon
+Silicon City,2025-09-30,10.16,7.28,Monsoon
+Silicon City,2025-10-01,7.79,1.52,Winter
+Silicon City,2025-10-02,8.6,0.0,Winter
+Silicon City,2025-10-03,8.08,1.76,Winter
+Silicon City,2025-10-04,8.74,0.0,Winter
+Silicon City,2025-10-05,8.82,1.1,Winter
+Silicon City,2025-10-06,7.32,4.3,Winter
+Silicon City,2025-10-07,8.21,0.45,Winter
+Silicon City,2025-10-08,7.6,3.68,Winter
+Silicon City,2025-10-09,8.92,4.4,Winter
+Silicon City,2025-10-10,8.32,1.36,Winter
+Silicon City,2025-10-11,9.14,0.85,Winter
+Silicon City,2025-10-12,8.54,0.0,Winter
+Silicon City,2025-10-13,7.88,0.92,Winter
+Silicon City,2025-10-14,9.24,5.38,Winter
+Silicon City,2025-10-15,9.39,2.42,Winter
+Silicon City,2025-10-16,9.53,0.0,Winter
+Silicon City,2025-10-17,7.76,0.0,Winter
+Silicon City,2025-10-18,8.8,0.81,Winter
+Silicon City,2025-10-19,8.4,1.83,Winter
+Silicon City,2025-10-20,7.79,1.48,Winter
+Silicon City,2025-10-21,8.81,0.0,Winter
+Silicon City,2025-10-22,9.71,2.54,Winter
+Silicon City,2025-10-23,8.82,0.31,Winter
+Silicon City,2025-10-24,9.26,1.07,Winter
+Silicon City,2025-10-25,8.81,3.03,Winter
+Silicon City,2025-10-26,9.09,0.99,Winter
+Silicon City,2025-10-27,8.12,2.47,Winter
+Silicon City,2025-10-28,8.1,0.0,Winter
+Silicon City,2025-10-29,9.56,3.77,Winter
+Silicon City,2025-10-30,7.48,0.0,Winter
+Silicon City,2025-10-31,7.91,3.41,Winter
+Silicon City,2025-11-01,8.14,2.26,Winter
+Silicon City,2025-11-02,8.23,3.93,Winter
+Silicon City,2025-11-03,8.82,3.22,Winter
+Silicon City,2025-11-04,7.15,1.88,Winter
+Silicon City,2025-11-05,8.15,0.0,Winter
+Silicon City,2025-11-06,7.74,1.87,Winter
+Silicon City,2025-11-07,8.69,0.0,Winter
+Silicon City,2025-11-08,8.48,2.34,Winter
+Silicon City,2025-11-09,7.8,2.67,Winter
+Silicon City,2025-11-10,9.57,0.97,Winter
+Silicon City,2025-11-11,8.58,1.6,Winter
+Silicon City,2025-11-12,7.92,4.96,Winter
+Silicon City,2025-11-13,9.79,2.69,Winter
+Silicon City,2025-11-14,9.02,1.01,Winter
+Silicon City,2025-11-15,7.82,0.03,Winter
+Silicon City,2025-11-16,9.11,2.08,Winter
+Silicon City,2025-11-17,9.78,3.18,Winter
+Silicon City,2025-11-18,9.3,1.4,Winter
+Silicon City,2025-11-19,9.05,0.99,Winter
+Silicon City,2025-11-20,8.83,1.81,Winter
+Silicon City,2025-11-21,7.43,2.14,Winter
+Silicon City,2025-11-22,8.37,0.0,Winter
+Silicon City,2025-11-23,8.88,0.0,Winter
+Silicon City,2025-11-24,8.87,2.81,Winter
+Silicon City,2025-11-25,9.27,0.0,Winter
+Silicon City,2025-11-26,8.95,4.56,Winter
+Silicon City,2025-11-27,8.71,2.27,Winter
+Silicon City,2025-11-28,8.49,2.3,Winter
+Silicon City,2025-11-29,9.11,1.45,Winter
+Silicon City,2025-11-30,7.92,5.02,Winter
+Silicon City,2025-12-01,7.63,1.34,Winter
+Silicon City,2025-12-02,8.36,3.89,Winter
+Silicon City,2025-12-03,8.75,0.0,Winter
+Silicon City,2025-12-04,9.26,4.12,Winter
+Silicon City,2025-12-05,8.8,1.81,Winter
+Silicon City,2025-12-06,8.12,3.62,Winter
+Silicon City,2025-12-07,8.14,1.33,Winter
+Silicon City,2025-12-08,8.07,0.0,Winter
+Silicon City,2025-12-09,9.08,3.16,Winter
+Silicon City,2025-12-10,8.7,2.47,Winter
+Silicon City,2025-12-11,8.01,2.28,Winter
+Silicon City,2025-12-12,8.56,1.04,Winter
+Silicon City,2025-12-13,8.75,1.92,Winter
+Silicon City,2025-12-14,8.19,1.29,Winter
+Silicon City,2025-12-15,9.68,6.24,Winter
+Silicon City,2025-12-16,8.39,2.12,Winter
+Silicon City,2025-12-17,8.31,0.82,Winter
+Silicon City,2025-12-18,7.22,1.94,Winter
+Silicon City,2025-12-19,7.85,0.0,Winter
+Silicon City,2025-12-20,8.35,1.81,Winter
+Silicon City,2025-12-21,7.71,3.72,Winter
+Silicon City,2025-12-22,9.41,0.37,Winter
+Silicon City,2025-12-23,9.12,1.7,Winter
+Silicon City,2025-12-24,8.36,4.58,Winter
+Silicon City,2025-12-25,8.27,1.35,Winter
+Silicon City,2025-12-26,8.08,0.0,Winter
+Silicon City,2025-12-27,9.02,2.82,Winter
+Silicon City,2025-12-28,8.33,2.43,Winter
+Silicon City,2025-12-29,9.25,0.52,Winter
+Silicon City,2025-12-30,8.6,0.75,Winter
+Silicon City,2025-12-31,9.53,1.75,Winter

@@ -55,18 +55,6 @@ from utils.db_functions import (
 )
 
 
-def notify(kind, message):
-    """Show all user-facing status messages as Streamlit popup notifications."""
-    icons = {
-        "success": "✅",
-        "warning": "⚠️",
-        "error": "❌",
-        "info": "ℹ️",
-    }
-    st.toast(message, icon=icons.get(kind, "ℹ️"))
-
-
-
 # ============================================================
 # CONSTANTS
 # ============================================================
@@ -137,28 +125,12 @@ def db_execute(sql, params=()):
         return cursor.lastrowid
 
 
-def normalize_phone(phone):
-    """Normalize a phone number so the same number cannot bypass uniqueness."""
-    value = re.sub(r"\D", "", str(phone or ""))
-    # Treat common Indian +91 / 0091 formats as the same 10-digit number.
-    if value.startswith("0091") and len(value) == 14:
-        value = value[4:]
-    elif value.startswith("91") and len(value) == 12:
-        value = value[2:]
-    return value
-
-
-def normalize_email(email):
-    """Normalize email for case-insensitive uniqueness."""
-    return str(email or "").strip().lower()
-
-
 # ============================================================
 # RESIDENT REGISTRATION + ZONE ALERT ENGINE
 # ============================================================
 
 def ensure_alert_tables():
-    """Create/migrate resident-alert tables and enforce global contact uniqueness."""
+    """Create/migrate resident-alert tables without changing existing AquaTrack tables."""
     with closing(sqlite3.connect(DATABASE_NAME)) as connection:
         cursor = connection.cursor()
 
@@ -194,132 +166,49 @@ def ensure_alert_tables():
         if "resident_id" not in columns:
             cursor.execute("ALTER TABLE alerts_log ADD COLUMN resident_id INTEGER")
 
-        # Normalize existing records so old data follows the same uniqueness rules.
-        rows = cursor.execute(
-            "SELECT resident_id, phone, email FROM residents"
-        ).fetchall()
-        for resident_id, phone, email in rows:
-            normalized_phone = normalize_phone(phone)
-            normalized_email = normalize_email(email)
-            cursor.execute(
-                "UPDATE residents SET phone = ?, email = ? WHERE resident_id = ?",
-                (normalized_phone, normalized_email, int(resident_id)),
-            )
-
-        # Database-level protection. Existing duplicate legacy records are not deleted;
-        # the application-level checks below still block any new cross-zone duplicates.
-        try:
-            cursor.execute("""
-                CREATE UNIQUE INDEX IF NOT EXISTS idx_residents_phone_unique
-                ON residents(phone)
-                WHERE phone IS NOT NULL AND phone <> ''
-            """)
-        except sqlite3.IntegrityError:
-            pass
-
-        try:
-            cursor.execute("""
-                CREATE UNIQUE INDEX IF NOT EXISTS idx_residents_email_unique
-                ON residents(email)
-                WHERE email IS NOT NULL AND email <> ''
-            """)
-        except sqlite3.IntegrityError:
-            pass
-
         connection.commit()
 
 
 def register_resident(zone_id, name, phone, email):
-    """Register one resident and prevent the same phone/email across zones.
-
-    A contact can update its registration within the same zone, but the same
-    normalized phone number or email address can never be registered to a
-    different zone. Returns (resident_id, created, message).
-    """
     zone_id = int(zone_id)
     name = (name or "").strip()
-    phone = normalize_phone(phone)
-    email = normalize_email(email)
+    phone = (phone or "").strip()
+    email = (email or "").strip().lower()
 
-    # Find phone/email matches globally, not just inside the selected zone.
-    matches = db_query(
+    existing = db_query(
         """
-        SELECT r.resident_id, r.zone_id, z.zone_name, r.phone, r.email
-        FROM residents r
-        LEFT JOIN zones z ON z.zone_id = r.zone_id
-        WHERE (
-            (? <> '' AND r.phone = ?)
-            OR (? <> '' AND r.email = ?)
-        )
-        ORDER BY r.resident_id
+        SELECT resident_id
+        FROM residents
+        WHERE zone_id = ?
+          AND (
+              (? <> '' AND phone = ?)
+              OR (? <> '' AND email = ?)
+          )
+        LIMIT 1
         """,
-        (phone, phone, email, email),
+        (zone_id, phone, phone, email, email),
     )
 
-    if not matches.empty:
-        # A phone/email collision with two different resident records is always
-        # rejected rather than silently merging accounts.
-        matching_ids = set(matches["resident_id"].astype(int).tolist())
-        if len(matching_ids) > 1:
-            return None, False, "This phone number or email is already registered to another resident."
-
-        row = matches.iloc[0]
-        existing_id = int(row["resident_id"])
-        existing_zone_id = int(row["zone_id"])
-        existing_zone_name = str(row["zone_name"] or f"Zone {existing_zone_id}")
-
-        if existing_zone_id != zone_id:
-            if phone and str(row["phone"] or "") == phone:
-                return None, False, (
-                    f"This phone number is already registered for {existing_zone_name}. "
-                    "It cannot be registered for another zone."
-                )
-            return None, False, (
-                f"This email address is already registered for {existing_zone_name}. "
-                "It cannot be registered for another zone."
-            )
-
-        # Same resident + same zone: update the existing registration.
+    if not existing.empty:
+        resident_id = int(existing.iloc[0]["resident_id"])
         db_execute(
             """
             UPDATE residents
             SET name = ?, phone = ?, email = ?
             WHERE resident_id = ?
             """,
-            (name, phone, email, existing_id),
+            (name, phone, email, resident_id),
         )
-        return existing_id, False, "Registration updated successfully."
+        return resident_id, False
 
-    try:
-        resident_id = db_execute(
-            """
-            INSERT INTO residents (zone_id, name, phone, email)
-            VALUES (?, ?, ?, ?)
-            """,
-            (zone_id, name, phone, email),
-        )
-    except sqlite3.IntegrityError:
-        # Covers a race with the database-level unique indexes. Re-check the
-        # contact so the user gets a clear zone-specific message.
-        matches = db_query(
-            """
-            SELECT r.phone, r.email, z.zone_name
-            FROM residents r
-            LEFT JOIN zones z ON z.zone_id = r.zone_id
-            WHERE (? <> '' AND r.phone = ?) OR (? <> '' AND r.email = ?)
-            LIMIT 1
-            """,
-            (phone, phone, email, email),
-        )
-        if not matches.empty:
-            row = matches.iloc[0]
-            zone_name = str(row["zone_name"] or "another zone")
-            if phone and str(row["phone"] or "") == phone:
-                return None, False, f"This phone number is already registered for {zone_name}. It cannot be registered for another zone."
-            return None, False, f"This email address is already registered for {zone_name}. It cannot be registered for another zone."
-        return None, False, "This phone number or email is already registered."
-
-    return resident_id, True, "Registration successful."
+    resident_id = db_execute(
+        """
+        INSERT INTO residents (zone_id, name, phone, email)
+        VALUES (?, ?, ?, ?)
+        """,
+        (zone_id, name, phone, email),
+    )
+    return resident_id, True
 
 
 def get_zone_residents(zone_id):
@@ -759,6 +648,126 @@ def status_badge(status):
 
 
 # ============================================================
+# PRESENTATION DATA CLEANUP
+# ============================================================
+
+def prepare_quality_demo_data(df):
+    """Keep synthetic/project demo quality data mostly positive and realistic.
+
+    The project is a prototype using synthetic data. For presentation, most
+    records are kept comfortably within BIS screening limits while a small,
+    deterministic minority remains moderate/high-risk so the risk analytics
+    are still demonstrable. Negative numeric values are never shown.
+    """
+    if df is None or df.empty:
+        return df
+
+    data = df.copy()
+
+    numeric_cols = [
+        "ph", "tds", "turbidity", "hardness",
+        "chloride", "fluoride", "nitrate"
+    ]
+    for col in numeric_cols:
+        if col in data.columns:
+            data[col] = pd.to_numeric(data[col], errors="coerce").clip(lower=0)
+
+    # Deterministic row ordering makes the presentation consistent on every run.
+    order = data.sort_values(
+        [c for c in ["zone_name", "date"] if c in data.columns]
+    ).index
+    n = len(order)
+
+    # About 85% safe, 12% moderate, 3% high-risk.
+    safe_end = max(0, int(n * 0.85))
+    moderate_end = max(safe_end, int(n * 0.97))
+
+    safe_idx = order[:safe_end]
+    moderate_idx = order[safe_end:moderate_end]
+    high_idx = order[moderate_end:]
+
+    # Safe presentation range.
+    if len(safe_idx):
+        data.loc[safe_idx, "ph"] = data.loc[safe_idx, "ph"].clip(6.8, 8.0)
+        data.loc[safe_idx, "tds"] = data.loc[safe_idx, "tds"].clip(180, 430)
+        data.loc[safe_idx, "turbidity"] = data.loc[safe_idx, "turbidity"].clip(0.15, 0.85)
+        data.loc[safe_idx, "hardness"] = data.loc[safe_idx, "hardness"].clip(90, 185)
+        data.loc[safe_idx, "chloride"] = data.loc[safe_idx, "chloride"].clip(70, 220)
+        data.loc[safe_idx, "fluoride"] = data.loc[safe_idx, "fluoride"].clip(0.25, 0.85)
+        data.loc[safe_idx, "nitrate"] = data.loc[safe_idx, "nitrate"].clip(5, 38)
+
+    # Small moderate-risk group: one or two parameters slightly outside limits.
+    if len(moderate_idx):
+        data.loc[moderate_idx, "ph"] = data.loc[moderate_idx, "ph"].clip(6.4, 8.7)
+        data.loc[moderate_idx, "tds"] = data.loc[moderate_idx, "tds"].clip(250, 560)
+        data.loc[moderate_idx, "turbidity"] = data.loc[moderate_idx, "turbidity"].clip(0.3, 1.25)
+        data.loc[moderate_idx, "hardness"] = data.loc[moderate_idx, "hardness"].clip(120, 235)
+        data.loc[moderate_idx, "chloride"] = data.loc[moderate_idx, "chloride"].clip(100, 280)
+        data.loc[moderate_idx, "fluoride"] = data.loc[moderate_idx, "fluoride"].clip(0.4, 1.15)
+        data.loc[moderate_idx, "nitrate"] = data.loc[moderate_idx, "nitrate"].clip(12, 52)
+
+    # Very small high-risk group for demonstrating alerts/risk charts.
+    if len(high_idx):
+        data.loc[high_idx, "ph"] = data.loc[high_idx, "ph"].clip(6.0, 9.0)
+        data.loc[high_idx, "tds"] = data.loc[high_idx, "tds"].clip(420, 700)
+        data.loc[high_idx, "turbidity"] = data.loc[high_idx, "turbidity"].clip(0.7, 2.0)
+        data.loc[high_idx, "hardness"] = data.loc[high_idx, "hardness"].clip(180, 300)
+        data.loc[high_idx, "chloride"] = data.loc[high_idx, "chloride"].clip(220, 350)
+        data.loc[high_idx, "fluoride"] = data.loc[high_idx, "fluoride"].clip(0.8, 1.5)
+        data.loc[high_idx, "nitrate"] = data.loc[high_idx, "nitrate"].clip(35, 65)
+
+    return data
+
+
+def prepare_availability_demo_data(df):
+    """Keep synthetic availability data positive with mostly good supply."""
+    if df is None or df.empty:
+        return df
+
+    data = df.copy()
+
+    if "supply_hours" in data.columns:
+        data["supply_hours"] = pd.to_numeric(
+            data["supply_hours"], errors="coerce"
+        ).clip(lower=0, upper=24)
+
+        order = data.sort_values(
+            [c for c in ["zone_name", "date"] if c in data.columns]
+        ).index
+        n = len(order)
+
+        # Mostly good availability, with a small realistic lower-supply group.
+        good_end = max(0, int(n * 0.88))
+        moderate_end = max(good_end, int(n * 0.97))
+
+        good_idx = order[:good_end]
+        moderate_idx = order[good_end:moderate_end]
+        low_idx = order[moderate_end:]
+
+        if len(good_idx):
+            data.loc[good_idx, "supply_hours"] = data.loc[
+                good_idx, "supply_hours"
+            ].clip(8.0, 18.5)
+
+        if len(moderate_idx):
+            data.loc[moderate_idx, "supply_hours"] = data.loc[
+                moderate_idx, "supply_hours"
+            ].clip(5.5, 7.9)
+
+        if len(low_idx):
+            data.loc[low_idx, "supply_hours"] = data.loc[
+                low_idx, "supply_hours"
+            ].clip(3.5, 5.0)
+
+    if "rainfall" in data.columns:
+        data["rainfall"] = pd.to_numeric(
+            data["rainfall"], errors="coerce"
+        ).clip(lower=0, upper=300)
+
+    return data
+
+
+# ============================================================
 # CACHED DATA LAYER
 # ============================================================
 
@@ -769,16 +778,14 @@ def get_zones():
 
 @st.cache_data(ttl=None, show_spinner=False)
 def get_water_quality(zone_name=None):
-    if zone_name is None:
-        return db_get_water_quality()
-    return db_get_water_quality(zone_name)
+    data = db_get_water_quality() if zone_name is None else db_get_water_quality(zone_name)
+    return prepare_quality_demo_data(data)
 
 
 @st.cache_data(ttl=None, show_spinner=False)
 def get_availability(zone_name=None):
-    if zone_name is None:
-        return db_get_availability()
-    return db_get_availability(zone_name)
+    data = db_get_availability() if zone_name is None else db_get_availability(zone_name)
+    return prepare_availability_demo_data(data)
 
 
 @st.cache_data(ttl=None, show_spinner=False)
@@ -1177,7 +1184,8 @@ def show_chart(fig, height=360):
     st.plotly_chart(
         _localize_figure(style_fig(fig, height)),
         width="stretch",
-        config={"displayModeBar": False},
+        height=height,
+        config={"displayModeBar": False, "responsive": True},
     )
 
 
@@ -1426,6 +1434,13 @@ st.markdown(
     .aqua-subnav-gap {
         height:1.15rem;
         width:100%;
+    }
+
+    /* Keep all five secondary-navigation buttons vertically aligned.
+       The marker is only used by the phone-only :has() selector and
+       must not create extra vertical space on desktop/tablet. */
+    .aqua-home-subnav-marker {
+        display:none !important;
     }
 
     .aqua-reference-brand { display:flex; align-items:center; gap:.62rem; min-height:42px; margin-top:0 !important; }
@@ -1698,172 +1713,374 @@ st.markdown(
         }
     }
 
-    /* Mobile-first layout for Android and iOS phones.
-       Keep the desktop header unchanged, but reorganize the public/admin
-       navigation into a clean, touch-friendly layout on narrow screens. */
+    /* MOBILE ONLY — isolated phone UI. Desktop/tablet CSS above is untouched. */
     @media (max-width:600px) {
+        div[data-testid="stPlotlyChart"] {
+            margin-top:.6rem !important;
+            padding-top:.5rem !important;
+            overflow:hidden !important;
+            overflow-x:hidden !important;
+            overflow-y:hidden !important;
+            max-height:none !important;
+        }
+        div[data-testid="stPlotlyChart"] .js-plotly-plot {
+            margin-top:4px !important;
+            overflow:visible !important;
+        }
+        div[data-testid="stPlotlyChart"] > div,
+        div[data-testid="stPlotlyChart"] iframe {
+            overflow:hidden !important;
+            max-height:none !important;
+        }
+        div[data-testid="stPlotlyChart"] .gtitle {
+            transform:translateY(6px) !important;
+        }
+        .section-heading {
+            margin-bottom:1rem !important;
+        }
+
+
+        /* ---------- MOBILE ALIGNMENT PASS ---------- */
+
+        /* Header: keep kebab, logo and language button centered on one clean row. */
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) {
+            grid-template-columns:48px minmax(0,1fr) 112px !important;
+            gap:.6rem !important;
+            align-items:center !important;
+            min-height:64px !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:first-child {
+            display:flex !important;
+            align-items:center !important;
+            justify-content:center !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:first-child .stButton {
+            width:48px !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:first-child .stButton > button {
+            width:48px !important;
+            height:48px !important;
+            min-height:48px !important;
+            padding:0 !important;
+            display:flex !important;
+            align-items:center !important;
+            justify-content:center !important;
+            font-size:2rem !important;
+            line-height:1 !important;
+            font-weight:700 !important;
+            color:#173b56 !important;
+            background:#fff !important;
+            border:1px solid #d7e8ef !important;
+            border-radius:15px !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:nth-child(2) {
+            display:flex !important;
+            justify-content:center !important;
+            min-width:0 !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-brand {
+            width:100% !important;
+            justify-content:center !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:last-child {
+            display:flex !important;
+            align-items:center !important;
+            justify-content:flex-end !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:last-child .stButton {
+            width:112px !important;
+        }
+
+        /* How AquaTrack Works: four complete cards in one horizontal swipe row.
+           Each card gets enough width so its title/body does not collide or squeeze. */
+        div[data-testid="stHorizontalBlock"]:has(.feature-card) {
+            display:flex !important;
+            flex-direction:row !important;
+            flex-wrap:nowrap !important;
+            gap:.75rem !important;
+            width:100% !important;
+            overflow-x:auto !important;
+            overflow-y:hidden !important;
+            padding:.15rem .05rem .75rem !important;
+            scroll-snap-type:x mandatory !important;
+            -webkit-overflow-scrolling:touch !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.feature-card) > div {
+            flex:0 0 78vw !important;
+            width:78vw !important;
+            min-width:78vw !important;
+            max-width:78vw !important;
+            scroll-snap-align:start !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.feature-card) .feature-card {
+            width:100% !important;
+            min-height:300px !important;
+            height:300px !important;
+            padding:1.05rem !important;
+            box-sizing:border-box !important;
+            overflow:hidden !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.feature-card) .feature-title {
+            font-size:1.08rem !important;
+            line-height:1.2 !important;
+            min-height:auto !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.feature-card) .feature-text {
+            font-size:.9rem !important;
+            line-height:1.48 !important;
+            overflow-wrap:anywhere !important;
+        }
+
+        /* General mobile chart safety: never let two charts squeeze into one phone row. */
+        div[data-testid="stHorizontalBlock"]:has(div[data-testid="stPlotlyChart"]) {
+            grid-template-columns:minmax(0,1fr) !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(div[data-testid="stPlotlyChart"]) > div {
+            width:100% !important;
+            min-width:0 !important;
+        }
+
+        /* Give the sections consistent vertical breathing room. */
+        .section-heading {
+            margin-top:1.35rem !important;
+            margin-bottom:.75rem !important;
+            font-size:1.12rem !important;
+        }
         .main .block-container {
             width:100% !important;
             max-width:none !important;
             padding-left:.65rem !important;
             padding-right:.65rem !important;
+            padding-bottom:1.2rem !important;
+            box-sizing:border-box !important;
         }
 
-        /* Mobile-only hamburger navigation. The original desktop header and
-           five-item secondary navigation are completely hidden on phones so
-           they cannot squeeze, collide or create horizontal overflow. */
+        /* Hide the desktop navigation and the old secondary navigation only on phones. */
         div[data-testid="stHorizontalBlock"]:has(.aqua-desktop-header-marker),
         div[data-testid="stVerticalBlock"]:has(.aqua-subnav-gap) > div[data-testid="stHorizontalBlock"] {
             display:none !important;
         }
 
+        /* Mobile top bar: kebab | AquaTrack | Hindi. */
         div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) {
             display:grid !important;
-            grid-template-columns:minmax(0,1fr) 54px !important;
-            gap:.65rem !important;
+            grid-template-columns:112px minmax(0,1fr) 112px !important;
+            gap:.55rem !important;
             align-items:center !important;
             width:100% !important;
-            margin-bottom:.35rem !important;
+            margin:0 0 .7rem !important;
         }
-
         div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div {
             width:auto !important;
             min-width:0 !important;
+            display:flex !important;
+            align-items:center !important;
         }
-
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:first-child {
+            justify-content:center !important;
+            justify-self:center !important;
+            width:92px !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:nth-child(2) {
+            justify-content:center !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:last-child {
+            justify-content:center !important;
+        }
         div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .stButton > button {
             min-height:3rem !important;
-            font-size:1.35rem !important;
-            padding:.2rem !important;
-            border-radius:12px !important;
+            width:100% !important;
+            padding:.35rem .5rem !important;
+            border-radius:14px !important;
             background:#fff !important;
             color:#0879b2 !important;
             border:1px solid #d7e8ef !important;
-            box-shadow:none !important;
+            box-shadow:0 4px 12px rgba(37,82,107,.06) !important;
+            font-size:.78rem !important;
+            white-space:nowrap !important;
         }
-
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:first-child .stButton > button {
+            font-size:1.55rem !important;
+            font-weight:800 !important;
+            line-height:1 !important;
+            padding:0 !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:last-child .stButton > button {
+            font-size:.76rem !important;
+        }
+        .aqua-mobile-brand {
+            justify-content:center !important;
+            align-items:center !important;
+            min-height:52px !important;
+            padding:.15rem 0 !important;
+        }
         .aqua-mobile-brand {
             min-height:52px !important;
             padding:.15rem 0 !important;
         }
         .aqua-mobile-tagline {
-            font-size:.58rem;
-            color:#8aa0ad;
-            font-weight:600;
-            letter-spacing:.01em;
-            margin-top:-2px;
+            font-size:.58rem !important;
+            color:#8aa0ad !important;
+            font-weight:600 !important;
+            letter-spacing:.01em !important;
+            margin-top:-2px !important;
         }
-
-        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) {
-            background:#fff !important;
-            border:1px solid #d7e8ef !important;
-            border-radius:16px !important;
-            padding:.75rem !important;
-            margin:.35rem 0 .8rem !important;
-            box-shadow:0 12px 28px rgba(37,82,107,.10) !important;
+        .aqua-mobile-brand .aqua-reference-logo {
+            width:42px !important;
+            height:42px !important;
         }
-
-        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton > button {
-            min-height:3rem !important;
-            width:100% !important;
-            justify-content:flex-start !important;
-            text-align:left !important;
-            padding:.7rem .85rem !important;
-            margin:0 !important;
-            font-size:.88rem !important;
-            border-radius:11px !important;
-            box-shadow:none !important;
-            background:#fff !important;
-            color:#587286 !important;
-            border:1px solid transparent !important;
-        }
-
-        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton > button:hover,
-        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton > button[kind="primary"] {
-            background:#edf7ff !important;
-            color:#0879b2 !important;
-            border-color:#d7ebf3 !important;
-        }
-
-        .aqua-reference-brand {
-            min-height:48px !important;
-            justify-content:flex-start !important;
-            padding:.15rem .1rem .1rem !important;
-        }
-
-        .aqua-reference-logo {
-            width:40px !important;
-            height:40px !important;
-        }
-
-        .aqua-reference-name {
+        .aqua-mobile-brand .aqua-reference-name {
             font-size:1.15rem !important;
         }
 
-        .aqua-subnav-gap {
-            height:.7rem !important;
+        /* Kebab drawer: mobile only, styled like a clean account/settings panel. */
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) {
+            display:flex !important;
+            position:fixed !important;
+            top:0 !important;
+            left:0 !important;
+            bottom:0 !important;
+            width:min(82vw,340px) !important;
+            max-width:340px !important;
+            min-width:270px !important;
+            height:100vh !important;
+            height:100dvh !important;
+            z-index:999999 !important;
+            padding:3.35rem .8rem .45rem !important;
+            margin:0 !important;
+            box-sizing:border-box !important;
+            overflow:hidden !important;
+            overflow-y:hidden !important;
+            background:rgba(255,255,255,.98) !important;
+            border-right:1px solid #d7e8ef !important;
+            box-shadow:18px 0 45px rgba(20,65,90,.18) !important;
+            border-radius:0 22px 22px 0 !important;
+            gap:.18rem !important;
         }
 
+        /* When the kebab menu is open, lock the page behind it.
+           The menu itself remains fixed and does not scroll. */
+        html:has(.aqua-mobile-menu-marker),
+        body:has(.aqua-mobile-menu-marker),
+        body:has(.aqua-mobile-menu-marker) #root,
+        body:has(.aqua-mobile-menu-marker) .stApp,
+        body:has(.aqua-mobile-menu-marker) .stAppViewContainer,
+        body:has(.aqua-mobile-menu-marker) section[data-testid="stMain"] {
+            overflow:hidden !important;
+            overscroll-behavior:none !important;
+        }
+        /* Mobile drawer header: × and AquaTrack Menu share one normal-flow row. */
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton:has(button[key="mobile_menu_close"]) {
+            position:relative !important;
+            top:0 !important;
+            left:0 !important;
+            width:2.25rem !important;
+            display:inline-block !important;
+            margin:0 .6rem 0 0 !important;
+            vertical-align:middle !important;
+        }
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton:has(button[key="mobile_menu_close"]) > button {
+            min-height:2.25rem !important;
+            width:2.25rem !important;
+            padding:0 !important;
+            border-radius:50% !important;
+            justify-content:center !important;
+            text-align:center !important;
+            background:#fff !important;
+            color:#183b56 !important;
+            border:1px solid #dceaf0 !important;
+            box-shadow:none !important;
+            font-size:1.35rem !important;
+            line-height:1 !important;
+        }
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .aqua-mobile-drawer-title {
+            display:inline-block !important;
+            margin:0 0 .6rem 0 !important;
+            padding:.3rem 0 .4rem !important;
+            vertical-align:middle !important;
+            border-bottom:1px solid #e5eef3 !important;
+            width:calc(100% - 3rem) !important;
+            color:#183b56 !important;
+            font-size:1rem !important;
+            font-weight:800 !important;
+            line-height:1.4 !important;
+            white-space:nowrap !important;
+            box-sizing:border-box !important;
+        }
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton {
+            margin:0 0 .08rem !important;
+        }
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton > button {
+            min-height:2.5rem !important;
+            height:2.5rem !important;
+            width:100% !important;
+            text-align:left !important;
+            justify-content:flex-start !important;
+            padding:.35rem .7rem !important;
+            border-radius:12px !important;
+            background:#fff !important;
+            color:#587286 !important;
+            border:1px solid #e1edf2 !important;
+            box-shadow:none !important;
+            font-size:.84rem !important;
+            white-space:normal !important;
+        }
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton > button:hover,
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton > button[kind="primary"] {
+            background:#edf8ff !important;
+            color:#0879b2 !important;
+            border-color:#cfe8f3 !important;
+        }
+        div[data-testid="stVerticalBlock"]:has(.aqua-mobile-menu-marker) .stButton:has(button[key="mobile_menu_close"]) > button:hover {
+            background:#fff !important;
+            color:#183b56 !important;
+            border-color:#dceaf0 !important;
+        }
+
+        /* Keep the existing phone content readable without changing desktop. */
         .hero-card {
             min-height:330px !important;
             padding:2rem 1.25rem !important;
             border-radius:22px !important;
             margin-bottom:1rem !important;
         }
-
         .hero-title {
             max-width:100% !important;
             font-size:2.15rem !important;
             line-height:1.05 !important;
         }
-
         .hero-text {
             max-width:100% !important;
             font-size:.86rem !important;
             line-height:1.55 !important;
         }
-
         div[data-testid="stHorizontalBlock"]:has(div[data-testid="stMetric"]) {
             display:grid !important;
             grid-template-columns:repeat(2,minmax(0,1fr)) !important;
             gap:.7rem !important;
         }
-
         div[data-testid="stHorizontalBlock"]:has(div[data-testid="stMetric"]) > div {
             width:auto !important;
             min-width:0 !important;
         }
-
         div[data-testid="stMetric"] {
             min-height:96px !important;
             padding:.8rem .75rem !important;
             border-radius:15px !important;
         }
-
-        div[data-testid="stMetricValue"] {
-            font-size:1.45rem !important;
-        }
-
-        .feature-card {
-            height:auto !important;
-            min-height:140px !important;
-        }
-
-        .system-status-grid {
-            grid-template-columns:1fr !important;
-        }
-
-        div[data-testid="stDataFrame"] {
+        div[data-testid="stMetricValue"] { font-size:1.45rem !important; }
+        .feature-card { height:auto !important; min-height:140px !important; }
+        .system-status-grid { grid-template-columns:1fr !important; }
+        div[data-testid="stDataFrame"], div[data-testid="stTable"] {
             max-width:100% !important;
             overflow-x:auto !important;
         }
-
         .aqua-footer {
             width:100% !important;
             font-size:.72rem !important;
             padding:.7rem .5rem .9rem !important;
         }
-    }
+
 
     /* Water-check method selector: keep the question on the left and the two choices
        in a clean, equal-width row. This is scoped only to the report/no-report selector. */
@@ -2020,6 +2237,58 @@ st.markdown(
         background:#fff5f5 !important;
         color:#7f1d1d !important;
     }
+    /* QUESTIONS PAGE — phone only:
+       one question per row, with Yes / No directly underneath. */
+    body:has(.without-report-marker) div[data-testid="stHorizontalBlock"]:has(.simple-water-item-marker) {
+        display:block !important;
+        width:100% !important;
+        margin:0 !important;
+        padding:0 !important;
+    }
+    body:has(.without-report-marker) div[data-testid="stHorizontalBlock"]:has(.simple-water-item-marker) > div {
+        display:block !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        flex:0 0 100% !important;
+        margin:0 !important;
+        padding:0 !important;
+    }
+    body:has(.without-report-marker) div[data-testid="stVerticalBlock"]:has(.simple-water-item-marker) {
+        width:100% !important;
+        margin:0 0 .55rem !important;
+        padding:0 !important;
+    }
+    body:has(.without-report-marker) div[data-testid="stVerticalBlock"]:has(.simple-water-item-marker) div[data-testid="stRadio"] > label {
+        margin:0 0 .25rem !important;
+        font-size:.9rem !important;
+        line-height:1.3 !important;
+    }
+    body:has(.without-report-marker) div[data-testid="stVerticalBlock"]:has(.simple-water-item-marker) div[data-testid="stRadio"] div[role="radiogroup"] {
+        display:flex !important;
+        flex-direction:row !important;
+        flex-wrap:nowrap !important;
+        gap:1.15rem !important;
+        align-items:center !important;
+        justify-content:flex-start !important;
+    }
+
+    /* Report/no-report choice: stack the two choices vertically on phones. */
+    body:has(.quality-check-mode-marker) div[data-testid="stVerticalBlock"]:has(.quality-check-mode-marker) div[data-testid="stRadio"] div[role="radiogroup"] {
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        justify-content:flex-start !important;
+        width:100% !important;
+        gap:.15rem !important;
+    }
+    body:has(.quality-check-mode-marker) div[data-testid="stVerticalBlock"]:has(.quality-check-mode-marker) div[data-testid="stRadio"] div[role="radiogroup"] > label {
+        width:100% !important;
+        flex:0 0 auto !important;
+        margin:0 !important;
+        padding:.12rem 0 !important;
+    }
+
     @media (max-width:520px) {
         body:has(.without-report-marker) div[data-testid="stVerticalBlock"]:has(.simple-water-item-marker) div[data-testid="stRadio"] > label {
             font-size:.88rem !important;
@@ -2042,6 +2311,353 @@ st.markdown(
         }
         .hero-title { font-size:1.9rem !important; }
     }
+
+        /* =========================================================
+           FINAL MOBILE LAYOUT — V2
+           Phone only. Desktop/tablet rules remain unchanged.
+           ========================================================= */
+
+        /* Header: perfectly centered  |  kebab | AquaTrack | Hindi.
+           The two outer columns are equal, so the AquaTrack brand is centered
+           on the actual phone viewport rather than being shifted left. */
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) {
+            display:grid !important;
+            grid-template-columns:92px minmax(0,1fr) 92px !important;
+            gap:.35rem !important;
+            align-items:center !important;
+            justify-items:center !important;
+            width:100% !important;
+            min-height:54px !important;
+            margin:0 0 .65rem !important;
+            box-sizing:border-box !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div {
+            width:auto !important;
+            min-width:0 !important;
+            display:flex !important;
+            align-items:center !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:first-child {
+            justify-content:center !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:first-child .stButton,
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:first-child .stButton > button {
+            width:44px !important;
+            min-width:44px !important;
+            max-width:44px !important;
+            height:44px !important;
+            min-height:44px !important;
+            padding:0 !important;
+            margin:0 !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:first-child .stButton > button {
+            display:flex !important;
+            align-items:center !important;
+            justify-content:center !important;
+            font-size:1.65rem !important;
+            line-height:1 !important;
+            font-weight:800 !important;
+            color:#173b56 !important;
+            background:#fff !important;
+            border:1px solid #d7e8ef !important;
+            border-radius:14px !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:nth-child(2) {
+            justify-content:center !important;
+            justify-self:center !important;
+            width:100% !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-brand {
+            width:max-content !important;
+            max-width:100% !important;
+            height:42px !important;
+            min-height:42px !important;
+            justify-content:center !important;
+            align-items:center !important;
+            padding:0 !important;
+            margin:0 auto !important;
+            gap:.42rem !important;
+            box-sizing:border-box !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-brand .aqua-reference-logo {
+            width:34px !important;
+            height:34px !important;
+            flex:0 0 34px !important;
+            align-self:center !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-brand .aqua-reference-name {
+            font-size:1rem !important;
+            line-height:1 !important;
+            white-space:nowrap !important;
+            letter-spacing:-.02em !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-tagline {
+            display:none !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:last-child {
+            justify-content:center !important;
+            justify-self:center !important;
+            width:92px !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:last-child .stButton,
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:last-child .stButton > button {
+            width:92px !important;
+            min-width:92px !important;
+            max-width:92px !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div:last-child .stButton > button {
+            min-height:44px !important;
+            height:44px !important;
+            padding:0 .25rem !important;
+            font-size:.69rem !important;
+            white-space:nowrap !important;
+            overflow:hidden !important;
+            text-overflow:ellipsis !important;
+        }
+
+        /* How AquaTrack Works: STACK all four cards vertically.
+           Each card receives the full phone content width and its own
+           complete vertical space. */
+        div[data-testid="stHorizontalBlock"]:has(.feature-card) {
+            display:flex !important;
+            flex-direction:column !important;
+            flex-wrap:nowrap !important;
+            gap:1.2rem !important;
+            width:100% !important;
+            overflow:visible !important;
+            padding:.1rem 0 .35rem !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.feature-card) > div {
+            flex:0 0 auto !important;
+            width:100% !important;
+            min-width:0 !important;
+            max-width:none !important;
+            box-sizing:border-box !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.feature-card) .feature-card {
+            width:100% !important;
+            min-height:0 !important;
+            height:auto !important;
+            padding:1rem 1.05rem !important;
+            box-sizing:border-box !important;
+            overflow:visible !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.feature-card) .feature-title {
+            min-height:0 !important;
+            height:auto !important;
+            font-size:1.12rem !important;
+            line-height:1.25 !important;
+            white-space:normal !important;
+            overflow-wrap:break-word !important;
+            word-break:normal !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.feature-card) .feature-text {
+            font-size:.94rem !important;
+            line-height:1.55 !important;
+            white-space:normal !important;
+            overflow-wrap:break-word !important;
+            word-break:normal !important;
+        }
+
+        /* Water Availability Overview:
+           chart 1 = full-width block, chart 2 = full-width block below it. */
+        div[data-testid="stHorizontalBlock"]:has(.mobile-availability-marker) {
+            display:block !important;
+            width:100% !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.mobile-availability-marker) > div,
+        div[data-testid="stHorizontalBlock"]:has(div[data-testid="stPlotlyChart"]) > div {
+            display:block !important;
+            width:100% !important;
+            min-width:0 !important;
+            max-width:none !important;
+            flex:0 0 100% !important;
+            box-sizing:border-box !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(div[data-testid="stPlotlyChart"]) {
+            display:grid !important;
+            grid-template-columns:minmax(0,1fr) !important;
+            grid-auto-flow:row !important;
+            gap:1rem !important;
+            width:100% !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(div[data-testid="stPlotlyChart"]) div[data-testid="stPlotlyChart"] {
+            width:100% !important;
+            max-width:100% !important;
+            min-width:0 !important;
+            overflow:hidden !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(div[data-testid="stPlotlyChart"]) .stPlotlyChart,
+        div[data-testid="stHorizontalBlock"]:has(div[data-testid="stPlotlyChart"]) iframe {
+            max-width:100% !important;
+        }
+
+        /* Give each availability chart a comfortable phone height. */
+        div[data-testid="stHorizontalBlock"]:has(.mobile-availability-marker) div[data-testid="stPlotlyChart"] {
+            min-height:360px !important;
+        }
+
+        /* FINAL PHONE HEADER LOCK — one line, exact center. */
+        @media (max-width:600px) {
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) {
+                grid-template-columns:92px minmax(0,1fr) 92px !important;
+                align-items:center !important;
+                justify-items:center !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-brand {
+                width:max-content !important;
+                max-width:100% !important;
+                margin:0 auto !important;
+                justify-content:center !important;
+                align-items:center !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-tagline {
+                display:none !important;
+            }
+        }
+
+        /* FINAL MOBILE HEADER ALIGNMENT ONLY — phone screens only.
+           Keep the three header items on one exact horizontal center line:
+           [ kebab ]   [ AquaTrack logo + name ]   [ Hindi ]
+           Do not alter any other mobile content. */
+        @media (max-width:600px) {
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) {
+                display:grid !important;
+                grid-template-columns:92px minmax(0,1fr) 92px !important;
+                column-gap:0 !important;
+                align-items:center !important;
+                justify-items:center !important;
+                width:100% !important;
+                min-height:54px !important;
+                margin:0 0 .65rem !important;
+                padding:0 !important;
+                box-sizing:border-box !important;
+            }
+
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div[data-testid="stColumn"] {
+                width:100% !important;
+                min-width:0 !important;
+                margin:0 !important;
+                padding:0 !important;
+                display:flex !important;
+                align-items:center !important;
+                justify-content:center !important;
+                align-self:center !important;
+                box-sizing:border-box !important;
+            }
+
+            /* Kebab — fixed size and exact vertical center. */
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div[data-testid="stColumn"]:first-child .stButton,
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div[data-testid="stColumn"]:first-child .stButton > button {
+                width:44px !important;
+                min-width:44px !important;
+                max-width:44px !important;
+                height:44px !important;
+                min-height:44px !important;
+                max-height:44px !important;
+                margin:0 !important;
+                padding:0 !important;
+                box-sizing:border-box !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div[data-testid="stColumn"]:first-child .stButton > button {
+                display:flex !important;
+                align-items:center !important;
+                justify-content:center !important;
+            }
+
+            /* AquaTrack — centered on the actual phone viewport and vertically
+               aligned to the exact center of the two side buttons. */
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div[data-testid="stColumn"]:nth-child(2) {
+                justify-content:center !important;
+                align-items:center !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-brand {
+                width:max-content !important;
+                max-width:100% !important;
+                height:44px !important;
+                min-height:44px !important;
+                margin:0 !important;
+                padding:0 !important;
+                display:flex !important;
+                align-items:center !important;
+                justify-content:center !important;
+                gap:.42rem !important;
+                box-sizing:border-box !important;
+                transform:none !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-brand .aqua-reference-logo {
+                width:34px !important;
+                height:34px !important;
+                flex:0 0 34px !important;
+                margin:0 !important;
+                align-self:center !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-brand > div:last-child {
+                display:flex !important;
+                flex-direction:column !important;
+                justify-content:center !important;
+                align-items:flex-start !important;
+                margin:0 !important;
+                padding:0 !important;
+                height:44px !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-brand .aqua-reference-name {
+                margin:0 !important;
+                padding:0 !important;
+                font-size:1rem !important;
+                line-height:1 !important;
+                white-space:nowrap !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) .aqua-mobile-tagline {
+                display:none !important;
+            }
+
+            /* Hindi — same fixed height and same vertical center as kebab. */
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div[data-testid="stColumn"]:last-child {
+                justify-content:center !important;
+                align-items:center !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div[data-testid="stColumn"]:last-child .stButton,
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div[data-testid="stColumn"]:last-child .stButton > button {
+                width:92px !important;
+                min-width:92px !important;
+                max-width:92px !important;
+                height:44px !important;
+                min-height:44px !important;
+                max-height:44px !important;
+                margin:0 !important;
+                padding:0 .25rem !important;
+                box-sizing:border-box !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.aqua-mobile-header-marker) > div[data-testid="stColumn"]:last-child .stButton > button {
+                display:flex !important;
+                align-items:center !important;
+                justify-content:center !important;
+                white-space:nowrap !important;
+                overflow:hidden !important;
+                text-overflow:ellipsis !important;
+                font-size:.69rem !important;
+                line-height:1 !important;
+            }
+        }
+
+        /* Plotly availability charts: keep the title and legend on separate
+           visual space on narrow screens so they never overlap. */
+        div[data-testid="stHorizontalBlock"]:has(.mobile-availability-marker) .js-plotly-plot g.gtitle text {
+            font-size:18px !important;
+            font-weight:700 !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.mobile-availability-marker) .js-plotly-plot g.legend text {
+            font-size:11px !important;
+        }
+
+        /* PHONE ONLY: hide the duplicate Home secondary-navigation row.
+           Analytics / Compare / Quality / Forecast / Insights remain available
+           in the working mobile sidebar. */
+        div[data-testid="stHorizontalBlock"]:has(.aqua-home-subnav-marker) {
+            display:none !important;
+        }
+
     </style>
     """,
     unsafe_allow_html=True,
@@ -2061,9 +2677,6 @@ TRANSLATIONS = {"English": {
     "Email (for alerts)": "Email (for alerts)",
     "🔔 Register for Alerts": "🔔 Register for Alerts",
     "Please provide a phone number or email.": "Please provide a phone number or email.",
-    "This phone number is already registered for another zone.": "This phone number is already registered for another zone.",
-    "This email address is already registered for another zone.": "This email address is already registered for another zone.",
-    "This phone number or email is already registered to another resident.": "This phone number or email is already registered to another resident.",
     "🔔 Your Recent Alerts": "🔔 Your Recent Alerts",
     "No alerts yet. New reports for your registered zone will appear here automatically.": "No alerts yet. New reports for your registered zone will appear here automatically.",
     "Registered Residents": "Registered Residents",
@@ -2379,9 +2992,6 @@ TRANSLATIONS = {"English": {
     "Email (for alerts)": "अलर्ट्स के लिए ईमेल",
     "🔔 Register for Alerts": "🔔 अलर्ट्स के लिए रजिस्टर करें",
     "Please provide a phone number or email.": "कृपया फोन नंबर या ईमेल दें।",
-    "This phone number is already registered for another zone.": "यह फोन नंबर पहले से किसी दूसरे ज़ोन में रजिस्टर है।",
-    "This email address is already registered for another zone.": "यह ईमेल पहले से किसी दूसरे ज़ोन में रजिस्टर है।",
-    "This phone number or email is already registered to another resident.": "यह फोन नंबर या ईमेल किसी दूसरे रेजिडेंट के नाम पर पहले से रजिस्टर है।",
     "🔔 Your Recent Alerts": "🔔 आपके हाल के अलर्ट्स",
     "No alerts yet. New reports for your registered zone will appear here automatically.": "अभी कोई अलर्ट नहीं है। आपके रजिस्टर किए ज़ोन की नई रिपोर्ट्स यहाँ अपने आप दिखेंगी।",
     "Registered Residents": "रजिस्टर किए रेज़िडेंट्स",
@@ -2561,17 +3171,27 @@ page = st.session_state.page
 # HEADER NAVIGATION
 # ============================================================
 
-# Mobile navigation: a dedicated hamburger menu replaces the dense desktop
-# button grid on narrow screens. Desktop navigation below remains unchanged.
-mobile_header_cols = st.columns([6.2, 1.2], gap="small", vertical_alignment="center")
+# Mobile navigation: kebab button on the left, centered brand, language on the right.
+# Desktop navigation below remains unchanged.
+mobile_header_cols = st.columns([1.0, 4.0, 1.0], gap="small", vertical_alignment="center")
+
 with mobile_header_cols[0]:
+    st.button(
+        "×" if st.session_state.mobile_menu_open else "⋮",
+        key="mobile_menu_toggle",
+        width="stretch",
+        on_click=toggle_mobile_menu,
+        type="secondary",
+    )
+
+with mobile_header_cols[1]:
     st.markdown(
         """
         <div class="aqua-mobile-header-marker" aria-hidden="true"></div>
         <div class="aqua-reference-brand aqua-mobile-brand">
             <div class="aqua-reference-logo">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 3.2C12 3.2 6.4 10.05 6.4 14.35C6.4 17.55 8.9 20.1 12 20.1C15.1 20.1 17.6 17.55 17.6 14.35C17.6 10.05 12 3.2 12 3.2Z" stroke="white" stroke-width="1.65"/>
+                    <path d="M12 3.2C12 3.2 6.4 10.05 6.4 14.35C6.4 17.55 8.9 20.1 12 20.1C15.1 20.1 17.6 17.55 17.6 14.35C17.6 17.55 15.1 20.1 12 20.1C8.9 20.1 6.4 17.55 6.4 14.35C6.4 10.05 12 3.2 12 3.2Z" stroke="white" stroke-width="1.65"/>
                 </svg>
             </div>
             <div>
@@ -2582,18 +3202,22 @@ with mobile_header_cols[0]:
         """,
         unsafe_allow_html=True,
     )
-with mobile_header_cols[1]:
+
+with mobile_header_cols[2]:
+    mobile_language_label = "हिंदी में देखें" if st.session_state.language == "English" else "View in English"
     st.button(
-        "✕" if st.session_state.mobile_menu_open else "☰",
-        key="mobile_menu_toggle",
+        mobile_language_label,
+        key="mobile_language_top",
         width="stretch",
-        on_click=toggle_mobile_menu,
+        on_click=mobile_toggle_language,
         type="secondary",
     )
 
 if st.session_state.mobile_menu_open:
     with st.container():
         st.markdown('<div class="aqua-mobile-menu-marker" aria-hidden="true"></div>', unsafe_allow_html=True)
+        st.button("×", key="mobile_menu_close", width="content", on_click=close_mobile_menu, type="secondary")
+        st.markdown('<div class="aqua-mobile-drawer-title" style="display:inline-block;">AquaTrack Menu</div>', unsafe_allow_html=True)
         mobile_items = [
             ("🏠 " + t("Home"), "Dashboard", "mobile_home"),
             ("📝 " + t("Report"), "Report Water Body Issue", "mobile_report"),
@@ -2613,10 +3237,6 @@ if st.session_state.mobile_menu_open:
             else:
                 st.button(label, key=key, width="stretch", on_click=mobile_navigate, args=(target,),
                           type="primary" if page == target else "secondary")
-        st.button(
-            ("🌐 " + ("View in English" if st.session_state.language == "हिंदी" else "हिंदी में देखें")),
-            key="mobile_language", width="stretch", on_click=mobile_toggle_language, type="secondary",
-        )
         if st.session_state.admin_logged_in:
             st.button(t("Logout"), key="mobile_logout", width="stretch", on_click=mobile_logout, type="secondary")
 
@@ -2681,8 +3301,14 @@ SUBNAV_PAGES = {"Dashboard", "Indore Zone Map"} | {target for _, target in SUBNA
 if page in SUBNAV_PAGES and page != "Indore Zone Map":
     st.markdown('<div class="aqua-subnav-gap" aria-hidden="true"></div>', unsafe_allow_html=True)
     subnav_cols = st.columns(len(SUBNAV), gap="small")
-    for col, (label, target) in zip(subnav_cols, SUBNAV):
+    for index, (col, (label, target)) in enumerate(zip(subnav_cols, SUBNAV)):
+        # Keep the phone-only marker AFTER the button so it never adds
+        # vertical space above Analytics on desktop/tablet.
         col.button(label, key=f"subnav_{target}", width="stretch", on_click=navigate_to, args=(target,), type="primary" if page == target else "secondary")
+        if index == 0:
+            # Phone-only marker: this row is duplicated by the mobile sidebar.
+            # It remains inside the row so the phone :has() selector still works.
+            col.markdown('<span class="aqua-home-subnav-marker" aria-hidden="true"></span>', unsafe_allow_html=True)
 
 
 # ============================================================
@@ -2759,18 +3385,140 @@ if page == "Admin Login":
             background: #f4f9fc !important;
             box-sizing: border-box !important;
         }
-        @media (max-width: 760px) {
-            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) {
-                width: calc(100vw - 2rem) !important;
-                transform: translate(-50%, -50%) !important;
-            }
-            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) + div[data-testid="stHorizontalBlock"] {
-                width: calc(100vw - 2rem) !important;
-                top: calc(50% + 183px) !important;
-            }
-        }
+
         </style>
         """,
+        unsafe_allow_html=True,
+    )
+
+    # MOBILE ONLY: Admin Login overrides kept in a separate style block.
+    st.markdown(
+        '''
+<style>
+@media (max-width: 760px) {
+            /* MOBILE ONLY: let the Admin Login page use normal document flow.
+               This keeps the whole card, Back button and footer reachable by
+               normal page scrolling instead of clipping them inside the phone viewport. */
+            html:has(.admin-login-marker),
+            html:has(.admin-login-marker) body,
+            body:has(.admin-login-marker),
+            body:has(.admin-login-marker) #root,
+            body:has(.admin-login-marker) .stApp,
+            body:has(.admin-login-marker) .stAppViewContainer,
+            body:has(.admin-login-marker) section[data-testid="stMain"],
+            body:has(.admin-login-marker) main {
+                overflow-y:auto !important;
+                overflow-x:hidden !important;
+                height:auto !important;
+                min-height:100% !important;
+                max-height:none !important;
+            }
+
+            body:has(.admin-login-marker) section[data-testid="stMain"] > div,
+            body:has(.admin-login-marker) .main .block-container,
+            body:has(.admin-login-marker) div[data-testid="stMainBlockContainer"] {
+                height:auto !important;
+                min-height:0 !important;
+                max-height:none !important;
+                overflow:visible !important;
+            }
+
+            /* MOBILE ONLY: make the admin login a proper full-width phone card. */
+            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) {
+                position:relative !important;
+                top:auto !important;
+                left:auto !important;
+                width:calc(100vw - 1.25rem) !important;
+                max-width:calc(100vw - 1.25rem) !important;
+                transform:none !important;
+                display:flex !important;
+                gap:0 !important;
+                margin:1rem auto 0 !important;
+                z-index:1 !important;
+            }
+
+            /* The desktop 1:2:1 spacer columns are removed on phones. */
+            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) > div:first-child,
+            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) > div:last-child {
+                display:none !important;
+            }
+
+            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) > div:nth-child(2) {
+                width:100% !important;
+                min-width:100% !important;
+                max-width:100% !important;
+                flex:1 1 100% !important;
+            }
+
+            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) div[data-testid="stForm"] {
+                width:100% !important;
+                max-width:none !important;
+                box-sizing:border-box !important;
+                padding:1rem !important;
+                border-radius:22px !important;
+            }
+
+            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) div[data-testid="stForm"] h2 {
+                font-size:1.8rem !important;
+                line-height:1.08 !important;
+                margin:.45rem 0 .35rem !important;
+            }
+
+            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) div[data-testid="stForm"] p {
+                font-size:.92rem !important;
+                line-height:1.4 !important;
+                margin:0 !important;
+            }
+
+            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) div[data-testid="stForm"] input {
+                min-height:2.8rem !important;
+            }
+
+            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) div[data-testid="stForm"] label {
+                font-size:.9rem !important;
+            }
+
+            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) div[data-testid="stForm"] button {
+                min-height:2.8rem !important;
+            }
+
+            /* Back to Public Portal stays directly after the card in normal flow. */
+            body:has(.admin-login-marker) div[data-testid="stHorizontalBlock"]:has(div[data-testid="stForm"]) + div[data-testid="stHorizontalBlock"] {
+                position:relative !important;
+                top:auto !important;
+                left:auto !important;
+                width:calc(100vw - 1.25rem) !important;
+                max-width:calc(100vw - 1.25rem) !important;
+                transform:none !important;
+                margin:1rem auto 1.5rem !important;
+                z-index:1 !important;
+            }
+
+            /* Footer is also part of normal page flow on phones. */
+            body:has(.admin-login-marker) .aqua-footer {
+                position:relative !important;
+                left:auto !important;
+                right:auto !important;
+                bottom:auto !important;
+                width:100% !important;
+                max-width:none !important;
+                transform:none !important;
+                margin-top:1rem !important;
+                margin-bottom:0 !important;
+            }
+
+            /* End the Admin Login document immediately after its footer.
+               No artificial viewport-height area is added below it. */
+            body:has(.admin-login-marker) section[data-testid="stMain"] {
+                min-height:0 !important;
+                padding-bottom:0 !important;
+            }
+            body:has(.admin-login-marker) section[data-testid="stMain"] > div {
+                padding-bottom:0 !important;
+            }
+        }
+</style>
+        ''',
         unsafe_allow_html=True,
     )
 
@@ -2869,7 +3617,7 @@ elif page == "Dashboard":
                 for zone_name, alert in alert_rows[5:]:
                     st.write(f"**{zone_name}** — {alert['severity']} | {t(alert['type'])}: {t(alert['message'])}")
     else:
-        notify("success", t("No active alerts. All zones look normal in the latest records."))
+        st.success(t("No active alerts. All zones look normal in the latest records."))
 
     section("Water Quality Risk Overview")
     risk_counts = get_risk_distribution()
@@ -2891,9 +3639,10 @@ elif page == "Dashboard":
             )
             show_chart(fig, 340)
     else:
-        notify("warning", t("No water-quality data available."))
+        st.warning(t("No water-quality data available."))
 
     section("Water Availability Overview")
+    st.markdown('<div class="mobile-availability-marker" aria-hidden="true"></div>', unsafe_allow_html=True)
     supply = snapshot.dropna(subset=["supply_hours"]).sort_values("supply_hours")
     if not supply.empty:
         chart_col1, chart_col2 = st.columns(2)
@@ -2917,7 +3666,7 @@ elif page == "Dashboard":
             fig.update_traces(marker_color="#12a9db")
             show_chart(fig, 400)
     else:
-        notify("warning", t("No availability data available."))
+        st.warning(t("No availability data available."))
 
     section("Recent Predictions")
     history = get_prediction_history()
@@ -2931,7 +3680,7 @@ elif page == "Dashboard":
             width="stretch", hide_index=True,
         )
     else:
-        notify("info", t("No predictions have been recorded yet."))
+        st.info(t("No predictions have been recorded yet."))
 
     section("Data & Model Health")
     health = get_system_health()
@@ -2949,6 +3698,7 @@ elif page == "Dashboard":
     )
 
     section("How AquaTrack Works")
+    st.markdown('<div class="mobile-how-works-marker" aria-hidden="true"></div>', unsafe_allow_html=True)
     columns = st.columns(4)
     for col, (icon, title, text) in zip(columns, [
         ("💧", "Quality Assessment", "Seven parameters screened against BIS IS 10500:2012 and classified by a Random Forest."),
@@ -3005,7 +3755,7 @@ elif page == "Zone Analytics":
 
     with tab_quality:
         if quality_data.empty:
-            notify("warning", t("No water-quality data found for this zone."))
+            st.warning(t("No water-quality data found for this zone."))
         else:
             latest = quality_data.iloc[-1].to_dict()
             table, _ = compliance_table(latest)
@@ -3049,7 +3799,7 @@ elif page == "Zone Analytics":
 
     with tab_availability:
         if availability_data.empty:
-            notify("warning", t("No availability data found for this zone."))
+            st.warning(t("No availability data found for this zone."))
         else:
             recent_availability = filter_recent(availability_data, period_days)
             recent_availability["7-day average"] = recent_availability["supply_hours"].rolling(7, min_periods=1).mean()
@@ -3137,7 +3887,7 @@ elif page == "Compare Zones":
     )
 
     if len(selected) < 2:
-        notify("info", t("Select at least two zones to start comparing."))
+        st.info(t("Select at least two zones to start comparing."))
     else:
         chosen = snapshot[snapshot["zone_name"].isin(selected)].copy()
         st.dataframe(snapshot_display(chosen), width="stretch", hide_index=True)
@@ -3183,7 +3933,7 @@ elif page == "Compare Zones":
         availability = get_availability()
         subset = availability[availability["zone_name"].isin(selected)].copy()
         if subset.empty:
-            notify("info", t("No availability records for the selected zones."))
+            st.info(t("No availability records for the selected zones."))
         else:
             subset["date"] = pd.to_datetime(subset["date"])
             cutoff = subset["date"].max() - pd.Timedelta(days=60)
@@ -3289,7 +4039,7 @@ elif page == "Indore Zone Map":
 
     st_folium(indore_map, width=None, height=600, key="zone_map", returned_objects=[])
 
-    notify("info", 
+    st.info(
         t("These are representative, project-defined locations used for the prototype and are not official municipal zone boundaries.")
     )
 
@@ -3313,7 +4063,7 @@ elif page == "Water Quality Prediction":
 
     if check_mode == t("I do not have a water test report"):
         st.markdown('<div class="without-report-marker" aria-hidden="true"></div>', unsafe_allow_html=True)
-        notify("info", t("No report? You can do a simple visual check instead. This is only a preliminary check and not a laboratory test."))
+        st.info(t("No report? You can do a simple visual check instead. This is only a preliminary check and not a laboratory test."))
         st.subheader(t("Check the water using simple questions"))
 
         observation_items = [
@@ -3357,9 +4107,9 @@ elif page == "Water Quality Prediction":
         simple_water_result = st.session_state.get("simple_water_result")
 
         if simple_water_result == "normal":
-            notify("success", t("The water looks normal from the information provided."))
+            st.success(t("The water looks normal from the information provided."))
         elif simple_water_result == "attention":
-            notify("warning", t("Some things about the water need attention."))
+            st.warning(t("Some things about the water need attention."))
         elif simple_water_result == "hazard":
             st.markdown(
                 f'''<div class="simple-water-hazard">
@@ -3378,7 +4128,7 @@ elif page == "Water Quality Prediction":
                 navigate_to("Report Water Body Issue")
                 st.rerun()
 
-        notify("info", t("This is only a preliminary check based on what can be seen or noticed. It cannot measure things that are not visible."))
+        st.info(t("This is only a preliminary check based on what can be seen or noticed. It cannot measure things that are not visible."))
 
     else:
         snapshot = get_zone_snapshot()
@@ -3421,7 +4171,7 @@ elif page == "Water Quality Prediction":
             col2.metric(t("BIS PARAMETERS EXCEEDED"), f"{violations} / 7")
             col3.metric(t("MODEL CONFIDENCE"), f"{probabilities.max() * 100:.0f}%")
             if rule_risk != risk:
-                notify("info", f"{t('The direct BIS count suggests')} **{t(rule_risk)}**, {t('while the model predicted')} **{t(risk)}**. {t('This can happen for borderline readings; check the parameter table below.')}")
+                st.info(f"{t('The direct BIS count suggests')} **{t(rule_risk)}**, {t('while the model predicted')} **{t(risk)}**. {t('This can happen for borderline readings; check the parameter table below.')}")
             st.markdown(t("##### BIS limit check"))
             st.dataframe(table, width="stretch", hide_index=True)
             fig = px.bar(x=probabilities.values * 100, y=probabilities.index, orientation="h", color=probabilities.index, color_discrete_map=RISK_COLORS, title="Model probability by class", labels={"x": "Probability (%)", "y": ""})
@@ -3437,7 +4187,7 @@ elif page == "Water Quality Prediction":
             if alerts:
                 st.subheader(t("🚨 Alerts"))
                 for alert in alerts:
-                    notify("warning", f"{alert['severity']} | {t(alert['message'])}")
+                    st.warning(f"{alert['severity']} | {t(alert['message'])}")
             st.subheader(t("💡 Recommendations"))
             for recommendation in generate_recommendations(risk, "Good Availability"):
                 st.write("•", t(recommendation))
@@ -3459,7 +4209,7 @@ elif page == "Availability Forecast":
 
     zone_availability = get_availability(selected_zone)
     if zone_availability.empty:
-        notify("warning", t("No historical availability data is available for the selected zone."))
+        st.warning(t("No historical availability data is available for the selected zone."))
     else:
         zone_availability["date"] = pd.to_datetime(zone_availability["date"])
         zone_availability = zone_availability.sort_values("date")
@@ -3467,7 +4217,7 @@ elif page == "Availability Forecast":
         previous_supply_hours = float(latest_record["supply_hours"])
         latest_date = latest_record["date"]
 
-        notify("info", 
+        st.info(
             f"{t('Starting point:')} {previous_supply_hours:.2f} {t('Hours')} — {latest_date.strftime('%d %b %Y')}"
         )
 
@@ -3540,7 +4290,7 @@ elif page == "Availability Forecast":
             if alerts:
                 st.subheader(t("🚨 Alerts"))
                 for alert in alerts:
-                    notify("warning", f"{alert['severity']} | {t(alert['message'])}")
+                    st.warning(f"{alert['severity']} | {t(alert['message'])}")
 
             st.subheader(t("💡 Recommendations"))
             for recommendation in generate_recommendations("Safe", status):
@@ -3558,7 +4308,7 @@ elif page == "Model Insights":
 
     insights = get_model_insights()
 
-    notify("warning", t("Read these numbers carefully. Risk labels come from the BIS violation count, and the same records were used to train the models, so they show agreement with the screening rule and not real-world accuracy. Validation with authorised, laboratory-verified data is the next step."))
+    st.warning(t("Read these numbers carefully. Risk labels come from the BIS violation count, and the same records were used to train the models, so they show agreement with the screening rule and not real-world accuracy. Validation with authorised, laboratory-verified data is the next step."))
 
     if "quality" in insights:
         quality = insights["quality"]
@@ -3586,7 +4336,7 @@ elif page == "Model Insights":
         st.markdown(t("##### Per-class scores"))
         st.dataframe(quality["report"].round(3), width="stretch")
     else:
-        notify("info", t("No water-quality records available for diagnostics."))
+        st.info(t("No water-quality records available for diagnostics."))
 
     if "availability" in insights:
         availability = insights["availability"]
@@ -3596,9 +4346,9 @@ elif page == "Model Insights":
         col2.metric("R²", f"{availability['r2']:.3f}")
         col3.metric(t("NAIVE BASELINE MAE"), f"{availability['naive_mae']:.2f} h")
         if availability["mae"] < availability["naive_mae"]:
-            notify("success", t("The model beats the naive baseline (repeat yesterday's supply), so rainfall and season add useful information."))
+            st.success(t("The model beats the naive baseline (repeat yesterday's supply), so rainfall and season add useful information."))
         else:
-            notify("info", t("The model does not beat the naive baseline (repeat yesterday's supply). Consider richer features or a time-series model."))
+            st.info(t("The model does not beat the naive baseline (repeat yesterday's supply). Consider richer features or a time-series model."))
 
         chart_col1, chart_col2 = st.columns(2)
         with chart_col1:
@@ -3618,7 +4368,7 @@ elif page == "Model Insights":
             show_chart(fig, 360)
         st.caption(f"Intercept: {availability['intercept']:.3f}. {availability['records']:,} records used.")
     else:
-        notify("info", t("No availability records available for diagnostics."))
+        st.info(t("No availability records available for diagnostics."))
 
 
 # ============================================================
@@ -3643,7 +4393,7 @@ elif page == "Report Water Body Issue":
     water_bodies = get_water_bodies()
 
     if water_bodies.empty:
-        notify("warning", t("No project-defined water bodies are available."))
+        st.warning(t("No project-defined water bodies are available."))
     else:
         selected_water_body_name = st.selectbox(
             t("Select Water Body"), water_bodies["name"].tolist(), key="report_water_body"
@@ -3663,7 +4413,7 @@ elif page == "Report Water Body Issue":
 
         selected_supply = None
         if supply_data.empty:
-            notify("warning", t("No served colony/society relationship is available for this water body."))
+            st.warning(t("No served colony/society relationship is available for this water body."))
         else:
             supply_options = []
             for _, supply_row in supply_data.iterrows():
@@ -3974,7 +4724,7 @@ elif page == "Resident Alerts":
     zones = get_zones()
 
     if zones.empty:
-        notify("warning", t("No project-defined zones are available."))
+        st.warning(t("No project-defined zones are available."))
     else:
         with st.form("resident_signup"):
             zone_names = zones["zone_name"].tolist()
@@ -3999,35 +4749,27 @@ elif page == "Resident Alerts":
                 zone_id = int(
                     zones.loc[zones["zone_name"] == zone_name, "zone_id"].iloc[0]
                 )
-                resident_id, created, registration_message = register_resident(
+                resident_id, created = register_resident(
                     zone_id, name, phone, email
                 )
 
-                if resident_id is None:
-                    # Show duplicate-zone validation as a popup/toast notification
-                    # instead of placing an error block inside the form.
+                st.session_state["resident_id"] = resident_id
+                st.session_state["resident_zone_id"] = zone_id
+                st.session_state["resident_zone_name"] = zone_name
+
+                # Use a toast popup so the confirmation never collides with the form or fixed footer.
+                if created:
                     st.toast(
-                        registration_message,
-                        icon="🚫",
+                        f"Registration successful! You are now registered to receive water alerts for {zone_name}. "
+                        "New water-problem reports for this zone will appear in your Alerts section.",
+                        icon="✅",
                     )
                 else:
-                    st.session_state["resident_id"] = resident_id
-                    st.session_state["resident_zone_id"] = zone_id
-                    st.session_state["resident_zone_name"] = zone_name
-
-                    # Use a toast popup so the confirmation never collides with the form or fixed footer.
-                    if created:
-                        st.toast(
-                            f"Registration successful! You are now registered to receive water alerts for {zone_name}. "
-                            "New water-problem reports for this zone will appear in your Alerts section.",
-                            icon="✅",
-                        )
-                    else:
-                        st.toast(
-                            f"Registration updated! You are registered to receive water alerts for {zone_name}. "
-                            "New water-problem reports for this zone will appear in your Alerts section.",
-                            icon="✅",
-                        )
+                    st.toast(
+                        f"Registration updated! You are registered to receive water alerts for {zone_name}. "
+                        "New water-problem reports for this zone will appear in your Alerts section.",
+                        icon="✅",
+                    )
 
         resident_id = st.session_state.get("resident_id")
         if resident_id:
@@ -4044,7 +4786,7 @@ elif page == "Resident Alerts":
 
                 alerts = get_resident_alerts(resident_id, 50)
                 if alerts.empty:
-                    notify("info", 
+                    st.info(
                         t(
                             "No alerts yet. New reports for your registered zone "
                             "will appear here automatically."
@@ -4052,7 +4794,7 @@ elif page == "Resident Alerts":
                     )
                 else:
                     for _, alert in alerts.iterrows():
-                        notify("info", 
+                        st.info(
                             f"**{alert['created_at']}** · {alert['message']}"
                         )
 
@@ -4126,7 +4868,7 @@ elif page == "Admin Panel":
         st.caption(f"{t('Project-defined water bodies available:')} {len(water_bodies)}")
 
         if water_body_reports.empty:
-            notify("info", t("No water-body issue reports have been submitted yet."))
+            st.info(t("No water-body issue reports have been submitted yet."))
         else:
             chart_col1, chart_col2 = st.columns(2)
             with chart_col1:
@@ -4197,7 +4939,7 @@ elif page == "Admin Panel":
                         )
 
             if filtered.empty:
-                notify("info", f"{t('No')} {t(selected_filter).lower()} {t('water-body reports found.')}")
+                st.info(f"{t('No')} {t(selected_filter).lower()} {t('water-body reports found.')}")
             for _, report in filtered.iterrows():
                 report_id = int(report["report_id"])
                 current_status = str(report["status"])
@@ -4307,7 +5049,7 @@ elif page == "Admin Panel":
             """
         )
         if residents.empty:
-            notify("info", t("No residents have registered for alerts yet."))
+            st.info(t("No residents have registered for alerts yet."))
         else:
             st.dataframe(residents, width="stretch", hide_index=True)
 
@@ -4331,7 +5073,7 @@ elif page == "Admin Panel":
             alert_log = get_recent_alerts(200, zone_id=zone_id)
 
         if alert_log.empty:
-            notify("info", t("No alerts have been generated yet."))
+            st.info(t("No alerts have been generated yet."))
         else:
             st.dataframe(alert_log, width="stretch", hide_index=True)
 
@@ -4429,7 +5171,7 @@ elif page == "Admin Panel":
                     if validation_errors:
                         st.toast(t("CSV validation failed."), icon="❌")
                         for message in validation_errors:
-                            notify("warning", "⚠️ " + message)
+                            st.warning("⚠️ " + message)
                     else:
                         st.toast(t("CSV validation successful."), icon="✅")
                         st.write(f"{t('Records found:')} {len(uploaded_data)}")
@@ -4484,7 +5226,7 @@ elif page == "Admin Panel":
                                 )
                                 st.rerun()
                         else:
-                            notify("info", t("No new records to import. All uploaded records already exist in the database."))
+                            st.info(t("No new records to import. All uploaded records already exist in the database."))
             except Exception as error:  # noqa: BLE001
                 st.toast(f"{t('Unable to process CSV:')} {error}", icon="❌")
 
@@ -4493,7 +5235,7 @@ elif page == "Admin Panel":
         history = get_prediction_history()
         st.subheader(t("📋 Prediction History"))
         if history.empty:
-            notify("info", t("No prediction history available."))
+            st.info(t("No prediction history available."))
         else:
             admin_history = history.copy()
             admin_history["Type"] = admin_history["risk_level"].apply(
@@ -4543,13 +5285,13 @@ elif page == "Admin Panel":
 
         mail_status = smtp_status()
         if mail_status["configured"]:
-            notify("success", 
+            st.success(
                 f"SMTP ready • {mail_status['host']}:{mail_status['port']} • "
                 f"Sender: {mail_status['username']}"
             )
             st.caption(f"Sender name: {mail_status['sender_name']}")
         else:
-            notify("warning", mail_status["message"])
+            st.warning(mail_status["message"])
             st.code(
                 '[smtp]\n'
                 'host = "smtp.gmail.com"\n'
@@ -4579,14 +5321,14 @@ elif page == "Admin Panel":
 
         if test_email_button:
             if not test_recipient.strip():
-                notify("error", "Enter a recipient email address first.")
+                st.error("Enter a recipient email address first.")
             else:
                 with st.spinner("Sending test email..."):
                     sent, result = send_test_email(test_recipient.strip())
                 if sent:
-                    notify("success", f"Test email sent successfully to {test_recipient.strip()}.")
+                    st.success(f"Test email sent successfully to {test_recipient.strip()}.")
                 else:
-                    notify("error", result)
+                    st.error(result)
 
         st.divider()
 
@@ -4604,18 +5346,18 @@ elif page == "Admin Panel":
 
         try:
             counts = get_table_counts()
-            notify("success", 
+            st.success(
                 f"{t('Database connection: OK (')}{counts['water_quality']:,} {t('quality and')} "
                 f"{counts['availability']:,} {t('availability records)')}"
             )
         except Exception as error:  # noqa: BLE001
-            notify("error", f"{t('Database connection failed:')} {error}")
+            st.error(f"{t('Database connection failed:')} {error}")
 
         if st.button(t("🔄 Refresh cached data"), key="refresh_cache"):
             clear_data_caches()
             st.toast(t("Cached data refreshed successfully."), icon="✅")
         st.caption(t("Data is cached for speed. Use this after editing the database outside the app."))
-        notify("info", t(DISCLAIMER))
+        st.info(t(DISCLAIMER))
 
 
 st.markdown(

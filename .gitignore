@@ -1,7 +1,26 @@
+# Streamlit secrets and environment files
 .streamlit/secrets.toml
 .env
+.env.*
+!.env.example
+
+# Python virtual environments
 venv/
 .venv/
+
+# Python cache
 __pycache__/
 *.pyc
+
+# Logs
 *.log
+
+# Private AquaTrack uploads
+reports/citizen_uploads/
+reports/completion_evidence/
+
+# Local database and backups
+aquatrack.db
+*.sqlite
+*.sqlite3
+backups/

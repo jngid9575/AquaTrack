@@ -461,10 +461,7 @@ https://github.com/jngid9575/AquaTrack
 
 ### Live Application
 
-Replace this with your Render URL:
-
-```text
-https://YOUR-AQUATRACK-RENDER-URL.onrender.com
+https://aquatrack-hfajzsrox3waybuitm6mob.streamlit.app/
 ```
 
 ---

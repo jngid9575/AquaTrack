@@ -319,22 +319,9 @@ def ensure_workflow_tables():
             cursor.execute("PRAGMA foreign_keys=ON")
             connection.commit()
 
-        # Old builds could contain the now-unused Worker Completed state.
-        # It represents the same point as Waiting for Verification, so normalize it.
-        cursor.execute(
-            "UPDATE water_body_reports "
-            "SET workflow_status='Waiting for Verification' "
-            "WHERE workflow_status='Worker Completed'"
-        )
-
-        # Admin notifications are a shared role-level inbox; do not bind them to admin #1.
-        cursor.execute(
-            "UPDATE aquatrack_notifications SET recipient_id=NULL "
-            "WHERE recipient_role='admin'"
-        )
-        connection.commit()
-
         # Extend the existing report table instead of replacing it.
+        # IMPORTANT: these columns must exist BEFORE any query references them.
+        # Older aquatrack.db files may predate the workflow_status column.
         for name, definition in [
             ("workflow_status", "TEXT DEFAULT 'Submitted'"),
             ("resident_id", "INTEGER"),
@@ -350,6 +337,21 @@ def ensure_workflow_tables():
             ("completion_evidence_path", "TEXT"),
         ]:
             _ensure_column("water_body_reports", name, definition)
+
+        # Old builds could contain the now-unused Worker Completed state.
+        # It represents the same point as Waiting for Verification, so normalize it.
+        cursor.execute(
+            "UPDATE water_body_reports "
+            "SET workflow_status='Waiting for Verification' "
+            "WHERE workflow_status='Worker Completed'"
+        )
+
+        # Admin notifications are a shared role-level inbox; do not bind them to admin #1.
+        cursor.execute(
+            "UPDATE aquatrack_notifications SET recipient_id=NULL "
+            "WHERE recipient_role='admin'"
+        )
+        connection.commit()
 
         # Legacy rows are treated as submitted/resolved workflow rows.
         db_execute(

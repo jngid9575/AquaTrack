@@ -14,7 +14,7 @@
 ![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?logo=sqlite&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Decision--Support%20Prototype-0A7EA4)
 
-**[🌐 Live Demo](https://aquatrack-hfajzsrox3waybuitm6mob.streamlit.app/)** • **[💻 Source Code](https://github.com/jngid9575/AquaTrack)**
+**[🌐 Live Demo](https://aquatrack.streamlit.app/)** • **[💻 Source Code](https://github.com/jngid9575/AquaTrack)**
 
 AquaTrack is a **Streamlit-based water intelligence and decision-support platform** for **Indore**. It screens water quality, forecasts water availability, collects citizen water-problem reports, manages field-worker service requests, and sends alerts to residents, all in one application with separate **Citizen**, **Worker** and **Admin** portals.
 
@@ -401,7 +401,7 @@ The application normally opens in your browser.
 
 AquaTrack is configured for deployment on **Streamlit Community Cloud**.
 
-**[🌐 AquaTrack · Streamlit](https://aquatrack-hfajzsrox3waybuitm6mob.streamlit.app/)**
+**[🌐 AquaTrack · Streamlit](https://aquatrack.streamlit.app/)**
 
 ### Important Deployment Notes
 
@@ -491,7 +491,7 @@ The application is intended for demonstration, academic evaluation, data analysi
 
 ### Live Application
 
-**[🌐 AquaTrack · Streamlit](https://aquatrack-hfajzsrox3waybuitm6mob.streamlit.app/)**
+**[🌐 AquaTrack · Streamlit](https://aquatrack.streamlit.app/)**
 
 ---
 

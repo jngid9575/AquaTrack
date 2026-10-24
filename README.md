@@ -474,9 +474,9 @@ The application is intended for demonstration, academic evaluation, data analysi
 
 | Name | Enrollment No. | Role |
 |---|---|---|
-| **Anush Parmar** | 0808CI231033 | Project Leader |
+| **Arpit Jangid** | 0808CI231038 | Project Leader |
 | **Anuj Patidar** | 0808CI231031 | Team Member |
-| **Arpit Jangid** | 0808CI231038 | Team Member |
+| **Anush Parmar** | 0808CI231033 | Team Member |
 | **Bhushan Bondre** | 0808CI231058 | Team Member |
 
 **Project Guide:** Mr. Sumit Kumar

@@ -1,4 +1,3 @@
-<div align="center">
 
 # 💧 AquaTrack
 
@@ -17,15 +16,9 @@
 
 **[🌐 Live Demo](https://aquatrack-hfajzsrox3waybuitm6mob.streamlit.app/)** • **[💻 Source Code](https://github.com/jngid9575/AquaTrack)**
 
-<<<<<<< HEAD
-</div>
-
 AquaTrack is a **Streamlit-based water intelligence and decision-support platform** for **Indore**. It screens water quality, forecasts water availability, collects citizen water-problem reports, manages field-worker service requests, and sends alerts to residents, all in one application with separate **Citizen**, **Worker** and **Admin** portals.
 
 > **Project Status:** B.Tech Major Project (Major Project-I) / Decision-Support Prototype
-=======
-> **Project Status:** B.Tech Major Project (Major Project-I, Presentation-2) / Decision-Support Prototype
->>>>>>> ed810a8 (Update AquaTrack README)
 > **Deployment:** Streamlit Community Cloud
 > **Target Location:** Indore, Madhya Pradesh, India
 
@@ -39,14 +32,7 @@ Water quality and water availability vary across zones and seasons, and they are
 2. **Water Availability Forecasting** — a **Linear Regression** model forecasts supply hours (up to 7 days) from previous supply hours, rainfall and season.
 3. **Citizen Service Workflow** — citizens report problems with a photo and GPS location, admins assign field workers, workers submit completion evidence, admins verify, and citizens review the result. Every step is recorded in a status history and audit log.
 
-<<<<<<< HEAD
 On top of these, AquaTrack provides zone analytics, zone comparison, interactive maps, resident e-mail alerts, prediction history, CSV import, PDF / Excel / CSV exports, system health checks and database backup, in an **English / Hinglish** interface.
-=======
-1. **Water Quality Assessment** — classifies water conditions from 7 parameters using a trained Random Forest model.
-2. **Water Availability Forecasting** — forecasts supply hours using a Linear Regression model.
-
-On top of these, AquaTrack adds zone-wise analytics, interactive maps, citizen reporting of water-body issues, resident registration with email alerts, prediction history, and PDF / Excel reports.
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ---
 
@@ -54,7 +40,6 @@ On top of these, AquaTrack adds zone-wise analytics, interactive maps, citizen r
 
 | Feature | Description |
 |---|---|
-<<<<<<< HEAD
 | 📊 **Dashboard** | Zone snapshot, safe / moderate / high-risk zones, scarcity-risk zones, project alerts and how the system works |
 | 💧 **Water Quality Prediction** | Random Forest risk class, BIS parameters exceeded, model confidence, and a simple visual water check for users without a lab report |
 | 📈 **Availability Forecast** | Linear Regression forecast with a status (Scarcity Risk / Moderate / Good Availability) and a rolling forecast of up to 7 days |
@@ -100,22 +85,6 @@ Submitted → Assigned → In Progress → Waiting for Verification → Resolved
 - The worker starts work (**In Progress**) and submits remarks and optional evidence; the request then moves to **Waiting for Verification**.
 - The admin reviews the submitted work and can resolve or reopen the request. A citizen can rate a resolved request.
 - Only valid transitions are allowed, and each status change is stored in the status history and audit log.
-=======
-| 📊 Dashboard | Overview of zones, water-quality status, risks, supply information and analytics |
-| 💧 Water Quality Analysis | Analyses pH, TDS, turbidity, hardness, chloride, fluoride and nitrate |
-| 🤖 ML Risk Classification | Random Forest classifies water conditions into Safe, Moderate Risk and High Risk |
-| 📈 Availability Forecasting | Linear Regression forecasts supply hours from previous supply, rainfall and season |
-| 🗺️ Interactive Maps | Displays zones and water bodies geographically |
-| 📝 Citizen Issue Reporting | Residents report water-body issues with a photo, GPS location ("detect my location") and severity; address lookup via OpenStreetMap Nominatim |
-| 🚨 Resident Alerts | Residents register with zone and email; admins set severity and broadcast email alerts through Gmail SMTP |
-| 🛠️ Admin Panel | Admins review reports, update status and severity, and send alerts |
-| 🌐 English / Hindi Interface | Language toggle for public pages |
-| 📋 Prediction History | Stores previous analytical and forecasting results |
-| 📄 Reports | Generates PDF and Excel zone reports |
-| 🏞️ Water Bodies | Information and analysis for water bodies |
-| 🔐 Authentication | Login and role-based access (resident / admin) |
-| ☁️ Cloud Deployment | Live Streamlit Community Cloud application |
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ---
 
@@ -126,24 +95,12 @@ Submitted → Assigned → In Progress → Waiting for Verification → Resolved
 A **Random Forest classifier** uses 7 parameters: pH, TDS, turbidity, hardness, chloride, fluoride and nitrate. It outputs:
 
 - 🟢 **Safe**
-<<<<<<< HEAD
 - 🟠 **Moderate Risk**
-=======
-- 🟡 **Moderate Risk**
->>>>>>> ed810a8 (Update AquaTrack README)
 - 🔴 **High Risk**
 
 AquaTrack also applies a direct **BIS rule screening** using the project limits (pH 6.5–8.5, TDS 500 mg/L, turbidity 1.0 NTU, hardness 200 mg/L, chloride 250 mg/L, fluoride 1.0 mg/L, nitrate 45 mg/L). Zero violations is Safe, 1–2 is Moderate Risk and 3 or more is High Risk. The app shows the model prediction, the exceeded parameters and the model confidence together.
 
-<<<<<<< HEAD
 Trained model: `models/water_quality_rf.joblib`
-=======
-The trained model is stored in:
-
-```text
-models/water_quality_rf.joblib
-```
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ### Water Availability Forecasting
 
@@ -153,22 +110,15 @@ A **Linear Regression** model uses previous supply hours, rainfall and season (S
 - 5 to under 8 hours — **Moderate Availability**
 - 8 hours or more — **Good Availability**
 
-<<<<<<< HEAD
 For a multi-day forecast, each day's forecast becomes the next day's previous supply while rainfall and season stay constant. Uncertainty grows with the forecast horizon.
 
 Trained model: `models/availability_linear_regression.joblib`
-=======
-```text
-models/availability_linear_regression.joblib
-```
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ### Evaluation Summary
 
 The **ML Model Performance** page in the Admin panel reports accuracy, macro precision, recall and F1, confusion matrix and feature importance for the quality model, and MAE, RMSE and R² for the availability model (held-out test split).
 
 | Metric | Result |
-<<<<<<< HEAD
 |---|---:|
 | Random Forest agreement with BIS-rule labels | **95.00%** |
 | F1-score (High Risk / Safe) | **0.96 / 0.98** |
@@ -176,22 +126,12 @@ The **ML Model Performance** page in the Admin panel reports accuracy, macro pre
 | Supply forecast R² | **0.7158** |
 
 > **Note:** The metrics depend on the dataset used and will change if the models are retrained on different data. Quality labels are derived from BIS-rule limits on synthetic, project-generated data. Laboratory validation with real field samples is future work.
-=======
-|---|---|
-| Random Forest agreement with BIS-rule labels | 95.00% |
-| F1-score (High Risk / Safe) | 0.96 / 0.98 |
-| Supply forecast MAE (874 records) | 0.64 h |
-| Supply forecast R² | 0.7158 |
-
-> **Note:** Quality labels are derived from BIS-rule limits on synthetic data. Laboratory validation with real field samples is future work.
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ---
 
 ## 🏗️ System Architecture
 
 ```text
-<<<<<<< HEAD
                     ┌─────────────────────────────┐
                     │          AquaTrack          │
                     │       Streamlit Web App     │
@@ -225,41 +165,6 @@ The **ML Model Performance** page in the Admin panel reports accuracy, macro pre
 
 External services: Gmail SMTP (e-mail alerts) • Google OAuth (sign-in)
                    • Map tiles • Google Maps links • Browser Geolocation API
-=======
-                    ┌─────────────────────────┐
-                    │       AquaTrack         │
-                    │  Streamlit Web App      │
-                    │  (English / Hindi)      │
-                    └────────────┬────────────┘
-                                 │
-             ┌───────────────────┼───────────────────┐
-             │                   │                   │
-             ▼                   ▼                   ▼
-       Authentication      Dashboard & UI      Reporting & Alerts
-       (Resident/Admin)                        (Issues, Email, PDF/Excel)
-             │                   │                   │
-             └───────────────────┼───────────────────┘
-                                 │
-                    ┌────────────▼────────────┐
-                    │   Application Layer     │
-                    └────────────┬────────────┘
-                                 │
-              ┌──────────────────┼──────────────────┐
-              │                  │                  │
-              ▼                  ▼                  ▼
-        Random Forest       Linear Regression   Data Analysis
-        (Risk class)        (Supply forecast)
-              │                  │                  │
-              └──────────────────┼──────────────────┘
-                                 │
-                    ┌────────────▼────────────┐
-                    │  SQLite (10 tables) /   │
-                    │  CSV files / photos     │
-                    └─────────────────────────┘
-
-   External services: Gmail SMTP (email alerts) • OpenStreetMap Nominatim (address)
-                      • Map tiles • Browser Geolocation API
->>>>>>> ed810a8 (Update AquaTrack README)
 ```
 
 AquaTrack is a **single Streamlit application** (`app.py`), not a microservice system. There is no API gateway and no separate backend service.
@@ -273,7 +178,6 @@ AquaTrack is a **single Streamlit application** (`app.py`), not a microservice s
 - **Streamlit**
 
 ### Data Science & Machine Learning
-<<<<<<< HEAD
 - **Pandas**
 - **NumPy**
 - **Scikit-learn**
@@ -283,25 +187,11 @@ AquaTrack is a **single Streamlit application** (`app.py`), not a microservice s
 - **Plotly**
 - **Folium**
 - **Streamlit-Folium**
-=======
-
-- Pandas
-- NumPy
-- Scikit-learn
-- Joblib
-
-### Visualization
-
-- Plotly
-- Folium
-- Streamlit-Folium
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ### Database
 - **SQLite** (write-ahead logging, foreign keys enforced)
 
 ### Reporting & Data Files
-<<<<<<< HEAD
 - **ReportLab (PDF)**
 - **OpenPyXL (Excel)**
 - **CSV datasets**
@@ -313,22 +203,6 @@ AquaTrack is a **single Streamlit application** (`app.py`), not a microservice s
 ### Deployment
 - **GitHub**
 - **Streamlit Community Cloud**
-=======
-
-- ReportLab (PDF)
-- OpenPyXL (Excel)
-- CSV datasets
-
-### External Services
-
-- Gmail SMTP (email alerts)
-- OpenStreetMap Nominatim (address lookup)
-
-### Deployment
-
-- GitHub
-- Streamlit Community Cloud
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ---
 
@@ -340,12 +214,8 @@ AquaTrack/
 ├── .streamlit/
 │   └── config.toml
 │
-<<<<<<< HEAD
 ├── assets/
 │   └── aqua_auth_background.jpg
-=======
-├── .vscode/
->>>>>>> ed810a8 (Update AquaTrack README)
 │
 ├── data/
 │   ├── water_quality.csv
@@ -356,12 +226,7 @@ AquaTrack/
 │   ├── availability_linear_regression.joblib
 │   └── water_quality_rf.joblib
 │
-<<<<<<< HEAD
 ├── reports/                  # Runtime uploads / evidence; keep private user files out of Git
-=======
-├── reports/
-│   └── water_body_reports/
->>>>>>> ed810a8 (Update AquaTrack README)
 │
 ├── utils/
 │   ├── alerts.py
@@ -369,10 +234,6 @@ AquaTrack/
 │   └── db_functions.py
 │
 ├── app.py
-<<<<<<< HEAD
-=======
-├── aquatrack.db
->>>>>>> ed810a8 (Update AquaTrack README)
 ├── database.py
 ├── check_database.py
 ├── generate_availability.py
@@ -400,24 +261,8 @@ Zone counts, safe / moderate-risk / high-risk and scarcity-risk zones, latest zo
 ### 3. 💧 Water Quality Prediction
 Enter the 7 parameters to get a Random Forest risk class, the BIS parameters exceeded and the model confidence. A simple visual check is available for users without a lab report. Predictions can be saved to history.
 
-<<<<<<< HEAD
 ### 4. 📈 Availability Forecast
 Rolling forecast of up to 7 days with an availability status. Admins get technical controls (rainfall, season, horizon) and can save forecasts.
-=======
-- Total zones
-- Safe, moderate-risk and high-risk zones
-- Water supply status
-- Charts and key indicators
-- Alerts
-
-### 3. 💧 Water Quality Analysis
-
-Users enter the 7 parameters and receive a Random Forest risk class with confidence. A simple check is also available for users without a lab report.
-
-### 4. 📈 Water Availability Prediction
-
-Provides a rolling supply forecast with status to support planning and resource-management decisions.
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ### 5. 🗺️ Analytics & Mapping
 Zone analytics, zone comparison with automatic insights, and an interactive map of zones and water bodies.
@@ -445,7 +290,6 @@ AquaTrack uses SQLite. Main tables include:
 
 | Table | Purpose |
 |---|---|
-<<<<<<< HEAD
 | `users` | user id, role, hashed password |
 | `residents` | zone id, name, phone, email |
 | `zones` | zone id, name, latitude, longitude |
@@ -463,18 +307,6 @@ AquaTrack uses SQLite. Main tables include:
 | `aquatrack_audit_log` | action, actor, report id, details, timestamp |
 
 Existing data is preserved when the database is migrated to newer workflow tables.
-=======
-| zones | zone id, name, latitude, longitude |
-| water_quality | zone id, date, 7 parameters |
-| availability | zone id, date, supply hours, rainfall, season |
-| predictions | zone id, date, risk level, forecast |
-| users | user id, name, role |
-| water_bodies | name, type, location, latitude / longitude |
-| water_body_supply | water body id, zone id, colony, society |
-| water_body_reports | status, severity, photo path, latitude / longitude |
-| residents | zone id, name, phone, email |
-| alerts_log | zone id, report id, resident id, channel, status |
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ---
 
@@ -482,7 +314,6 @@ Existing data is preserved when the database is migrated to newer workflow table
 
 The project uses structured, project-generated water datasets (12 Indore zones).
 
-<<<<<<< HEAD
 | Parameter | BIS limit used | Purpose |
 |---|---|---|
 | **pH** | 6.5–8.5 | Acidity / alkalinity |
@@ -494,19 +325,6 @@ The project uses structured, project-generated water datasets (12 Indore zones).
 | **Nitrate** | 45 mg/L | Health-related indicator |
 
 Water-availability and water-body data are also used by the analytical modules. Demo data generation must be enabled explicitly through configuration.
-=======
-| Parameter | Purpose |
-|---|---|
-| pH | Acidity / alkalinity assessment |
-| TDS | Total dissolved solids |
-| Turbidity | Water clarity assessment |
-| Hardness | Mineral concentration indicator |
-| Chloride | Water chemistry indicator |
-| Fluoride | Water-quality indicator |
-| Nitrate | Water-quality indicator |
-
-The project also contains water-availability and water-body data used by the analytical modules.
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ---
 
@@ -514,15 +332,9 @@ The project also contains water-availability and water-body data used by the ana
 
 ### Prerequisites
 
-<<<<<<< HEAD
 - **Python 3.12 recommended**
 - **Git**
 - **A modern web browser**
-=======
-- Python 3.12 recommended
-- Git
-- A modern web browser
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ### 1. Clone the repository
 
@@ -578,11 +390,7 @@ Google sign-in also needs a Google OAuth client ID, client secret and redirect U
 ### 6. Run AquaTrack
 
 ```powershell
-<<<<<<< HEAD
 python -m streamlit run app.py
-=======
-streamlit run app.py
->>>>>>> ed810a8 (Update AquaTrack README)
 ```
 
 The application normally opens in your browser.
@@ -591,7 +399,6 @@ The application normally opens in your browser.
 
 ## ☁️ Deployment
 
-<<<<<<< HEAD
 AquaTrack is configured for deployment on **Streamlit Community Cloud**.
 
 **[🌐 AquaTrack · Streamlit](https://aquatrack-hfajzsrox3waybuitm6mob.streamlit.app/)**
@@ -602,17 +409,6 @@ AquaTrack is configured for deployment on **Streamlit Community Cloud**.
 - Do not commit `.streamlit/secrets.toml`.
 - The prototype uses SQLite and stores report photos / evidence on local disk, so database and upload data can be lost on redeploy.
 - A production deployment should use a managed database such as PostgreSQL and external file storage.
-=======
-AquaTrack is deployed on **Streamlit Community Cloud**.
-
-### Streamlit Community Cloud Deployment
-
-- Connect the GitHub repository to Streamlit Community Cloud.
-- Set the main application file to `app.py`.
-- Add required secrets through the Streamlit Cloud Secrets settings.
-- Do not commit `.streamlit/secrets.toml`.
-- The prototype uses SQLite and stores report photos on local disk; production deployment should use a managed database and external file storage.
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ---
 
@@ -632,19 +428,12 @@ AquaTrack is intended to demonstrate secure application practices:
 
 ```text
 .streamlit/secrets.toml
-<<<<<<< HEAD
 .env and other local environment files
 API keys and OAuth client secrets
 SMTP passwords and private credentials
 private SQLite databases or backups
 reports/citizen_uploads/
 reports/completion_evidence/
-=======
-.env
-API keys
-SMTP passwords
-private credentials
->>>>>>> ed810a8 (Update AquaTrack README)
 ```
 
 ---
@@ -698,19 +487,11 @@ The application is intended for demonstration, academic evaluation, data analysi
 
 ### Source Code
 
-<<<<<<< HEAD
 **[💻 AquaTrack · GitHub](https://github.com/jngid9575/AquaTrack)**
 
 ### Live Application
 
 **[🌐 AquaTrack · Streamlit](https://aquatrack-hfajzsrox3waybuitm6mob.streamlit.app/)**
-=======
-**[AquaTrack · GitHub](https://github.com/jngid9575/AquaTrack)**
-
-### Live Application
-
-**[AquaTrack · Streamlit](https://aquatrack-hfajzsrox3waybuitm6mob.streamlit.app/)**
->>>>>>> ed810a8 (Update AquaTrack README)
 
 ---
 
